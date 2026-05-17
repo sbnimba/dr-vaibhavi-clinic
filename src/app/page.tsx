@@ -89,39 +89,39 @@ export default function Home() {
             </a>
 
             {/*  Desktop Nav  */}
-            <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+            <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
                 {/* 1. HOME */}
-                <a href="#" className="text-xs xl:text-sm font-bold text-primary-700 hover:text-primary-600 transition tracking-wide">HOME</a>
+                <a href="#" className="text-[11px] xl:text-xs font-bold text-primary-700 hover:text-primary-600 transition tracking-wider">HOME</a>
 
                 {/* 2. ABOUT */}
                 <div className="relative group py-2">
-                    <button className="text-xs xl:text-sm font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wide flex items-center gap-1 outline-none cursor-pointer">
-                        ABOUT <i className="fa-solid fa-chevron-down text-[10px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                    <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer">
+                        ABOUT <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full -left-4 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl p-6 border border-gray-100 hidden group-hover:block transition-all duration-300 z-50 min-w-[500px] grid grid-cols-2 gap-6 animate-fade-in">
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Doctor Profile</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Doctor Profile</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-user-md text-primary-400 mr-2 w-4"></i> About Doctor</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-graduation-cap text-primary-400 mr-2 w-4"></i> Qualification (MS OBGY)</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-award text-primary-400 mr-2 w-4"></i> Experience & Awards</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-certificate text-primary-400 mr-2 w-4"></i> Memberships</a></li>
                             </ul>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Philosophy</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Philosophy</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-hand-holding-heart text-primary-400 mr-2 w-4"></i> Patient Care Approach</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-venus text-primary-400 mr-2 w-4"></i> Women-Centric Care</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Media & Recognition</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Media & Recognition</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="hover:text-primary-600 transition block"><i className="fa-solid fa-video text-primary-400 mr-2 w-4"></i> Interviews & Talks</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-newspaper text-primary-400 mr-2 w-4"></i> Publications</a></li>
                             </ul>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Support</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Support</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#faq" className="hover:text-primary-600 transition block"><i className="fa-solid fa-circle-question text-primary-400 mr-2 w-4"></i> FAQs & Queries</a></li>
                             </ul>
                         </div>
@@ -130,26 +130,26 @@ export default function Home() {
 
                 {/* 3. SERVICES (Mega Menu) */}
                 <div className="relative group py-2">
-                    <button className="text-xs xl:text-sm font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wide flex items-center gap-1 outline-none cursor-pointer">
-                        SERVICES <i className="fa-solid fa-chevron-down text-[10px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                    <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer">
+                        SERVICES <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Mega Dropdown */}
                     <div className="absolute top-full -left-32 bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-gray-100 hidden group-hover:block transition-all duration-300 z-50 min-w-[750px] grid grid-cols-3 gap-8 animate-fade-in">
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
-                                <i className="fa-solid fa-person-pregnant text-base"></i> Pregnancy Care
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
+                                <i className="fa-solid fa-person-pregnant text-sm"></i> Pregnancy Care
                             </h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600 mb-6">
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600 mb-6">
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Normal Pregnancy Care</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">High-Risk Pregnancy</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">ANC Checkups</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Nutrition Guidance</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Pregnancy Scans</a></li>
                             </ul>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
-                                <i className="fa-solid fa-baby-carriage text-base"></i> Fertility
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
+                                <i className="fa-solid fa-baby-carriage text-sm"></i> Fertility
                             </h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Infertility Consultation</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Ovulation Guidance</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">PCOS-related Fertility</a></li>
@@ -157,10 +157,10 @@ export default function Home() {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
-                                <i className="fa-solid fa-dna text-base"></i> Gynecology
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
+                                <i className="fa-solid fa-dna text-sm"></i> Gynecology
                             </h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600 mb-6">
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600 mb-6">
                                 <li><a href="#services" className="hover:text-primary-600 transition block">PCOS / PCOD Treatment</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Irregular Periods</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Fibroids & Ovarian Cysts</a></li>
@@ -170,20 +170,20 @@ export default function Home() {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
-                                <i className="fa-solid fa-user-nurse text-base"></i> Delivery & Surgery
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
+                                <i className="fa-solid fa-user-nurse text-sm"></i> Delivery & Surgery
                             </h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600 mb-6">
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600 mb-6">
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Normal Delivery</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Painless Delivery</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">C-Section</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Laparoscopy</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Hysterectomy</a></li>
                             </ul>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
-                                <i className="fa-solid fa-shield-halved text-base"></i> Women Wellness
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1 flex items-center gap-2">
+                                <i className="fa-solid fa-shield-halved text-sm"></i> Women Wellness
                             </h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Adolescent Health</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Vaccination (HPV)</a></li>
                                 <li><a href="#services" className="hover:text-primary-600 transition block">Preventive Checkups</a></li>
@@ -193,24 +193,24 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* 4. CLINIC / CENTER */}
+                {/* 4. CLINIC */}
                 <div className="relative group py-2">
-                    <button className="text-xs xl:text-sm font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wide flex items-center gap-1 outline-none cursor-pointer">
-                        CLINIC / CENTER <i className="fa-solid fa-chevron-down text-[10px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                    <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer">
+                        CLINIC <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full -left-10 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl p-6 border border-gray-100 hidden group-hover:block transition-all duration-300 z-50 min-w-[420px] grid grid-cols-2 gap-6 animate-fade-in">
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Physical Trust</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Physical Trust</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-hospital text-primary-400 mr-2 w-4"></i> Clinic Overview & Photos</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-sparkles text-primary-400 mr-2 w-4"></i> Hygiene & Facilities</a></li>
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-location-dot text-primary-400 mr-2 w-4"></i> MGM Belapur Location</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Patient Info</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Patient Info</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#appointment" className="hover:text-primary-600 transition block"><i className="fa-solid fa-clock text-primary-400 mr-2 w-4"></i> Timings & OPD Schedule</a></li>
                                 <li><a href="#appointment" className="hover:text-primary-600 transition block"><i className="fa-solid fa-file-invoice-dollar text-primary-400 mr-2 w-4"></i> Insurance / TPA Support</a></li>
                                 <li><a href="#appointment" className="hover:text-primary-600 transition block"><i className="fa-solid fa-laptop-medical text-primary-400 mr-2 w-4"></i> Virtual Consultation</a></li>
@@ -221,22 +221,22 @@ export default function Home() {
 
                 {/* 5. RESOURCES */}
                 <div className="relative group py-2">
-                    <button className="text-xs xl:text-sm font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wide flex items-center gap-1 outline-none cursor-pointer">
-                        RESOURCES <i className="fa-solid fa-chevron-down text-[10px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                    <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer">
+                        RESOURCES <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full -left-10 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl p-6 border border-gray-100 hidden group-hover:block transition-all duration-300 z-50 min-w-[420px] grid grid-cols-2 gap-6 animate-fade-in">
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Knowledge</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Knowledge</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#" className="hover:text-primary-600 transition block"><i className="fa-solid fa-book-open text-primary-400 mr-2 w-4"></i> Blog & Articles</a></li>
                                 <li><a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="hover:text-primary-600 transition block"><i className="fa-brands fa-youtube text-primary-400 mr-2 w-4"></i> Educational Videos</a></li>
                                 <li><a href="#" className="hover:text-primary-600 transition block"><i className="fa-solid fa-calculator text-primary-400 mr-2 w-4"></i> Pregnancy Calculator</a></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Patient Portal</h4>
-                            <ul className="space-y-2.5 text-sm font-medium text-gray-600">
+                            <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Patient Portal</h4>
+                            <ul className="space-y-2.5 text-xs font-medium text-gray-600">
                                 <li><a href="#" className="hover:text-primary-600 transition block"><i className="fa-solid fa-file-arrow-down text-primary-400 mr-2 w-4"></i> Download Reports</a></li>
                                 <li><a href="#" className="hover:text-primary-600 transition block"><i className="fa-solid fa-file-pdf text-primary-400 mr-2 w-4"></i> Diet Charts & PDFs</a></li>
                                 <li><a href="#" className="hover:text-primary-600 transition block"><i className="fa-solid fa-heart-circle-check text-primary-400 mr-2 w-4"></i> Care Instructions</a></li>
@@ -246,18 +246,18 @@ export default function Home() {
                 </div>
 
                 {/* 6. TESTIMONIALS */}
-                <a href="#testimonials" className="text-xs xl:text-sm font-bold text-gray-700 hover:text-primary-600 transition tracking-wide">TESTIMONIALS</a>
+                <a href="#testimonials" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider">TESTIMONIALS</a>
 
                 {/* 7. CONTACT US */}
-                <a href="#appointment" className="text-xs xl:text-sm font-bold text-gray-700 hover:text-primary-600 transition tracking-wide">CONTACT US</a>
+                <a href="#appointment" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider">CONTACT US</a>
                 
                 {/*  Language Toggle with Blinking Arrow  */}
-                <div className="flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-100 relative group cursor-pointer shrink-0">
-                    <div className="absolute -left-6 top-1/2 -translate-y-1/2 text-primary-500 animate-pulse text-lg" title="Change Language">
+                <div className="flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full shadow-sm border border-gray-100 relative group cursor-pointer shrink-0">
+                    <div className="absolute -left-5 top-1/2 -translate-y-1/2 text-primary-500 animate-pulse text-base" title="Change Language">
                         <i className="fa-solid fa-caret-right"></i>
                     </div>
-                    <i className="fa-solid fa-language text-gray-400 group-hover:text-primary-500 transition"></i>
-                    <select id="lang-select" onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-xs xl:text-sm font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-2">
+                    <i className="fa-solid fa-language text-gray-400 group-hover:text-primary-500 transition text-xs"></i>
+                    <select id="lang-select" onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] xl:text-xs font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
                         <option value="en">English (EN)</option>
                         <option value="hi">हिंदी (HI)</option>
                         <option value="mr">मराठी (MR)</option>
@@ -266,12 +266,12 @@ export default function Home() {
                         <option value="te">తెలుగు (TE)</option>
                         <option value="bn">বাংলা (BN)</option>
                     </select>
-                    <i className="fa-solid fa-chevron-down text-[10px] text-gray-400 absolute right-3 pointer-events-none hidden"></i>
+                    <i className="fa-solid fa-chevron-down text-[9px] text-gray-400 absolute right-2 pointer-events-none hidden"></i>
                 </div>
 
                 {/* 8. APPOINTMENT BUTTON (Important Contrasting Rose Gold / Coral CTA) */}
-                <a href="#appointment" className="bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white px-6 py-2.5 rounded-full text-xs xl:text-sm font-bold hover:from-rose-600 hover:to-purple-700 transition shadow-[0_10px_20px_rgba(225,29,72,0.25)] hover:shadow-[0_15px_25px_rgba(225,29,72,0.4)] hover:-translate-y-0.5 transform duration-300 shrink-0 flex items-center gap-2 border border-pink-400/30">
-                    <i className="fa-regular fa-calendar-check text-base animate-bounce"></i> Book Appointment
+                <a href="#appointment" className="bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white px-5 py-2 rounded-full text-[11px] xl:text-xs font-bold hover:from-rose-600 hover:to-purple-700 transition shadow-[0_8px_16px_rgba(225,29,72,0.25)] hover:shadow-[0_12px_20px_rgba(225,29,72,0.4)] hover:-translate-y-0.5 transform duration-300 shrink-0 flex items-center gap-1.5 border border-pink-400/30">
+                    <i className="fa-regular fa-calendar-check text-sm animate-bounce"></i> Book Appointment
                 </a>
             </nav>
         </div>
