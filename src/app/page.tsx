@@ -297,10 +297,10 @@ export default function Home() {
                     
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-[1.2] mb-6 tracking-normal">
                         Where Every Woman Feels <br />
-                        <span className="gradient-text">Safe, Heard & Cared For</span>
+                        <span className="gradient-text">Safe, Heard & Cared</span>
                     </h1>
                     
-                    <p className="text-base sm:text-lg text-gray-700 font-sans font-medium mb-8 max-w-xl leading-relaxed tracking-wide">
+                    <p className="text-base sm:text-lg text-gray-700 font-sans font-medium italic mb-8 max-w-xl leading-relaxed tracking-wide">
                         Warm, private, and judgment-free women's care — at every stage of life
                     </p>
                     
@@ -340,19 +340,6 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-12 scale-105 opacity-50"></div>
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
                         <img src="images/doctor-hero.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-[600px] object-cover object-top" />
-                    </div>
-                    
-                    {/*  Floating Badge  */}
-                    <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-gray-100 z-20 flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
-                        <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                            <i className="fa-solid fa-star"></i>
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold text-gray-900">Top Rated Doctor</p>
-                            <div className="flex text-yellow-400 text-xs">
-                                <i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
