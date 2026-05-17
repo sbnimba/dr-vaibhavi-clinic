@@ -1,10 +1,12 @@
 "use client";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 export default function Home() {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
     useEffect(() => {
         // Initialize AOS with mirror and once: false for soft entering/leaving animations
         if (typeof window !== 'undefined') {
@@ -272,18 +274,79 @@ export default function Home() {
                     <i className="fa-regular fa-calendar-check text-sm animate-bounce"></i> Book Appointment
                 </a>
             </nav>
+
+            {/* Mobile Hamburger Button */}
+            <div className="flex lg:hidden items-center gap-3">
+                {/* Mobile Language Toggle */}
+                <div className="flex items-center gap-1 bg-white px-2 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer shrink-0">
+                    <i className="fa-solid fa-language text-primary-500 text-xs"></i>
+                    <select onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
+                        <option value="en">EN</option>
+                        <option value="hi">HI</option>
+                        <option value="mr">MR</option>
+                        <option value="gu">GU</option>
+                        <option value="ta">TA</option>
+                        <option value="te">TE</option>
+                        <option value="bn">BN</option>
+                    </select>
+                </div>
+                <button 
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    className="w-10 h-10 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center hover:bg-primary-100 transition shadow-sm outline-none cursor-pointer"
+                    aria-label="Toggle Mobile Menu"
+                >
+                    <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark text-lg' : 'fa-bars text-base'}`}></i>
+                </button>
+            </div>
         </div>
+
+        {/* Mobile Drawer Overlay */}
+        {mobileMenuOpen && (
+            <div className="lg:hidden fixed inset-x-0 top-[64px] bg-white/95 backdrop-blur-2xl border-b border-gray-100 shadow-2xl p-6 animate-fade-in max-h-[calc(100vh-64px)] overflow-y-auto z-50 flex flex-col gap-4">
+                <div className="flex flex-col space-y-4 text-sm font-bold text-gray-800 border-b pb-4 border-gray-100">
+                    <a href="#home" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-house text-primary-500 w-5"></i> Home
+                    </a>
+                    <a href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-user-md text-primary-500 w-5"></i> About Doctor
+                    </a>
+                    <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-person-pregnant text-primary-500 w-5"></i> Specialties & Services
+                    </a>
+                    <a href="#mission-vision" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-hand-holding-heart text-primary-500 w-5"></i> Philosophy & Values
+                    </a>
+                    <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-star text-primary-500 w-5"></i> Patient Stories
+                    </a>
+                    <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-circle-question text-primary-500 w-5"></i> FAQs
+                    </a>
+                    <a href="#community" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-newspaper text-primary-500 w-5"></i> Health Tips & Blog
+                    </a>
+                </div>
+                <div className="flex flex-col gap-3 pt-2">
+                    <a href="#appointment" onClick={() => setMobileMenuOpen(false)} className="w-full bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white py-3 rounded-full font-bold text-center shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2 text-xs">
+                        <i className="fa-regular fa-calendar-check text-sm"></i> Book Appointment
+                    </a>
+                    <a href="https://wa.me/919284880359" target="_blank" onClick={() => setMobileMenuOpen(false)} className="w-full bg-green-500 text-white py-3 rounded-full font-bold text-center shadow-lg shadow-green-500/25 flex items-center justify-center gap-2 text-xs">
+                        <i className="fa-brands fa-whatsapp text-sm"></i> WhatsApp Consult
+                    </a>
+                </div>
+            </div>
+        )}
     </header>
 
     {/* ==================== 1ST PAGE: HERO SECTION ==================== */}
-    <section id="home" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-white">
+    <section id="home" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
         {/*  Background Elements  */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
             <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-peach/30 rounded-full blur-3xl opacity-60"></div>
             <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-brand-lavender/40 rounded-full blur-3xl opacity-60"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
                 
                 {/*  Hero Content  */}
@@ -334,17 +397,17 @@ export default function Home() {
                 </div>
 
                 {/*  Hero Image  */}
-                <div className="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div className="lg:col-span-5 relative mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-12 scale-105 opacity-50 pointer-events-none"></div>
-                    <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white bg-white aspect-square max-h-[380px] xl:max-h-[440px] flex items-center justify-center">
+                    <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-6 sm:border-8 border-white bg-white aspect-square max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[440px] flex items-center justify-center mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none">
                         <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
-                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2.5 px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-3 z-20 w-max">
-                            <div className="w-2.5 h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
+                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3 z-20 w-max">
+                            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
                             <div className="text-left">
-                                <p className="text-sm sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi Dhenge</p>
-                                <p className="text-[10px] sm:text-xs font-bold text-primary-600 uppercase tracking-widest leading-none">MS OBGY | MBBS</p>
+                                <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi Dhenge</p>
+                                <p className="text-[9px] sm:text-xs font-bold text-primary-600 uppercase tracking-widest leading-none">MS OBGY | MBBS</p>
                             </div>
                         </div>
                     </div>
@@ -355,16 +418,16 @@ export default function Home() {
     </section>
 
     {/* ==================== 2ND PAGE: ABOUT DOCTOR ==================== */}
-    <section id="about" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-t border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+    <section id="about" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-t border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
             <div className="text-center mb-6" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Get To Know</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900">About Us</h3>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div data-aos="fade-up" className="lg:col-span-5 relative order-2 lg:order-1 max-h-[380px] xl:max-h-[420px]">
-                    <img src="images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="rounded-[2rem] shadow-premium object-cover h-[380px] xl:h-[420px] w-full" />
+                <div data-aos="fade-up" className="lg:col-span-5 relative order-2 lg:order-1 max-h-[260px] sm:max-h-[320px] lg:max-h-[380px] xl:max-h-[420px] mx-auto w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none">
+                    <img src="images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="rounded-[2rem] shadow-premium object-cover h-[260px] sm:h-[320px] lg:h-[380px] xl:h-[420px] w-full" />
                 </div>
                 
                 <div className="lg:col-span-7 order-1 lg:order-2" data-aos="fade-up" data-aos-delay="200">
@@ -379,7 +442,7 @@ export default function Home() {
                     </p>
                     
                     {/* Quick Credentials */}
-                    <div className="bg-white p-5 sm:p-6 rounded-2xl border border-gray-100 mb-4 shadow-sm">
+                    <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 mb-4 shadow-sm">
                         <h5 className="text-[11px] font-bold uppercase tracking-widest text-primary-700 mb-3 flex items-center gap-2">
                             <i className="fa-solid fa-award text-primary-500 text-sm"></i> Quick Credentials
                         </h5>
@@ -412,7 +475,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 3RD PAGE: MISSION, VISION & VALUES ==================== */}
-    <section id="mission-vision" className="w-full h-screen snap-start snap-always overflow-hidden pt-24 pb-4 flex flex-col justify-start relative bg-white border-b border-gray-100">
+    <section id="mission-vision" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-start relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
             <div className="text-center max-w-3xl mx-auto mb-4" data-aos="fade-up">
                 <h2 className="text-[11px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Our Philosophy</h2>
@@ -482,7 +545,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
-    <section id="services" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+    <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Expert Treatments</h2>
@@ -561,7 +624,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 5TH PAGE: PATIENT STORIES ==================== */}
-    <section id="testimonials" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
+    <section id="testimonials" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Testimonials</h2>
@@ -596,7 +659,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 6TH PAGE: FAQ SECTION ==================== */}
-    <section id="faq" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+    <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center mb-8" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Patient Guide</h2>
@@ -645,7 +708,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 7TH PAGE: COMMUNITY & PREGNANCY TIPS ==================== */}
-    <section id="community" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
+    <section id="community" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
             <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1" data-aos="fade-up">Stay Connected</h2>
             <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">Community & Health Tips</h3>
@@ -695,7 +758,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 8TH PAGE: BOOK YOUR VISIT & FOOTER ==================== */}
-    <section id="appointment" className="w-full h-screen snap-start snap-always overflow-hidden pt-20 flex flex-col justify-between relative bg-white">
+    <section id="appointment" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 flex flex-col justify-between relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-6">
             <div className="bg-[#FAF9F6] rounded-[2rem] shadow-premium overflow-hidden border border-gray-100">
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
