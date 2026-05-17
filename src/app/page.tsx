@@ -295,13 +295,13 @@ export default function Home() {
                         <span className="text-xs font-bold text-primary-700 tracking-wider uppercase">Senior Resident, MGM Belapur</span>
                     </div>
                     
-                    <h1 className="text-4xl lg:text-6xl font-serif font-bold text-gray-900 leading-[1.1] mb-6">
-                        Empowering Women with <br />
-                        <span className="gradient-text italic">Compassionate Care.</span>
+                    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-gray-900 leading-[1.15] mb-6">
+                        Where Every Woman Feels <br />
+                        <span className="gradient-text italic">Safe, Heard & Cared For.</span>
                     </h1>
                     
                     <p className="text-lg text-gray-600 mb-8 max-w-lg leading-relaxed">
-                        A safe, premium, and non-judgmental space for your pregnancy, fertility, and gynaecological needs. Because every stage of womanhood deserves the best.
+                        Warm, private, and judgment-free women's care — at every stage of life.
                     </p>
                     
                     <div className="flex flex-wrap gap-4 mt-8">
