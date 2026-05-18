@@ -746,8 +746,10 @@ export default function Home() {
                     </div>
                     <div className="p-5">
                         <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest">Women's Health</span>
-                        <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900">Understanding PCOS: Myths vs Facts</h4>
-                        <a href="#appointment" className="text-primary-600 text-xs font-bold flex items-center gap-1">Read More &rarr;</a>
+                        <Link href="/pcos-myths-facts" className="block outline-none group">
+                            <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Understanding PCOS: Myths vs Facts</h4>
+                        </Link>
+                        <Link href="/pcos-myths-facts" className="text-primary-600 text-xs font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
                 <div className="bg-[#FAF9F6] rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition border border-gray-100 flex flex-col justify-between">
