@@ -727,41 +727,164 @@ export default function Home() {
                 </a>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left" data-aos="fade-up" data-aos-delay="300">
-                <div className="bg-[#FAF9F6] rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition border border-gray-100 flex flex-col justify-between">
-                    <div className="h-32 bg-gradient-to-r from-primary-100 to-primary-200 flex items-center justify-center text-primary-600 text-3xl">
-                        <i className="fa-solid fa-apple-whole"></i>
-                    </div>
-                    <div className="p-5">
-                        <span className="text-[10px] font-bold text-primary-600 uppercase tracking-widest">Pregnancy Tips</span>
-                        <Link href="/nutrition-first-trimester" className="block outline-none group">
-                            <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900 group-hover:text-primary-600 transition-colors">Nutrition guide for your first trimester</h4>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 text-left" data-aos="fade-up" data-aos-delay="300">
+                {/* Card 1 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center text-pink-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-apple-whole"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-pink-600 uppercase tracking-wider block mb-1">Pregnancy Tips</span>
+                        <Link href="/nutrition-first-trimester" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2 leading-snug">Nutrition guide for your first trimester</h4>
                         </Link>
-                        <Link href="/nutrition-first-trimester" className="text-primary-600 text-xs font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <Link href="/nutrition-first-trimester" className="text-pink-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
-                <div className="bg-[#FAF9F6] rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition border border-gray-100 flex flex-col justify-between">
-                    <div className="h-32 bg-gradient-to-r from-purple-100 to-purple-200 flex items-center justify-center text-purple-600 text-3xl">
-                        <i className="fa-solid fa-dna"></i>
-                    </div>
-                    <div className="p-5">
-                        <span className="text-[10px] font-bold text-purple-600 uppercase tracking-widest">Women's Health</span>
-                        <Link href="/pcos-myths-facts" className="block outline-none group">
-                            <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900 group-hover:text-purple-600 transition-colors">Understanding PCOS (now PMOS): Myths vs Facts</h4>
+
+                {/* Card 2 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-dna"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-purple-600 uppercase tracking-wider block mb-1">Women's Health</span>
+                        <Link href="/pcos-myths-facts" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2 leading-snug">Understanding PCOS (now PMOS): Myths vs Facts</h4>
                         </Link>
-                        <Link href="/pcos-myths-facts" className="text-primary-600 text-xs font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <Link href="/pcos-myths-facts" className="text-purple-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
-                <div className="bg-[#FAF9F6] rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition border border-gray-100 flex flex-col justify-between">
-                    <div className="h-32 bg-gradient-to-r from-brand-peach/30 to-brand-peach/60 flex items-center justify-center text-orange-600 text-3xl">
-                        <i className="fa-solid fa-baby-carriage"></i>
-                    </div>
-                    <div className="p-5">
-                        <span className="text-[10px] font-bold text-orange-600 uppercase tracking-widest">Fertility</span>
-                        <Link href="/infertility-consult" className="block outline-none group">
-                            <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">When Should You Consult an Infertility Specialist?</h4>
+
+                {/* Card 3 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-baby-carriage"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-orange-600 uppercase tracking-wider block mb-1">Fertility</span>
+                        <Link href="/infertility-consult" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug">When Should You Consult an Infertility Specialist?</h4>
                         </Link>
-                        <Link href="/infertility-consult" className="text-primary-600 text-xs font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <Link href="/infertility-consult" className="text-orange-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
+                    </div>
+                </div>
+
+                {/* Card 4 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center text-rose-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-person-pregnant"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-rose-600 uppercase tracking-wider block mb-1">Antenatal Guide</span>
+                        <Link href="/early-signs-pregnancy" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-rose-600 transition-colors line-clamp-2 leading-snug">Early Signs of Pregnancy: What’s Normal & What’s Not</h4>
+                        </Link>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <Link href="/early-signs-pregnancy" className="text-rose-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
+                    </div>
+                </div>
+
+                {/* Card 5 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-vials"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Prenatal Care</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">Essential Prenatal Tests Every Mother Should Know About</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
+                    </div>
+                </div>
+
+                {/* Card 6 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-teal-600 uppercase tracking-wider block mb-1">Fetal Development</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-teal-600 transition-colors line-clamp-2 leading-snug">Baby Growth Month-by-Month During Pregnancy</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
+                    </div>
+                </div>
+
+                {/* Card 7 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-amber-600 uppercase tracking-wider block mb-1">High-Risk Pregnancy</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug">Understanding High-Risk Pregnancy: Warning Signs & Care</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
+                    </div>
+                </div>
+
+                {/* Card 8 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center text-red-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-bell"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-red-600 uppercase tracking-wider block mb-1">Pregnancy Warning</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">What are the warning signs during pregnancy that should never be ignored?</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
+                    </div>
+                </div>
+
+                {/* Card 9 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-hospital-user"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">Labor & Delivery</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-indigo-600 transition-colors line-clamp-2 leading-snug">Normal Delivery vs C-Section: What Every Mother Should Know</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
+                    </div>
+                </div>
+
+                {/* Card 10 */}
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-3.5 group">
+                    <div>
+                        <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                            <i className="fa-solid fa-capsules"></i>
+                        </div>
+                        <span className="text-[9px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Supplements</span>
+                        <a href="#community" className="block outline-none">
+                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">How important are pregnancy supplements like folic acid and iron?</h4>
+                        </a>
+                    </div>
+                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                        <span className="text-gray-400 text-[10px] font-medium italic">Coming Soon</span>
                     </div>
                 </div>
             </div>
