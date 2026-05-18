@@ -758,8 +758,10 @@ export default function Home() {
                     </div>
                     <div className="p-5">
                         <span className="text-[10px] font-bold text-orange-600 uppercase tracking-widest">Fertility</span>
-                        <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900">When to consult an infertility specialist?</h4>
-                        <a href="#appointment" className="text-primary-600 text-xs font-bold flex items-center gap-1">Read More &rarr;</a>
+                        <Link href="/infertility-consult" className="block outline-none group">
+                            <h4 className="font-bold text-sm sm:text-base mt-1.5 mb-2 text-gray-900 group-hover:text-orange-600 transition-colors">When Should You Consult an Infertility Specialist?</h4>
+                        </Link>
+                        <Link href="/infertility-consult" className="text-primary-600 text-xs font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
             </div>
