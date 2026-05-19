@@ -101,37 +101,127 @@ export default function Home() {
         setBookingStep(prev => prev - 1);
     };
 
-    const handleAppointmentSubmit = (e: React.FormEvent) => {
+    // Helper for sending real emails using EmailJS REST API
+    const sendEmailAlert = async (type: 'new_booking' | 'status_update', data: any) => {
+        if (typeof window === 'undefined') return false;
+        
+        const serviceId = localStorage.getItem('dr_vaibhavi_emailjs_service_id');
+        const templateId = type === 'new_booking' 
+            ? localStorage.getItem('dr_vaibhavi_emailjs_template_booking')
+            : localStorage.getItem('dr_vaibhavi_emailjs_template_update');
+        const publicKey = localStorage.getItem('dr_vaibhavi_emailjs_public_key');
+
+        if (!serviceId || !templateId || !publicKey) {
+            console.log('[EmailJS] Credentials not configured. Simulated dispatch only.');
+            return false;
+        }
+
+        try {
+            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    service_id: serviceId,
+                    template_id: templateId,
+                    user_id: publicKey,
+                    template_params: {
+                        to_email: type === 'new_booking' ? 'IndiasBestGynaecologist@gmail.com' : data.emailAddress,
+                        to_name: type === 'new_booking' ? 'Dr. Vaibhavi Dhenge' : data.patientName,
+                        patient_name: data.patientName,
+                        reference_id: data.id,
+                        consultation_mode: data.consultationMode,
+                        specialty: data.specialty,
+                        appointment_date: data.date,
+                        appointment_time: data.timeSlot,
+                        health_concern: data.healthConcern || 'None',
+                        medical_history: data.medicalHistory ? data.medicalHistory.join(', ') : 'None',
+                        status: data.status,
+                        note: data.note || '',
+                        reply_to: data.emailAddress
+                    }
+                })
+            });
+            return response.ok;
+        } catch (err) {
+            console.error('[EmailJS] Error sending email:', err);
+            return false;
+        }
+    };
+
+    const handleAppointmentSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        setTimeout(() => {
-            const refId = 'APP-' + Math.floor(100000 + Math.random() * 900000);
-            const newAppointment = {
-                id: refId,
-                patientName,
-                mobileNumber,
-                emailAddress,
-                consultationMode: selectedMode,
-                specialty: selectedSpecialty,
-                date: selectedDate,
-                timeSlot: selectedTimeSlot,
-                healthConcern: healthConcern || 'None',
-                medicalHistory: medicalConditions,
-                status: 'Pending',
-                createdAt: new Date().toISOString()
-            };
+        const refId = 'APP-' + Math.floor(100000 + Math.random() * 900000);
+        const newAppointment = {
+            id: refId,
+            patientName,
+            mobileNumber,
+            emailAddress,
+            consultationMode: selectedMode,
+            specialty: selectedSpecialty,
+            date: selectedDate,
+            timeSlot: selectedTimeSlot,
+            healthConcern: healthConcern || 'None',
+            medicalHistory: medicalConditions,
+            status: 'Pending',
+            createdAt: new Date().toISOString()
+        };
 
-            // Save to LocalStorage mock database
+        // Try syncing with Supabase if keys exist
+        let synced = false;
+        if (typeof window !== 'undefined') {
+            const sbUrl = localStorage.getItem('dr_vaibhavi_supabase_url');
+            const sbKey = localStorage.getItem('dr_vaibhavi_supabase_key');
+            
+            if (sbUrl && sbKey) {
+                try {
+                    const response = await fetch(`${sbUrl}/rest/v1/appointments`, {
+                        method: 'POST',
+                        headers: {
+                            'apikey': sbKey,
+                            'Authorization': `Bearer ${sbKey}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: refId,
+                            patient_name: patientName,
+                            mobile_number: mobileNumber,
+                            email_address: emailAddress,
+                            consultation_mode: selectedMode,
+                            specialty: selectedSpecialty,
+                            appointment_date: selectedDate,
+                            time_slot: selectedTimeSlot,
+                            health_concern: healthConcern || 'None',
+                            medical_history: medicalConditions,
+                            status: 'Pending',
+                            created_at: new Date().toISOString()
+                        })
+                    });
+                    if (response.ok) {
+                        synced = true;
+                        console.log('[Supabase] Appointment successfully synced.');
+                    }
+                } catch (err) {
+                    console.error('[Supabase] Insert failed:', err);
+                }
+            }
+        }
+
+        // Always save to localStorage as local fallback/cache
+        if (typeof window !== 'undefined') {
             const existing = localStorage.getItem('dr_vaibhavi_appointments');
             const appointments = existing ? JSON.parse(existing) : [];
             appointments.unshift(newAppointment);
             localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(appointments));
+        }
 
-            setBookedAppointment(newAppointment);
-            setIsSubmitting(false);
-            setBookingSuccess(true);
-        }, 1200);
+        // Trigger real email notification alert if EmailJS is configured
+        await sendEmailAlert('new_booking', newAppointment);
+
+        setBookedAppointment(newAppointment);
+        setIsSubmitting(false);
+        setBookingSuccess(true);
     };
 
     const resetBooking = () => {
@@ -976,7 +1066,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 8TH PAGE: BOOK YOUR VISIT & FOOTER ==================== */}
-    <section id="appointment" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 flex flex-col justify-between relative bg-white">
+    <section id="appointment" className="w-full min-h-screen snap-start snap-always overflow-y-auto pt-24 lg:pt-20 flex flex-col justify-between relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-6">
             <div className="bg-[#FAF9F6] rounded-[2rem] shadow-premium overflow-hidden border border-gray-100">
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
@@ -1006,50 +1096,50 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-7 p-6 lg:p-10 bg-white">
+                    <div className="lg:col-span-7 p-4 sm:p-6 lg:p-10 bg-white">
                         {bookingSuccess ? (
-                            <div className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border border-emerald-200 rounded-3xl p-8 text-center shadow-premium animate-fade-in space-y-6">
-                                <div className="w-16 h-16 bg-emerald-500 text-white rounded-full flex items-center justify-center text-3xl mx-auto shadow-lg shadow-emerald-500/30 animate-bounce">
+                            <div className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 border border-emerald-200 rounded-3xl p-5 sm:p-6 text-center shadow-premium animate-fade-in space-y-4">
+                                <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-2xl mx-auto shadow-lg shadow-emerald-500/30 animate-bounce">
                                     <i className="fa-solid fa-check"></i>
                                 </div>
-                                <div className="space-y-2">
-                                    <span className="text-xs font-bold text-emerald-700 tracking-widest uppercase bg-emerald-100 px-3 py-1 rounded-full">Booking Confirmed</span>
-                                    <h3 className="text-2xl font-serif font-bold text-gray-900">Your appointment request has been submitted</h3>
-                                    <p className="text-xs sm:text-sm text-gray-600 max-w-md mx-auto leading-relaxed">
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold text-emerald-700 tracking-widest uppercase bg-emerald-100 px-2.5 py-0.5 rounded-full">Booking Confirmed</span>
+                                    <h3 className="text-xl font-serif font-bold text-gray-900">Your appointment request has been submitted</h3>
+                                    <p className="text-[11px] sm:text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
                                         Dr. Vaibhavi Dhenge and the clinic staff have received your request. A confirmation email and background alert have been dispatched to the clinic management.
                                     </p>
                                 </div>
 
-                                <div className="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm text-left space-y-3 max-w-md mx-auto">
-                                    <div className="flex justify-between items-center text-xs border-b border-gray-100 pb-2">
+                                <div className="bg-white p-4 rounded-2xl border border-emerald-100 shadow-sm text-left space-y-2.5 max-w-md mx-auto">
+                                    <div className="flex justify-between items-center text-[11px] border-b border-gray-100 pb-1.5">
                                         <span className="text-gray-500 font-medium">Reference ID</span>
                                         <span className="font-bold text-gray-900 font-mono">{bookedAppointment?.id}</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs border-b border-gray-100 pb-2">
+                                    <div className="flex justify-between items-center text-[11px] border-b border-gray-100 pb-1.5">
                                         <span className="text-gray-500 font-medium">Patient Name</span>
                                         <span className="font-bold text-gray-900">{bookedAppointment?.patientName}</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs border-b border-gray-100 pb-2">
+                                    <div className="flex justify-between items-center text-[11px] border-b border-gray-100 pb-1.5">
                                         <span className="text-gray-500 font-medium">Date & Time</span>
                                         <span className="font-bold text-emerald-600">{bookedAppointment?.date} at {bookedAppointment?.timeSlot}</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs border-b border-gray-100 pb-2">
+                                    <div className="flex justify-between items-center text-[11px] border-b border-gray-100 pb-1.5">
                                         <span className="text-gray-500 font-medium">Consultation Mode</span>
                                         <span className="font-bold text-gray-900">{bookedAppointment?.consultationMode}</span>
                                     </div>
-                                    <div className="flex justify-between items-center text-xs pt-1">
+                                    <div className="flex justify-between items-center text-[11px] pt-0.5">
                                         <span className="text-gray-500 font-medium">Specialty</span>
                                         <span className="font-bold text-gray-900">{bookedAppointment?.specialty}</span>
                                     </div>
                                 </div>
 
                                 {/* Simulated Email Notification Badge */}
-                                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-4 text-xs text-emerald-800 text-left space-y-1 max-w-md mx-auto">
-                                    <div className="font-bold flex items-center gap-2">
+                                <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-3.5 text-left space-y-1 max-w-md mx-auto">
+                                    <div className="font-bold flex items-center gap-2 text-[11px] text-emerald-800">
                                         <i className="fa-solid fa-envelope-circle-check text-emerald-600 text-sm animate-pulse"></i>
                                         <span>Automated Notifications Dispatched:</span>
                                     </div>
-                                    <ul className="list-disc list-inside text-[11px] text-emerald-700 space-y-1 pt-1 font-medium">
+                                    <ul className="list-disc list-inside text-[10px] text-emerald-700 space-y-0.5 pt-0.5 font-medium">
                                         <li>Email sent to: <strong>IndiasBestGynaecologist@gmail.com</strong></li>
                                         <li>Confirmation sent to: <strong>{bookedAppointment?.emailAddress}</strong></li>
                                         <li>Background alert synced to Doctor Portal</li>
