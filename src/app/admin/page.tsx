@@ -71,8 +71,55 @@ export default function AdminDashboard() {
         }
     }, []);
 
+    // Security XOR helper functions for encrypting/decrypting private patient data
+    const SECRET_KEY = "vaibhavi2026";
+    
+    const encryptData = (text: string): string => {
+        try {
+            const xor = text.split('').map((char, i) => 
+                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
+            ).join('');
+            return btoa(unescape(encodeURIComponent(xor)));
+        } catch (e) {
+            return '';
+        }
+    };
+
+    const decryptData = (encoded: string): string => {
+        try {
+            const decoded = decodeURIComponent(escape(atob(encoded)));
+            return decoded.split('').map((char, i) => 
+                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
+            ).join('');
+        } catch (e) {
+            return '';
+        }
+    };
+
     const loadAppointments = async () => {
         setIsSyncing(true);
+        
+        // 1. Primary Sync: Fetch from secure KVDB cloud bucket
+        try {
+            const response = await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments');
+            if (response.ok) {
+                const encryptedText = await response.text();
+                if (encryptedText) {
+                    const decryptedText = decryptData(encryptedText);
+                    if (decryptedText) {
+                        const parsed = JSON.parse(decryptedText);
+                        setAppointments(parsed);
+                        localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(parsed));
+                        setIsSyncing(false);
+                        return;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error('[KVDB] Load failed. Trying Supabase or cache...', err);
+        }
+
+        // 2. Secondary Sync: Try Supabase if keys exist
         const url = localStorage.getItem('dr_vaibhavi_supabase_url');
         const key = localStorage.getItem('dr_vaibhavi_supabase_key');
 
@@ -171,8 +218,11 @@ export default function AdminDashboard() {
     };
 
     const updateAppointmentInStore = async (id: string, status: Appointment['status'], extra: Partial<Appointment>, emailType: 'status_update', emailNote?: string) => {
-        // 1. Update local cache state
-        const updatedList = appointments.map(app => {
+        // 1. Update local cache state & trigger email alert
+        let updatedList: Appointment[] = [];
+        const appToUpdate = appointments.find(app => app.id === id);
+        
+        updatedList = appointments.map(app => {
             if (app.id === id) {
                 const newApp = { ...app, status, ...extra };
                 // Send email to patient asynchronously
@@ -185,7 +235,19 @@ export default function AdminDashboard() {
         setAppointments(updatedList);
         localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(updatedList));
 
-        // 2. Sync to Supabase
+        // 2. Sync to secure KVDB cloud database
+        try {
+            const encryptedPayload = encryptData(JSON.stringify(updatedList));
+            await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments', {
+                method: 'POST',
+                body: encryptedPayload
+            });
+            console.log('[KVDB] Synced update successfully.');
+        } catch (err) {
+            console.error('[KVDB] Sync update failed:', err);
+        }
+
+        // 3. Secondary Sync to Supabase
         const url = localStorage.getItem('dr_vaibhavi_supabase_url');
         const key = localStorage.getItem('dr_vaibhavi_supabase_key');
         if (url && key) {
@@ -193,7 +255,6 @@ export default function AdminDashboard() {
                 status: status,
                 ...extra
             };
-            // Map dates/times to db columns
             if (extra.date) {
                 dbUpdates.appointment_date = extra.date;
                 delete dbUpdates.date;

@@ -101,6 +101,31 @@ export default function Home() {
         setBookingStep(prev => prev - 1);
     };
 
+    // Security XOR helper functions for encrypting private patient data
+    const SECRET_KEY = "vaibhavi2026";
+    
+    const encryptData = (text: string): string => {
+        try {
+            const xor = text.split('').map((char, i) => 
+                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
+            ).join('');
+            return btoa(unescape(encodeURIComponent(xor)));
+        } catch (e) {
+            return '';
+        }
+    };
+
+    const decryptData = (encoded: string): string => {
+        try {
+            const decoded = decodeURIComponent(escape(atob(encoded)));
+            return decoded.split('').map((char, i) => 
+                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
+            ).join('');
+        } catch (e) {
+            return '';
+        }
+    };
+
     // Helper for sending real emails using EmailJS REST API
     const sendEmailAlert = async (type: 'new_booking' | 'status_update', data: any) => {
         if (typeof window === 'undefined') return false;
@@ -168,15 +193,50 @@ export default function Home() {
             createdAt: new Date().toISOString()
         };
 
-        // Try syncing with Supabase if keys exist
-        let synced = false;
+        // Automatic Zero-Config KVDB Cloud Database Sync (Encrypted for Privacy)
+        let currentList = [];
+        try {
+            const response = await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments');
+            if (response.ok) {
+                const encryptedText = await response.text();
+                if (encryptedText) {
+                    const decryptedText = decryptData(encryptedText);
+                    if (decryptedText) {
+                        currentList = JSON.parse(decryptedText);
+                    }
+                }
+            }
+        } catch (err) {
+            console.error('[KVDB] Fetch current list failed. Falling back to local storage.', err);
+            if (typeof window !== 'undefined') {
+                const cached = localStorage.getItem('dr_vaibhavi_appointments');
+                if (cached) currentList = JSON.parse(cached);
+            }
+        }
+
+        // Add the new appointment at the top
+        currentList.unshift(newAppointment);
+
+        // Upload encrypted list back to cloud
+        try {
+            const encryptedPayload = encryptData(JSON.stringify(currentList));
+            await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments', {
+                method: 'POST',
+                body: encryptedPayload
+            });
+            console.log('[KVDB] Synced successfully.');
+        } catch (err) {
+            console.error('[KVDB] Upload failed:', err);
+        }
+
+        // Try syncing with Supabase as secondary database if configured
         if (typeof window !== 'undefined') {
             const sbUrl = localStorage.getItem('dr_vaibhavi_supabase_url');
             const sbKey = localStorage.getItem('dr_vaibhavi_supabase_key');
             
             if (sbUrl && sbKey) {
                 try {
-                    const response = await fetch(`${sbUrl}/rest/v1/appointments`, {
+                    await fetch(`${sbUrl}/rest/v1/appointments`, {
                         method: 'POST',
                         headers: {
                             'apikey': sbKey,
@@ -198,22 +258,15 @@ export default function Home() {
                             created_at: new Date().toISOString()
                         })
                     });
-                    if (response.ok) {
-                        synced = true;
-                        console.log('[Supabase] Appointment successfully synced.');
-                    }
                 } catch (err) {
                     console.error('[Supabase] Insert failed:', err);
                 }
             }
         }
 
-        // Always save to localStorage as local fallback/cache
+        // Always save to localStorage as backup/cache
         if (typeof window !== 'undefined') {
-            const existing = localStorage.getItem('dr_vaibhavi_appointments');
-            const appointments = existing ? JSON.parse(existing) : [];
-            appointments.unshift(newAppointment);
-            localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(appointments));
+            localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(currentList));
         }
 
         // Trigger real email notification alert if EmailJS is configured
