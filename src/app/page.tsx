@@ -5,8 +5,72 @@ import AOS from 'aos';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
+// ─── Built-in Translation Dictionary ────────────────────────────────────────
+type LangKey = 'en' | 'hi' | 'mr' | 'gu' | 'ta' | 'te' | 'bn';
+const translations: Record<LangKey, Record<string, string>> = {
+  en: {
+    nav_home: 'HOME', nav_about: 'ABOUT', nav_services: 'SERVICES', nav_specialties: 'SPECIALTIES',
+    nav_testimonials: 'TESTIMONIALS', nav_gallery: 'GALLERY', nav_contact: 'CONTACT US',
+    nav_book: 'Book Appointment', hero_tagline: "Women's Health, Expert Care",
+    hero_subtitle: 'Compassionate gynaecological care for every stage of a woman\'s life.',
+    book_appt: 'Book Appointment', call_now: 'Call Now',
+    lang_label: 'Language',
+  },
+  hi: {
+    nav_home: 'होम', nav_about: 'हमारे बारे में', nav_services: 'सेवाएं', nav_specialties: 'विशेषताएं',
+    nav_testimonials: 'प्रशंसापत्र', nav_gallery: 'गैलरी', nav_contact: 'संपर्क करें',
+    nav_book: 'अपॉइंटमेंट बुक करें', hero_tagline: 'महिला स्वास्थ्य, विशेषज्ञ देखभाल',
+    hero_subtitle: 'महिला के जीवन के हर चरण के लिए सहानुभूतिपूर्ण स्त्री रोग देखभाल।',
+    book_appt: 'अपॉइंटमेंट बुक करें', call_now: 'अभी कॉल करें',
+    lang_label: 'भाषा',
+  },
+  mr: {
+    nav_home: 'मुख्यपृष्ठ', nav_about: 'आमच्याबद्दल', nav_services: 'सेवा', nav_specialties: 'विशेषता',
+    nav_testimonials: 'प्रशंसापत्रे', nav_gallery: 'गॅलरी', nav_contact: 'संपर्क करा',
+    nav_book: 'भेट बुक करा', hero_tagline: 'महिला आरोग्य, तज्ज्ञ काळजी',
+    hero_subtitle: 'महिलेच्या जीवनाच्या प्रत्येक टप्प्यासाठी सहानुभूतीपूर्ण स्त्रीरोग काळजी.',
+    book_appt: 'भेट बुक करा', call_now: 'आत्ता कॉल करा',
+    lang_label: 'भाषा',
+  },
+  gu: {
+    nav_home: 'હોમ', nav_about: 'અમારા વિશે', nav_services: 'સેવાઓ', nav_specialties: 'વિશેષતાઓ',
+    nav_testimonials: 'પ્રશંસાપત્ર', nav_gallery: 'ગૅલૅરી', nav_contact: 'અમારો સંપર્ક કરો',
+    nav_book: 'એપોઇન્ટમેન્ટ બુક કરો', hero_tagline: 'મહિલા સ્વાસ્થ્ય, નિષ્ણાત સંભાળ',
+    hero_subtitle: 'સ્ત્રીના જીવનના દરેક તબક્કા માટે સહાનુભૂતિ સ્ત્રીરોગ સંભાળ.',
+    book_appt: 'એપોઇન્ટમેન્ટ બુક કરો', call_now: 'હવે કૉલ કરો',
+    lang_label: 'ભાષા',
+  },
+  ta: {
+    nav_home: 'முகப்பு', nav_about: 'எங்களை பற்றி', nav_services: 'சேவைகள்', nav_specialties: 'சிறப்பியல்புகள்',
+    nav_testimonials: 'சான்றுகள்', nav_gallery: 'தொகுப்பு', nav_contact: 'தொடர்பு கொள்ள',
+    nav_book: 'சந்திப்பு பதிவு', hero_tagline: 'பெண்கள் ஆரோக்கியம், நிபுணர் அக்கறை',
+    hero_subtitle: 'ஒரு பெண்ணின் வாழ்வின் ஒவ்வொரு கட்டத்திற்கும் அனுதாப மகப்பேறு மருத்துவ சேவை.',
+    book_appt: 'சந்திப்பு பதிவு', call_now: 'இப்போது அழைக்கவும்',
+    lang_label: 'மொழி',
+  },
+  te: {
+    nav_home: 'హోమ్', nav_about: 'మా గురించి', nav_services: 'సేవలు', nav_specialties: 'ప్రత్యేకతలు',
+    nav_testimonials: 'సాక్ష్యాలు', nav_gallery: 'గ్యాలరీ', nav_contact: 'సంప్రదించండి',
+    nav_book: 'అపాయింట్మెంట్ బుక్ చేయండి', hero_tagline: 'మహిళా ఆరోగ్యం, నిపుణుల సంరక్షణ',
+    hero_subtitle: 'స్త్రీ జీవితంలోని ప్రతి దశకూ సానుభూతిగల స్త్రీ వైద్య సంరక్షణ.',
+    book_appt: 'అపాయింట్మెంట్ బుక్ చేయండి', call_now: 'ఇప్పుడు కాల్ చేయండి',
+    lang_label: 'భాష',
+  },
+  bn: {
+    nav_home: 'হোম', nav_about: 'আমাদের সম্পর্কে', nav_services: 'পরিষেবা', nav_specialties: 'বিশেষত্ব',
+    nav_testimonials: 'প্রশংসাপত্র', nav_gallery: 'গ্যালারি', nav_contact: 'যোগাযোগ করুন',
+    nav_book: 'অ্যাপয়েন্টমেন্ট বুক করুন', hero_tagline: 'নারী স্বাস্থ্য, বিশেষজ্ঞ যত্ন',
+    hero_subtitle: 'একজন মহিলার জীবনের প্রতিটি পর্যায়ে সহানুভূতিশীল স্ত্রীরোগ পরিষেবা।',
+    book_appt: 'অ্যাপয়েন্টমেন্ট বুক করুন', call_now: 'এখনই কল করুন',
+    lang_label: 'ভাষা',
+  },
+};
+// ─────────────────────────────────────────────────────────────────────────────
+
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [currentLang, setCurrentLang] = useState<LangKey>('en');
+    const t = (key: string) => translations[currentLang]?.[key] ?? translations['en'][key] ?? key;
 
     useEffect(() => {
         // Initialize AOS with mirror and once: false for soft entering/leaving animations
@@ -133,6 +197,7 @@ export default function Home() {
         // 1. Send new booking alert to Doctor via Web3Forms using the user's Access Key
         if (type === 'new_booking') {
             let gcalLink = '';
+            let gcalUrl = '';
             try {
                 const [time, modifier] = data.timeSlot.split(' ');
                 let [hours, minutes] = time.split(':');
@@ -141,10 +206,33 @@ export default function Home() {
                 const start = new Date(`${data.date}T${hours.padStart(2, '0')}:${minutes}:00`);
                 const end = new Date(start.getTime() + 15 * 60000); // 15 mins
                 const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
-                gcalLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}`)}&add=${encodeURIComponent(data.emailAddress)}`;
+                gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Patient Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}\nRef: ${data.id}`)}&add=${encodeURIComponent(data.emailAddress)}`;
+                gcalLink = `<div style="margin-top:24px;text-align:center;"><a href="${gcalUrl}" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;font-family:sans-serif;box-shadow:0 6px 20px rgba(124,58,237,0.35);letter-spacing:0.3px;">✅ Confirm Booking &amp; Schedule 15-Min Meeting</a><p style="margin-top:10px;font-size:11px;color:#888;font-family:sans-serif;">Clicking this will open Google Calendar. Save the event to send a meeting invite to the patient.</p></div>`;
             } catch (e) {
                 console.error("GCal Link error", e);
             }
+
+            const htmlBody = `<div style="font-family:sans-serif;max-width:600px;margin:auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
+  <div style="background:linear-gradient(135deg,#7c3aed,#db2777);padding:28px 32px;">
+    <h2 style="margin:0;color:#fff;font-size:22px;">🩺 New Appointment Booking</h2>
+    <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">Dr. Vaibhavi Dhenge Clinic — Automated Alert</p>
+  </div>
+  <div style="padding:28px 32px;">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      <tr><td style="padding:8px 0;color:#888;width:45%;">Reference ID</td><td style="padding:8px 0;font-weight:700;color:#1f2937;">${data.id}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Patient Name</td><td style="padding:8px 0;font-weight:700;color:#1f2937;border-top:1px solid #f3f4f6;">${data.patientName}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Mobile Number</td><td style="padding:8px 0;font-weight:700;color:#1f2937;border-top:1px solid #f3f4f6;">${data.mobileNumber}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Email Address</td><td style="padding:8px 0;font-weight:700;color:#1f2937;border-top:1px solid #f3f4f6;">${data.emailAddress}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Appointment Date</td><td style="padding:8px 0;font-weight:700;color:#db2777;border-top:1px solid #f3f4f6;">${data.date}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Appointment Time</td><td style="padding:8px 0;font-weight:700;color:#db2777;border-top:1px solid #f3f4f6;">${data.timeSlot}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Consultation Mode</td><td style="padding:8px 0;font-weight:700;color:#1f2937;border-top:1px solid #f3f4f6;">${data.consultationMode}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Specialty</td><td style="padding:8px 0;font-weight:700;color:#1f2937;border-top:1px solid #f3f4f6;">${data.specialty}</td></tr>
+      <tr><td style="padding:8px 0;color:#888;border-top:1px solid #f3f4f6;">Health Concern</td><td style="padding:8px 0;color:#1f2937;border-top:1px solid #f3f4f6;">${data.healthConcern || 'None'}</td></tr>
+    </table>
+    ${gcalLink}
+  </div>
+  <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Dhenge Clinic booking system.</div>
+</div>`;
 
             try {
                 await fetch('https://api.web3forms.com/submit', {
@@ -155,21 +243,10 @@ export default function Home() {
                     },
                     body: JSON.stringify({
                         access_key: "f6628986-b070-413e-9f0d-8191fd9b2bf5",
-                        subject: `New Booking Request: ${data.patientName} (${data.id})`,
+                        subject: `🩺 New Booking: ${data.patientName} — ${data.date} at ${data.timeSlot}`,
                         from_name: "Dr. Vaibhavi Clinic (Automated)",
                         replyto: data.emailAddress,
-                        "Reference ID": data.id,
-                        "Patient Name": data.patientName,
-                        "Mobile Number": data.mobileNumber,
-                        "Email Address": data.emailAddress,
-                        "Consultation Mode": data.consultationMode,
-                        "Specialty": data.specialty,
-                        "Appointment Date": data.date,
-                        "Appointment Time": data.timeSlot,
-                        "Health Concern": data.healthConcern || 'None',
-                        "Medical History": data.medicalHistory ? data.medicalHistory.join(', ') : 'None',
-                        "Status": data.status,
-                        "Schedule Meeting (Click Link)": gcalLink
+                        html: htmlBody
                     })
                 });
                 console.log('[Web3Forms] Booking notification sent to doctor.');
@@ -277,8 +354,25 @@ export default function Home() {
             localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(currentList));
         }
 
-        // Trigger real email notification alert if EmailJS is configured
+        // Trigger email notification
         await sendEmailAlert('new_booking', newAppointment);
+
+        // Silent WhatsApp notification to Dr. Vaibhavi
+        try {
+            const waMsg = encodeURIComponent(
+                `🩺 *New Appointment Booking!*\n\n` +
+                `*Patient:* ${patientName}\n` +
+                `*Mobile:* ${mobileNumber}\n` +
+                `*Date:* ${selectedDate}\n` +
+                `*Time:* ${selectedTimeSlot}\n` +
+                `*Mode:* ${selectedMode}\n` +
+                `*Ref ID:* ${refId}\n\n` +
+                `Please reply to confirm the appointment.`
+            );
+            window.open(`https://wa.me/919284880359?text=${waMsg}`, '_blank');
+        } catch (err) {
+            console.error('[WhatsApp] Notification failed:', err);
+        }
 
         setBookedAppointment(newAppointment);
         setIsSubmitting(false);
@@ -299,26 +393,13 @@ export default function Home() {
     };
 
     const changeLanguage = (langCode: string) => {
-        const selectField = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-        if (selectField) {
-            selectField.value = langCode;
-            selectField.dispatchEvent(new Event('change'));
-        } else {
-            setTimeout(() => {
-                const retrySelect = document.querySelector(".goog-te-combo") as HTMLSelectElement;
-                if (retrySelect) {
-                    retrySelect.value = langCode;
-                    retrySelect.dispatchEvent(new Event('change'));
-                }
-            }, 500);
-        }
+        setCurrentLang(langCode as LangKey);
     };
 
     return (
         <main className="w-full bg-white" id="main-snap-container">
             
-    {/*  Google Translate Hidden Div  */}
-    <div id="google_translate_element"></div>
+    {/* Built-in translation active — no Google Translate needed */
 
     {/*  Header / Navbar  */}
     <header className="fixed w-full top-0 z-50 glass-header transition-all duration-300 py-3" id="navbar">
@@ -337,12 +418,12 @@ export default function Home() {
             {/*  Desktop Nav  */}
             <nav className="hidden lg:flex items-center space-x-3 xl:space-x-5">
                 {/* 1. HOME */}
-                <a href="#home" className="text-[11px] xl:text-xs font-bold text-primary-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">HOME</a>
+                <a href="#home" className="text-[11px] xl:text-xs font-bold text-primary-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">{t('nav_home')}</a>
 
                 {/* 2. ABOUT */}
                 <div className="relative group py-2 shrink-0">
                     <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer whitespace-nowrap">
-                        ABOUT <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                        {t('nav_about')} <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Dropdown */}
                     <div className="absolute top-full -left-4 bg-white/95 backdrop-blur-xl shadow-2xl rounded-2xl p-6 border border-gray-100 hidden group-hover:grid transition-all duration-300 z-50 min-w-[500px] grid-cols-2 gap-6 animate-fade-in">
@@ -370,7 +451,7 @@ export default function Home() {
                 {/* 3. SERVICES (Mega Menu) */}
                 <div className="relative group py-2 shrink-0">
                     <button className="text-[11px] xl:text-xs font-bold text-gray-700 group-hover:text-primary-600 transition tracking-wider flex items-center gap-1 outline-none cursor-pointer whitespace-nowrap">
-                        SERVICES <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
+                        {t('nav_services')} <i className="fa-solid fa-chevron-down text-[9px] text-primary-500 transition-transform group-hover:rotate-180"></i>
                     </button>
                     {/* Mega Dropdown */}
                     <div className="absolute top-full -left-32 bg-white/95 backdrop-blur-xl shadow-2xl rounded-3xl p-8 border border-gray-100 hidden group-hover:grid transition-all duration-300 z-50 min-w-[750px] grid-cols-3 gap-8 animate-fade-in">
@@ -485,10 +566,10 @@ export default function Home() {
                 </div>
 
                 {/* 6. TESTIMONIALS */}
-                <a href="#testimonials" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">TESTIMONIALS</a>
+                <a href="#testimonials" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">{t('nav_testimonials')}</a>
 
                 {/* 7. CONTACT US */}
-                <a href="#appointment" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">CONTACT US</a>
+                <a href="#appointment" className="text-[11px] xl:text-xs font-bold text-gray-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">{t('nav_contact')}</a>
                 
                 {/*  Language Toggle with Blinking Arrow  */}
                 <div className="flex items-center gap-1.5 bg-white px-2.5 py-1 rounded-full shadow-sm border border-gray-100 relative group cursor-pointer shrink-0 whitespace-nowrap">
@@ -496,7 +577,7 @@ export default function Home() {
                         <i className="fa-solid fa-caret-right"></i>
                     </div>
                     <i className="fa-solid fa-language text-gray-400 group-hover:text-primary-500 transition text-xs"></i>
-                    <select id="lang-select" onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] xl:text-xs font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
+                    <select id="lang-select" value={currentLang} onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] xl:text-xs font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
                         <option value="en">English (EN)</option>
                         <option value="hi">हिंदी (HI)</option>
                         <option value="mr">मराठी (MR)</option>
@@ -519,7 +600,7 @@ export default function Home() {
                 {/* Mobile Language Toggle */}
                 <div className="flex items-center gap-1 bg-white px-2 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer shrink-0">
                     <i className="fa-solid fa-language text-primary-500 text-xs"></i>
-                    <select onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
+                    <select value={currentLang} onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
                         <option value="en">EN</option>
                         <option value="hi">HI</option>
                         <option value="mr">MR</option>
