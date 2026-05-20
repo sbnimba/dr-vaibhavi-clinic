@@ -177,7 +177,7 @@ export default function Home() {
                 const end = new Date(start.getTime() + 15 * 60000); // 15 mins
                 
                 const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
-                gcalLink = `\n\n📅 Add to Google Calendar (15 min slot):\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Appt: ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}`)}`;
+                gcalLink = `\n\n📅 Schedule Meeting with Patient:\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}`)}&add=${encodeURIComponent(data.emailAddress)}`;
             } catch (e) {
                 console.error("GCal Link error", e);
             }
