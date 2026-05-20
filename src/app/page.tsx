@@ -132,6 +132,20 @@ export default function Home() {
 
         // 1. Send new booking alert to Doctor via Web3Forms using the user's Access Key
         if (type === 'new_booking') {
+            let gcalLink = '';
+            try {
+                const [time, modifier] = data.timeSlot.split(' ');
+                let [hours, minutes] = time.split(':');
+                if (hours === '12') hours = '00';
+                if (modifier === 'PM') hours = (parseInt(hours, 10) + 12).toString();
+                const start = new Date(`${data.date}T${hours.padStart(2, '0')}:${minutes}:00`);
+                const end = new Date(start.getTime() + 15 * 60000); // 15 mins
+                const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
+                gcalLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}`)}&add=${encodeURIComponent(data.emailAddress)}`;
+            } catch (e) {
+                console.error("GCal Link error", e);
+            }
+
             try {
                 await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
@@ -154,7 +168,8 @@ export default function Home() {
                         "Appointment Time": data.timeSlot,
                         "Health Concern": data.healthConcern || 'None',
                         "Medical History": data.medicalHistory ? data.medicalHistory.join(', ') : 'None',
-                        "Status": data.status
+                        "Status": data.status,
+                        "Schedule Meeting (Click Link)": gcalLink
                     })
                 });
                 console.log('[Web3Forms] Booking notification sent to doctor.');
@@ -163,59 +178,7 @@ export default function Home() {
             }
         }
 
-        // 2. Guaranteed Email Delivery via EmailJS
-        try {
-            // Generate Google Calendar Add Link
-            let gcalLink = '';
-            try {
-                const [time, modifier] = data.timeSlot.split(' ');
-                let [hours, minutes] = time.split(':');
-                if (hours === '12') hours = '00';
-                if (modifier === 'PM') hours = (parseInt(hours, 10) + 12).toString();
-                
-                const start = new Date(`${data.date}T${hours.padStart(2, '0')}:${minutes}:00`);
-                const end = new Date(start.getTime() + 15 * 60000); // 15 mins
-                
-                const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
-                gcalLink = `\n\n📅 Schedule Meeting with Patient:\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}`)}&add=${encodeURIComponent(data.emailAddress)}`;
-            } catch (e) {
-                console.error("GCal Link error", e);
-            }
-
-            const messageBody = `Booking Request Details:\n` +
-                `- Reference ID: ${data.id}\n` +
-                `- Mode: ${data.consultationMode}\n` +
-                `- Specialty: ${data.specialty}\n` +
-                `- Date: ${data.date}\n` +
-                `- Time: ${data.timeSlot}\n` +
-                `- Mobile: ${data.mobileNumber}\n` +
-                `- Patient Email: ${data.emailAddress}\n\n` +
-                `Health Concern: ${data.healthConcern || 'None'}\n` +
-                `Medical History: ${data.medicalHistory ? data.medicalHistory.join(', ') : 'None'}` + 
-                gcalLink;
-
-            const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    service_id: "service_0dkq6ns",
-                    template_id: "template_llze50i",
-                    user_id: "NM0TLSdi7PIfz7SFv",
-                    template_params: {
-                        name: data.patientName,
-                        email: data.emailAddress,
-                        title: `New Booking Request: ${data.patientName}`,
-                        message: messageBody,
-                        reply_to: data.emailAddress
-                    }
-                })
-            });
-            console.log('[EmailJS] Booking notification sent.');
-            return response.ok;
-        } catch (err) {
-            console.error('[EmailJS] Error sending email:', err);
-            return false;
-        }
+        return true;
     };
 
     const handleAppointmentSubmit = async (e: React.FormEvent) => {
