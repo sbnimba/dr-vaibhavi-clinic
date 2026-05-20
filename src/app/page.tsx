@@ -946,14 +946,15 @@ export default function Home() {
 
     {/* ==================== 6TH PAGE: FAQ SECTION ==================== */}
     <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center mb-8" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Patient Guide</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Frequently Asked Questions</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Clear, transparent answers to common patient questions about pregnancy, gynecology, and consultation modes.</p>
             </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-start" data-aos="fade-up" data-aos-delay="200">
+            <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
                 {/* Left Column (FAQs 1-5) */}
                 <div className="space-y-3">
                     <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
@@ -1061,6 +1062,7 @@ export default function Home() {
                         <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">After your consultation, the doctor can share your prescription and medical advice digitally through WhatsApp, email, or the patient portal.</p>
                     </details>
                 </div>
+            </div>
             </div>
         </div>
     </section>
