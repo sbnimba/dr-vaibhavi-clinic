@@ -335,14 +335,14 @@ export default function Home() {
             // Reset to English
             const iframe = document.querySelector('.goog-te-banner-frame') as HTMLIFrameElement;
             const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-            if (select) { select.value = 'en'; select.dispatchEvent(new Event('change')); }
+            if (select) { select.value = 'en'; select.dispatchEvent(new Event('change', { bubbles: true })); }
             return;
         }
         const tryTranslate = (attempt = 0) => {
             const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
             if (select) {
                 select.value = langCode;
-                select.dispatchEvent(new Event('change'));
+                select.dispatchEvent(new Event('change', { bubbles: true }));
             } else if (attempt < 10) {
                 setTimeout(() => tryTranslate(attempt + 1), 300);
             }
@@ -354,7 +354,7 @@ export default function Home() {
         <main className="w-full bg-white" id="main-snap-container">
             
     {/* Google Translate Hook — hidden via CSS in layout.tsx */}
-    <div id="google_translate_element" style={{display:'none'}}></div>
+    <div id="google_translate_element" style={{position: 'absolute', width: '1px', height: '1px', overflow: 'hidden'}}></div>
 
     {/*  Header / Navbar  */}
     <header className="fixed w-full top-0 z-50 glass-header transition-all duration-300 py-3" id="navbar">
