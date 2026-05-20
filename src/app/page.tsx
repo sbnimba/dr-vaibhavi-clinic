@@ -130,20 +130,20 @@ export default function Home() {
     const sendEmailAlert = async (type: 'new_booking' | 'status_update', data: any) => {
         if (typeof window === 'undefined') return false;
 
-        // 1. Send new booking alert to Doctor via FormSubmit (Zero-config, works out of the box!)
+        // 1. Send new booking alert to Doctor via Web3Forms using the user's Access Key
         if (type === 'new_booking') {
             try {
-                await fetch('https://formsubmit.co/ajax/IndiasBestGynaecologist@gmail.com', {
+                await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        _subject: `New Booking Request: ${data.patientName} (${data.id})`,
-                        _replyto: data.emailAddress,
-                        _captcha: "false",
-                        _template: "box",
+                        access_key: "f6628986-b070-413e-9f0d-8191fd9b2bf5",
+                        subject: `New Booking Request: ${data.patientName} (${data.id})`,
+                        from_name: "Dr. Vaibhavi Clinic (Automated)",
+                        replyto: data.emailAddress,
                         "Reference ID": data.id,
                         "Patient Name": data.patientName,
                         "Mobile Number": data.mobileNumber,
@@ -157,9 +157,9 @@ export default function Home() {
                         "Status": data.status
                     })
                 });
-                console.log('[FormSubmit] Booking notification sent to doctor.');
+                console.log('[Web3Forms] Booking notification sent to doctor.');
             } catch (err) {
-                console.error('[FormSubmit] Booking notification failed:', err);
+                console.error('[Web3Forms] Booking notification failed:', err);
             }
         }
 
