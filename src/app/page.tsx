@@ -165,6 +165,23 @@ export default function Home() {
 
         // 2. Guaranteed Email Delivery via EmailJS
         try {
+            // Generate Google Calendar Add Link
+            let gcalLink = '';
+            try {
+                const [time, modifier] = data.timeSlot.split(' ');
+                let [hours, minutes] = time.split(':');
+                if (hours === '12') hours = '00';
+                if (modifier === 'PM') hours = (parseInt(hours, 10) + 12).toString();
+                
+                const start = new Date(`${data.date}T${hours.padStart(2, '0')}:${minutes}:00`);
+                const end = new Date(start.getTime() + 15 * 60000); // 15 mins
+                
+                const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
+                gcalLink = `\n\n📅 Add to Google Calendar (15 min slot):\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Appt: ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}`)}`;
+            } catch (e) {
+                console.error("GCal Link error", e);
+            }
+
             const messageBody = `Booking Request Details:\n` +
                 `- Reference ID: ${data.id}\n` +
                 `- Mode: ${data.consultationMode}\n` +
@@ -174,7 +191,8 @@ export default function Home() {
                 `- Mobile: ${data.mobileNumber}\n` +
                 `- Patient Email: ${data.emailAddress}\n\n` +
                 `Health Concern: ${data.healthConcern || 'None'}\n` +
-                `Medical History: ${data.medicalHistory ? data.medicalHistory.join(', ') : 'None'}`;
+                `Medical History: ${data.medicalHistory ? data.medicalHistory.join(', ') : 'None'}` + 
+                gcalLink;
 
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
