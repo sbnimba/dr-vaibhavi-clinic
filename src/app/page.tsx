@@ -1,9 +1,12 @@
 "use client";
 import { useEffect, useState } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import AOS from 'aos';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+
+const HeroAnimation = dynamic(() => import('@/components/HeroAnimation'), { ssr: false });
 
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -616,10 +619,12 @@ export default function Home() {
 
     {/* ==================== 1ST PAGE: HERO SECTION ==================== */}
     <section id="home" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
-        {/*  Background Elements  */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-            <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-peach/30 rounded-full blur-3xl opacity-60"></div>
-            <div className="absolute bottom-[10%] left-[-10%] w-[600px] h-[600px] bg-brand-lavender/40 rounded-full blur-3xl opacity-60"></div>
+        {/* Soothing Animated Background */}
+        <HeroAnimation />
+        {/* Soft static gradient accent blobs (behind canvas) */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
+            <div className="absolute top-[-10%] right-[-5%] w-[400px] h-[400px] bg-brand-peach/20 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute bottom-[10%] left-[-10%] w-[500px] h-[500px] bg-brand-lavender/20 rounded-full blur-3xl opacity-50"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
