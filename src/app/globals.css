@@ -51,7 +51,18 @@
 }
 
 /* Hide the annoying Google Translate top frame and text safely */
-.goog-te-banner-frame { display: none !important; }
+.goog-te-banner-frame,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc { 
+    display: none !important; 
+    visibility: hidden !important;
+}
+body > .skiptranslate {
+    display: none !important;
+}
+iframe[src*="translate.googleapis.com"] {
+    display: none !important;
+}
 body { top: 0 !important; }
 #google_translate_element { position: absolute; opacity: 0; z-index: -100; pointer-events: none; }
 .goog-tooltip { display: none !important; }

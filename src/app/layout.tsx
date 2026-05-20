@@ -41,9 +41,17 @@ export default function RootLayout({
           #goog-gt-tt,
           .goog-te-balloon-frame,
           .goog-tooltip,
-          .goog-tooltip:hover {
+          .goog-tooltip:hover,
+          .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+          .VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
             display: none !important;
             visibility: hidden !important;
+          }
+          body > .skiptranslate {
+            display: none !important;
+          }
+          iframe[src*="translate.googleapis.com"] {
+            display: none !important;
           }
           body {
             top: 0 !important;
