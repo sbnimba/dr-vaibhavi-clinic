@@ -393,13 +393,30 @@ export default function Home() {
     };
 
     const changeLanguage = (langCode: string) => {
-        setCurrentLang(langCode as LangKey);
+        if (langCode === 'en') {
+            // Reset to English
+            const iframe = document.querySelector('.goog-te-banner-frame') as HTMLIFrameElement;
+            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+            if (select) { select.value = 'en'; select.dispatchEvent(new Event('change')); }
+            return;
+        }
+        const tryTranslate = (attempt = 0) => {
+            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            } else if (attempt < 10) {
+                setTimeout(() => tryTranslate(attempt + 1), 300);
+            }
+        };
+        tryTranslate();
     };
 
     return (
         <main className="w-full bg-white" id="main-snap-container">
             
-    {/* Built-in translation active — no Google Translate needed */}
+    {/* Google Translate Hook — hidden via CSS in layout.tsx */}
+    <div id="google_translate_element" style={{display:'none'}}></div>
 
     {/*  Header / Navbar  */}
     <header className="fixed w-full top-0 z-50 glass-header transition-all duration-300 py-3" id="navbar">

@@ -25,7 +25,6 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      translate="no"
       className={`${plusJakartaSans.variable} ${lora.variable} scroll-smooth snap-y snap-mandatory antialiased`}
     >
       <head>
@@ -33,9 +32,47 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-        {/* Prevent browser auto-translate — we have built-in translation */}
-        <meta name="google" content="notranslate" />
-        <meta httpEquiv="Content-Language" content="en" />
+
+        {/* Google Translate — toolbar is hidden via CSS; our navbar dropdown controls it */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          /* Hide the Google Translate toolbar/banner completely */
+          .goog-te-banner-frame,
+          .goog-te-balloon-frame,
+          #goog-gt-tt,
+          .goog-te-balloon-frame,
+          .goog-tooltip,
+          .goog-tooltip:hover {
+            display: none !important;
+            visibility: hidden !important;
+          }
+          body {
+            top: 0 !important;
+            position: static !important;
+          }
+          /* Hide the Google Translate gadget element we use only as hook */
+          #google_translate_element {
+            display: none !important;
+          }
+          /* Fix font rendering after translation */
+          font {
+            background-color: transparent !important;
+          }
+        `}} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                  pageLanguage: 'en',
+                  includedLanguages: 'en,hi,mr,gu,ta,te,bn',
+                  autoDisplay: false,
+                  layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                }, 'google_translate_element');
+              }
+            `,
+          }}
+        />
+        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async />
       </head>
       <body className="font-sans text-gray-800 overflow-x-hidden">{children}</body>
     </html>
