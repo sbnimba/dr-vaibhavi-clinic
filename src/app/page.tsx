@@ -163,43 +163,36 @@ export default function Home() {
             }
         }
 
-        // 2. Secondary/Patient notifications using custom EmailJS templates (if configured)
-        const serviceId = localStorage.getItem('dr_vaibhavi_emailjs_service_id');
-        const templateId = type === 'new_booking' 
-            ? localStorage.getItem('dr_vaibhavi_emailjs_template_booking')
-            : localStorage.getItem('dr_vaibhavi_emailjs_template_update');
-        const publicKey = localStorage.getItem('dr_vaibhavi_emailjs_public_key');
-
-        if (!serviceId || !templateId || !publicKey) {
-            console.log('[EmailJS] Credentials not configured. Skipping EmailJS dispatch.');
-            return true;
-        }
-
+        // 2. Guaranteed Email Delivery via EmailJS
         try {
+            const messageBody = `Booking Request Details:\n` +
+                `- Reference ID: ${data.id}\n` +
+                `- Mode: ${data.consultationMode}\n` +
+                `- Specialty: ${data.specialty}\n` +
+                `- Date: ${data.date}\n` +
+                `- Time: ${data.timeSlot}\n` +
+                `- Mobile: ${data.mobileNumber}\n` +
+                `- Patient Email: ${data.emailAddress}\n\n` +
+                `Health Concern: ${data.healthConcern || 'None'}\n` +
+                `Medical History: ${data.medicalHistory ? data.medicalHistory.join(', ') : 'None'}`;
+
             const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    service_id: serviceId,
-                    template_id: templateId,
-                    user_id: publicKey,
+                    service_id: "service_0dkq6ns",
+                    template_id: "template_llze50i",
+                    user_id: "NM0TLSdi7PIfz7SFv",
                     template_params: {
-                        to_email: type === 'new_booking' ? 'IndiasBestGynaecologist@gmail.com' : data.emailAddress,
-                        to_name: type === 'new_booking' ? 'Dr. Vaibhavi Dhenge' : data.patientName,
-                        patient_name: data.patientName,
-                        reference_id: data.id,
-                        consultation_mode: data.consultationMode,
-                        specialty: data.specialty,
-                        appointment_date: data.date,
-                        appointment_time: data.timeSlot,
-                        health_concern: data.healthConcern || 'None',
-                        medical_history: data.medicalHistory ? data.medicalHistory.join(', ') : 'None',
-                        status: data.status,
-                        note: data.note || '',
+                        name: data.patientName,
+                        email: data.emailAddress,
+                        title: `New Booking Request: ${data.patientName}`,
+                        message: messageBody,
                         reply_to: data.emailAddress
                     }
                 })
             });
+            console.log('[EmailJS] Booking notification sent.');
             return response.ok;
         } catch (err) {
             console.error('[EmailJS] Error sending email:', err);
