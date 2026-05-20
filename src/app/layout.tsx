@@ -33,6 +33,15 @@ export default function RootLayout({
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
+        {/* Google Analytics Placeholder */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-XXXXXXXXXX');
+        `}} />
+
         {/* Google Translate — toolbar is hidden via CSS; our navbar dropdown controls it */}
         <style dangerouslySetInnerHTML={{ __html: `
           /* Hide the Google Translate toolbar/banner completely */

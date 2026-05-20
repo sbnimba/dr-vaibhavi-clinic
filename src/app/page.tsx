@@ -506,7 +506,7 @@ export default function Home() {
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
                                 <li><a href="#community" className="hover:text-primary-600 transition block"><i className="fa-solid fa-book-open text-primary-400 mr-2 w-4"></i> Blog & Articles</a></li>
                                 <li><a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="hover:text-primary-600 transition block"><i className="fa-brands fa-youtube text-primary-400 mr-2 w-4"></i> Educational Videos</a></li>
-                                <li><a href="#community" className="hover:text-primary-600 transition block"><i className="fa-solid fa-calculator text-primary-400 mr-2 w-4"></i> Pregnancy Tips</a></li>
+                                <li><Link href="/pregnancy-calculator" className="hover:text-primary-600 transition block"><i className="fa-solid fa-calculator text-primary-400 mr-2 w-4"></i> Pregnancy Due Date Calculator</Link></li>
                             </ul>
                         </div>
                         <div>
@@ -597,6 +597,9 @@ export default function Home() {
                     <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-circle-question text-primary-500 w-5"></i> FAQs
                     </a>
+                    <Link href="/pregnancy-calculator" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                        <i className="fa-solid fa-calculator text-primary-500 w-5"></i> Pregnancy Calculator
+                    </Link>
                     <a href="#community" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-newspaper text-primary-500 w-5"></i> Health Tips & Blog
                     </a>
@@ -930,6 +933,13 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="swiper-pagination"></div>
+            </div>
+
+            <div className="text-center mt-2 pb-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#" target="_blank" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-800 font-bold rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all text-xs sm:text-sm outline-none group">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    Read all 5-Star Reviews on Google Maps <i className="fa-solid fa-arrow-up-right-from-square text-gray-400 ml-1"></i>
+                </a>
             </div>
         </div>
     </section>
