@@ -386,8 +386,6 @@ export default function Home() {
                             <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Doctor Profile</h4>
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
                                 <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-user-md text-primary-400 mr-2 w-4"></i> About Doctor</a></li>
-                                <li><a href="#experience" className="hover:text-primary-600 transition block"><i className="fa-solid fa-award text-primary-400 mr-2 w-4"></i> Awards & Experience</a></li>
-                                <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-certificate text-primary-400 mr-2 w-4"></i> Memberships</a></li>
                             </ul>
                             <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Philosophy</h4>
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
@@ -720,29 +718,62 @@ export default function Home() {
                         Having worked across premier institutions including MGM Hospital Belapur, Kashibai Navale Medical College Pune, Motherhood Hospital and Shri Vasantrao Naik GMC Yavatmal, she brings a uniquely well-rounded perspective built on advanced urban clinical practice and frontline rural care.
                     </p>
                     
-                    {/* Quick Credentials */}
-                    <div className="bg-white p-4 sm:p-6 rounded-2xl border border-gray-100 mb-4 shadow-sm">
-                        <h5 className="text-[11px] font-bold uppercase tracking-widest text-primary-700 mb-3 flex items-center gap-2">
-                            <i className="fa-solid fa-award text-primary-500 text-sm"></i> Quick Credentials
+                    {/* Academic Presentations & Achievements */}
+                    <div className="bg-gray-900 relative overflow-hidden p-5 sm:p-6 rounded-2xl border border-yellow-500/30 mb-6 shadow-xl group">
+                        {/* Golden laurel background pattern effect */}
+                        <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M54.627 0l.83.83-2.658 2.658-.83-.83 2.658-2.658zM24 10.155v-2.031l2-2.03V4.062L24 2.031V0h-2v2.031l-2 2.031v2.031l2 2.032v2.03h2zm18 0v-2.031l2-2.03V4.062L42 2.031V0h-2v2.031l-2 2.031v2.031l2 2.032v2.03h2zm-9-1.016V7.108L35 5.077v-2.03L33 1.016V-1h-2v2.016l-2 2.03v2.031l2 2.032v2.03h2z\\' fill=\\'%23EAB308\\' fill-opacity=\\'1\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')" }}></div>
+                        
+                        <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
+                            <i className="fa-solid fa-award text-yellow-500 text-[100px]"></i>
+                        </div>
+                        
+                        <h5 className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-yellow-500 mb-5 flex items-center gap-2 relative z-10">
+                            <i className="fa-solid fa-trophy text-base"></i> Academic Achievements & Affiliations
                         </h5>
-                        <ul className="space-y-2 font-sans text-xs sm:text-sm text-gray-700 grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                            <li className="flex items-center gap-2">
-                                <span className="text-base shrink-0">🎓</span>
-                                <span className="truncate"><strong>MS OBGY | MBBS</strong></span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-base shrink-0">🏥</span>
-                                <span className="truncate"><strong>1,000+ Cases</strong> Managed</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-base shrink-0">⚕️</span>
-                                <span className="truncate">Laparoscopy & Gynecology Surgeries</span>
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="text-base shrink-0">🏆</span>
-                                <span className="truncate"><strong>Award Winner</strong> (ACOG, AICOG)</span>
-                            </li>
-                        </ul>
+                        
+                        <div className="space-y-5 relative z-10">
+                            <div>
+                                <h6 className="text-white text-[11px] sm:text-xs font-bold border-b border-yellow-500/20 pb-1 mb-2.5 inline-block uppercase tracking-wide">Case Presentations</h6>
+                                <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-gray-300">
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-medal text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">POGS:</strong> Placenta Accreta Spectrum - A Drawback of Rising C-section Rate</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-medal text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">2nd Rank at ACOG, AICOG:</strong> Unusual Presentation of Metastatic Carcinoma Cervix With Clinically Silent Primary</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-medal text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">1st Rank at MediAce & 3rd Rank at Medice Conference:</strong> Solitary Kidney Obstruction Unmasked by Pregnancy</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h6 className="text-white text-[11px] sm:text-xs font-bold border-b border-yellow-500/20 pb-1 mb-2.5 inline-block uppercase tracking-wide">Paper Presentation</h6>
+                                <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-gray-300">
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-scroll text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">4th Annual Research Society Conference, POGS:</strong> Clinical Outcome in Patients Undergoing LSCS via ERAS Pathway versus Traditional Pathway: A Prospective Observational Study</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h6 className="text-white text-[11px] sm:text-xs font-bold border-b border-yellow-500/20 pb-1 mb-2.5 inline-block uppercase tracking-wide">Professional Affiliations</h6>
+                                <ul className="space-y-2.5 font-sans text-xs sm:text-sm text-gray-300">
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-certificate text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">Member</strong> - Pune Obstetrics & Gynecology Society (POGS)</span>
+                                    </li>
+                                    <li className="flex items-start gap-2.5">
+                                        <i className="fa-solid fa-certificate text-yellow-500 mt-1 text-[10px]"></i>
+                                        <span className="leading-relaxed"><strong className="text-white">Participant</strong> - ACOG, AICOG, Mediace Conferences</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     
                     <a href="#services" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-800 transition text-xs sm:text-sm">
