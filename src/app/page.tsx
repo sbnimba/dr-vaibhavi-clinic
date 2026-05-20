@@ -945,50 +945,50 @@ export default function Home() {
     </section>
 
     {/* ==================== 6TH PAGE: FAQ SECTION ==================== */}
-    <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="text-center mb-8" data-aos="fade-up">
+    <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="text-center mb-4 lg:mb-6" data-aos="fade-up">
                 <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Patient Guide</h2>
-                <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Frequently Asked Questions</h3>
+                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Frequently Asked Questions</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Clear, transparent answers to common patient questions about pregnancy, gynecology, and consultation modes.</p>
             </div>
             
-            <div className="space-y-4" data-aos="fade-up" data-aos-delay="200">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start">
+            <div className="space-y-3 lg:space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 items-start">
                 {/* Left Column (FAQs 1-5) */}
-                <div className="space-y-3">
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                <div className="space-y-2">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             1. How do I book an appointment?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">You can book either an in-clinic visit or a video consultation directly through our website. Simply choose your preferred consultation type, select a suitable time slot, and confirm your booking.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">You can book either an in-clinic visit or a video consultation directly through our website. Simply choose your preferred consultation type, select a suitable time slot, and confirm your booking.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             2. What is the difference between a clinic visit and a video consultation?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">Clinic visits are ideal for physical examinations, scans, procedures, and detailed evaluations. Video consultations are convenient for follow-ups, pregnancy guidance, reports discussion, PCOS management, menstrual concerns, and general medical advice.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">Clinic visits are ideal for physical examinations, scans, procedures, and detailed evaluations. Video consultations are convenient for follow-ups, pregnancy guidance, reports discussion, PCOS management, menstrual concerns, and general medical advice.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             3. Is video consultation safe and confidential?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">Yes. All consultations are completely private and confidential. Your medical information and discussions are securely handled with professional confidentiality.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">Yes. All consultations are completely private and confidential. Your medical information and discussions are securely handled with professional confidentiality.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             4. What health concerns can be discussed online?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <div className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">
+                        <div className="text-gray-600 mt-1.5 text-xs leading-relaxed">
                             You can consult for:
-                            <ul className="list-disc pl-5 mt-2 space-y-1">
+                            <ul className="list-disc pl-4 mt-1 space-y-0.5">
                                 <li>Pregnancy guidance & nutrition</li>
                                 <li>PCOS/PCOD & irregular periods</li>
                                 <li>Fertility & birth control advice</li>
@@ -997,14 +997,14 @@ export default function Home() {
                         </div>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             5. When should I choose an in-clinic appointment?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <div className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">
+                        <div className="text-gray-600 mt-1.5 text-xs leading-relaxed">
                             An in-clinic visit is recommended if you need:
-                            <ul className="list-disc pl-5 mt-2 space-y-1">
+                            <ul className="list-disc pl-4 mt-1 space-y-0.5">
                                 <li>Physical examination or procedures</li>
                                 <li>Ultrasound/scans</li>
                                 <li>Severe pain or emergency evaluation</li>
@@ -1014,15 +1014,15 @@ export default function Home() {
                 </div>
 
                 {/* Right Column (FAQs 6-10) */}
-                <div className="space-y-3">
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                <div className="space-y-2">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             6. What should I keep ready before a video consultation?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <div className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">
+                        <div className="text-gray-600 mt-1.5 text-xs leading-relaxed">
                             Please keep the following ready:
-                            <ul className="list-disc pl-5 mt-2 space-y-1">
+                            <ul className="list-disc pl-4 mt-1 space-y-0.5">
                                 <li>Previous prescriptions or reports</li>
                                 <li>List of current symptoms & medication details</li>
                                 <li>Internet connection and a quiet environment</li>
@@ -1030,36 +1030,36 @@ export default function Home() {
                         </div>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             7. Can I consult during pregnancy through video consultation?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">Yes. Many pregnancy-related concerns and follow-up discussions can be handled online. However, certain routine checkups and scans may still require clinic visits depending on your pregnancy stage.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">Yes. Many pregnancy-related concerns and follow-up discussions can be handled online. However, certain routine checkups and scans may still require clinic visits depending on your pregnancy stage.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             8. Do I need to create an account before booking?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">No complicated signup is required. You can quickly book your appointment using basic details like your name, phone number, and preferred consultation type.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">No complicated signup is required. You can quickly book your appointment using basic details like your name, phone number, and preferred consultation type.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             9. What happens if I miss my appointment?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">If you miss your appointment, you may contact our support team or clinic reception to reschedule based on slot availability.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">If you miss your appointment, you may contact our support team or clinic reception to reschedule based on slot availability.</p>
                     </details>
                     
-                    <details name="faq" className="group bg-white rounded-2xl p-4 cursor-pointer border border-gray-100 shadow-sm">
-                        <summary className="flex justify-between items-center font-bold text-sm sm:text-base text-gray-900">
+                    <details name="faq" className="group bg-white rounded-xl p-3 cursor-pointer border border-gray-100 shadow-sm">
+                        <summary className="flex justify-between items-center font-bold text-xs sm:text-sm text-gray-900">
                             10. How will I receive prescriptions after an online consultation?
                             <span className="transition group-open:rotate-180"><i className="fa-solid fa-chevron-down text-primary-500 text-xs"></i></span>
                         </summary>
-                        <p className="text-gray-600 mt-2 text-xs sm:text-sm leading-relaxed">After your consultation, the doctor can share your prescription and medical advice digitally through WhatsApp, email, or the patient portal.</p>
+                        <p className="text-gray-600 mt-1.5 text-xs leading-relaxed">After your consultation, the doctor can share your prescription and medical advice digitally through WhatsApp, email, or the patient portal.</p>
                     </details>
                 </div>
             </div>
