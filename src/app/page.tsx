@@ -371,7 +371,7 @@ export default function Home() {
 
     {/*  Header / Navbar  */}
     <header className="fixed w-full top-0 z-50 glass-header transition-all duration-300 py-3" id="navbar">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-2 overflow-hidden">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4">
             {/*  Logo  */}
             <a href="#home" className="flex items-center gap-2 xl:gap-3 shrink-0">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white shadow-lg shrink-0">
@@ -384,7 +384,7 @@ export default function Home() {
             </a>
 
             {/*  Desktop Nav  */}
-            <nav className="hidden lg:flex items-center space-x-3 xl:space-x-5">
+            <nav className="hidden lg:flex flex-1 items-center justify-between ml-6 xl:ml-10">
                 {/* 1. HOME */}
                 <a href="#home" className="text-[11px] xl:text-xs font-bold text-primary-700 hover:text-primary-600 transition tracking-wider whitespace-nowrap shrink-0">HOME</a>
 
