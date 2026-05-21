@@ -12,6 +12,14 @@ export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [currentLang, setCurrentLang] = useState('en');
 
+    // Restore selected language from cookie on mount
+    useEffect(() => {
+        const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+        if (match && match[1] && match[1] !== 'en') {
+            setCurrentLang(match[1]);
+        }
+    }, []);
+
     useEffect(() => {
         // Initialize AOS with mirror and once: false for soft entering/leaving animations
         if (typeof window !== 'undefined') {
@@ -334,23 +342,25 @@ export default function Home() {
 
     const changeLanguage = (langCode: string) => {
         setCurrentLang(langCode);
-        if (langCode === 'en') {
-            // Reset to English
-            const iframe = document.querySelector('.goog-te-banner-frame') as HTMLIFrameElement;
-            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-            if (select) { select.value = 'en'; select.dispatchEvent(new Event('change', { bubbles: true })); }
-            return;
-        }
-        const tryTranslate = (attempt = 0) => {
-            const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
-            if (select) {
-                select.value = langCode;
-                select.dispatchEvent(new Event('change', { bubbles: true }));
-            } else if (attempt < 10) {
-                setTimeout(() => tryTranslate(attempt + 1), 300);
-            }
+        
+        // Cookie-based approach: the most reliable way to control Google Translate
+        // Set the googtrans cookie on root domain + path, then reload
+        const setCookie = (value: string) => {
+            // Set on current domain
+            document.cookie = `googtrans=${value}; path=/; domain=${window.location.hostname}`;
+            // Also set without domain (fallback)
+            document.cookie = `googtrans=${value}; path=/`;
         };
-        tryTranslate();
+
+        if (langCode === 'en') {
+            // Clear the cookie to go back to English
+            setCookie('/en/en');
+        } else {
+            setCookie(`/en/${langCode}`);
+        }
+        
+        // Reload the page so Google Translate picks up the new cookie
+        window.location.reload();
     };
 
     return (

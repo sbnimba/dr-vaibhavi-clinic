@@ -42,38 +42,26 @@ export default function RootLayout({
           gtag('config', 'G-XXXXXXXXXX');
         `}} />
 
-        {/* Google Translate — toolbar is hidden via CSS; our navbar dropdown controls it */}
+        {/* Google Translate — cookie-based reliable method */}
         <style dangerouslySetInnerHTML={{ __html: `
           /* Hide the Google Translate toolbar/banner completely */
           .goog-te-banner-frame,
           .goog-te-balloon-frame,
           #goog-gt-tt,
-          .goog-te-balloon-frame,
           .goog-tooltip,
           .goog-tooltip:hover,
           .VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
-          .VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
+          .VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc,
+          .goog-te-gadget-simple,
+          .goog-te-menu-value {
             display: none !important;
             visibility: hidden !important;
           }
-          body > .skiptranslate {
-            display: none !important;
-          }
-          iframe[src*="translate.googleapis.com"] {
-            display: none !important;
-          }
-          body {
-            top: 0 !important;
-            position: static !important;
-          }
-          /* Hide the Google Translate gadget element we use only as hook */
-          #google_translate_element {
-            display: none !important;
-          }
-          /* Fix font rendering after translation */
-          font {
-            background-color: transparent !important;
-          }
+          body > .skiptranslate { display: none !important; }
+          iframe[src*="translate.googleapis.com"] { display: none !important; }
+          body { top: 0 !important; position: static !important; }
+          #google_translate_element { display: none !important; }
+          font { background-color: transparent !important; }
         `}} />
         <script
           dangerouslySetInnerHTML={{
@@ -83,7 +71,6 @@ export default function RootLayout({
                   pageLanguage: 'en',
                   includedLanguages: 'en,hi,mr,gu,ta,te,bn',
                   autoDisplay: false,
-                  layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
                 }, 'google_translate_element');
               }
             `,
