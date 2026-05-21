@@ -531,10 +531,6 @@ export default function Home() {
                     <i className="fa-solid fa-chevron-down text-[9px] text-primary-400"></i>
                 </div>
 
-                {/* 8. APPOINTMENT BUTTON (Important Contrasting Rose Gold / Coral CTA) */}
-                <a href="#appointment" className="bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white px-5 py-2 rounded-full text-[11px] xl:text-xs font-bold hover:from-rose-600 hover:to-purple-700 transition shadow-[0_8px_16px_rgba(225,29,72,0.25)] hover:shadow-[0_12px_20px_rgba(225,29,72,0.4)] hover:-translate-y-0.5 transform duration-300 shrink-0 whitespace-nowrap flex items-center gap-1.5 border border-pink-400/30">
-                    <i className="fa-regular fa-calendar-check text-sm animate-bounce"></i> Book Appointment
-                </a>
             </nav>
 
             {/* Mobile Hamburger Button */}
