@@ -379,7 +379,7 @@ export default function Home() {
                 </div>
                 <div className="shrink-0">
                     <h1 className="text-lg xl:text-xl font-serif font-bold text-gray-900 tracking-wide whitespace-nowrap">Dr. Vaibhavi Dhenge</h1>
-                    <p className="text-[10px] xl:text-xs text-primary-600 font-bold tracking-widest uppercase whitespace-nowrap">MS OBGY | MBBS</p>
+                    <p className="text-[10px] xl:text-xs text-primary-600 font-bold tracking-widest uppercase whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
                 </div>
             </a>
 
@@ -691,14 +691,14 @@ export default function Home() {
                 <div className="lg:col-span-5 relative mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-12 scale-105 opacity-50 pointer-events-none"></div>
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-6 sm:border-8 border-white bg-white aspect-square max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[440px] flex items-center justify-center mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none">
-                        <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="w-full h-full object-cover object-center" />
+                        <img src="/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
                         <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3 z-20 w-max">
                             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
                             <div className="text-left">
                                 <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi Dhenge</p>
-                                <p className="text-[9px] sm:text-xs font-bold text-primary-600 uppercase tracking-widest leading-none">MS OBGY | MBBS</p>
+                                <p className="text-[9px] sm:text-xs font-bold text-primary-600 uppercase tracking-widest leading-none">Consultant Obstetrician & Gynecologist</p>
                             </div>
                         </div>
                     </div>

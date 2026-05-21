@@ -14,7 +14,7 @@ export default function EssentialPrenatalTests() {
                         </div>
                         <div>
                             <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-blue-600 transition-colors">Dr. Vaibhavi Dhenge</h1>
-                            <p className="text-[10px] sm:text-xs text-blue-600 font-bold tracking-widest uppercase">MS OBGY | MBBS</p>
+                            <p className="text-[10px] sm:text-xs text-blue-600 font-bold tracking-widest uppercase">Consultant Obstetrician & Gynecologist</p>
                         </div>
                     </Link>
 
@@ -54,7 +54,7 @@ export default function EssentialPrenatalTests() {
                             <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block"></div>
                             <div className="flex items-center gap-2">
                                 <i className="fa-solid fa-graduation-cap text-blue-500"></i>
-                                <span>MS OBGY, MBBS</span>
+                                <span>MBBS, MS (OBGY)</span>
                             </div>
                             <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block"></div>
                             <div className="flex items-center gap-2">
@@ -410,7 +410,7 @@ export default function EssentialPrenatalTests() {
                         
                         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                             <div className="w-20 h-20 rounded-full border-4 border-white shadow-xl overflow-hidden mx-auto bg-blue-50">
-                                <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-full object-cover object-center" />
+                                <img src="/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-full object-cover object-center" />
                             </div>
 
                             <div>
