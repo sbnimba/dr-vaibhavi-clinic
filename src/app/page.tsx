@@ -102,9 +102,17 @@ export default function Home() {
 
     const handleNextStep = (e: React.MouseEvent) => {
         e.preventDefault();
-        if (bookingStep === 2 && (!selectedDate || !selectedTimeSlot)) {
-            alert('Please select both a preferred date and time slot.');
-            return;
+        if (bookingStep === 2) {
+            if (!selectedDate || !selectedTimeSlot) {
+                alert('Please select both a preferred date and time slot.');
+                return;
+            }
+            
+            const today = new Date().toISOString().split('T')[0];
+            if (selectedDate < today) {
+                alert('Appointments cannot be booked for past dates. Please select a valid upcoming date.');
+                return;
+            }
         }
         setBookingStep(prev => prev + 1);
     };
@@ -1494,9 +1502,10 @@ export default function Home() {
                                                 type="date" 
                                                 value={selectedDate} 
                                                 onChange={(e) => setSelectedDate(e.target.value)} 
+                                                onClick={(e) => (e.currentTarget as HTMLInputElement).showPicker && (e.currentTarget as HTMLInputElement).showPicker()}
                                                 required 
                                                 min={new Date().toISOString().split('T')[0]}
-                                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition bg-gray-50 font-medium text-xs sm:text-sm" 
+                                                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition bg-gray-50 font-medium text-xs sm:text-sm cursor-pointer" 
                                             />
                                             <p className="text-[11px] text-gray-500">📅 MGM Hospital clinic hours operate Monday through Saturday.</p>
                                         </div>
