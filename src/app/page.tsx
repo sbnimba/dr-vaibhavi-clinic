@@ -946,7 +946,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 7TH PAGE: COMMUNITY & PREGNANCY TIPS ==================== */}
-    <section id="community" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
+    <section id="community" className="w-full min-h-screen snap-start snap-always overflow-y-auto pt-24 pb-12 lg:pb-16 flex flex-col relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
             <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1" data-aos="fade-up">Stay Connected</h2>
             <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-4" data-aos="fade-up" data-aos-delay="100">Community & Health Tips</h3>
