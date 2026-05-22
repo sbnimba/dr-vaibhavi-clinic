@@ -170,33 +170,20 @@ export default function Home() {
             }
 
             try {
-                await fetch('https://api.web3forms.com/submit', {
+                await fetch('/api/book-appointment', {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        access_key: "f6628986-b070-413e-9f0d-8191fd9b2bf5",
-                        subject: `🩺 New Booking: ${data.patientName} — ${data.date} at ${data.timeSlot}`,
-                        from_name: "Dr. Vaibhavi Clinic Booking System",
-                        replyto: data.emailAddress,
-                        "Reference ID": data.id,
-                        "Patient Name": data.patientName,
-                        "Mobile Number": data.mobileNumber,
-                        "Email Address": data.emailAddress,
-                        "Appointment Date": data.date,
-                        "Appointment Time": data.timeSlot,
-                        "Consultation Mode": data.consultationMode,
-                        "Specialty": data.specialty,
-                        "Health Concern": data.healthConcern || 'None',
-                        "Action Required": "Please confirm this booking by calling the patient.",
-                        "Confirm Booking Link": gcalUrl
+                        ...data,
+                        gcalUrl
                     })
                 });
-                console.log('[Web3Forms] Booking notification sent to doctor.');
+                console.log('[API] Booking notification sent to doctor.');
             } catch (err) {
-                console.error('[Web3Forms] Booking notification failed:', err);
+                console.error('[API] Booking notification failed:', err);
             }
         }
 
