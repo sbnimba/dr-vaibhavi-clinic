@@ -960,181 +960,180 @@ export default function Home() {
                 </a>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-2 text-left" data-aos="fade-up" data-aos-delay="300">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-left" data-aos="fade-up" data-aos-delay="300">
                 {/* Card 1 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-pink-100 flex items-center justify-center text-pink-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-pink-100 flex items-center justify-center text-pink-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-apple-whole"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-pink-600 uppercase tracking-wider block mb-1">Pregnancy Tips</span>
+                        <span className="text-[8px] font-bold text-pink-600 uppercase tracking-wider block mb-1">Pregnancy Tips</span>
                         <Link href="/nutrition-first-trimester" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2 leading-snug">Nutrition guide for your first trimester</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-pink-600 transition-colors line-clamp-2 leading-snug">Nutrition guide for your first trimester</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/nutrition-first-trimester" className="text-pink-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 2 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-purple-100 flex items-center justify-center text-purple-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-dna"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-purple-600 uppercase tracking-wider block mb-1">Women's Health</span>
+                        <span className="text-[8px] font-bold text-purple-600 uppercase tracking-wider block mb-1">Women's Health</span>
                         <Link href="/pcos-myths-facts" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2 leading-snug">Understanding PCOS (now PMOS): Myths vs Facts</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2 leading-snug">Understanding PCOS (now PMOS): Myths vs Facts</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/pcos-myths-facts" className="text-purple-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 3 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-orange-100 flex items-center justify-center text-orange-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-baby-carriage"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-orange-600 uppercase tracking-wider block mb-1">Fertility</span>
+                        <span className="text-[8px] font-bold text-orange-600 uppercase tracking-wider block mb-1">Fertility</span>
                         <Link href="/infertility-consult" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug">When Should You Consult an Infertility Specialist?</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-orange-600 transition-colors line-clamp-2 leading-snug">When Should You Consult an Infertility Specialist?</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/infertility-consult" className="text-orange-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 4 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-rose-100 flex items-center justify-center text-rose-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-rose-100 flex items-center justify-center text-rose-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-person-pregnant"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-rose-600 uppercase tracking-wider block mb-1">Antenatal Guide</span>
+                        <span className="text-[8px] font-bold text-rose-600 uppercase tracking-wider block mb-1">Antenatal Guide</span>
                         <Link href="/early-signs-pregnancy" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-rose-600 transition-colors line-clamp-2 leading-snug">Early Signs of Pregnancy: What’s Normal & What’s Not</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-rose-600 transition-colors line-clamp-2 leading-snug">Early Signs of Pregnancy: What’s Normal & What’s Not</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/early-signs-pregnancy" className="text-rose-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 5 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-blue-100 flex items-center justify-center text-blue-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-vials"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Prenatal Care</span>
+                        <span className="text-[8px] font-bold text-blue-600 uppercase tracking-wider block mb-1">Prenatal Care</span>
                         <Link href="/essential-prenatal-tests" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">Essential Prenatal Tests Every Mother Should Know About</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">Essential Prenatal Tests Every Mother Should Know About</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/essential-prenatal-tests" className="text-blue-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 6 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-teal-100 flex items-center justify-center text-teal-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-chart-line"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-teal-600 uppercase tracking-wider block mb-1">Fetal Development</span>
+                        <span className="text-[8px] font-bold text-teal-600 uppercase tracking-wider block mb-1">Fetal Development</span>
                         <Link href="/baby-growth-pregnancy" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-teal-600 transition-colors line-clamp-2 leading-snug">Baby Growth Month-by-Month During Pregnancy</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-teal-600 transition-colors line-clamp-2 leading-snug">Baby Growth Month-by-Month During Pregnancy</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/baby-growth-pregnancy" className="text-teal-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 7 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center text-amber-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-amber-100 flex items-center justify-center text-amber-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-triangle-exclamation"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-amber-600 uppercase tracking-wider block mb-1">High-Risk Pregnancy</span>
+                        <span className="text-[8px] font-bold text-amber-600 uppercase tracking-wider block mb-1">High-Risk Pregnancy</span>
                         <Link href="/high-risk-pregnancy" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug">Understanding High-Risk Pregnancy: Warning Signs & Care</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-amber-600 transition-colors line-clamp-2 leading-snug">Understanding High-Risk Pregnancy: Warning Signs & Care</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/high-risk-pregnancy" className="text-amber-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 8 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center text-red-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-red-100 flex items-center justify-center text-red-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-bell"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-red-600 uppercase tracking-wider block mb-1">Pregnancy Warning</span>
+                        <span className="text-[8px] font-bold text-red-600 uppercase tracking-wider block mb-1">Pregnancy Warning</span>
                         <Link href="/pregnancy-warning-signs" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">What are the warning signs during pregnancy that should never be ignored?</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-red-600 transition-colors line-clamp-2 leading-snug">What are the warning signs during pregnancy that should never be ignored?</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/pregnancy-warning-signs" className="text-red-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 9 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-indigo-100 flex items-center justify-center text-indigo-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-hospital-user"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">Labor & Delivery</span>
+                        <span className="text-[8px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">Labor & Delivery</span>
                         <Link href="/normal-delivery-vs-csection" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-indigo-600 transition-colors line-clamp-2 leading-snug">Normal Delivery vs C-Section: What Every Mother Should Know</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-indigo-600 transition-colors line-clamp-2 leading-snug">Normal Delivery vs C-Section: What Every Mother Should Know</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/normal-delivery-vs-csection" className="text-indigo-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
 
                 {/* Card 10 */}
-                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2.5 group">
+                <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
-                        <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-600 text-sm mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <div className="w-6 h-6 rounded-md bg-emerald-100 flex items-center justify-center text-emerald-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-capsules"></i>
                         </div>
-                        <span className="text-[9px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Supplements</span>
+                        <span className="text-[8px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Supplements</span>
                         <Link href="/pregnancy-supplements" className="block outline-none">
-                            <h4 className="font-bold text-xs sm:text-sm text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">How important are pregnancy supplements like folic acid and iron?</h4>
+                            <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-emerald-600 transition-colors line-clamp-2 leading-snug">How important are pregnancy supplements like folic acid and iron?</h4>
                         </Link>
                     </div>
-                    <div className="mt-3 pt-2 border-t border-gray-100/60 flex items-center justify-between">
+                    <div className="mt-2 pt-1.5 border-t border-gray-100/60 flex items-center justify-between">
                         <Link href="/pregnancy-supplements" className="text-emerald-600 text-[10px] font-bold flex items-center gap-1 hover:underline outline-none">Read More &rarr;</Link>
                     </div>
                 </div>
             </div>
 
             {/* Lead Capture Form */}
-            <div className="mt-4 lg:mt-6 bg-gradient-to-br from-brand-peach/20 via-pink-50/30 to-brand-peach/10 border border-brand-peach/40 rounded-3xl p-4 sm:p-5 max-w-4xl mx-auto shadow-premium flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden" data-aos="fade-up">
+            <div className="mt-4 bg-gradient-to-br from-brand-peach/20 via-pink-50/30 to-brand-peach/10 border border-brand-peach/40 rounded-2xl p-3 sm:p-4 max-w-4xl mx-auto shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 relative overflow-hidden" data-aos="fade-up">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                <div className="relative z-10 text-center md:text-left md:max-w-lg">
-                    <h4 className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-1">Free Download</h4>
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-gray-900 mb-1">Week-by-Week Pregnancy Diet Guide</h3>
-                    <p className="text-gray-600 text-[10px] sm:text-xs">Get Dr. Vaibhavi's exclusive nutritional roadmap sent directly to your inbox.</p>
+                <div className="relative z-10 text-center sm:text-left flex-1">
+                    <h4 className="text-[9px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Free Download</h4>
+                    <h3 className="text-sm sm:text-base font-serif font-bold text-gray-900">Week-by-Week Pregnancy Diet Guide</h3>
                 </div>
-                <div className="w-full md:w-auto relative z-10 shrink-0">
-                    <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => { e.preventDefault(); alert('Subscribed! In a live app, this would send an email via Formspree or EmailJS.'); }}>
-                        <input type="email" placeholder="Enter your email address" required className="flex-1 w-full sm:w-64 bg-white border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all shadow-sm" />
-                        <button type="submit" className="w-full sm:w-auto bg-primary-600 text-white font-bold py-3 px-6 rounded-xl shadow-md hover:bg-primary-700 transition-colors text-sm outline-none whitespace-nowrap">
-                            Send Guide <i className="fa-solid fa-download ml-1"></i>
+                <div className="w-full sm:w-auto relative z-10 shrink-0">
+                    <form className="flex gap-2" onSubmit={(e) => { e.preventDefault(); alert('Subscribed! In a live app, this would send an email via Formspree or EmailJS.'); }}>
+                        <input type="email" placeholder="Email address" required className="flex-1 w-full sm:w-48 bg-white border border-gray-200 text-gray-800 text-xs rounded-lg px-3 py-1.5 outline-none focus:border-primary-500 shadow-sm" />
+                        <button type="submit" className="bg-primary-600 text-white font-bold py-1.5 px-4 rounded-lg shadow-sm hover:bg-primary-700 transition-colors text-xs outline-none whitespace-nowrap">
+                            Send <i className="fa-solid fa-download ml-1"></i>
                         </button>
                     </form>
                 </div>
