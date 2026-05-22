@@ -1339,7 +1339,7 @@ export default function Home() {
                             {/* Google Map Embed */}
                             <div className="mt-6 rounded-2xl overflow-hidden shadow-sm border border-brand-peach/30 h-48 w-full relative">
                                 <iframe 
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.492576189912!2d73.03716617511478!3d19.042048582156294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3db5a88c791%3A0xc5458023c72b2c3!2sMGM%20Hospital%20-%20CBD%20Belapur!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                    src="https://maps.google.com/maps?q=MGM%20Hospital,%20Sector%201A,%20CBD%20Belapur,%20Navi%20Mumbai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                                     width="100%" 
                                     height="100%" 
                                     style={{ border: 0 }} 
