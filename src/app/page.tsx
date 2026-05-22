@@ -897,7 +897,8 @@ export default function Home() {
                         <i className="fa-solid fa-dna"></i>
                     </div>
                     <h4 className="text-base font-bold font-serif text-gray-900 mb-1">PCOS (PMOS) Treatment</h4>
-                    <p className="text-[11px] text-gray-600">Holistic medical and lifestyle management for PCOS (now PMOS) and hormonal imbalances.</p>
+                    <p className="text-[11px] text-gray-600 mb-2">Holistic medical and lifestyle management for PCOS (now PMOS) and hormonal imbalances.</p>
+                    <Link href="/pcos-quiz" className="inline-block mt-1 text-[10px] font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 px-3 py-1.5 rounded-full transition-colors border border-teal-100">Take PCOS Risk Quiz <i className="fa-solid fa-arrow-right ml-1"></i></Link>
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
@@ -1120,6 +1121,24 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+            {/* Lead Capture Form */}
+            <div className="mt-12 lg:mt-16 bg-gradient-to-br from-brand-peach/20 via-pink-50/30 to-brand-peach/10 border border-brand-peach/40 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto shadow-premium flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden" data-aos="fade-up">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div className="relative z-10 text-center md:text-left md:max-w-lg">
+                    <h4 className="text-sm font-bold tracking-widest text-primary-600 uppercase mb-2">Free Download</h4>
+                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-2">Week-by-Week Pregnancy Diet Guide</h3>
+                    <p className="text-gray-600 text-xs sm:text-sm">Get Dr. Vaibhavi's exclusive nutritional roadmap sent directly to your inbox. Perfect for expecting mothers!</p>
+                </div>
+                <div className="w-full md:w-auto relative z-10 shrink-0">
+                    <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => { e.preventDefault(); alert('Subscribed! In a live app, this would send an email via Formspree or EmailJS.'); }}>
+                        <input type="email" placeholder="Enter your email address" required className="flex-1 w-full sm:w-64 bg-white border border-gray-200 text-gray-800 text-sm rounded-xl px-4 py-3 outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all shadow-sm" />
+                        <button type="submit" className="w-full sm:w-auto bg-primary-600 text-white font-bold py-3 px-6 rounded-xl shadow-md hover:bg-primary-700 transition-colors text-sm outline-none whitespace-nowrap">
+                            Send Guide <i className="fa-solid fa-download ml-1"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1315,8 +1334,22 @@ export default function Home() {
                                         <p className="text-xs sm:text-sm font-bold text-gray-900">MGM Hospital, Belapur</p>
                                     </div>
                                 </div>
+                                </div>
                             </div>
-                        </div>
+                            
+                            {/* Google Map Embed */}
+                            <div className="mt-6 rounded-2xl overflow-hidden shadow-sm border border-brand-peach/30 h-48 w-full relative">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.492576189912!2d73.03716617511478!3d19.042048582156294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3db5a88c791%3A0xc5458023c72b2c3!2sMGM%20Hospital%20-%20CBD%20Belapur!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style={{ border: 0 }} 
+                                    allowFullScreen={false} 
+                                    loading="lazy" 
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="absolute inset-0"
+                                ></iframe>
+                            </div>
                     </div>
 
                     <div className="lg:col-span-7 p-4 sm:p-6 lg:p-10 bg-white">

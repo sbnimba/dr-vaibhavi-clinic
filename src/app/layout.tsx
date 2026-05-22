@@ -77,6 +77,45 @@ export default function RootLayout({
           }}
         />
         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async />
+
+        {/* Structured Data / Schema.org for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": ["Physician", "MedicalBusiness"],
+              "name": "Dr. Vaibhavi Dhenge",
+              "image": "https://sbnimba.github.io/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg",
+              "description": "Consultant Obstetrician & Gynecologist. Expert in high-risk pregnancy, PCOS, and women's health.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "MGM Hospital, Sector 1A, CBD Belapur",
+                "addressLocality": "Navi Mumbai",
+                "addressRegion": "Maharashtra",
+                "postalCode": "400614",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 19.0187,
+                "longitude": 73.0416
+              },
+              "url": "https://sbnimba.github.io/dr-vaibhavi-clinic/",
+              "telephone": "+91-9999999999",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+                  ],
+                  "opens": "09:00",
+                  "closes": "21:00"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className="font-sans text-gray-800 overflow-x-hidden">{children}</body>
     </html>
