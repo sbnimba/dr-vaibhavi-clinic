@@ -183,7 +183,7 @@ export default function Home() {
                         "Specialty": data.specialty,
                         "Health Concern": data.healthConcern || 'None',
                         "Action Required": "Please confirm this booking by calling the patient.",
-                        "Google Calendar Link": gcalUrl
+                        "Confirm Booking": `<a href="${gcalUrl}" style="background-color:#db2777;color:#ffffff;padding:10px 20px;text-decoration:none;border-radius:5px;display:inline-block;font-weight:bold;margin-top:5px;">📅 Add to Google Calendar</a>`
                     })
                 });
                 console.log('[Web3Forms] Booking notification sent to doctor.');
