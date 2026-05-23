@@ -84,6 +84,7 @@ export default function Home() {
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTimeSlot, setSelectedTimeSlot] = useState('');
     const [patientName, setPatientName] = useState('');
+    const [legalConsent, setLegalConsent] = useState(false);
     const [mobileNumber, setMobileNumber] = useState('');
     const [emailAddress, setEmailAddress] = useState('');
     const [healthConcern, setHealthConcern] = useState('');
@@ -1598,6 +1599,19 @@ export default function Home() {
                                             </div>
                                         </div>
 
+                                        <div className="bg-primary-50/50 p-3 rounded-xl border border-primary-100 flex items-start gap-3 mt-2">
+                                            <input 
+                                                type="checkbox" 
+                                                id="legalConsent" 
+                                                checked={legalConsent}
+                                                onChange={(e) => setLegalConsent(e.target.checked)}
+                                                className="mt-1 w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500 cursor-pointer shrink-0"
+                                            />
+                                            <label htmlFor="legalConsent" className="text-[10px] sm:text-[11px] text-gray-700 leading-tight cursor-pointer">
+                                                I consent to the collection of my health data and agree to the <Link href="/privacy-policy" className="text-primary-700 underline font-semibold">Privacy Policy</Link> & <Link href="/terms-conditions" className="text-primary-700 underline font-semibold">Terms</Link>.
+                                            </label>
+                                        </div>
+
                                         <div className="flex gap-3 pt-2">
                                             <button 
                                                 type="button"
@@ -1609,8 +1623,8 @@ export default function Home() {
                                             </button>
                                             <button 
                                                 type="submit"
-                                                disabled={isSubmitting}
-                                                className="w-2/3 bg-primary-600 text-white font-bold py-3.5 rounded-xl shadow-md shadow-primary-500/20 hover:bg-primary-700 transition flex items-center justify-center gap-2 text-xs sm:text-sm disabled:opacity-70 outline-none"
+                                                disabled={isSubmitting || !legalConsent}
+                                                className="w-2/3 bg-primary-600 text-white font-bold py-3.5 rounded-xl shadow-md shadow-primary-500/20 hover:bg-primary-700 transition flex items-center justify-center gap-2 text-xs sm:text-sm disabled:opacity-70 disabled:cursor-not-allowed outline-none"
                                             >
                                                 {isSubmitting ? (
                                                     <>
@@ -1647,6 +1661,11 @@ export default function Home() {
                         <p className="text-gray-400 text-[11px] leading-relaxed mb-3">
                             Premium women's healthcare focusing on empathy, clinical excellence, and empowerment for every stage of life.
                         </p>
+                        <div className="bg-gray-800/50 p-2.5 rounded-lg border border-gray-700 mb-4 inline-block">
+                            <p className="text-gray-300 text-[10px] font-mono">
+                                <span className="text-primary-400 font-bold">Reg No:</span> 2020/07/4756 (MMC)
+                            </p>
+                        </div>
                         <div className="flex gap-2.5">
                             <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-instagram"></i></a>
                             <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-youtube"></i></a>
@@ -1699,10 +1718,20 @@ export default function Home() {
                 <div className="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500">
                     <p>&copy; 2026 Dr. Vaibhavi Dhenge. All rights reserved.</p>
                     <div className="space-x-4 mt-2 md:mt-0">
-                        <a href="#appointment" className="hover:text-white transition">Privacy Policy</a>
-                        <a href="#appointment" className="hover:text-white transition">Terms & Conditions</a>
-                        <a href="#appointment" className="hover:text-white transition">Medical Disclaimer</a>
+                        <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
+                        <Link href="/terms-conditions" className="hover:text-white transition">Terms & Conditions</Link>
+                        <Link href="/medical-disclaimer" className="hover:text-white transition">Medical Disclaimer</Link>
                         <Link href="/admin" className="hover:text-primary-400 transition text-primary-600 font-bold ml-2">Admin Portal</Link>
+                    </div>
+                </div>
+
+                {/* Emergency Disclaimer */}
+                <div className="border-t border-gray-800 pt-6 pb-4 mb-4">
+                    <div className="bg-red-900/20 border border-red-900/50 rounded-xl p-4 flex items-start gap-3">
+                        <i className="fa-solid fa-triangle-exclamation text-red-500 mt-0.5"></i>
+                        <p className="text-gray-400 text-[10px] leading-relaxed">
+                            <strong className="text-red-400">MEDICAL EMERGENCY DISCLAIMER:</strong> This website and the online consultation services are NOT meant to handle medical emergencies. In case of severe pain, heavy bleeding, loss of consciousness, or any medical emergency, please do NOT wait for an online response. Immediately visit the nearest hospital emergency room or contact emergency medical services.
+                        </p>
                     </div>
                 </div>
             </div>
