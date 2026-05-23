@@ -6,6 +6,7 @@ import AOS from 'aos';
 import LeadCaptureForm from '@/components/LeadCaptureForm';
 import 'swiper/css/bundle';
 import Swiper from 'swiper/bundle';
+import { supabase } from '@/lib/supabase';
 
 const HeroAnimation = dynamic(() => import('@/components/HeroAnimation'), { ssr: false });
 
@@ -211,80 +212,30 @@ export default function Home() {
             createdAt: new Date().toISOString()
         };
 
-        // Automatic Zero-Config KVDB Cloud Database Sync (Encrypted for Privacy)
-        let currentList = [];
+        // Insert directly into Supabase PostgreSQL Database
         try {
-            const response = await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments');
-            if (response.ok) {
-                const encryptedText = await response.text();
-                if (encryptedText) {
-                    const decryptedText = decryptData(encryptedText);
-                    if (decryptedText) {
-                        currentList = JSON.parse(decryptedText);
-                    }
-                }
+            const { error } = await supabase
+                .from('appointments')
+                .insert([{
+                    patient_name: patientName,
+                    mobile_number: mobileNumber,
+                    email_address: emailAddress,
+                    consultation_mode: selectedMode,
+                    specialty: selectedSpecialty,
+                    appointment_date: selectedDate,
+                    time_slot: selectedTimeSlot,
+                    health_concern: healthConcern || 'None',
+                    medical_history: medicalConditions,
+                    status: 'Pending'
+                }]);
+                
+            if (error) {
+                console.error('[Supabase] Insert failed:', error);
+            } else {
+                console.log('[Supabase] Inserted successfully.');
             }
         } catch (err) {
-            console.error('[KVDB] Fetch current list failed. Falling back to local storage.', err);
-            if (typeof window !== 'undefined') {
-                const cached = localStorage.getItem('dr_vaibhavi_appointments');
-                if (cached) currentList = JSON.parse(cached);
-            }
-        }
-
-        // Add the new appointment at the top
-        currentList.unshift(newAppointment);
-
-        // Upload encrypted list back to cloud
-        try {
-            const encryptedPayload = encryptData(JSON.stringify(currentList));
-            await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments', {
-                method: 'POST',
-                body: encryptedPayload
-            });
-            console.log('[KVDB] Synced successfully.');
-        } catch (err) {
-            console.error('[KVDB] Upload failed:', err);
-        }
-
-        // Try syncing with Supabase as secondary database if configured
-        if (typeof window !== 'undefined') {
-            const sbUrl = localStorage.getItem('dr_vaibhavi_supabase_url');
-            const sbKey = localStorage.getItem('dr_vaibhavi_supabase_key');
-            
-            if (sbUrl && sbKey) {
-                try {
-                    await fetch(`${sbUrl}/rest/v1/appointments`, {
-                        method: 'POST',
-                        headers: {
-                            'apikey': sbKey,
-                            'Authorization': `Bearer ${sbKey}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            id: refId,
-                            patient_name: patientName,
-                            mobile_number: mobileNumber,
-                            email_address: emailAddress,
-                            consultation_mode: selectedMode,
-                            specialty: selectedSpecialty,
-                            appointment_date: selectedDate,
-                            time_slot: selectedTimeSlot,
-                            health_concern: healthConcern || 'None',
-                            medical_history: medicalConditions,
-                            status: 'Pending',
-                            created_at: new Date().toISOString()
-                        })
-                    });
-                } catch (err) {
-                    console.error('[Supabase] Insert failed:', err);
-                }
-            }
-        }
-
-        // Always save to localStorage as backup/cache
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(currentList));
+            console.error('[Supabase] Unexpected error:', err);
         }
 
         // Trigger email notification

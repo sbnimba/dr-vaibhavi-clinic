@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabase';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface Appointment {
@@ -99,91 +100,37 @@ export default function AdminDashboard() {
 
     const loadAppointments = async () => {
         setIsSyncing(true);
-        
-        // 1. Primary Sync: Fetch from secure KVDB cloud bucket
         try {
-            const response = await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments');
-            if (response.ok) {
-                const encryptedText = await response.text();
-                if (encryptedText) {
-                    const decryptedText = decryptData(encryptedText);
-                    if (decryptedText) {
-                        const parsed = JSON.parse(decryptedText);
-                        setAppointments(parsed);
-                        localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(parsed));
-                        setIsSyncing(false);
-                        return;
-                    }
-                }
+            const { data, error } = await supabase
+                .from('appointments')
+                .select('*')
+                .order('created_at', { ascending: false });
+
+            if (error) throw error;
+            
+            if (data && data.length > 0) {
+                const mapped: Appointment[] = data.map((item: any) => ({
+                    id: item.id,
+                    patientName: item.patient_name,
+                    mobileNumber: item.mobile_number,
+                    emailAddress: item.email_address,
+                    consultationMode: item.consultation_mode,
+                    specialty: item.specialty,
+                    date: item.appointment_date,
+                    timeSlot: item.time_slot,
+                    healthConcern: item.health_concern,
+                    medicalHistory: item.medical_history || [],
+                    status: item.status,
+                    createdAt: item.created_at,
+                    rescheduleNote: item.reschedule_note,
+                    rejectNote: item.reject_note
+                }));
+                setAppointments(mapped);
+            } else {
+                setAppointments([]);
             }
         } catch (err) {
-            console.error('[KVDB] Load failed. Trying Supabase or cache...', err);
-        }
-
-        // 2. Secondary Sync: Try Supabase if keys exist
-        const url = localStorage.getItem('dr_vaibhavi_supabase_url');
-        const key = localStorage.getItem('dr_vaibhavi_supabase_key');
-
-        if (url && key) {
-            try {
-                const response = await fetch(`${url}/rest/v1/appointments?order=created_at.desc`, {
-                    headers: {
-                        'apikey': key,
-                        'Authorization': `Bearer ${key}`
-                    }
-                });
-                if (response.ok) {
-                    const data = await response.json();
-                    const mapped: Appointment[] = data.map((item: any) => ({
-                        id: item.id,
-                        patientName: item.patient_name,
-                        mobileNumber: item.mobile_number,
-                        emailAddress: item.email_address,
-                        consultationMode: item.consultation_mode,
-                        specialty: item.specialty,
-                        date: item.appointment_date,
-                        timeSlot: item.time_slot,
-                        healthConcern: item.health_concern,
-                        medicalHistory: item.medical_history || [],
-                        status: item.status,
-                        createdAt: item.created_at,
-                        rescheduleNote: item.reschedule_note,
-                        rejectNote: item.reject_note
-                    }));
-                    setAppointments(mapped);
-                    localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(mapped));
-                    setIsSyncing(false);
-                    return;
-                }
-            } catch (err) {
-                console.error('[Supabase] Fetch failed. Falling back to local cache.', err);
-            }
-        }
-
-        // Fallback to local storage cache
-        const localData = localStorage.getItem('dr_vaibhavi_appointments');
-        if (localData) {
-            setAppointments(JSON.parse(localData));
-        } else {
-            // Initial seed if no local data
-            const sampleData: Appointment[] = [
-                {
-                    id: 'APP-748291',
-                    patientName: 'Anjali Sharma',
-                    mobileNumber: '+919876543210',
-                    emailAddress: 'anjali.sharma@example.com',
-                    consultationMode: 'In-Clinic Visit (MGM Belapur)',
-                    specialty: 'PCOS / PMOS & Hormones',
-                    date: '2026-05-20',
-                    timeSlot: '10:00 AM',
-                    healthConcern: 'Irregular cycles and weight gain over the last 6 months.',
-                    medicalHistory: ['Thyroid Disorder'],
-                    status: 'Pending',
-                    createdAt: new Date(Date.now() - 3600000 * 2).toISOString()
-                }
-            ];
-            setAppointments(sampleData);
-            localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(sampleData));
+            console.error('[Supabase] Fetch failed:', err);
         }
         setIsSyncing(false);
     };
@@ -234,58 +181,27 @@ export default function AdminDashboard() {
         });
 
         setAppointments(updatedList);
-        localStorage.setItem('dr_vaibhavi_appointments', JSON.stringify(updatedList));
 
-        // 2. Sync to secure KVDB cloud database
+        // 2. Sync to Supabase
+        const dbUpdates: any = {
+            status: status,
+        };
+        if (extra.date) dbUpdates.appointment_date = extra.date;
+        if (extra.timeSlot) dbUpdates.time_slot = extra.timeSlot;
+        if (extra.rescheduleNote) dbUpdates.reschedule_note = extra.rescheduleNote;
+        if (extra.rejectNote) dbUpdates.reject_note = extra.rejectNote;
+
         try {
-            const encryptedPayload = encryptData(JSON.stringify(updatedList));
-            await fetch('https://kvdb.io/vaibhavi_clinic_db_ad9aee2/appointments', {
-                method: 'POST',
-                body: encryptedPayload
-            });
-            console.log('[KVDB] Synced update successfully.');
+            const { error } = await supabase
+                .from('appointments')
+                .update(dbUpdates)
+                .eq('id', id);
+                
+            if (error) {
+                console.error('[Supabase] Sync patch failed:', error);
+            }
         } catch (err) {
-            console.error('[KVDB] Sync update failed:', err);
-        }
-
-        // 3. Secondary Sync to Supabase
-        const url = localStorage.getItem('dr_vaibhavi_supabase_url');
-        const key = localStorage.getItem('dr_vaibhavi_supabase_key');
-        if (url && key) {
-            const dbUpdates: any = {
-                status: status,
-                ...extra
-            };
-            if (extra.date) {
-                dbUpdates.appointment_date = extra.date;
-                delete dbUpdates.date;
-            }
-            if (extra.timeSlot) {
-                dbUpdates.time_slot = extra.timeSlot;
-                delete dbUpdates.timeSlot;
-            }
-            if (extra.rescheduleNote) {
-                dbUpdates.reschedule_note = extra.rescheduleNote;
-                delete dbUpdates.rescheduleNote;
-            }
-            if (extra.rejectNote) {
-                dbUpdates.reject_note = extra.rejectNote;
-                delete dbUpdates.rejectNote;
-            }
-
-            try {
-                await fetch(`${url}/rest/v1/appointments?id=eq.${id}`, {
-                    method: 'PATCH',
-                    headers: {
-                        'apikey': key,
-                        'Authorization': `Bearer ${key}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(dbUpdates)
-                });
-            } catch (err) {
-                console.error('[Supabase] Sync patch failed:', err);
-            }
+            console.error('[Supabase] Sync patch failed:', err);
         }
     };
 
