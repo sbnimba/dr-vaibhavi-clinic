@@ -410,7 +410,7 @@ export default function EssentialPrenatalTests() {
                         
                         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                             <div className="w-20 h-20 rounded-full border-4 border-white shadow-xl overflow-hidden mx-auto bg-blue-50">
-                                <img src="/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-full object-cover object-center" />
+                                <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-full object-cover object-center" />
                             </div>
 
                             <div>
