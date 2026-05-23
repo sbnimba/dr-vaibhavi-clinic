@@ -573,7 +573,7 @@ export default function Home() {
                     </a>
                 </div>
                 <div className="flex flex-col gap-3 pt-2">
-                    <a href="#appointment" onClick={() => setMobileMenuOpen(false)} className="w-full bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white py-3 rounded-full font-bold text-center shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2 text-xs">
+                    <a href="#booking-form" onClick={() => setMobileMenuOpen(false)} className="w-full bg-primary-600 text-white py-3 rounded-full font-bold text-center shadow-md shadow-primary-500/30 flex items-center justify-center gap-2 text-xs hover:bg-primary-700 transition mb-2">
                         <i className="fa-regular fa-calendar-check text-sm"></i> Book Appointment
                     </a>
                     <Link href="/admin" onClick={() => setMobileMenuOpen(false)} className="w-full bg-gray-900 text-white py-3 rounded-full font-bold text-center shadow-md flex items-center justify-center gap-2 text-xs hover:bg-gray-800 transition">
@@ -615,7 +615,7 @@ export default function Home() {
                     
                     <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full sm:w-auto">
                         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                            <a href="#appointment" className="bg-primary-600 text-white px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <a href="#booking-form" className="bg-primary-600 text-white px-8 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-regular fa-calendar-check"></i> Book Appointment
                             </a>
                         </div>
@@ -1398,7 +1398,7 @@ export default function Home() {
                                 </div>
                             </div>
                         ) : (
-                            <form className="space-y-6 animate-fade-in" onSubmit={handleAppointmentSubmit}>
+                            <form id="booking-form" className="space-y-6 animate-fade-in" onSubmit={handleAppointmentSubmit}>
                                 {/* Progress Bar */}
                                 <div className="space-y-2">
                                     <div className="flex justify-between items-center text-xs font-bold text-gray-500">
@@ -1740,7 +1740,7 @@ export default function Home() {
 
     {/* Sticky Floating CTA for Mobile (Right) */}
     <div className="fixed bottom-6 right-6 z-50 md:hidden flex flex-col gap-3 items-end">
-        <a href="#appointment" className="bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white px-5 py-3.5 rounded-full font-bold shadow-premium flex items-center gap-2 border border-pink-400/30 animate-pulse text-xs">
+        <a href="#booking-form" className="bg-gradient-to-r from-rose-500 via-pink-600 to-purple-600 text-white px-5 py-3.5 rounded-full font-bold shadow-premium flex items-center gap-2 border border-pink-400/30 animate-pulse text-xs">
             <i className="fa-regular fa-calendar-check text-base"></i> Book Visit
         </a>
     </div>
