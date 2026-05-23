@@ -56,6 +56,23 @@ export async function POST(request: Request) {
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.messageId);
 
+    // Automatically add the patient to the MailerLite Newsletter list
+    try {
+      const mlFormData = new FormData();
+      mlFormData.append('fields[email]', data.emailAddress);
+      mlFormData.append('ml-submit', '1');
+      mlFormData.append('anticsrf', 'true');
+
+      await fetch('https://assets.mailerlite.com/jsonp/2371546/forms/188182160208823762/subscribe', {
+        method: 'POST',
+        body: mlFormData,
+      });
+      console.log('Patient automatically added to MailerLite newsletter list.');
+    } catch (mlError) {
+      console.error('Failed to add patient to MailerLite:', mlError);
+      // We don't throw here so the booking still succeeds even if MailerLite is down
+    }
+
     return NextResponse.json({ success: true, message: 'Booking notification sent successfully.' });
   } catch (error) {
     console.error('Error sending email:', error);
