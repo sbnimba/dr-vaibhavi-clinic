@@ -1672,7 +1672,8 @@ export default function Home() {
                         <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
                         <Link href="/terms-conditions" className="hover:text-white transition">Terms & Conditions</Link>
                         <Link href="/medical-disclaimer" className="hover:text-white transition">Medical Disclaimer</Link>
-                        <Link href="/admin" className="hover:text-primary-400 transition text-primary-600 font-bold ml-2">Admin Portal</Link>
+                        <Link href="/patient-portal" className="hover:text-primary-400 transition text-primary-500 font-bold ml-2"><i className="fa-solid fa-hospital-user mr-1"></i> Patient Portal</Link>
+                        <Link href="/admin" className="hover:text-gray-300 transition text-gray-500 font-bold ml-2">Admin Login</Link>
                     </div>
                 </div>
 
