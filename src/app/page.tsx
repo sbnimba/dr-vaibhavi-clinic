@@ -574,11 +574,11 @@ export default function Home() {
                             <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="bg-white text-red-600 border border-red-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-red-50 transition shadow-premium">
                                 <i className="fa-brands fa-youtube text-lg"></i>
                             </a>
-                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="bg-white text-pink-600 border border-pink-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-pink-50 transition shadow-premium">
-                                <i className="fa-brands fa-instagram text-lg"></i>
-                            </a>
                             <a href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" className="bg-white text-blue-600 border border-blue-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-blue-50 transition shadow-premium">
                                 <i className="fa-brands fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="bg-white text-pink-600 border border-pink-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-pink-50 transition shadow-premium">
+                                <i className="fa-brands fa-instagram text-lg"></i>
                             </a>
                         </div>
                     </div>
@@ -1618,9 +1618,9 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="flex gap-2.5">
-                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-instagram"></i></a>
                             <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-youtube"></i></a>
                             <a href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                     
