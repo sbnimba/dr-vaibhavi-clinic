@@ -19,13 +19,13 @@ export default function MedicalDisclaimer() {
             <p>The content provided on this website—including but not limited to text, graphics, images, dietary charts, pregnancy calculators, and blog posts—is for general informational and educational purposes only. It is NOT intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>
 
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">2. No Doctor-Patient Relationship</h2>
-            <p>Simply reading the information on this website, downloading a diet chart, or submitting a contact form does NOT establish a doctor-patient relationship between you and Dr. Vaibhavi Dhenge. A formal clinical relationship is only established upon a formal consultation (in-clinic or via scheduled telemedicine).</p>
+            <p>Simply reading the information on this website, downloading a diet chart, or submitting a contact form does NOT establish a doctor-patient relationship between you and Dr. Vaibhavi. A formal clinical relationship is only established upon a formal consultation (in-clinic or via scheduled telemedicine).</p>
 
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">3. Consult Your Physician</h2>
             <p>Never disregard professional medical advice or delay in seeking it because of something you have read on this website. Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition or treatment plan.</p>
 
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">4. Limitation of Liability</h2>
-            <p>Dr. Vaibhavi Dhenge and the clinic shall not be held liable for any direct, indirect, consequential, or special damages arising from the use of information provided on this website. Reliance on any information provided herein is solely at your own risk.</p>
+            <p>Dr. Vaibhavi and the clinic shall not be held liable for any direct, indirect, consequential, or special damages arising from the use of information provided on this website. Reliance on any information provided herein is solely at your own risk.</p>
 
             <div className="mt-12 pt-8 border-t border-gray-100 text-center">
                 <Link href="/" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition">

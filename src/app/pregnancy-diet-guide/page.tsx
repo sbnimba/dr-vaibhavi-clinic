@@ -309,7 +309,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="text-lg md:text-xl font-serif text-gray-800 relative z-10 leading-relaxed font-medium">
                             "Always remember: every pregnancy is different. A personalized diet plan based on weight, medical history, sugar levels, thyroid status, and lifestyle is always best."
                         </p>
-                        <p className="mt-6 font-bold text-primary-600 uppercase tracking-widest text-sm">— Dr. Vaibhavi Dhenge</p>
+                        <p className="mt-6 font-bold text-primary-600 uppercase tracking-widest text-sm">— Dr. Vaibhavi</p>
                         <p className="text-xs text-gray-500 mt-2 italic">Consult your gynecologist before making any major diet changes.</p>
                     </div>
 

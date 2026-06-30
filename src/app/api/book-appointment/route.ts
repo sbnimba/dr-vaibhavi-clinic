@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       <div style="font-family:sans-serif;max-width:600px;margin:auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
         <div style="background:linear-gradient(135deg,#7c3aed,#db2777);padding:28px 32px;">
           <h2 style="margin:0;color:#fff;font-size:22px;">🩺 New Appointment Booking</h2>
-          <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">Dr. Vaibhavi Dhenge Clinic — Automated Alert</p>
+          <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">Dr. Vaibhavi Clinic — Automated Alert</p>
         </div>
         <div style="padding:28px 32px;">
           <table style="width:100%;border-collapse:collapse;font-size:14px;">
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
             <p style="margin-top:10px;font-size:11px;color:#888;font-family:sans-serif;">Clicking this will open Google Calendar. Save the event to send a meeting invite to the patient.</p>
           </div>
         </div>
-        <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Dhenge Clinic booking system.</div>
+        <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Clinic booking system.</div>
       </div>
     `;
 

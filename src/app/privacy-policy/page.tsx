@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
           </div>
           
           <div className="prose prose-gray max-w-none text-sm leading-relaxed text-gray-600">
-            <p>Welcome to the Dr. Vaibhavi Dhenge Clinic ("Clinic", "we", "our", "us"). We respect your privacy and are committed to protecting your personal data in compliance with the Digital Personal Data Protection Act, 2023 (DPDPA) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.</p>
+            <p>Welcome to the Dr. Vaibhavi Clinic ("Clinic", "we", "our", "us"). We respect your privacy and are committed to protecting your personal data in compliance with the Digital Personal Data Protection Act, 2023 (DPDPA) and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.</p>
             
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">1. Information We Collect</h2>
             <p>When you book an appointment or consult with us online, we may collect the following Sensitive Personal Data or Information (SPDI):</p>
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">5. Contact Us</h2>
             <p>If you have any questions regarding your privacy or data, please contact our Grievance Officer at:</p>
             <p className="font-mono mt-2">
-                Dr. Vaibhavi Dhenge Clinic<br/>
+                Dr. Vaibhavi Clinic<br/>
                 MGM Hospital, Sector 1, Belapur, Navi Mumbai<br/>
                 Medical Reg No: 2020/07/4756 (MMC)<br/>
                 Email: consult@drvaibhavi.com

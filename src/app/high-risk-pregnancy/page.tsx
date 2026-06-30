@@ -13,7 +13,7 @@ export default function HighRiskPregnancy() {
                             <i className="fa-solid fa-triangle-exclamation"></i>
                         </div>
                         <div>
-                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-amber-600 transition-colors">Dr. Vaibhavi Dhenge</h1>
+                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-amber-600 transition-colors">Dr. Vaibhavi</h1>
                             <p className="text-[10px] sm:text-xs text-amber-600 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
                         </div>
                     </Link>
@@ -49,7 +49,7 @@ export default function HighRiskPregnancy() {
                         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 font-medium bg-white/80 backdrop-blur-sm py-3 px-6 rounded-full w-max mx-auto shadow-sm border border-white">
                             <div className="flex items-center gap-2">
                                 <i className="fa-solid fa-user-md text-amber-500"></i>
-                                <span>By <strong>Dr. Vaibhavi Dhenge</strong></span>
+                                <span>By <strong>Dr. Vaibhavi</strong></span>
                             </div>
                             <div className="w-1 h-1 rounded-full bg-gray-300 hidden sm:block"></div>
                             <div className="flex items-center gap-2">
@@ -360,13 +360,13 @@ export default function HighRiskPregnancy() {
                         
                         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                             <div className="w-20 h-20 rounded-full border-4 border-white shadow-xl overflow-hidden mx-auto bg-amber-50">
-                                <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge" className="w-full h-full object-cover object-center" />
+                                <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi" className="w-full h-full object-cover object-center" />
                             </div>
 
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-1">Need Specialized High-Risk Pregnancy Care?</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto leading-relaxed">
-                                    Consult Dr. Vaibhavi Dhenge for expert maternal-fetal monitoring, advanced diagnostic ultrasounds, and a safe, reassuring care plan.
+                                    Consult Dr. Vaibhavi for expert maternal-fetal monitoring, advanced diagnostic ultrasounds, and a safe, reassuring care plan.
                                 </p>
                             </div>
 

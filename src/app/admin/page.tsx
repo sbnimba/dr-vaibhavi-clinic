@@ -261,7 +261,7 @@ export default function AdminDashboard() {
     };
 
     const getGmailComposeLink = (app: Appointment) => {
-        const subject = `Appointment ${app.status} - Dr. Vaibhavi Dhenge Clinic [${app.id}]`;
+        const subject = `Appointment ${app.status} - Dr. Vaibhavi Clinic [${app.id}]`;
         let body = `Dear ${app.patientName},\n\n`;
         
         if (app.status === 'Confirmed') {
@@ -289,7 +289,7 @@ export default function AdminDashboard() {
 
         body += `\nShould you need to change your appointment or have any questions, please contact us at +91 91361 68582 / +91 85912 37628.\n\n`;
         body += `Best regards,\n`;
-        body += `Dr. Vaibhavi Dhenge Clinic Team\n`;
+        body += `Dr. Vaibhavi Clinic Team\n`;
         body += `MGM Hospital, Vashi / Belapur`;
 
         return `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(app.emailAddress)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -347,7 +347,7 @@ export default function AdminDashboard() {
     };
 
     const handleComplete = (id: string) => {
-        updateAppointmentInStore(id, 'Completed', {}, 'status_update', 'Thank you for consulting Dr. Vaibhavi Dhenge.');
+        updateAppointmentInStore(id, 'Completed', {}, 'status_update', 'Thank you for consulting Dr. Vaibhavi.');
         showToast('Completed & Archived.');
     };
 
@@ -473,7 +473,7 @@ export default function AdminDashboard() {
                             <i className="fa-solid fa-stethoscope"></i>
                         </div>
                         <div>
-                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900">Dr. Vaibhavi Dhenge</h1>
+                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900">Dr. Vaibhavi</h1>
                             <p className="text-[10px] sm:text-xs text-primary-600 font-bold uppercase tracking-wider">Clinical Administration Portal</p>
                         </div>
                     </div>

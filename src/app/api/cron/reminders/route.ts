@@ -47,7 +47,7 @@ export async function GET(request: Request) {
         // Send a reminder email to each patient
         for (const app of appointments) {
             const mailOptions = {
-                from: `"Dr. Vaibhavi Dhenge Clinic" <${process.env.GMAIL_USER}>`,
+                from: `"Dr. Vaibhavi Clinic" <${process.env.GMAIL_USER}>`,
                 to: app.email_address,
                 subject: 'Reminder: Upcoming Appointment Tomorrow with Dr. Vaibhavi',
                 html: `
@@ -58,7 +58,7 @@ export async function GET(request: Request) {
                         <div style="padding: 32px; background: #ffffff;">
                             <p style="font-size: 16px; color: #333;">Dear <strong>${app.patient_name}</strong>,</p>
                             <p style="font-size: 15px; color: #555; line-height: 1.6;">
-                                This is a gentle reminder that you have an appointment scheduled for tomorrow with Dr. Vaibhavi Dhenge.
+                                This is a gentle reminder that you have an appointment scheduled for tomorrow with Dr. Vaibhavi.
                             </p>
                             
                             <div style="background: #f8fafc; border-left: 4px solid #db2777; padding: 16px; margin: 24px 0; border-radius: 4px;">
@@ -74,7 +74,7 @@ export async function GET(request: Request) {
 
                             <p style="font-size: 15px; color: #555; margin-top: 32px;">
                                 Warm regards,<br/>
-                                <strong>Dr. Vaibhavi Dhenge Clinic Team</strong><br/>
+                                <strong>Dr. Vaibhavi Clinic Team</strong><br/>
                                 MGM Hospital, Sector 1, Belapur, Navi Mumbai<br/>
                                 📞 022-27572293
                             </p>

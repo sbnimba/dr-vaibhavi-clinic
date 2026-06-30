@@ -11,7 +11,7 @@ export default function TermsConditions() {
           </div>
           
           <div className="prose prose-gray max-w-none text-sm leading-relaxed text-gray-600">
-            <p>Welcome to the Dr. Vaibhavi Dhenge Clinic website. By accessing or using this website to book appointments or read content, you agree to be bound by these Terms & Conditions.</p>
+            <p>Welcome to the Dr. Vaibhavi Clinic website. By accessing or using this website to book appointments or read content, you agree to be bound by these Terms & Conditions.</p>
             
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">1. Telemedicine & Online Consultations</h2>
             <p>Online video consultations are conducted in accordance with the Telemedicine Practice Guidelines issued by the National Medical Commission (NMC). By opting for an online consultation:</p>

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       <div style="font-family:sans-serif;max-width:600px;margin:auto;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
         <div style="background:${headerBg};padding:28px 32px;">
           <h2 style="margin:0;color:#fff;font-size:22px;">🩺 ${statusTitle}</h2>
-          <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">Dr. Vaibhavi Dhenge Clinic</p>
+          <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">Dr. Vaibhavi Clinic</p>
         </div>
         <div style="padding:28px 32px;">
           <p style="font-size:15px;color:#1f2937;margin-top:0;">Dear <strong>${data.patientName}</strong>,</p>
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
           
           <p style="font-size:13px;color:#6b7280;margin-bottom:0;">If you have any questions, please contact the clinic at +91 91361 68582.</p>
         </div>
-        <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Dhenge Clinic booking system.</div>
+        <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Clinic booking system.</div>
       </div>
     `;
 

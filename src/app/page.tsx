@@ -314,7 +314,7 @@ export default function Home() {
                     <i className="fa-solid fa-spa"></i>
                 </div>
                 <div className="shrink-0">
-                    <h1 className="text-lg xl:text-xl font-serif font-bold text-gray-900 tracking-wide whitespace-nowrap">Dr. Vaibhavi Dhenge</h1>
+                    <h1 className="text-lg xl:text-xl font-serif font-bold text-gray-900 tracking-wide whitespace-nowrap">Dr. Vaibhavi</h1>
                     <p className="text-[10px] xl:text-xs text-primary-600 font-bold tracking-widest whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
                 </div>
             </a>
@@ -627,13 +627,13 @@ export default function Home() {
                 <div className="lg:col-span-5 relative mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-12 scale-105 opacity-50 pointer-events-none"></div>
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-6 sm:border-8 border-white bg-white aspect-square max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[440px] flex items-center justify-center mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none">
-                        <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="w-full h-full object-cover object-center" />
+                        <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
                         <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3 z-20 w-max">
                             <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
                             <div className="text-left">
-                                <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi Dhenge</p>
+                                <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi</p>
                                 <p className="text-[9px] sm:text-xs font-bold text-primary-600 tracking-widest leading-none">Consultant Obstetrician & Gynecologist</p>
                             </div>
                         </div>
@@ -654,15 +654,15 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                 <div data-aos="fade-up" className="lg:col-span-4 relative order-2 lg:order-1 mx-auto w-full max-w-[280px] lg:max-w-none">
-                    <img src="images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi Dhenge OBGY" className="rounded-[2rem] shadow-premium object-cover h-[240px] sm:h-[300px] lg:h-[420px] w-full" />
+                    <img src="images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi OBGY" className="rounded-[2rem] shadow-premium object-cover h-[240px] sm:h-[300px] lg:h-[420px] w-full" />
                 </div>
                 
                 <div className="lg:col-span-8 order-1 lg:order-2" data-aos="fade-up" data-aos-delay="200">
-                    <h4 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 mb-0.5">Dr. Vaibhavi Dhenge</h4>
+                    <h4 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 mb-0.5">Dr. Vaibhavi</h4>
                     <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">MBBS, MS (Obstetrics & Gynaecology) | <span className="text-primary-600">Senior Resident, MGM Belapur Hospital</span></p>
                     
                     <p className="text-gray-600 leading-relaxed mb-4 font-sans text-xs sm:text-sm">
-                        Dr. Vaibhavi Dhenge is an Obstetrician and Gynecologist with 4+ years of experience across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
+                        Dr. Vaibhavi is an Obstetrician and Gynecologist with 4+ years of experience across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
                     </p>
                     
                     {/* Awards & Recognition — visual badge grid */}
@@ -1247,7 +1247,7 @@ export default function Home() {
                         <div className="relative z-10">
                             <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Professional Care</h2>
                             <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Book Your Visit</h3>
-                            <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">Schedule an in-clinic appointment or an online video consultation with Dr. Vaibhavi Dhenge.</p>
+                            <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">Schedule an in-clinic appointment or an online video consultation with Dr. Vaibhavi.</p>
                             
                             <div className="space-y-3">
                                 <div className="flex items-center gap-3 bg-white p-3.5 rounded-2xl shadow-sm border border-gray-100">
@@ -1292,7 +1292,7 @@ export default function Home() {
                                     <span className="text-[10px] font-bold text-emerald-700 tracking-widest uppercase bg-emerald-100 px-2.5 py-0.5 rounded-full">Booking Confirmed</span>
                                     <h3 className="text-xl font-serif font-bold text-gray-900">Your appointment request has been submitted</h3>
                                     <p className="text-[11px] sm:text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
-                                        Dr. Vaibhavi Dhenge and the clinic staff have received your request. A confirmation email and background alert have been dispatched to the clinic management.
+                                        Dr. Vaibhavi and the clinic staff have received your request. A confirmation email and background alert have been dispatched to the clinic management.
                                     </p>
                                 </div>
 
@@ -1334,7 +1334,7 @@ export default function Home() {
 
                                 <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2 max-w-md mx-auto">
                                     <a 
-                                        href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Appointment with Dr. Vaibhavi Dhenge')}&dates=20260520T100000Z/20260520T110000Z&details=${encodeURIComponent(`Patient: ${bookedAppointment?.patientName}\nMode: ${bookedAppointment?.consultationMode}\nSpecialty: ${bookedAppointment?.specialty}\nConcern: ${bookedAppointment?.healthConcern}`)}&location=${encodeURIComponent(bookedAppointment?.consultationMode.includes('In-Clinic') ? 'MGM Hospital, Belapur' : 'Online Video Consultation')}`}
+                                        href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Appointment with Dr. Vaibhavi')}&dates=20260520T100000Z/20260520T110000Z&details=${encodeURIComponent(`Patient: ${bookedAppointment?.patientName}\nMode: ${bookedAppointment?.consultationMode}\nSpecialty: ${bookedAppointment?.specialty}\nConcern: ${bookedAppointment?.healthConcern}`)}&location=${encodeURIComponent(bookedAppointment?.consultationMode.includes('In-Clinic') ? 'MGM Hospital, Belapur' : 'Online Video Consultation')}`}
                                         target="_blank" 
                                         className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-xl shadow-md hover:bg-blue-700 transition flex items-center justify-center gap-2 text-xs sm:text-sm outline-none"
                                     >
@@ -1667,7 +1667,7 @@ export default function Home() {
                 </div>
                 
                 <div className="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500">
-                    <p>&copy; 2026 Dr. Vaibhavi Dhenge. All rights reserved.</p>
+                    <p>&copy; 2026 Dr. Vaibhavi. All rights reserved.</p>
                     <div className="space-x-4 mt-2 md:mt-0">
                         <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
                         <Link href="/terms-conditions" className="hover:text-white transition">Terms & Conditions</Link>

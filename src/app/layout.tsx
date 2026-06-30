@@ -13,8 +13,8 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Dr. Vaibhavi Dhenge | Premium Obstetrician & Gynaecologist",
-  description: "Dr. Vaibhavi Dhenge, Senior Resident at MGM Belapur Hospital. Expert Obstetrician & Gynaecologist for pregnancy, PCOS, and women's health.",
+  title: "Dr. Vaibhavi | Premium Obstetrician & Gynaecologist",
+  description: "Dr. Vaibhavi, Senior Resident at MGM Belapur Hospital. Expert Obstetrician & Gynaecologist for pregnancy, PCOS, and women's health.",
 };
 
 export default function RootLayout({
@@ -85,7 +85,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": ["Physician", "MedicalBusiness"],
-              "name": "Dr. Vaibhavi Dhenge",
+              "name": "Dr. Vaibhavi",
               "image": "https://sbnimba.github.io/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg",
               "description": "Consultant Obstetrician & Gynecologist. Expert in high-risk pregnancy, PCOS, and women's health.",
               "address": {
