@@ -102,7 +102,7 @@ export default function RootLayout({
                 "longitude": 73.0416
               },
               "url": "https://sbnimba.github.io/dr-vaibhavi-clinic/",
-              "telephone": "+91-9283880359",
+              "telephone": "+91-9321880359",
               "openingHoursSpecification": [
                 {
                   "@type": "OpeningHoursSpecification",

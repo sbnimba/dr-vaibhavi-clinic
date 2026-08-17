@@ -253,7 +253,7 @@ export default function Home() {
                 `*Ref ID:* ${refId}\n\n` +
                 `Please reply to confirm the appointment.`
             );
-            window.open(`https://wa.me/919283880359?text=${waMsg}`, '_blank');
+            window.open(`https://wa.me/919321880359?text=${waMsg}`, '_blank');
         } catch (err) {
             console.error('[WhatsApp] Notification failed:', err);
         }
@@ -569,12 +569,12 @@ export default function Home() {
                             <a href="#booking-form" className="bg-primary-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-regular fa-calendar-check"></i> Book Appointment
                             </a>
-                            <a href="https://wa.me/919283880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
                             </a>
                         </div>
                         <div className="flex items-center justify-center sm:justify-start gap-2.5 pt-1 sm:pt-0">
-                            <a href="https://wa.me/919283880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-white text-emerald-600 border border-emerald-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-emerald-50 transition shadow-premium" title="Chat on WhatsApp">
+                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-white text-emerald-600 border border-emerald-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-emerald-50 transition shadow-premium" title="Chat on WhatsApp">
                                 <i className="fa-brands fa-whatsapp text-xl"></i>
                             </a>
                             <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" rel="noopener noreferrer" className="bg-white text-red-600 border border-red-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-red-50 transition shadow-premium" title="Watch YouTube">
@@ -1260,7 +1260,7 @@ export default function Home() {
                                     <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-phone"></i></div>
                                     <div>
                                         <p className="text-[11px] text-gray-500 font-medium">Clinic Reception</p>
-                                        <p className="text-xs sm:text-sm font-bold text-gray-900">+91 92838 80359</p>
+                                        <p className="text-xs sm:text-sm font-bold text-gray-900">+91 93218 80359</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3 bg-white p-3.5 rounded-2xl shadow-sm border border-gray-100">
@@ -1662,7 +1662,7 @@ export default function Home() {
                             </li>
                             <li className="flex items-center gap-2">
                                 <i className="fa-solid fa-phone text-primary-500"></i>
-                                <span>+91 92838 80359</span>
+                                <span>+91 93218 80359</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <i className="fa-solid fa-envelope text-primary-500"></i>
