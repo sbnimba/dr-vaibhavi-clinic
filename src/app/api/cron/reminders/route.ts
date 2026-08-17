@@ -1,25 +1,38 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { createClient } from '@supabase/supabase-js';
+import { esc } from '@/lib/api-security';
 
 // Initialize Supabase backend client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder';
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
+/** Tomorrow's date in IST (UTC+5:30), which is the timezone the clinic books in. */
+function tomorrowInIST(): string {
+    const nowIST = new Date(Date.now() + 5.5 * 60 * 60 * 1000);
+    nowIST.setUTCDate(nowIST.getUTCDate() + 1);
+    return nowIST.toISOString().split('T')[0];
+}
+
 export async function GET(request: Request) {
-    // Basic security check to ensure this is triggered by Vercel Cron
+    // This endpoint emails every patient booked for tomorrow, so it fails CLOSED:
+    // without a correctly configured CRON_SECRET nothing is sent. Vercel Cron sends
+    // the secret automatically as a Bearer token.
     const authHeader = request.headers.get('authorization');
-    if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
-        // Only enforce if CRON_SECRET is set (optional security layer)
-        // return new Response('Unauthorized', { status: 401 });
+    if (!process.env.CRON_SECRET) {
+        console.error('CRON_SECRET is not configured — refusing to send reminders.');
+        return NextResponse.json(
+            { success: false, message: 'Reminder job is not configured.' },
+            { status: 503 }
+        );
+    }
+    if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+        return NextResponse.json({ success: false, message: 'Unauthorized.' }, { status: 401 });
     }
 
     try {
-        // Calculate tomorrow's date (IST timezone approximation)
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const tomorrowString = tomorrow.toISOString().split('T')[0];
+        const tomorrowString = tomorrowInIST();
 
         // Fetch Confirmed appointments for tomorrow
         const { data: appointments, error } = await supabase
@@ -56,16 +69,16 @@ export async function GET(request: Request) {
                             <h2 style="color: #ffffff; margin: 0; font-size: 24px;">Appointment Reminder ⏰</h2>
                         </div>
                         <div style="padding: 32px; background: #ffffff;">
-                            <p style="font-size: 16px; color: #333;">Dear <strong>${app.patient_name}</strong>,</p>
+                            <p style="font-size: 16px; color: #333;">Dear <strong>${esc(app.patient_name)}</strong>,</p>
                             <p style="font-size: 15px; color: #555; line-height: 1.6;">
                                 This is a gentle reminder that you have an appointment scheduled for tomorrow with Dr. Vaibhavi.
                             </p>
                             
                             <div style="background: #f8fafc; border-left: 4px solid #db2777; padding: 16px; margin: 24px 0; border-radius: 4px;">
-                                <p style="margin: 4px 0; color: #333;"><strong>📅 Date:</strong> ${app.appointment_date}</p>
-                                <p style="margin: 4px 0; color: #333;"><strong>⏰ Time:</strong> ${app.time_slot}</p>
-                                <p style="margin: 4px 0; color: #333;"><strong>🏥 Mode:</strong> ${app.consultation_mode}</p>
-                                <p style="margin: 4px 0; color: #333;"><strong>Reference ID:</strong> ${app.id}</p>
+                                <p style="margin: 4px 0; color: #333;"><strong>📅 Date:</strong> ${esc(app.appointment_date)}</p>
+                                <p style="margin: 4px 0; color: #333;"><strong>⏰ Time:</strong> ${esc(app.time_slot)}</p>
+                                <p style="margin: 4px 0; color: #333;"><strong>🏥 Mode:</strong> ${esc(app.consultation_mode)}</p>
+                                <p style="margin: 4px 0; color: #333;"><strong>Reference ID:</strong> ${esc(app.id)}</p>
                             </div>
 
                             <p style="font-size: 15px; color: #555; line-height: 1.6;">
