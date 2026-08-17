@@ -585,8 +585,8 @@ export default function Home() {
                     
                     <div className="mt-6 flex items-center gap-6">
                         <div>
-                            <p className="text-2xl font-serif font-bold text-gray-900">4+</p>
-                            <p className="text-xs text-gray-500 font-medium">Years Experience</p>
+                            <p className="text-2xl font-serif font-bold text-gray-900">6+</p>
+                            <p className="text-xs text-gray-500 font-medium">Years in Medical Healthcare</p>
                         </div>
                         <div className="w-px h-8 bg-gray-200"></div>
                         <div>
@@ -662,7 +662,7 @@ export default function Home() {
                     <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">MBBS, MS (Obstetrics & Gynaecology) | <span className="text-primary-600">Senior Resident, MGM Belapur Hospital</span></p>
                     
                     <p className="text-gray-600 leading-relaxed mb-4 font-sans text-xs sm:text-sm">
-                        Dr. Vaibhavi is an Obstetrician and Gynecologist with 4+ years of experience across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
+                        Dr. Vaibhavi is an Obstetrician and Gynecologist with 6+ years of experience in medical healthcare across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
                     </p>
                     
                     {/* Awards & Recognition — visual badge grid */}
@@ -697,7 +697,7 @@ export default function Home() {
                                 <div className="text-yellow-400 text-xl mb-1">🌟</div>
                                 <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1000+ Cases</div>
                                 <div className="text-white text-[9px] font-bold leading-tight">Managed</div>
-                                <div className="text-yellow-500/70 text-[8px] mt-0.5">4+ Years Exp.</div>
+                                <div className="text-yellow-500/70 text-[8px] mt-0.5">6+ Years Exp.</div>
                             </div>
                         </div>
                     </div>
