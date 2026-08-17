@@ -287,7 +287,7 @@ export default function AdminDashboard() {
             body += `- Note: ${app.rejectNote}\n`;
         }
 
-        body += `\nShould you need to change your appointment or have any questions, please contact us at +91 91361 68582 / +91 85912 37628.\n\n`;
+        body += `\nShould you need to change your appointment or have any questions, please contact us at +91 92838 80359.\n\n`;
         body += `Best regards,\n`;
         body += `Dr. Vaibhavi Clinic Team\n`;
         body += `MGM Hospital, Vashi / Belapur`;

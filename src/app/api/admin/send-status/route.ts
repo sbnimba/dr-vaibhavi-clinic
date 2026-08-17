@@ -50,7 +50,7 @@ export async function POST(request: Request) {
             </table>
           </div>
           
-          <p style="font-size:13px;color:#6b7280;margin-bottom:0;">If you have any questions, please contact the clinic at +91 91361 68582.</p>
+          <p style="font-size:13px;color:#6b7280;margin-bottom:0;">If you have any questions, please contact the clinic at +91 92838 80359.</p>
         </div>
         <div style="background:#f9fafb;padding:16px 32px;font-size:11px;color:#aaa;text-align:center;">This is an automated notification from the Dr. Vaibhavi Clinic booking system.</div>
       </div>

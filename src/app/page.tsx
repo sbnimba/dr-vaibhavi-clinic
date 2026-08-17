@@ -253,7 +253,7 @@ export default function Home() {
                 `*Ref ID:* ${refId}\n\n` +
                 `Please reply to confirm the appointment.`
             );
-            window.open(`https://wa.me/919284880359?text=${waMsg}`, '_blank');
+            window.open(`https://wa.me/919283880359?text=${waMsg}`, '_blank');
         } catch (err) {
             console.error('[WhatsApp] Notification failed:', err);
         }
@@ -1254,7 +1254,7 @@ export default function Home() {
                                     <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-phone"></i></div>
                                     <div>
                                         <p className="text-[11px] text-gray-500 font-medium">Clinic Reception</p>
-                                        <p className="text-xs sm:text-sm font-bold text-gray-900">022-27572293</p>
+                                        <p className="text-xs sm:text-sm font-bold text-gray-900">+91 92838 80359</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3 bg-white p-3.5 rounded-2xl shadow-sm border border-gray-100">
@@ -1656,7 +1656,7 @@ export default function Home() {
                             </li>
                             <li className="flex items-center gap-2">
                                 <i className="fa-solid fa-phone text-primary-500"></i>
-                                <span>022-27572293</span>
+                                <span>+91 92838 80359</span>
                             </li>
                             <li className="flex items-center gap-2">
                                 <i className="fa-solid fa-envelope text-primary-500"></i>

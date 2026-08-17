@@ -76,7 +76,7 @@ export async function GET(request: Request) {
                                 Warm regards,<br/>
                                 <strong>Dr. Vaibhavi Clinic Team</strong><br/>
                                 MGM Hospital, Sector 1, Belapur, Navi Mumbai<br/>
-                                📞 022-27572293
+                                📞 +91 92838 80359
                             </p>
                         </div>
                     </div>
