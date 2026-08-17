@@ -310,12 +310,12 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-4">
             {/*  Logo  */}
             <a href="#home" className="flex items-center gap-2 xl:gap-3 shrink-0">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white shadow-lg shrink-0">
+                <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white shadow-lg shrink-0">
                     <i className="fa-solid fa-spa"></i>
                 </div>
                 <div className="shrink-0">
                     <h1 className="text-lg xl:text-xl font-serif font-bold text-gray-900 tracking-wide whitespace-nowrap">Dr. Vaibhavi</h1>
-                    <p className="text-[10px] xl:text-xs text-primary-600 font-bold tracking-widest whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
+                    <p className="text-[10px] xl:text-xs text-primary-700 font-bold tracking-widest whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
                 </div>
             </a>
 
@@ -455,7 +455,7 @@ export default function Home() {
                 {/*  Language Toggle — very subtle pink outline  */}
                 <div className="flex items-center gap-1.5 bg-white px-2.5 py-1.5 rounded-lg border border-pink-100 hover:border-pink-300 transition-colors duration-200 cursor-pointer shrink-0 whitespace-nowrap">
                     <i className="fa-solid fa-language text-primary-500 text-xs"></i>
-                    <select id="lang-select" value={currentLang} onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] xl:text-xs font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
+                    <select id="lang-select" value={currentLang} aria-label="Choose website language" onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] xl:text-xs font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
                         <option value="en">English (EN)</option>
                         <option value="hi">हिंदी (HI)</option>
                         <option value="mr">मराठी (MR)</option>
@@ -474,7 +474,7 @@ export default function Home() {
                 {/* Mobile Language Toggle */}
                 <div className="flex items-center gap-1 bg-white px-2 py-1 rounded-full shadow-sm border border-gray-100 cursor-pointer shrink-0">
                     <i className="fa-solid fa-language text-primary-500 text-xs"></i>
-                    <select value={currentLang} onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
+                    <select aria-label="Choose website language" value={currentLang} onChange={(e) => changeLanguage(e.target.value)} className="bg-transparent text-[11px] font-bold text-primary-700 outline-none cursor-pointer appearance-none pr-1">
                         <option value="en">EN</option>
                         <option value="hi">HI</option>
                         <option value="mr">MR</option>
@@ -486,7 +486,7 @@ export default function Home() {
                 </div>
                 <button 
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="w-10 h-10 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center hover:bg-primary-100 transition shadow-sm outline-none cursor-pointer"
+                    className="w-10 h-10 rounded-full bg-primary-50 text-primary-700 flex items-center justify-center hover:bg-primary-100 transition shadow-sm outline-none cursor-pointer"
                     aria-label="Toggle Mobile Menu"
                 >
                     <i className={`fa-solid ${mobileMenuOpen ? 'fa-xmark text-lg' : 'fa-bars text-base'}`}></i>
@@ -569,7 +569,7 @@ export default function Home() {
                             <a href="#booking-form" className="bg-primary-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-regular fa-calendar-check"></i> Book Appointment
                             </a>
-                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
                             </a>
                         </div>
@@ -633,7 +633,7 @@ export default function Home() {
                 <div className="lg:col-span-5 relative mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-12 scale-105 opacity-50 pointer-events-none"></div>
                     <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-6 sm:border-8 border-white bg-white aspect-square max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[440px] flex items-center justify-center mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none">
-                        <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" className="w-full h-full object-cover object-center" />
+                        <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" width={40} height={40} decoding="async" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
                         <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3 z-20 w-max">
@@ -654,13 +654,13 @@ export default function Home() {
     <section id="about" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
             <div className="text-center mb-4" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Get To Know</h2>
+                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Get To Know</h2>
                 <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900">About Us</h3>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
                 <div data-aos="fade-up" className="lg:col-span-4 relative order-2 lg:order-1 mx-auto w-full max-w-[280px] lg:max-w-none">
-                    <img src="images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi OBGY" className="rounded-[2rem] shadow-premium object-cover h-[240px] sm:h-[300px] lg:h-[420px] w-full" />
+                    <img src="/images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi OBGY" className="rounded-[2rem] shadow-premium object-cover h-[240px] sm:h-[300px] lg:h-[420px] w-full" />
                 </div>
                 
                 <div className="lg:col-span-8 order-1 lg:order-2" data-aos="fade-up" data-aos-delay="200">
@@ -682,28 +682,28 @@ export default function Home() {
                                 <div className="text-yellow-400 text-xl mb-1">🏆</div>
                                 <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
                                 <div className="text-white text-[9px] font-bold leading-tight">Award Winner</div>
-                                <div className="text-yellow-500/70 text-[8px] mt-0.5">ACOG · AICOG</div>
+                                <div className="text-yellow-200/90 text-[8px] mt-0.5">ACOG · AICOG</div>
                             </div>
                             {/* Badge 2 */}
                             <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
                                 <div className="text-yellow-400 text-xl mb-1">🥇</div>
                                 <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1st Rank</div>
                                 <div className="text-white text-[9px] font-bold leading-tight">Research Award</div>
-                                <div className="text-yellow-500/70 text-[8px] mt-0.5">MediAce Conference</div>
+                                <div className="text-yellow-200/90 text-[8px] mt-0.5">MediAce Conference</div>
                             </div>
                             {/* Badge 3 */}
                             <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
                                 <div className="text-yellow-400 text-xl mb-1">🎖️</div>
                                 <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">Excellence</div>
                                 <div className="text-white text-[9px] font-bold leading-tight">Case Presenter</div>
-                                <div className="text-yellow-500/70 text-[8px] mt-0.5">POGS Society</div>
+                                <div className="text-yellow-200/90 text-[8px] mt-0.5">POGS Society</div>
                             </div>
                             {/* Badge 4 */}
                             <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
                                 <div className="text-yellow-400 text-xl mb-1">🌟</div>
                                 <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1000+ Cases</div>
                                 <div className="text-white text-[9px] font-bold leading-tight">Managed</div>
-                                <div className="text-yellow-500/70 text-[8px] mt-0.5">6+ Years Exp.</div>
+                                <div className="text-yellow-200/90 text-[8px] mt-0.5">6+ Years Exp.</div>
                             </div>
                         </div>
                     </div>
@@ -729,7 +729,7 @@ export default function Home() {
                         </div>
                     </div>
                     
-                    <a href="#services" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-800 transition text-xs sm:text-sm">
+                    <a href="#services" className="inline-flex items-center gap-2 text-primary-700 font-bold hover:text-primary-800 transition text-xs sm:text-sm">
                         Explore Specialties <i className="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
@@ -738,7 +738,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 3RD PAGE: MISSION, VISION & VALUES ==================== */}
-    <section id="mission-vision" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-start relative bg-white border-b border-gray-100">
+    <section id="mission-vision" tabIndex={0} aria-label="Our mission, vision and values" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-start relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
             <div className="text-center max-w-3xl mx-auto mb-4" data-aos="fade-up">
                 <h2 className="text-[11px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Our Philosophy</h2>
@@ -782,21 +782,21 @@ export default function Home() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="flex flex-col items-center text-center px-3">
-                        <div className="w-10 h-10 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-lg mb-2 shadow-inner">
+                        <div className="w-10 h-10 rounded-2xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg mb-2 shadow-inner">
                             🤝
                         </div>
                         <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Trust</h6>
                         <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug max-w-xs">A safe space where no concern is too small and no question goes unheard.</p>
                     </div>
                     <div className="flex flex-col items-center text-center px-3 border-t md:border-t-0 md:border-l md:border-r border-gray-100">
-                        <div className="w-10 h-10 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-lg mb-2 shadow-inner">
+                        <div className="w-10 h-10 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg mb-2 shadow-inner">
                             ⚕️
                         </div>
                         <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Excellence</h6>
                         <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug max-w-xs">Evidence-based, modern care backed by 1,000+ real clinical experiences.</p>
                     </div>
                     <div className="flex flex-col items-center text-center px-3 border-t md:border-t-0 border-gray-100">
-                        <div className="w-10 h-10 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg mb-2 shadow-inner">
+                        <div className="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-2 shadow-inner">
                             🌸
                         </div>
                         <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Dignity</h6>
@@ -811,7 +811,7 @@ export default function Home() {
     <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Expert Treatments</h2>
+                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Our Specialties</h3>
                 <p className="text-gray-600 text-xs sm:text-sm">From your first period to menopause and everything in between, we provide holistic care for every phase of your life.</p>
             </div>
@@ -852,7 +852,7 @@ export default function Home() {
                 </div>
                 
                 <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
-                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-droplet"></i>
                     </div>
                     <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menstrual Disorders</h4>
@@ -868,7 +868,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
-                    <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                    <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-user-nurse"></i>
                     </div>
                     <h4 className="text-base font-bold font-serif text-gray-900 mb-1">C-Section & Delivery</h4>
@@ -878,7 +878,7 @@ export default function Home() {
                 <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group flex items-center justify-center text-center" data-aos="fade-up" data-aos-delay="400">
                     <div>
                         <h4 className="text-sm font-bold text-gray-900 mb-1">View All Services</h4>
-                        <a href="#appointment" className="w-8 h-8 mx-auto rounded-full bg-primary-50 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors text-sm">
+                        <a href="#appointment" aria-label="Book an appointment" className="w-8 h-8 mx-auto rounded-full bg-primary-50 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors text-sm">
                             <i className="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -1082,7 +1082,7 @@ export default function Home() {
     <section id="testimonials" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Testimonials</h2>
+                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Testimonials</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Patient Stories</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Real experiences from women and families who trusted Dr. Vaibhavi with their health and pregnancy journeys.</p>
             </div>
@@ -1112,8 +1112,8 @@ export default function Home() {
             </div>
 
             <div className="text-center mt-2 pb-4" data-aos="fade-up" data-aos-delay="300">
-                <a href="#" target="_blank" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-800 font-bold rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all text-xs sm:text-sm outline-none group">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                <a href="https://share.google/rIHIKWL49PnG4VcCd" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-800 font-bold rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all text-xs sm:text-sm outline-none group">
+                    <img src="/images/google-g.svg" alt="" aria-hidden="true" width={16} height={16} className="w-4 h-4 group-hover:scale-110 transition-transform" />
                     Read all 5-Star Reviews on Google Maps <i className="fa-solid fa-arrow-up-right-from-square text-gray-400 ml-1"></i>
                 </a>
             </div>
@@ -1124,7 +1124,7 @@ export default function Home() {
     <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center mb-4 lg:mb-6" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Patient Guide</h2>
+                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Patient Guide</h2>
                 <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Frequently Asked Questions</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Clear, transparent answers to common patient questions about pregnancy, gynecology, and consultation modes.</p>
             </div>
@@ -1251,20 +1251,20 @@ export default function Home() {
                     
                     <div className="lg:col-span-5 p-6 lg:p-10 flex flex-col justify-center bg-brand-peach/10 relative overflow-hidden h-full">
                         <div className="relative z-10">
-                            <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-1">Professional Care</h2>
+                            <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Professional Care</h2>
                             <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Book Your Visit</h3>
                             <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">Schedule an in-clinic appointment or an online video consultation with Dr. Vaibhavi.</p>
                             
                             <div className="space-y-3">
                                 <div className="flex items-center gap-3 bg-white p-3.5 rounded-2xl shadow-sm border border-gray-100">
-                                    <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-phone"></i></div>
+                                    <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-700 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-phone"></i></div>
                                     <div>
                                         <p className="text-[11px] text-gray-500 font-medium">Clinic Reception</p>
                                         <p className="text-xs sm:text-sm font-bold text-gray-900">+91 93218 80359</p>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-3 bg-white p-3.5 rounded-2xl shadow-sm border border-gray-100">
-                                    <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-location-dot"></i></div>
+                                    <div className="w-8 h-8 rounded-full bg-primary-50 text-primary-700 flex items-center justify-center text-base shrink-0"><i className="fa-solid fa-location-dot"></i></div>
                                     <div>
                                         <p className="text-[11px] text-gray-500 font-medium">Clinic Location</p>
                                         <p className="text-xs sm:text-sm font-bold text-gray-900">MGM Hospital, Belapur</p>
@@ -1276,6 +1276,7 @@ export default function Home() {
                             {/* Google Map Embed */}
                             <div className="mt-6 rounded-2xl overflow-hidden shadow-sm border border-brand-peach/30 h-48 w-full relative">
                                 <iframe 
+                                    title="Map showing the clinic location — MGM Hospital, CBD Belapur, Navi Mumbai"
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.33611311059!2d73.0390444!3d19.025676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c24cf0000001%3A0x1acc89e51d266e24!2sMGM%20Hospital!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
                                     width="100%" 
                                     height="100%" 
@@ -1359,9 +1360,9 @@ export default function Home() {
                                 {/* Progress Bar */}
                                 <div className="space-y-2">
                                     <div className="flex justify-between items-center text-xs font-bold text-gray-500">
-                                        <span className={bookingStep >= 1 ? 'text-primary-600 font-bold' : ''}>1. Service & Specialty</span>
-                                        <span className={bookingStep >= 2 ? 'text-primary-600 font-bold' : ''}>2. Date & Time</span>
-                                        <span className={bookingStep >= 3 ? 'text-primary-600 font-bold' : ''}>3. Patient Intake</span>
+                                        <span className={bookingStep >= 1 ? 'text-primary-700 font-bold' : ''}>1. Service & Specialty</span>
+                                        <span className={bookingStep >= 2 ? 'text-primary-700 font-bold' : ''}>2. Date & Time</span>
+                                        <span className={bookingStep >= 3 ? 'text-primary-700 font-bold' : ''}>3. Patient Intake</span>
                                     </div>
                                     <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
                                         <div 
@@ -1624,9 +1625,9 @@ export default function Home() {
                             </p>
                         </div>
                         <div className="flex gap-2.5">
-                            <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-youtube"></i></a>
-                            <a href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-linkedin-in"></i></a>
-                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-instagram"></i></a>
+                            <a aria-label="Watch Dr. Vaibhavi on YouTube" href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-youtube"></i></a>
+                            <a aria-label="Dr. Vaibhavi on LinkedIn" href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-linkedin-in"></i></a>
+                            <a aria-label="Dr. Vaibhavi on Instagram" href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="w-7 h-7 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition text-xs"><i className="fa-brands fa-instagram"></i></a>
                         </div>
                     </div>
                     
@@ -1672,14 +1673,14 @@ export default function Home() {
                     </div>
                 </div>
                 
-                <div className="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-500">
+                <div className="border-t border-gray-800 pt-4 flex flex-col md:flex-row justify-between items-center text-[11px] text-gray-400">
                     <p>&copy; 2026 Dr. Vaibhavi. All rights reserved.</p>
                     <div className="space-x-4 mt-2 md:mt-0">
                         <Link href="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link>
                         <Link href="/terms-conditions" className="hover:text-white transition">Terms & Conditions</Link>
                         <Link href="/medical-disclaimer" className="hover:text-white transition">Medical Disclaimer</Link>
-                        <Link href="/patient-portal" className="hover:text-primary-400 transition text-primary-500 font-bold ml-2"><i className="fa-solid fa-hospital-user mr-1"></i> Patient Portal</Link>
-                        <Link href="/admin" className="hover:text-gray-300 transition text-gray-500 font-bold ml-2">Admin Login</Link>
+                        <Link href="/patient-portal" className="hover:text-primary-300 transition text-primary-400 font-bold ml-2"><i className="fa-solid fa-hospital-user mr-1"></i> Patient Portal</Link>
+                        <Link href="/admin" className="hover:text-gray-200 transition text-gray-400 font-bold ml-2">Admin Login</Link>
                     </div>
                 </div>
 

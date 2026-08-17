@@ -25,7 +25,7 @@ export default function PregnancyDietGuidePage() {
 
                 {/* Article Header */}
                 <header className="mb-12 text-center md:text-left">
-                    <span className="inline-block bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Free Download</span>
+                    <span className="inline-block bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4">Free Download</span>
                     <h1 className="text-3xl md:text-5xl font-serif font-bold text-gray-900 leading-tight mb-6">
                         Week-by-Week Pregnancy Diet Guide
                     </h1>
@@ -50,7 +50,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Focus on building strong nutrition foundations.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Folic acid-rich foods (spinach, broccoli, lentils)</li>
                                     <li>Iron-rich foods (dates, beetroot, jaggery, leafy greens)</li>
@@ -59,7 +59,7 @@ export default function PregnancyDietGuidePage() {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-bold text-red-600 text-sm uppercase tracking-wide">Avoid:</h4>
+                                <h4 className="font-bold text-red-700 text-sm uppercase tracking-wide">Avoid:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Excess junk food</li>
                                     <li>Smoking/alcohol</li>
@@ -77,7 +77,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">This is when nausea and fatigue commonly begin.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Small frequent meals</li>
                                     <li>Dry snacks like khakra, toast, crackers</li>
@@ -86,7 +86,7 @@ export default function PregnancyDietGuidePage() {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-bold text-red-600 text-sm uppercase tracking-wide">Avoid:</h4>
+                                <h4 className="font-bold text-red-700 text-sm uppercase tracking-wide">Avoid:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Oily and spicy foods</li>
                                     <li>Long gaps between meals</li>
@@ -103,7 +103,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Your baby’s brain, heart, and organs start forming rapidly.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Nuts and seeds</li>
                                     <li>Milk and dairy products</li>
@@ -114,7 +114,7 @@ export default function PregnancyDietGuidePage() {
                         </div>
                         <div className="mt-4 pt-4 border-t border-pink-200">
                             <p className="text-sm"><strong>Important Nutrients:</strong> Calcium, DHA/Omega-3, Protein</p>
-                            <p className="text-sm mt-2 text-primary-600 font-bold"><i className="fa-solid fa-lightbulb"></i> Tip: Do not skip prenatal supplements prescribed by your doctor.</p>
+                            <p className="text-sm mt-2 text-primary-700 font-bold"><i className="fa-solid fa-lightbulb"></i> Tip: Do not skip prenatal supplements prescribed by your doctor.</p>
                         </div>
                     </div>
 
@@ -125,7 +125,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">You may feel more active and hungry.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Whole grains</li>
                                     <li>Fresh homemade meals</li>
@@ -144,7 +144,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Bones and muscles start strengthening.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Calcium-rich foods</li>
                                     <li>Sesame seeds</li>
@@ -163,7 +163,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Acidity and constipation may increase.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Fiber-rich foods</li>
                                     <li>Warm water</li>
@@ -171,7 +171,7 @@ export default function PregnancyDietGuidePage() {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-bold text-red-600 text-sm uppercase tracking-wide">Avoid:</h4>
+                                <h4 className="font-bold text-red-700 text-sm uppercase tracking-wide">Avoid:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Heavy late-night meals</li>
                                     <li>Fried foods</li>
@@ -188,7 +188,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Healthy weight gain becomes important now.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Healthy fats (nuts, ghee in moderation)</li>
                                     <li>Protein-rich snacks</li>
@@ -208,7 +208,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Baby’s brain and lungs grow rapidly.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Walnuts</li>
                                     <li>Milk</li>
@@ -226,7 +226,7 @@ export default function PregnancyDietGuidePage() {
                         <h3 className="text-xl font-bold text-gray-900 mt-0">Week 32–35: Managing Swelling & Fatigue</h3>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Potassium-rich foods (banana, coconut water)</li>
                                     <li>Hydrating foods</li>
@@ -234,7 +234,7 @@ export default function PregnancyDietGuidePage() {
                                 </ul>
                             </div>
                             <div>
-                                <h4 className="font-bold text-red-600 text-sm uppercase tracking-wide">Avoid:</h4>
+                                <h4 className="font-bold text-red-700 text-sm uppercase tracking-wide">Avoid:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Excess salt</li>
                                     <li>Packaged foods</li>
@@ -251,7 +251,7 @@ export default function PregnancyDietGuidePage() {
                         <p className="mb-4">Focus on easy-to-digest nutritious meals.</p>
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
-                                <h4 className="font-bold text-emerald-600 text-sm uppercase tracking-wide">Eat More:</h4>
+                                <h4 className="font-bold text-emerald-700 text-sm uppercase tracking-wide">Eat More:</h4>
                                 <ul className="mt-2 space-y-1 text-sm list-disc pl-5">
                                     <li>Soups</li>
                                     <li>Khichdi</li>
@@ -262,7 +262,7 @@ export default function PregnancyDietGuidePage() {
                         </div>
                         <div className="mt-4 pt-4 border-t border-blue-200">
                             <p className="text-sm"><strong>Important Nutrients:</strong> Iron, Energy-rich foods, Hydration</p>
-                            <p className="text-sm mt-2 text-primary-600 font-bold"><i className="fa-solid fa-lightbulb"></i> Tip: Eat smaller meals frequently as digestion slows near delivery.</p>
+                            <p className="text-sm mt-2 text-primary-700 font-bold"><i className="fa-solid fa-lightbulb"></i> Tip: Eat smaller meals frequently as digestion slows near delivery.</p>
                         </div>
                     </div>
 

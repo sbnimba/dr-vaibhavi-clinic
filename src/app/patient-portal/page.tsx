@@ -47,7 +47,7 @@ export default function PatientPortal() {
             <div className="max-w-3xl w-full px-4 sm:px-6 lg:px-8">
                 
                 <div className="text-center mb-10">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-600 mb-4 shadow-inner">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary-100 text-primary-700 mb-4 shadow-inner">
                         <i className="fa-solid fa-hospital-user text-2xl"></i>
                     </div>
                     <h1 className="text-3xl font-serif font-bold text-gray-900 mb-3">Patient Portal</h1>
@@ -60,6 +60,7 @@ export default function PatientPortal() {
                             <div className="w-full sm:w-1/3">
                                 <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Search By</label>
                                 <select 
+                                    aria-label="Search by mobile number or email address"
                                     className="w-full bg-gray-50 border border-gray-200 text-gray-800 text-sm rounded-xl focus:ring-primary-500 focus:border-primary-500 block p-3.5"
                                     value={searchType}
                                     onChange={(e) => setSearchType(e.target.value as 'email' | 'mobile')}
@@ -148,7 +149,7 @@ export default function PatientPortal() {
                 )}
 
                 <div className="mt-12 text-center">
-                    <Link href="/" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition text-sm">
+                    <Link href="/" className="inline-flex items-center gap-2 text-primary-700 font-bold hover:text-primary-700 transition text-sm">
                         <i className="fa-solid fa-arrow-left"></i>
                         Back to Home
                     </Link>

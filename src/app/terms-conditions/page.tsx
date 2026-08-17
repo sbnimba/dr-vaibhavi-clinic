@@ -31,7 +31,7 @@ export default function TermsConditions() {
             <p>These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising out of the use of this website or the medical services provided shall be subject to the exclusive jurisdiction of the courts located in Navi Mumbai, Maharashtra.</p>
 
             <div className="mt-12 pt-8 border-t border-gray-100 text-center">
-                <Link href="/" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition">
+                <Link href="/" className="inline-flex items-center gap-2 text-primary-700 font-bold hover:text-primary-700 transition">
                     <i className="fa-solid fa-arrow-left"></i>
                     Back to Home
                 </Link>
