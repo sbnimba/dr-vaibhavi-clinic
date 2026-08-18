@@ -35,8 +35,7 @@ export default function RootLayout({
 
         {/* Google Analytics */}
         {(() => {
-          const gaId = process.env.NEXT_PUBLIC_GA_ID;
-          if (!gaId || gaId === 'G-XXXXXXXXXX') return null;
+          const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-3CEGSVQZRT';
           return (
             <>
               <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
