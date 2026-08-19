@@ -93,7 +93,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": ["Physician", "MedicalBusiness"],
               "name": "Dr. Vaibhavi",
-              "image": "https://sbnimba.github.io/dr-vaibhavi-clinic/images/doctor-hero-hd.jpg",
+              "image": "https://drvaibhavicare.com/images/doctor-hero-hd.jpg",
               "description": "Consultant Obstetrician & Gynecologist. Expert in high-risk pregnancy, PCOS, and women's health.",
               "address": {
                 "@type": "PostalAddress",
@@ -108,7 +108,7 @@ export default function RootLayout({
                 "latitude": 19.0187,
                 "longitude": 73.0416
               },
-              "url": "https://sbnimba.github.io/dr-vaibhavi-clinic/",
+              "url": "https://drvaibhavicare.com/",
               "telephone": "+91-9321880359",
               "openingHoursSpecification": [
                 {
