@@ -236,17 +236,22 @@ export default function AdminDashboard() {
 
     const sendEmailAlert = async (app: Appointment, note: string) => {
         try {
+            // The endpoint requires an approved staff session, and it reads the patient's
+            // address from the database rather than trusting anything sent from here.
+            const { data: { session } } = await supabase.auth.getSession();
+            if (!session) {
+                console.error('[Backend API] No active session — cannot send status update.');
+                return;
+            }
+
             const res = await fetch('/api/admin/send-status', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Bearer ${session.access_token}`,
+                },
                 body: JSON.stringify({
                     id: app.id,
-                    patientName: app.patientName,
-                    emailAddress: app.emailAddress,
-                    date: app.date,
-                    timeSlot: app.timeSlot,
-                    consultationMode: app.consultationMode,
-                    specialty: app.specialty,
                     status: app.status,
                     note: note
                 })
@@ -364,7 +369,7 @@ export default function AdminDashboard() {
             <div className="min-h-screen bg-[#FAF9F6] flex flex-col justify-center items-center p-4">
                 <div className="w-full max-w-md bg-white rounded-3xl p-8 shadow-premium border border-gray-100 animate-scale-in">
                     <div className="text-center mb-6">
-                        <div className="w-16 h-16 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner">
+                        <div className="w-16 h-16 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center text-2xl mx-auto mb-3 shadow-inner">
                             <i className="fa-solid fa-shield-halved"></i>
                         </div>
                         <h2 className="text-2xl font-serif font-bold text-gray-900">
@@ -472,9 +477,9 @@ export default function AdminDashboard() {
                         <div className="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center text-lg shadow-md shadow-primary-500/30">
                             <i className="fa-solid fa-stethoscope"></i>
                         </div>
-                        <div>
-                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900">Dr. Vaibhavi</h1>
-                            <p className="text-[10px] sm:text-xs text-primary-600 font-bold uppercase tracking-wider">Clinical Administration Portal</p>
+                        <div className="min-w-0">
+                            <span className="block truncate text-base sm:text-lg font-serif font-bold text-gray-900">Dr. Vaibhavi</span>
+                            <p className="text-[10px] sm:text-xs text-primary-700 font-bold uppercase tracking-wider">Clinical Administration Portal</p>
                         </div>
                     </div>
 
@@ -493,7 +498,7 @@ export default function AdminDashboard() {
                         </Link>
                         <button 
                             onClick={handleLogout} 
-                            className="bg-red-50 text-red-600 border border-red-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-100 transition flex items-center gap-2"
+                            className="bg-red-50 text-red-700 border border-red-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-100 transition flex items-center gap-2"
                         >
                             <i className="fa-solid fa-power-off"></i>
                             <span className="hidden sm:inline">Logout</span>
@@ -598,7 +603,7 @@ export default function AdminDashboard() {
                                                 {staff.role !== 'SUPER_ADMIN' && (
                                                     <button 
                                                         onClick={() => toggleStaffApproval(staff.id, staff.is_approved)}
-                                                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${staff.is_approved ? 'bg-red-50 text-red-600 hover:bg-red-100' : 'bg-green-50 text-green-600 hover:bg-green-100'}`}
+                                                        className={`px-3 py-1.5 rounded-lg text-xs font-bold transition ${staff.is_approved ? 'bg-red-50 text-red-700 hover:bg-red-100' : 'bg-green-50 text-green-700 hover:bg-green-100'}`}
                                                     >
                                                         {staff.is_approved ? 'Revoke' : 'Approve'}
                                                     </button>
@@ -722,7 +727,7 @@ export default function AdminDashboard() {
                                     {/* Header Row */}
                                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-100 pb-4">
                                         <div className="flex items-start gap-3">
-                                            <div className="w-12 h-12 bg-primary-50 text-primary-600 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-0.5 font-bold shadow-inner">
+                                            <div className="w-12 h-12 bg-primary-50 text-primary-700 rounded-2xl flex items-center justify-center text-xl shrink-0 mt-0.5 font-bold shadow-inner">
                                                 {app.patientName.charAt(0)}
                                             </div>
                                             <div>
@@ -755,14 +760,14 @@ export default function AdminDashboard() {
                                                     </button>
                                                     <button 
                                                         onClick={() => openRescheduleModal(app)}
-                                                        className="bg-blue-50 text-blue-600 border border-blue-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
+                                                        className="bg-blue-50 text-blue-700 border border-blue-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
                                                     >
                                                         <i className="fa-solid fa-calendar-day"></i>
                                                         <span>Reschedule</span>
                                                     </button>
                                                     <button 
                                                         onClick={() => openRejectModal(app)}
-                                                        className="bg-red-50 text-red-600 border border-red-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-100 transition flex items-center gap-1.5"
+                                                        className="bg-red-50 text-red-700 border border-red-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-red-100 transition flex items-center gap-1.5"
                                                     >
                                                         <i className="fa-solid fa-xmark"></i>
                                                         <span>Decline</span>
@@ -781,7 +786,7 @@ export default function AdminDashboard() {
                                                     </button>
                                                     <button 
                                                         onClick={() => openRescheduleModal(app)}
-                                                        className="bg-blue-50 text-blue-600 border border-blue-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
+                                                        className="bg-blue-50 text-blue-700 border border-blue-200 px-4 py-2.5 rounded-xl font-bold text-xs hover:bg-blue-100 transition flex items-center gap-1.5"
                                                     >
                                                         <i className="fa-solid fa-calendar-day"></i>
                                                         <span>Reschedule</span>
@@ -801,7 +806,7 @@ export default function AdminDashboard() {
                                                 href={getGmailComposeLink(app)}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="bg-primary-50 text-primary-600 border border-primary-100 w-9 h-9 rounded-xl flex items-center justify-center hover:bg-primary-100 transition text-sm"
+                                                className="bg-primary-50 text-primary-700 border border-primary-100 w-9 h-9 rounded-xl flex items-center justify-center hover:bg-primary-100 transition text-sm"
                                                 title="Compose Pre-filled Gmail Confirmation"
                                             >
                                                 <i className="fa-solid fa-envelope"></i>

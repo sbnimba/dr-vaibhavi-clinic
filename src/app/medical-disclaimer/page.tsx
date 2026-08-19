@@ -28,7 +28,7 @@ export default function MedicalDisclaimer() {
             <p>Dr. Vaibhavi and the clinic shall not be held liable for any direct, indirect, consequential, or special damages arising from the use of information provided on this website. Reliance on any information provided herein is solely at your own risk.</p>
 
             <div className="mt-12 pt-8 border-t border-gray-100 text-center">
-                <Link href="/" className="inline-flex items-center gap-2 text-primary-600 font-bold hover:text-primary-700 transition">
+                <Link href="/" className="inline-flex items-center gap-2 text-primary-700 font-bold hover:text-primary-700 transition">
                     <i className="fa-solid fa-arrow-left"></i>
                     Back to Home
                 </Link>

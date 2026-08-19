@@ -51,13 +51,13 @@ export default function PregnancyCalculator() {
             {/* Header */}
             <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm py-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-4">
-                    <Link href="/" className="flex items-center gap-3 shrink-0 group outline-none">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <Link href="/" className="flex items-center gap-3 min-w-0 group outline-none">
+                        <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
                             <i className="fa-solid fa-spa"></i>
                         </div>
-                        <div>
-                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-primary-600 transition-colors">Dr. Vaibhavi</h1>
-                            <p className="text-[10px] sm:text-xs text-primary-600 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
+                        <div className="min-w-0">
+                            <span className="block truncate text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-primary-600 transition-colors">Dr. Vaibhavi</span>
+                            <p className="truncate text-[10px] sm:text-xs text-primary-700 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
                         </div>
                     </Link>
 
@@ -157,7 +157,7 @@ export default function PregnancyCalculator() {
                         
                         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                             <div className="w-20 h-20 rounded-full border-4 border-white shadow-xl overflow-hidden mx-auto bg-primary-50">
-                                <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi" className="w-full h-full object-cover object-center" />
+                                <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi" width={40} height={40} decoding="async" className="w-full h-full object-cover object-center" />
                             </div>
 
                             <div>

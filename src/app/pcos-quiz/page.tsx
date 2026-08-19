@@ -49,13 +49,13 @@ export default function PCOSQuizPage() {
     return (
         <div className="min-h-screen bg-[#FAF9F6] py-20 px-4 sm:px-6 lg:px-8 font-sans">
             <div className="max-w-2xl mx-auto">
-                <Link href="/" className="inline-flex items-center text-primary-600 font-bold mb-8 hover:text-primary-700 transition">
+                <Link href="/" className="inline-flex items-center text-primary-700 font-bold mb-8 hover:text-primary-700 transition">
                     <i className="fa-solid fa-arrow-left mr-2"></i> Back to Home
                 </Link>
 
                 <div className="bg-white rounded-[2rem] shadow-premium overflow-hidden border border-gray-100 p-8 sm:p-12">
                     <div className="text-center mb-8">
-                        <h2 className="text-xs font-bold tracking-widest text-primary-600 uppercase mb-2">Health Assessment</h2>
+                        <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-2">Health Assessment</h2>
                         <h1 className="text-3xl font-serif font-bold text-gray-900 mb-3">PCOS Risk Assessment</h1>
                         <p className="text-gray-600 text-sm">Take this quick 2-minute quiz to understand your symptoms better.</p>
                     </div>
@@ -110,7 +110,7 @@ export default function PCOSQuizPage() {
                         </div>
                     )}
                 </div>
-                <p className="text-center text-[10px] text-gray-400 mt-6">* This assessment is for informational purposes only and does not replace professional medical advice.</p>
+                <p className="text-center text-[10px] text-gray-600 mt-6">* This assessment is for informational purposes only and does not replace professional medical advice.</p>
             </div>
         </div>
     );

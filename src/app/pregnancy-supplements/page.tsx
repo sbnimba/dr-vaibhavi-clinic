@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function PregnancySupplements() {
     return (
@@ -8,18 +9,18 @@ export default function PregnancySupplements() {
             {/* Header */}
             <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm py-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center gap-4">
-                    <Link href="/" className="flex items-center gap-3 shrink-0 group outline-none">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
+                    <Link href="/" className="flex items-center gap-3 min-w-0 group outline-none">
+                        <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform duration-300">
                             <i className="fa-solid fa-pills"></i>
                         </div>
-                        <div>
-                            <h1 className="text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-emerald-600 transition-colors">Dr. Vaibhavi</h1>
-                            <p className="text-[10px] sm:text-xs text-emerald-600 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
+                        <div className="min-w-0">
+                            <span className="block truncate text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-emerald-600 transition-colors">Dr. Vaibhavi</span>
+                            <p className="truncate text-[10px] sm:text-xs text-emerald-700 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
                         </div>
                     </Link>
 
                     <Link href="/#community" className="inline-flex items-center gap-2 px-4.5 py-2 rounded-full bg-emerald-50 text-emerald-800 font-bold text-xs sm:text-sm hover:bg-emerald-100 transition shadow-sm border border-emerald-100/50 outline-none">
-                        <i className="fa-solid fa-arrow-left text-xs"></i> Go back to Community & Health Tips
+                        <i className="fa-solid fa-arrow-left text-xs"></i><span className="hidden sm:inline">Go back to Community &amp; Health Tips</span><span className="sm:hidden">Back</span>
                     </Link>
                 </div>
             </header>
@@ -46,7 +47,7 @@ export default function PregnancySupplements() {
                             An expert guide to essential micronutrients, daily recommended dosages, natural dietary sources, and protecting your baby's early development.
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 font-medium bg-white/80 backdrop-blur-sm py-3 px-6 rounded-full w-max mx-auto shadow-sm border border-white">
+                        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 font-medium bg-white/80 backdrop-blur-sm py-3 px-6 rounded-full max-w-full mx-auto shadow-sm border border-white">
                             <div className="flex items-center gap-2">
                                 <i className="fa-solid fa-user-md text-emerald-500"></i>
                                 <span>By <strong>Dr. Vaibhavi</strong></span>
@@ -70,9 +71,12 @@ export default function PregnancySupplements() {
                     {/* Featured Image */}
                     <div className="bg-white p-3 sm:p-4 rounded-[2rem] shadow-2xl border border-gray-100 mb-12">
                         <div className="relative rounded-[1.5rem] overflow-hidden aspect-[16/9] max-h-[450px] bg-gray-100">
-                            <img 
-                                src="images/pregnancy_supplements.png" 
+                            <Image 
+                                src="/images/pregnancy_supplements.webp" 
                                 alt="Pregnancy Supplements Folic Acid Iron Calcium Vitamins" 
+                                fill
+                                priority
+                                sizes="(max-width: 768px) 100vw, 896px"
                                 className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 sm:p-8">
@@ -207,17 +211,17 @@ export default function PregnancySupplements() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div className="bg-white border border-gray-200/60 p-6 rounded-2xl shadow-sm space-y-2">
-                                    <span className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-lg">🦴</span>
+                                    <span className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-lg">🦴</span>
                                     <h4 className="font-serif font-bold text-gray-900 text-base m-0">Calcium</h4>
                                     <p className="text-xs text-gray-600 m-0 leading-relaxed">Supports baby’s bones and teeth as well as maternal bone health. Common requirement: <strong>1000 mg/day</strong>.</p>
                                 </div>
                                 <div className="bg-white border border-gray-200/60 p-6 rounded-2xl shadow-sm space-y-2">
-                                    <span className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-lg">☀️</span>
+                                    <span className="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-lg">☀️</span>
                                     <h4 className="font-serif font-bold text-gray-900 text-base m-0">Vitamin D</h4>
                                     <p className="text-xs text-gray-600 m-0 leading-relaxed">Helps calcium absorption and supports overall maternal immunity and fetal bone health.</p>
                                 </div>
                                 <div className="bg-white border border-gray-200/60 p-6 rounded-2xl shadow-sm space-y-2">
-                                    <span className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center font-bold text-lg">🐟</span>
+                                    <span className="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 flex items-center justify-center font-bold text-lg">🐟</span>
                                     <h4 className="font-serif font-bold text-gray-900 text-base m-0">DHA & Omega-3</h4>
                                     <p className="text-xs text-gray-600 m-0 leading-relaxed">Supports baby’s brain and eye development. Some mothers may be advised DHA supplements during pregnancy.</p>
                                 </div>
@@ -311,7 +315,7 @@ export default function PregnancySupplements() {
                         
                         <div className="relative z-10 max-w-2xl mx-auto space-y-6">
                             <div className="w-20 h-20 rounded-full border-4 border-white shadow-xl overflow-hidden mx-auto bg-emerald-50">
-                                <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi" className="w-full h-full object-cover object-center" />
+                                <img src="/images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi" width={40} height={40} decoding="async" className="w-full h-full object-cover object-center" />
                             </div>
 
                             <div>
