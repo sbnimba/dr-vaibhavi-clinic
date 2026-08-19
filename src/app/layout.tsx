@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 
-// Previously loaded from three separate CDNs at versions that did not match the
-// installed packages (Swiper CSS v10 against Swiper JS v12). Bundling them keeps
-// the CSS and JS in lockstep and removes three render-blocking external requests.
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "aos/dist/aos.css";
-import "swiper/swiper-bundle.css";
+
 
 import { SITE_URL, SITE_NAME, CLINIC_PHONE, OG_IMAGE } from "@/lib/site";
 
@@ -117,6 +112,10 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${lora.variable} scroll-smooth snap-y snap-mandatory antialiased`}
     >
       <head>
+        {/* Libraries */}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         {/* Google Analytics */}
         {(() => {
           const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-3CEGSVQZRT';
