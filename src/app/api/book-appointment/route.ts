@@ -1,4 +1,3 @@
-export const dynamic = 'force-static';
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { esc, clean, isEmail, isMobile, rateLimit } from '@/lib/api-security';
