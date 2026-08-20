@@ -24,7 +24,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Dr. Vaibhavi | Obstetrician & Gynaecologist, Navi Mumbai",
+    default: "Dr. Vaibhavi | Obstetrician & Gynaecologist",
     template: "%s | Dr. Vaibhavi",
   },
   description: DESCRIPTION,
