@@ -1,20 +1,24 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { UserProfile } from '@/types/pregnancy-journey';
-import { getUserProfile } from '@/lib/pregnancy-store';
+import { getUserProfile, saveUserProfile } from '@/lib/pregnancy-store';
 import OnboardingFlow from '@/components/pregnancy-journey/OnboardingFlow';
 import MainDashboard from '@/components/pregnancy-journey/MainDashboard';
 
 export default function JourneyPage() {
     const [profile, setProfile] = useState<UserProfile | null>(null);
-    const [isOnboardingCompleted, setIsOnboardingCompleted] = useState<boolean>(false);
+    const [showOnboarding, setShowOnboarding] = useState(false);
 
     useEffect(() => {
         const stored = getUserProfile();
         setProfile(stored);
-        // Check if user has initialized their profile
-        if (stored && stored.lmpDate) {
-            setIsOnboardingCompleted(true);
+        // Show onboarding only if user has never set their LMP
+        // Otherwise go straight to the journey map
+        if (!stored.hasConfirmedPregnancy && stored.journeyState === 'pre_pregnancy') {
+            // Auto-advance to active_journey for returning users who already have a profile
+            // This means the journey map shows FIRST, not the pre-pregnancy checker
+            const updated = saveUserProfile({ journeyState: 'active_journey', hasConfirmedPregnancy: true });
+            setProfile(updated);
         }
     }, []);
 
@@ -22,21 +26,10 @@ export default function JourneyPage() {
         return (
             <div className="min-h-screen flex items-center justify-center bg-rose-50">
                 <div className="text-center p-6">
-                    <span className="text-4xl animate-bounce block mb-2">🌸</span>
-                    <p className="text-xs font-bold text-gray-500">Loading Journey...</p>
+                    <span className="text-5xl animate-bounce block mb-3">🌸</span>
+                    <p className="text-xs font-bold text-gray-500 animate-pulse">Loading your journey...</p>
                 </div>
             </div>
-        );
-    }
-
-    if (!isOnboardingCompleted) {
-        return (
-            <OnboardingFlow
-                onComplete={(updated) => {
-                    setProfile(updated);
-                    setIsOnboardingCompleted(true);
-                }}
-            />
         );
     }
 
