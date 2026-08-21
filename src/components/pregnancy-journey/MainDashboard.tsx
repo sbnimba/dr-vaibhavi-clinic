@@ -1356,7 +1356,7 @@ export default function MainDashboard({ initialProfile }: Props) {
             {/* DESKTOP SIDE PANEL (LEFT): AVOID / NO (Mom Avoiding) */}
             {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.no && (
               <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-rose-200 rounded-2xl shadow-lg w-44 absolute right-full mr-5 top-1/2 -translate-y-1/2 animate-pop-in">
-                <span className="text-5xl mb-2 animate-pulse">🤰🙅‍♀️</span>
+                <img src="/images/mom_no.png" className="w-20 h-20 object-contain mb-2 animate-pulse" alt="Avoid" />
                 <span className="bg-rose-100 text-rose-700 text-[10px] font-black px-2.5 py-0.5 rounded-full mb-2 uppercase tracking-wider">
                   {t("Avoid", "बचें", "टाळा")} ✕
                 </span>
@@ -1376,7 +1376,7 @@ export default function MainDashboard({ initialProfile }: Props) {
             {/* DESKTOP SIDE PANEL (RIGHT): EAT / YES (Mom Eating) */}
             {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.yes && (
               <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-emerald-200 rounded-2xl shadow-lg w-44 absolute left-full ml-5 top-1/2 -translate-y-1/2 animate-pop-in">
-                <span className="text-5xl mb-2 animate-pulse">🤰😋</span>
+                <img src="/images/mom_yes.png" className="w-20 h-20 object-contain mb-2 animate-pulse" alt="Eat" />
                 <span className="bg-emerald-100 text-emerald-700 text-[10px] font-black px-2.5 py-0.5 rounded-full mb-2 uppercase tracking-wider">
                   {t("Eat / Yes", "खाएं", "खा")} ✓
                 </span>
@@ -1472,7 +1472,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                     <div className="flex lg:hidden gap-2 mb-2.5">
                       {selectedPillar.questions[currentQuestionIdx].visuals.no && selectedPillar.questions[currentQuestionIdx].visuals.no.length > 0 && (
                         <div className="flex-1 bg-rose-50 border border-rose-200 rounded-xl p-1.5 flex items-center gap-2">
-                          <span className="text-2xl shrink-0">🤰🙅‍♀️</span>
+                          <img src="/images/mom_no.png" className="w-8 h-8 object-contain shrink-0" alt="Avoid" />
                           <div className="min-w-0">
                             <p className="text-[8px] font-black text-rose-700 uppercase tracking-wider leading-none mb-0.5">{t("Avoid", "बचें", "टाळा")} ✕</p>
                             <p className="text-[8px] font-bold text-rose-955 truncate leading-tight">
@@ -1484,7 +1484,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                       
                       {selectedPillar.questions[currentQuestionIdx].visuals.yes && selectedPillar.questions[currentQuestionIdx].visuals.yes.length > 0 && (
                         <div className="flex-1 bg-emerald-50 border border-emerald-200 rounded-xl p-1.5 flex items-center gap-2">
-                          <span className="text-2xl shrink-0">🤰😋</span>
+                          <img src="/images/mom_yes.png" className="w-8 h-8 object-contain shrink-0" alt="Eat" />
                           <div className="min-w-0">
                             <p className="text-[8px] font-black text-emerald-700 uppercase tracking-wider leading-none mb-0.5">{t("Eat / Yes", "खाएं", "खा")} ✓</p>
                             <p className="text-[8px] font-bold text-emerald-955 truncate leading-tight">
