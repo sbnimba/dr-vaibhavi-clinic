@@ -1333,7 +1333,7 @@ export default function Home() {
                                         <span>Automated Notifications Dispatched:</span>
                                     </div>
                                     <ul className="list-disc list-inside text-[10px] text-emerald-700 space-y-0.5 pt-0.5 font-medium">
-                                        <li>Email sent to: <strong>IndiasBestGynaecologist@gmail.com</strong></li>
+                                        <li>Email sent to: <strong>drvaibhavicare@gmail.com</strong></li>
                                         <li>Confirmation sent to: <strong>{bookedAppointment?.emailAddress}</strong></li>
                                         <li>Background alert synced to Doctor Portal</li>
                                     </ul>
@@ -1667,7 +1667,7 @@ export default function Home() {
                             </li>
                             <li className="flex items-center gap-2">
                                 <i className="fa-solid fa-envelope text-primary-500"></i>
-                                <span>consult@drvaibhavi.com</span>
+                                <span>drvaibhavicare@gmail.com</span>
                             </li>
                         </ul>
                     </div>
