@@ -1351,40 +1351,45 @@ export default function MainDashboard({ initialProfile }: Props) {
         )}
 
         {/* --- SCREEN 4: QUIZ FLOW --- */}
-        {currentScreen === 'quiz' && selectedStage && selectedPillar && (
+        {currentScreen === 'quiz' && selectedStage && selectedPillar && (() => {
+          const currentQ = selectedPillar.questions[currentQuestionIdx];
+          const activeVisuals = currentQ.visuals || {
+            no: [{ emoji: "⚠️", label: { en: "Precaution", hi: "सावधानी रखें", mr: "काळजी घ्या" } }],
+            yes: [{ emoji: "🩺", label: { en: "Doctor Advice", hi: "डॉक्टर सलाह", mr: "डॉक्टरांचा सल्ला" } }]
+          };
+
+          return (
           <div className="relative w-full">
             {/* DESKTOP SIDE PANEL (LEFT): AVOID / NO (Mom Avoiding) */}
-            {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.no && (
+            {isAnswered && (
               <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-rose-200 rounded-2xl shadow-lg w-44 absolute right-full mr-5 top-1/2 -translate-y-1/2 animate-pop-in">
                 <img src="/images/mom_no.png" className="w-20 h-20 object-contain mb-2 animate-pulse" alt="Avoid" />
-
                 <div className="flex flex-wrap items-center gap-1.5 justify-center mb-1.5">
-                  {selectedPillar.questions[currentQuestionIdx].visuals.no.map((v, vidx) => (
+                  {activeVisuals.no.map((v, vidx) => (
                     <span key={vidx} className="text-2xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s` }}>
                       {v.emoji}
                     </span>
                   ))}
                 </div>
                 <p className="text-[10px] font-extrabold text-rose-955 leading-snug">
-                  {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(' + ')}
+                  {activeVisuals.no.map(v => v.label[language]).join(' + ')}
                 </p>
               </div>
             )}
 
             {/* DESKTOP SIDE PANEL (RIGHT): EAT / YES (Mom Eating) */}
-            {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.yes && (
+            {isAnswered && (
               <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-emerald-200 rounded-2xl shadow-lg w-44 absolute left-full ml-5 top-1/2 -translate-y-1/2 animate-pop-in">
                 <img src="/images/mom_yes.png" className="w-20 h-20 object-contain mb-2 animate-pulse" alt="Eat" />
-
                 <div className="flex flex-wrap items-center gap-1.5 justify-center mb-1.5">
-                  {selectedPillar.questions[currentQuestionIdx].visuals.yes.map((v, vidx) => (
+                  {activeVisuals.yes.map((v, vidx) => (
                     <span key={vidx} className="text-2xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s` }}>
                       {v.emoji}
                     </span>
                   ))}
                 </div>
                 <p className="text-[10px] font-extrabold text-emerald-955 leading-snug">
-                  {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(' + ')}
+                  {activeVisuals.yes.map(v => v.label[language]).join(' + ')}
                 </p>
               </div>
             )}
@@ -1406,13 +1411,13 @@ export default function MainDashboard({ initialProfile }: Props) {
               {/* Question Text Box */}
               <div className="bg-white rounded-2xl p-4 shadow-sm border-2 border-rose-100/60 relative overflow-hidden">
                 <p className="text-sm sm:text-base font-extrabold text-gray-900 leading-snug">
-                  {selectedPillar.questions[currentQuestionIdx].q[language]}
+                  {currentQ.q[language]}
                 </p>
               </div>
 
               {/* Answers Selection */}
               <div className="space-y-2">
-                {selectedPillar.questions[currentQuestionIdx].options.map((opt, oIdx) => {
+                {currentQ.options.map((opt, oIdx) => {
                   const isSelected = selectedOptionIdx === oIdx;
                   const showCorrect = isAnswered && opt.isCorrect;
                   const showWrong = isAnswered && isSelected && !opt.isCorrect;
@@ -1455,7 +1460,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                       </h4>
                     </div>
                     <button 
-                      onClick={() => speakText(selectedPillar.questions[currentQuestionIdx].explanation[language], language)}
+                      onClick={() => speakText(currentQ.explanation[language], language)}
                       className="text-[9px] font-black text-rose-700 bg-white hover:bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm transition-all"
                     >
                       <span>🔊</span>
@@ -1464,36 +1469,28 @@ export default function MainDashboard({ initialProfile }: Props) {
                   </div>
 
                   {/* --- DYNAMIC MOBILE COMPACT VISUALS --- */}
-                  {selectedPillar.questions[currentQuestionIdx].visuals && (
-                    <div className="flex lg:hidden gap-2 mb-2.5">
-                      {selectedPillar.questions[currentQuestionIdx].visuals.no && selectedPillar.questions[currentQuestionIdx].visuals.no.length > 0 && (
-                        <div className="flex-1 bg-rose-50 border border-rose-200 rounded-xl p-1.5 flex items-center gap-2">
-                          <img src="/images/mom_no.png" className="w-8 h-8 object-contain shrink-0" alt="Avoid" />
-                          <div className="min-w-0">
-                            
-                            <p className="text-[8px] font-bold text-rose-955 truncate leading-tight">
-                              {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.emoji).join(' ')} {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(', ')}
-                            </p>
-                          </div>
-                        </div>
-                      )}
-                      
-                      {selectedPillar.questions[currentQuestionIdx].visuals.yes && selectedPillar.questions[currentQuestionIdx].visuals.yes.length > 0 && (
-                        <div className="flex-1 bg-emerald-50 border border-emerald-200 rounded-xl p-1.5 flex items-center gap-2">
-                          <img src="/images/mom_yes.png" className="w-8 h-8 object-contain shrink-0" alt="Eat" />
-                          <div className="min-w-0">
-                            
-                            <p className="text-[8px] font-bold text-emerald-955 truncate leading-tight">
-                              {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.emoji).join(' ')} {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(', ')}
-                            </p>
-                          </div>
-                        </div>
-                      )}
+                  <div className="flex lg:hidden gap-2 mb-2.5">
+                    <div className="flex-1 bg-rose-50 border border-rose-200 rounded-xl p-1.5 flex items-center gap-2">
+                      <img src="/images/mom_no.png" className="w-8 h-8 object-contain shrink-0" alt="Avoid" />
+                      <div className="min-w-0">
+                        <p className="text-[8px] font-bold text-rose-955 truncate leading-tight">
+                          {activeVisuals.no.map(v => v.emoji).join(' ')} {activeVisuals.no.map(v => v.label[language]).join(', ')}
+                        </p>
+                      </div>
                     </div>
-                  )}
+                    
+                    <div className="flex-1 bg-emerald-50 border border-emerald-200 rounded-xl p-1.5 flex items-center gap-2">
+                      <img src="/images/mom_yes.png" className="w-8 h-8 object-contain shrink-0" alt="Eat" />
+                      <div className="min-w-0">
+                        <p className="text-[8px] font-bold text-emerald-955 truncate leading-tight">
+                          {activeVisuals.yes.map(v => v.emoji).join(' ')} {activeVisuals.yes.map(v => v.label[language]).join(', ')}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                   
                   <p className="text-xs text-amber-955 font-semibold leading-relaxed mb-2.5">
-                    {selectedPillar.questions[currentQuestionIdx].explanation[language]}
+                    {currentQ.explanation[language]}
                   </p>
 
                   {/* --- CONNECT TO CLINIC HOOK --- */}
@@ -1506,7 +1503,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                       )}
                     </p>
                     <a
-                      href={getWhatsAppLink(selectedPillar.questions[currentQuestionIdx].q[language])}
+                      href={getWhatsAppLink(currentQ.q[language])}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[10px] px-3 py-1.5 rounded-full shadow-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 shrink-0"
@@ -1532,7 +1529,8 @@ export default function MainDashboard({ initialProfile }: Props) {
               )}
             </div>
           </div>
-        )}
+          );
+        })()}
 
         {/* --- SCREEN 5: PILLAR COMPLETE CELEBRATION --- */}
         {currentScreen === 'pillar_complete' && selectedStage && selectedPillar && (
