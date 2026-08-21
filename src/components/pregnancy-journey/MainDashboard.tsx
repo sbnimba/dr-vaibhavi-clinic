@@ -1410,7 +1410,7 @@ export default function MainDashboard({ initialProfile }: Props) {
               {/* Question Text Box */}
               <div className="bg-white rounded-2xl p-4 shadow-sm border-2 border-rose-100/60 relative overflow-hidden">
                 <p className="text-sm sm:text-base font-extrabold text-gray-900 leading-snug">
-                  "${selectedPillar.questions[currentQuestionIdx].q[language]}"
+                  {selectedPillar.questions[currentQuestionIdx].q[language]}
                 </p>
               </div>
 
@@ -1438,7 +1438,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                               : 'bg-white border-rose-100 hover:border-rose-300 hover:bg-rose-50/20 active:scale-98'
                       }`}
                     >
-                      <span>${opt.text[language]}</span>
+                      <span>{opt.text[language]}</span>
                       
                       {/* Visual state icon */}
                       {showCorrect && <span className="text-emerald-600 text-base">✓</span>}
@@ -1476,7 +1476,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                           <div className="min-w-0">
                             <p className="text-[8px] font-black text-rose-700 uppercase tracking-wider leading-none mb-0.5">{t("Avoid", "बचें", "टाळा")} ✕</p>
                             <p className="text-[8px] font-bold text-rose-955 truncate leading-tight">
-                              ${selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.emoji).join(' ')} ${selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(', ')}
+                              {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.emoji).join(' ')} {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(', ')}
                             </p>
                           </div>
                         </div>
@@ -1488,7 +1488,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                           <div className="min-w-0">
                             <p className="text-[8px] font-black text-emerald-700 uppercase tracking-wider leading-none mb-0.5">{t("Eat / Yes", "खाएं", "खा")} ✓</p>
                             <p className="text-[8px] font-bold text-emerald-955 truncate leading-tight">
-                              ${selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.emoji).join(' ')} ${selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(', ')}
+                              {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.emoji).join(' ')} {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(', ')}
                             </p>
                           </div>
                         </div>
@@ -1497,7 +1497,7 @@ export default function MainDashboard({ initialProfile }: Props) {
                   )}
                   
                   <p className="text-xs text-amber-955 font-semibold leading-relaxed mb-2.5">
-                    ${selectedPillar.questions[currentQuestionIdx].explanation[language]}
+                    {selectedPillar.questions[currentQuestionIdx].explanation[language]}
                   </p>
 
                   {/* --- CONNECT TO CLINIC HOOK --- */}
