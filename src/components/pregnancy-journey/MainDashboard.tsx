@@ -54,7 +54,7 @@ interface Props {
     initialProfile: UserProfile;
 }
 
-// --- FULL COMPREHENSIVE QUIZ DATA (4-5 QUESTIONS PER PILLAR) ---
+// --- FULL COMPREHENSIVE QUIZ DATA (4-5 QUESTIONS PER PILLAR WITH VISUAL HOOKS) ---
 const STAGES_DATA = [
   {
     id: 1,
@@ -79,6 +79,10 @@ const STAGES_DATA = [
               en: "A missed period is usually the first sign. If your period is late by even 7 days, you should do a pregnancy test. Other early signs include morning sickness, breast tenderness, and tiredness.",
               hi: "मासिक धर्म (पीरियड) मिस होना आमतौर पर पहला लक्षण है। अगर पीरियड 7 दिन भी लेट हो, तो टेस्ट करें। अन्य लक्षणों में उल्टी होना, थकान और स्तनों में भारीपन शामिल हैं।",
               mr: "मासिक पाळी चुकणे हे सहसा पहिले लक्षण असते. पाळी ७ दिवस जरी उशिरा आली तरी टेस्ट करावी. इतर लक्षणांमध्ये उलट्या होणे, थकवा आणि स्तनांमध्ये जडपणा जाणवणे यांचा समावेश होतो."
+            },
+            visuals: {
+              yes: [{ emoji: "📅", label: { en: "Late Period", hi: "देरी से पीरियड", mr: "उशिरा पाळी" } }],
+              no: [{ emoji: "🩸", label: { en: "Normal Flow", hi: "सामान्य फ्लो", mr: "नॉर्मल पाळी" } }]
             }
           },
           {
@@ -91,6 +95,10 @@ const STAGES_DATA = [
               en: "Despite its name, morning sickness (nausea and vomiting) can happen at any time of day or night. It is very common in the first 3 months.",
               hi: "नाम के विपरीत, जी मिचलाना और उल्टी होना (मॉर्निंग सिकनेस) दिन या रात में किसी भी समय हो सकता है। यह पहले ३ महीनों में बहुत आम है।",
               mr: "नावाच्या विरुद्ध, उलट्या किंवा मळमळणे (मॉर्निंग सिकनेस) दिवसा किंवा रात्री कधीही होऊ शकते. हे पहिल्या ३ महिन्यांत खूप सामान्य आहे."
+            },
+            visuals: {
+              yes: [{ emoji: "☀️", label: { en: "Morning", hi: "सुबह", mr: "सकाळी" } }, { emoji: "🌙", label: { en: "Night", hi: "रात", mr: "रात्री" } }],
+              no: []
             }
           },
           {
@@ -103,6 +111,10 @@ const STAGES_DATA = [
               en: "During early pregnancy, levels of the hormone progesterone soar, which can make you feel sleepy and exhausted. Resting is very important.",
               hi: "गर्भावस्था की शुरुआत में प्रोजेस्टेरोन हार्मोन का स्तर बहुत बढ़ जाता है, जिससे नींद और थकान महसूस होती है। इस समय आराम करना आवश्यक है।",
               mr: "गर्भावस्थेच्या सुरुवातीला प्रोजेस्टेरॉन हार्मोनचे प्रमाण वाढते, ज्यामुळे झोप आणि थकवा जाणवतो. या काळात विश्रांती घेणे आवश्यक आहे."
+            },
+            visuals: {
+              yes: [{ emoji: "🛌", label: { en: "Take Rest", hi: "आराम करें", mr: "विश्रांती घ्या" } }],
+              no: [{ emoji: "🏋️‍♀️", label: { en: "Overwork", hi: "कठिन काम", mr: "कष्टाचे काम" } }]
             }
           },
           {
@@ -114,7 +126,7 @@ const STAGES_DATA = [
             explanation: {
               en: "Hormonal changes make breasts sensitive, heavy, or sore in the first few weeks as the body prepares for future breastfeeding.",
               hi: "हार्मोनल बदलावों के कारण शुरुआती हफ्तों में स्तन संवेदनशील और भारी हो जाते हैं, क्योंकि शरीर आगे चलकर स्तनपान की तैयारी करता है।",
-              mr: "हार्मोनल बदलांमुळे सुरुवातीच्या आठवड्यात स्तन संवेदनशील आणि जड होतात, कारण शरीर पुढे जाऊन स्तनपानाची तयारी करत असते."
+              mr: "हॉर्मोनल बदलांमुळे सुरुवातीच्या आठवड्यात स्तन संवेदनशील आणि जड होतात, कारण शरीर पुढे जाऊन स्तनपानाची तयारी करत असते."
             }
           }
         ]
@@ -125,7 +137,7 @@ const STAGES_DATA = [
         titles: { en: "Confirm Pregnancy", hi: "गर्भावस्था की पुष्टि", mr: "गर्भावस्थेची खात्री" },
         questions: [
           {
-            q: { en: "Which test is best for home confirmation?", hi: "घर पर प्रेगनेंसी चेक करने के लिए कौन सा टेस्ट सबसे अच्छा है?", mr: "घरी गरोदरपणा तपासण्यासाठी कोणती टेस्ट सर्वात चांगली आहे?" },
+            q: { en: "Which test is best for home confirmation?", hi: "घर पर प्रेगनेंसी चेक करने के लिए कौन सा test सबसे अच्छा है?", mr: "घरी गरोदरपणा तपासण्यासाठी कोणती टेस्ट सर्वात चांगली आहे?" },
             options: [
               { text: { en: "Blood pressure test", hi: "ब्लड प्रेशर चेक करना", mr: "रक्तदाब तपासणे" }, isCorrect: false },
               { text: { en: "Urine pregnancy test kit", hi: "पेशाब जांच किट (Urine Kit)", mr: "लघवीची तपासणी कीट" }, isCorrect: true },
@@ -135,6 +147,10 @@ const STAGES_DATA = [
               en: "A urine test kit detects pregnancy hormones. Use your first morning urine for the most accurate and clear result. Two pink lines mean positive!",
               hi: "यूरिन टेस्ट किट से गर्भावस्था के हार्मोन का पता चलता है। सबसे सटीक परिणाम के लिए सुबह की पहली पेशाब का उपयोग करें। दो गुलाबी लाइनों का मतलब है पॉजिटिव!",
               mr: "लघवीची टेस्ट किट गरोदरपणाच्या संप्रेरकांचा शोध घेते. सर्वात अचूक निकालासाठी सकाळच्या पहिल्या लघवीचा वापर करा. दोन गुलाबी रेषा म्हणजे पॉझिटिव्ह!"
+            },
+            visuals: {
+              yes: [{ emoji: "🧪", label: { en: "Urine Kit", hi: "यूरिन किट", mr: "लघवी कीट" } }],
+              no: [{ emoji: "🩸", label: { en: "Sugar Test", hi: "शुगर जांच", mr: "साखर तपासणी" } }]
             }
           },
           {
@@ -190,6 +206,10 @@ const STAGES_DATA = [
               en: "Visit your gynecologist immediately after a positive test. Early visits help start critical folic acid supplements and confirm a healthy placement via scan.",
               hi: "टेस्ट पॉजिटिव आते ही तुरंत डॉक्टर से मिलें। शुरुआती जांच से बच्चे के विकास के लिए जरूरी फॉलिक एसिड टैबलेट्स समय पर शुरू हो जाती हैं।",
               mr: "मिस झालेली पाळी आणि पॉझिटिव्ह टेस्ट आल्यावर लगेच डॉक्टरांना भेटा. सुरुवातीच्या भेटीमुळे बाळाच्या विकासासाठी आवश्यक फॉलिक ऍसिड गोळ्या वेळेवर सुरू होतात."
+            },
+            visuals: {
+              yes: [{ emoji: "🩺", label: { en: "Doctor", hi: "डॉक्टर", mr: "डॉक्टर" } }],
+              no: [{ emoji: "⏳", label: { en: "Wait", hi: "देरी", mr: "उशीर" } }]
             }
           },
           {
@@ -214,6 +234,10 @@ const STAGES_DATA = [
               en: "Folic acid is essential to prevent major brain and spine birth defects in the baby. It should be taken daily.",
               hi: "फॉलिक एसिड बच्चे के दिमाग और रीढ़ की हड्डी में होने वाले जन्मजात दोषों को रोकने के लिए सबसे आवश्यक पूरक है।",
               mr: "बाळाच्या मेंदू आणि पाठीच्या कण्याच्या विकासातील दोष टाळण्यासाठी फॉलिक ऍसिड गोळी अत्यंत आवश्यक आहे."
+            },
+            visuals: {
+              yes: [{ emoji: "💊", label: { en: "Folic Acid", hi: "फॉलिक एसिड", mr: "फॉलिक ऍसिड" } }],
+              no: []
             }
           },
           {
@@ -254,6 +278,10 @@ const STAGES_DATA = [
               en: "You do not need double food! You only need extra nutrition. Focus on green vegetables, dals, milk, curd, and fruits to provide calcium and iron.",
               hi: "दोगुना भोजन खाने की जरूरत नहीं है! आपको केवल अतिरिक्त पौष्टिकता की आवश्यकता है। हरी सब्जियां, दालें, दूध, दही और फल खाएं।",
               mr: "दुप्पट जेवणाची गरज नाही! तुम्हाला फक्त अतिरिक्त पौष्टिकतेची गरज आहे. हिरव्या भाज्या, डाळी, दूध, दही आणि फळे खा."
+            },
+            visuals: {
+              yes: [{ emoji: "🍛", label: { en: "Nutritious Food", hi: "पौष्टिक भोजन", mr: "पौष्टिक जेवण" } }],
+              no: [{ emoji: "🍽️🍽️", label: { en: "Double Meals", hi: "दोगुना खाना", mr: "दुप्पट जेवण" } }]
             }
           },
           {
@@ -263,21 +291,29 @@ const STAGES_DATA = [
               { text: { en: "Raw Papaya & Pineapple", hi: "कच्चा पपीता और अनानास", mr: "कच्ची पपई आणि अननस" }, isCorrect: true }
             ],
             explanation: {
-              en: "Raw/unripe papaya contains latex which can cause uterine contractions and miscarriage. Avoid it completely.",
-              hi: "कच्चे पपीते में लेटेक्स होता है जो गर्भपात या दर्द का कारण बन सकता है। पके पपीते को भी सावधानी से खाएं, कच्चा पपीता पूरी तरह टालें।",
-              mr: "कच्च्या पपईमध्ये लेटेक्स असते ज्यामुळे गर्भपात होऊ शकतो. म्हणून कच्ची पपई खाणे पूर्णपणे टाळावे."
+              en: "Raw/unripe papaya contains latex which can cause uterine contractions and miscarriage. Avoid it completely. Apples and Oranges are safe.",
+              hi: "कच्चे पपीते और अनानास से पूरी तरह बचें। सेब, संतरा और अमरूद जैसे फल पूरी तरह सुरक्षित और सेहतमंद हैं।",
+              mr: "कच्ची पपई आणि अननस खाणे टाळा. सफरचंद, संत्री किंवा पेरू खाणे पूर्णपणे सुरक्षित आणि आरोग्यासाठी चांगले आहे."
+            },
+            visuals: {
+              yes: [{ emoji: "🍎", label: { en: "Apple", hi: "सेब", mr: "सफरचंद" } }, { emoji: "🍊", label: { en: "Orange", hi: "संतरा", mr: "संत्री" } }],
+              no: [{ emoji: "🥭", label: { en: "Raw Papaya", hi: "कच्चा पपीता", mr: "कच्ची पपई" } }, { emoji: "🍍", label: { en: "Pineapple", hi: "अनानास", mr: "अननस" } }]
             }
           },
           {
             q: { en: "How much water should a pregnant woman drink daily?", hi: "गर्भवती महिला को रोजाना कितना पानी पीना चाहिए?", mr: "गर्भवती महिलेने दररोज किती पाणी प्यावे?" },
             options: [
               { text: { en: "2-3 glasses only", hi: "केवल 2-3 गिलास", mr: "फक्त २-३ ग्लास" }, isCorrect: false },
-              { text: { en: "8-10 glasses (2-3 liters)", hi: "8-10 गिलास (2-3 लीटर)", mr: "८-१० ग्लास (२-३ लीटर)" }, isCorrect: true }
+              { text: { en: "8-10 glasses (2-3 liters)", hi: "8-10 glasses (2-3 liters)", mr: "८-१० ग्लास (२-३ लीटर)" }, isCorrect: true }
             ],
             explanation: {
               en: "Drinking 8-10 glasses of fluids prevents constipation, urinary tract infections (UTI), and keeps the amniotic fluid levels healthy.",
               hi: "रोजाना 8-10 गिलास पानी पीने से कब्ज, यूरिन इन्फेक्शन से बचाव होता है और गर्भ में पानी की कमी नहीं होती।",
               mr: "रोज ८-१० ग्लास पाणी पिल्याने बद्धकोष्ठता, लघवीचा संसर्ग टळतो आणि गर्भातील पाण्याचे प्रमाण चांगले राहते."
+            },
+            visuals: {
+              yes: [{ emoji: "💧", label: { en: "Water", hi: "पानी", mr: "पाणी" } }, { emoji: "🥥", label: { en: "Coconut", hi: "नारियल", mr: "शहाळे" } }],
+              no: [{ emoji: "🥤", label: { en: "Cold drinks", hi: "कोल्ड ड्रिंक्स", mr: "थंड पेये" } }]
             }
           },
           {
@@ -307,8 +343,12 @@ const STAGES_DATA = [
             ],
             explanation: {
               en: "Gentle walking for 20-30 minutes is the best and safest exercise. Avoid lifting heavy buckets or straining your abdomen.",
-              hi: "रोज २०-३० मिनट हल्की सैर करना सबसे बेहतर और सुरक्षित है। भारी पानी की बाल्टी उठाना या पेट पर दबाव डालना टालें।",
+              hi: "रोज २०-३० मिनट हल्की सैर करना सबसे बेहतर and सुरक्षित है। भारी पानी की बाल्टी उठाना या पेट पर दबाव डालना टालें।",
               mr: "दररोज २०-३० मिनिटे हळूहळू चालणे सर्वात सुरक्षित आहे. जड बादल्या उचलणे किंवा पोटावर ताण देणे टाळा."
+            },
+            visuals: {
+              yes: [{ emoji: "🚶‍♀️", label: { en: "Walking", hi: "हल्की सैर", mr: "सैर" } }],
+              no: [{ emoji: "🏋️‍♀️", label: { en: "Heavy Weight", hi: "भारी वजन", mr: "जड वजन" } }]
             }
           },
           {
@@ -364,6 +404,10 @@ const STAGES_DATA = [
               en: "Folic acid helps form the baby's brain and spinal cord. Take it daily as prescribed. Never take self-prescribed painkillers.",
               hi: "फॉलिक एसिड बच्चे के दिमाग और रीढ़ की हड्डी के विकास के लिए बेहद जरूरी है। डॉक्टर की लिखी हुई विटामिन की गोलियां रोज लें।",
               mr: "फॉलिक ऍसिड बाळाच्या मेंदूच्या विकासासाठी अत्यंत आवश्यक आहे. डॉक्टरांनी दिलेल्या गोळ्या दररोज घ्या."
+            },
+            visuals: {
+              yes: [{ emoji: "💊", label: { en: "Folic Acid", hi: "फॉलिक एसिड", mr: "फॉलिक ऍसिड" } }],
+              no: []
             }
           },
           {
@@ -376,6 +420,10 @@ const STAGES_DATA = [
               en: "Many common painkillers and cold medicines are unsafe during pregnancy. Always consult Dr. Vaibhavi before taking any tablet.",
               hi: "गर्भावस्था में बिना डॉक्टर की सलाह के कोई भी दवा (जैसे दर्द निवारक या सर्दी-खांसी की दवा) लेना बच्चे को नुकसान पहुँचा सकता है।",
               mr: "गरोदरपणात डॉक्टरांच्या सल्ल्याशिवाय कोणतेही औषध घेणे बाळासाठी घातक ठरू शकते. नेहमी आधी डॉक्टरांचा सल्ला घ्या."
+            },
+            visuals: {
+              yes: [{ emoji: "🩺", label: { en: "Doctor", hi: "डॉक्टर सलाह", mr: "डॉक्टर" } }],
+              no: [{ emoji: "💊", label: { en: "Self-Pill", hi: "बिना डॉक्टर दवा", mr: "स्वतःची औषधे" } }]
             }
           },
           {
@@ -388,12 +436,16 @@ const STAGES_DATA = [
               en: "Calcium blocks the absorption of iron in the body. Take Iron in the morning and Calcium at night, or keep a 2-hour gap.",
               hi: "कैल्शियम शरीर में आयरन को सोखने से रोकता है। इसलिए आयरन सुबह लें और कैल्शियम दोपहर या रात को लें, दोनों में अंतर रखें।",
               mr: "कॅल्शियम शरीराला लोह शोषून घेण्यापासून रोखते. म्हणूनच दोन्ही गोळ्या वेगवेगळ्या वेळी घ्याव्यात, जसे की एक सकाळी आणि दुसरी रात्री."
+            },
+            visuals: {
+              yes: [{ emoji: "⏰", label: { en: "2 Hours Gap", hi: "2 घंटे का अंतर", mr: "२ तास गॅप" } }],
+              no: [{ emoji: "💊💊", label: { en: "Taken Together", hi: "एक साथ लेना", mr: "एकत्र घेणे" } }]
             }
           },
           {
             q: { en: "What helps your body absorb Iron better?", hi: "आयरन की गोली का असर शरीर में बढ़ाने के लिए इसे किसके साथ लेना चाहिए?", mr: "आयरनच्या गोळीचा परिणाम शरीरात वाढवण्यासाठी ती कशासोबत घ्यावी?" },
             options: [
-              { text: { en: "With lemon water or orange juice (Vitamin C)", hi: "नींबू पानी या संतरे के रस के साथ (विटामिन C)", mr: "कडधान्ये किंवा लिंबू पाण्यासोबत (व्हिटॅमिन C)" }, isCorrect: true },
+              { text: { en: "With lemon water or orange juice (Vitamin C)", hi: "नींबू पानी या संतरे के रस के साथ (विटामिन C)", mr: "लिंबू पाणी किंवा संत्र्याच्या रसासोबत (व्हिटॅमिन C)" }, isCorrect: true },
               { text: { en: "With tea or milk", hi: "चाय या दूध के साथ", mr: "चहा किंवा दुधासोबत" }, isCorrect: false }
             ],
             explanation: {
@@ -428,6 +480,10 @@ const STAGES_DATA = [
               en: "Baby's bones are hardening. Eat calcium-rich foods like milk, paneer, curd, and ragi. Take your Calcium + Vitamin D tablets daily.",
               hi: "बच्चे की हड्डियां इस समय तेजी से विकसित होती हैं। कैल्शियम के लिए दूध, दही, पनीर और रागी का सेवन करें।",
               mr: "या काळात बाळाची हाडे वेगाने विकसित होतात. कॅल्शियमसाठी दूध, दही, पनीर आणि नाचणी खा."
+            },
+            visuals: {
+              yes: [{ emoji: "🥛", label: { en: "Milk", hi: "दूध", mr: "दूध" } }, { emoji: "🧀", label: { en: "Paneer", hi: "पनीर", mr: "पनीर" } }],
+              no: [{ emoji: "🍕", label: { en: "Junk Food", hi: "फास्ट फूड", mr: "जंक फूड" } }]
             }
           },
           {
@@ -462,7 +518,7 @@ const STAGES_DATA = [
             ],
             explanation: {
               en: "Raw salads can harbor harmful bacteria/parasites (like Toxoplasma). Wash fruits and vegetables under running tap water very thoroughly.",
-              hi: "बिना धुली कच्ची सब्जियों में हानिकारक कीटाणु हो सकते हैं। सलाद या फलों को हमेशा नल के साफ पानी में अच्छे से धोकर ही खाएं।",
+              hi: "बिना धुली कच्ची सब्जियों में हानिकारक कीटाणु हो सकते हैं। सलाद या फलों को हमेशा नली के साफ पानी में अच्छे से धोकर ही खाएं।",
               mr: "न धुता सॅलड खाल्ल्याने पोटात जंतू जाऊ शकतात. त्यामुळे सॅलड किंवा फळे नेहमी स्वच्छ पाण्याने धुवूनच खावीत."
             }
           }
@@ -483,6 +539,10 @@ const STAGES_DATA = [
               en: "Sleeping on your left side improves blood flow and nutrients to the baby, and keeps pressure off your major veins.",
               hi: "बाईं करवट लेकर सोने से बच्चे को खून और पोषण का प्रवाह सबसे अच्छा मिलता है। पीठ के बल सीधा सोने से बचें।",
               mr: "डाव्या कुशीवर झोपल्याने बाळाला रक्त आणि पोषणाचा पुरवठा उत्तम होतो. पाठीवर सरळ झोपणे टाळा."
+            },
+            visuals: {
+              yes: [{ emoji: "🛌", label: { en: "Left Side", hi: "बाईं करवट", mr: "डावी कुशी" } }],
+              no: [{ emoji: "🚶‍♀️", label: { en: "Flat Back", hi: "पीठ के बल", mr: "पाठीवर सरळ" } }]
             }
           },
           {
@@ -547,6 +607,10 @@ const STAGES_DATA = [
               en: "Eating small portions frequently helps prevent acidity, heartburn, and bloating, which are very common now.",
               hi: "थोड़ा-थोड़ा करके दिन में कई बार खाने से एसिडिटी और सीने की जलन से राहत मिलती है, जो इस समय बहुत आम है।",
               mr: "दिवसातून अनेक वेळा थोडे-थोडे खाल्ल्याने ऍसिडिटी आणि जळजळ कमी होते, जी या काळात सामान्य आहे."
+            },
+            visuals: {
+              yes: [{ emoji: "🥣", label: { en: "Small Meals", hi: "छोटा भोजन", mr: "छोटे जेवण" } }],
+              no: [{ emoji: "🍽️", label: { en: "Huge Meals", hi: "भारी भोजन", mr: "भारी जेवण" } }]
             }
           },
           {
@@ -559,6 +623,10 @@ const STAGES_DATA = [
               en: "Too much salt causes fluid retention (swelling in feet) and raises blood pressure, which can be dangerous in late pregnancy.",
               hi: "ज्यादा नमक खाने से शरीर में पानी जमा होता है जिससे पैरों में सूजन आती है और बीपी बढ़ सकता है। सादा भोजन ही लें।",
               mr: "जास्त मीठ खाल्ल्याने शरीरात पाणी साठून पायांवर सूज येते आणि बीपी वाढू शकतो. त्यामुळे साधे जेवण घ्यावे."
+            },
+            visuals: {
+              yes: [{ emoji: "🥗", label: { en: "Fresh Salad", hi: "ताजा सलाद", mr: "ताजे सॅलड" } }],
+              no: [{ emoji: "🍟", label: { en: "Chips/Papad", hi: "पापड़/चिप्स", mr: "पापड/चिप्स" } }]
             }
           },
           {
@@ -602,13 +670,17 @@ const STAGES_DATA = [
               en: "Count baby movements daily. You should feel at least 10 kicks/movements in 2 hours after meals. If less, contact your doctor immediately.",
               hi: "रोज भोजन के बाद बच्चे की हलचल गिनें। २ घंटे में कम से कम १० बार हलचल होनी चाहिए। कम होने पर तुरंत डॉक्टर से मिलें।",
               mr: "रोज जेवणानंतर बाळाची हालचाल मोजा. २ तासात किमान १० वेळा हालचाल जाणवली पाहिजे. कमी असल्यास डॉक्टरांशी संपर्क साधा."
+            },
+            visuals: {
+              yes: [{ emoji: "🦶", label: { en: "Active Kicks", hi: "10 हलचल", mr: "१० हालचाली" } }],
+              no: [{ emoji: "💤", label: { en: "No movement", hi: "कोई हलचल नहीं", mr: "हालचाल नाही" } }]
             }
           },
           {
             q: { en: "If you feel the baby has not moved for 3-4 hours, what should you do first?", hi: "यदि बच्चा 3-4 घंटे से नहीं हिला है, तो सबसे पहले क्या करें?", mr: "जर बाळ ३-४ तास हलले नसेल, तर सर्वात आधी काय करावे?" },
             options: [
               { text: { en: "Drink cold water or eat sweet, lie on left side and count", hi: "ठंडा पानी पिएं या कुछ मीठा खाकर बाईं करवट लेटें और गिनें", mr: "थंड पाणी प्या किंवा गोड खाऊन डाव्या कुशीवर झोपा आणि मोजा" }, isCorrect: true },
-              { text: { en: "Wait till tomorrow morning", hi: "अगली सुबह तक का इंतजार करें", mr: "दुसऱ्या दिवशी सकाळपर्यंत वाट पाहा" }, isCorrect: false }
+              { text: { en: "Wait till tomorrow morning", hi: "अगली सुबह तक का इंतजार करें", mr: "अगल्या सकाळी वाट पाहा" }, isCorrect: false }
             ],
             explanation: {
               en: "Drinking cold water or eating a snack often wakes the baby up. Lie on your left side and monitor kicks. If no movement in next 1 hour, contact Dr. Vaibhavi.",
@@ -666,6 +738,10 @@ const STAGES_DATA = [
               en: "Your medical file with all blood tests and scans is vital for the doctors at the hospital to ensure a safe delivery.",
               hi: "आपकी मेडिकल फाइल सबसे जरूरी है। इसमें खून की जांच, सोनोग्राफी रिपोर्ट्स होती हैं जो सुरक्षित प्रसव के लिए आवश्यक हैं।",
               mr: "तुमची वैद्यकीय फाईल सर्वात महत्त्वाची आहे. यामध्ये रक्त तपासणी आणि सोनोग्राफी रिपोर्ट असतात जे बाळंतपणासाठी आवश्यक असतात."
+            },
+            visuals: {
+              yes: [{ emoji: "📁", label: { en: "Medical File", hi: "मेडिकल फाइल", mr: "वैद्यकीय फाईल" } }],
+              no: [{ emoji: "🧸", label: { en: "Toys", hi: "खिलौने", mr: "खेळणी" } }]
             }
           },
           {
@@ -726,13 +802,17 @@ const STAGES_DATA = [
           {
             q: { en: "If your water breaks (leakage of clear fluid), you should:", hi: "यदि पानी की थैली फट जाए (पानी बहने लगे), तो आपको क्या करना चाहिए?", mr: "जर पाण्याची पिशवी फुटली (पाणी वाहू लागले), तर तुम्ही काय करावे?" },
             options: [
-              { text: { en: "Wait at home for pains to start", hi: "दर्द शुरू होने का घर पर इंतजार करें", mr: "घरी कळा येण्याची वाट पाहा" }, isCorrect: false },
+              { text: { en: "Wait at home for pains to start", hi: "दर्द शुरू होने का घर पर इंतजार करें", mr: "घरी कळा यायची वाट पाहा" }, isCorrect: false },
               { text: { en: "Go to the hospital immediately", hi: "बिना देरी किए तुरंत अस्पताल जाएं", mr: "विलंब न करता लगेच रुग्णालयात जा" }, isCorrect: true }
             ],
             explanation: {
               en: "Once the water breaks, the protective barrier around the baby is gone. Visit the hospital immediately to prevent infections, even if you have no pain.",
               hi: "पानी बहना शुरू होने पर संक्रमण का खतरा बढ़ जाता है। दर्द न होने पर भी तुरंत डॉक्टर के पास या अस्पताल जाएं।",
               mr: "पाणी वाहू लागल्यास बाळाला जंतू संसर्ग होण्याचा धोका असतो. कळा येत नसतील तरीही लगेच रुग्णालयात जावे."
+            },
+            visuals: {
+              yes: [{ emoji: "💧", label: { en: "Clear Fluid", hi: "साफ पानी", mr: "स्वच्छ पाणी" } }],
+              no: [{ emoji: "🟢", label: { en: "Green/Brown", hi: "हरा / भूरा", mr: "हिरवे / तपकिरी" } }]
             }
           },
           {
@@ -785,6 +865,10 @@ const STAGES_DATA = [
               en: "Colostrum is the baby's first natural vaccine. It is full of antibodies and protects the newborn from major infections.",
               hi: "पहला पीला गाढ़ा दूध (खीस/कोलोस्ट्रम) बच्चे का पहला टीका होता है। यह बच्चे की रोग प्रतिरोधक क्षमता को बढ़ाता है।",
               mr: "पहिले पिवळे घट्ट दूध बाळाची रोगप्रतिकारक शक्ती वाढवते. हे बाळाचे पहिले नैसर्गिक लस असते."
+            },
+            visuals: {
+              yes: [{ emoji: "🍼", label: { en: "Feed Colostrum", hi: "पीला दूध पिलाएं", mr: "पिवळे दूध पाजा" } }],
+              no: [{ emoji: "🗑️", label: { en: "Discard Milk", hi: "दूध फेंकना", mr: "दूध फेकून देणे" } }]
             }
           },
           {
@@ -797,6 +881,10 @@ const STAGES_DATA = [
               en: "For the first 6 months, baby needs only breast milk. It contains 80%+ water and all nutrients. Extra water can cause infection.",
               hi: "पहले ६ महीने बच्चे को पानी की एक बूंद भी न दें, केवल स्तनपान कराएं। माँ के दूध में पर्याप्त पानी होता है।",
               mr: "पहिल्या ६ महिन्यांत बाळाला पाण्याची गरज नसते, फक्त आईचे दूध पाजावे. दुधात पुरेसे पाणी असते."
+            },
+            visuals: {
+              yes: [{ emoji: "🤱", label: { en: "Breast Milk Only", hi: "केवल माँ का दूध", mr: "फक्त आईचे दूध" } }],
+              no: [{ emoji: "💧", label: { en: "Water / Honey", hi: "पानी या शहद", mr: "पाणी किंवा मध" } }]
             }
           },
           {
@@ -839,7 +927,11 @@ const STAGES_DATA = [
             explanation: {
               en: "Keep the cord dry. Do not apply anything like turmeric or oil as it causes infection. It falls off naturally in 7-14 days.",
               hi: "नाभि को हमेशा सूखा और साफ रखें। उस पर हल्दी, तेल या घी लगाने से इन्फेक्शन हो सकता है। यह 1-2 हफ्ते में खुद गिर जाती है।",
-              mr: "नाळ नेहमी कोरडी ठेवावी. त्यावर हळद किंवा तेल लावल्यास संसर्ग होऊ शकतो. ती १-२ आठवड्यात आपोआप गळून पडते."
+              mr: "नाळ नेहमी कोरडी ठेवावी. त्यावर हळद किंवा तेल लावल्यास संसर्ग जाऊ शकतो. ती १-२ आठवड्यात आपोआप गळून पडते."
+            },
+            visuals: {
+              yes: [{ emoji: "💨", label: { en: "Keep Dry", hi: "सूखा रखें", mr: "कोरडे ठेवा" } }],
+              no: [{ emoji: "🍯", label: { en: "Oil / Turmeric", hi: "तेल / हल्दी", mr: "तेल / हळद" } }]
             }
           },
           {
@@ -1333,6 +1425,51 @@ export default function MainDashboard({ initialProfile }: Props) {
                     <span>{t("Listen", "सुनें", "ऐका")}</span>
                   </button>
                 </div>
+
+                {/* --- DYNAMIC VISUAL FOODS / ACTIONS POPUP --- */}
+                {selectedPillar.questions[currentQuestionIdx].visuals && (
+                  <div className="grid grid-cols-2 gap-3 mb-4 animate-pop-in">
+                    {/* AVOID CARD (NO) */}
+                    {selectedPillar.questions[currentQuestionIdx].visuals.no && selectedPillar.questions[currentQuestionIdx].visuals.no.length > 0 && (
+                      <div className="bg-rose-50/80 border-2 border-rose-200 rounded-2xl p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                        <span className="absolute top-1 right-2 text-rose-600 font-extrabold text-[10px]">✕</span>
+                        <div className="flex items-center gap-2 justify-center mb-1.5">
+                          {selectedPillar.questions[currentQuestionIdx].visuals.no.map((v, vidx) => (
+                            <span key={vidx} className="text-3xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s`, animationDuration: '2.5s' }}>
+                              {v.emoji}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-[10px] font-black text-rose-700 uppercase tracking-wider mb-0.5">
+                          {t("Avoid / No", "न खाएं / बचें", "टाळा / नको")}
+                        </p>
+                        <p className="text-[9px] font-bold text-rose-950/80 leading-tight">
+                          {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(' + ')}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* EAT/USE CARD (YES) */}
+                    {selectedPillar.questions[currentQuestionIdx].visuals.yes && selectedPillar.questions[currentQuestionIdx].visuals.yes.length > 0 && (
+                      <div className="bg-emerald-50/80 border-2 border-emerald-200 rounded-2xl p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                        <span className="absolute top-1 right-2 text-emerald-600 font-extrabold text-[10px]">✓</span>
+                        <div className="flex items-center gap-2 justify-center mb-1.5">
+                          {selectedPillar.questions[currentQuestionIdx].visuals.yes.map((v, vidx) => (
+                            <span key={vidx} className="text-3xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s`, animationDuration: '2.5s' }}>
+                              {v.emoji}
+                            </span>
+                          ))}
+                        </div>
+                        <p className="text-[10px] font-black text-emerald-700 uppercase tracking-wider mb-0.5">
+                          {t("Eat / Yes", "खाएं / उपयोगी", "खा / सोयीचे")}
+                        </p>
+                        <p className="text-[9px] font-bold text-emerald-950/80 leading-tight">
+                          {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(' + ')}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                )}
                 
                 <p className="text-xs sm:text-sm text-amber-950 font-semibold leading-relaxed mb-4">
                   {selectedPillar.questions[currentQuestionIdx].explanation[language]}
