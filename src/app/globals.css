@@ -107,9 +107,13 @@ body { top: 0 !important; }
 html.snap-mandatory { scroll-snap-type: none; }
 section.snap-always { scroll-snap-stop: normal; }
 
-/* Phones and tablets: sections size to their content, no full-screen pages */
+/* Phones and tablets: sections size to their content, no full-screen pages,
+   and no section is its own scroll container. overflow-x:clip on the hero
+   still clips the decorative blobs without trapping the gesture. */
 @media (max-width: 1023px) {
   section.min-h-screen { min-height: auto; }
+  section.snap-always { overflow: visible; }
+  #home { overflow-x: clip; overflow-y: visible; }
 }
 
 /* Mobile hero leads with the doctor's portrait */
