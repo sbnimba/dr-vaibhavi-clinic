@@ -1,28 +1,40 @@
-import { UserProfile, AppLanguage } from '@/types/pregnancy-journey';
+import { UserProfile } from '@/types/pregnancy-journey';
 
-const STORAGE_KEY = 'dr_vaibhavi_pregnancy_profile_v1';
+const STORAGE_KEY = 'dr_vaibhavi_pregnancy_profile_v2';
 
 export const DEFAULT_USER_PROFILE: UserProfile = {
     name: 'मीना',
+    journeyState: 'pre_pregnancy',
     lmpDate: '2026-04-01',
     expectedDueDate: '2027-01-06',
-    calculatedWeek: 20,
-    trimester: 2,
+    calculatedWeek: 12,
+    trimester: 1,
     isFirstPregnancy: true,
     language: 'hi',
-    carePoints: 350,
-    streakDays: 4,
-    unlockedBadges: ['nutrition_explorer', 'hydration_hero'],
+    dietaryPreference: 'veg',
+    carePoints: 120,
+    streakDays: 3,
+    unlockedBadges: ['first_step'],
     completedGameIds: [],
-    completedWeekLessons: [4, 12]
+    completedWeekLessons: [4, 6],
+    babyBookMemories: [
+        {
+            id: 'mem_4',
+            week: 4,
+            title: { en: 'A Tiny Seed Begins', hi: 'नन्हा बीज अंकुरित हुआ', mr: 'चिमुकले रोप तयार झाले' },
+            icon: '🌾',
+            dateUnlocked: '2026-04-28',
+            description: { en: 'Pregnancy confirmed! Baby is the size of a poppy seed.', hi: 'प्रेगनेंसी की पुष्टि! बच्चा अभी खसखस जितना है।', mr: 'खात्री झाली! बाळ खसखस एवढे आहे.' }
+        }
+    ],
+    defeatedMyths: ['eat_for_two'],
+    hasConfirmedPregnancy: false
 };
 
 export function calculatePregnancyDetails(lmpDateString: string): { week: number; trimester: 1 | 2 | 3; dueDate: string } {
     try {
         const lmp = new Date(lmpDateString);
-        if (isNaN(lmp.getTime())) {
-            throw new Error('Invalid LMP date');
-        }
+        if (isNaN(lmp.getTime())) throw new Error('Invalid LMP');
 
         const now = new Date();
         const diffMs = Math.max(0, now.getTime() - lmp.getTime());
@@ -33,13 +45,12 @@ export function calculatePregnancyDetails(lmpDateString: string): { week: number
         if (week >= 13 && week <= 27) trimester = 2;
         if (week >= 28) trimester = 3;
 
-        // Due date = LMP + 280 days (40 weeks)
         const due = new Date(lmp.getTime() + 280 * 24 * 60 * 60 * 1000);
         const dueDate = due.toISOString().split('T')[0];
 
         return { week, trimester, dueDate };
     } catch {
-        return { week: 20, trimester: 2, dueDate: '2027-01-06' };
+        return { week: 12, trimester: 1, dueDate: '2027-01-06' };
     }
 }
 
@@ -69,7 +80,7 @@ export function saveUserProfile(profile: Partial<UserProfile>): UserProfile {
         try {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
         } catch (e) {
-            console.error('Failed to save user profile:', e);
+            console.error('Failed to save profile:', e);
         }
     }
     return updated;
