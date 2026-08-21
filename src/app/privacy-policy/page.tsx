@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
                 Dr. Vaibhavi Clinic<br/>
                 MGM Hospital, Sector 1, Belapur, Navi Mumbai<br/>
                 Medical Reg No: 2020/07/4756 (MMC)<br/>
-                Email: consult@drvaibhavi.com
+                Email: drvaibhavicare@gmail.com
             </p>
 
             <div className="mt-12 pt-8 border-t border-gray-100 text-center">
