@@ -9,7 +9,7 @@ import EmergencyHelpModal from './EmergencyHelpModal';
 // --- ANIMATION STYLES ---
 const customStyles = `
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 @keyframes slideInRight {
@@ -17,17 +17,37 @@ const customStyles = `
   to { opacity: 1; transform: translateX(0); }
 }
 @keyframes popIn {
-  0% { transform: scale(0.9); opacity: 0; }
+  0% { transform: scale(0.95); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 @keyframes pulseGlow {
   0%, 100% { box-shadow: 0 0 5px rgba(244, 63, 94, 0.4); }
   50% { box-shadow: 0 0 15px rgba(244, 63, 94, 0.8); }
 }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+@keyframes floatUp {
+  0% { transform: translateY(105vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.15; }
+  90% { opacity: 0.15; }
+  100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+}
+@keyframes fallDown {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
 .animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
 .animate-slide-in { animation: slideInRight 0.3s ease-out forwards; }
 .animate-pop-in { animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
 .animate-pulse-glow { animation: pulseGlow 2s infinite; }
+.animate-shake { animation: shake 0.4s ease-in-out; }
+.animate-float-1 { animation: floatUp 16s infinite linear; }
+.animate-float-2 { animation: floatUp 22s infinite linear; }
+.animate-float-3 { animation: floatUp 19s infinite linear; }
+.animate-fall { animation: fallDown 3.5s linear forwards; }
 `;
 
 interface Props {
@@ -875,6 +895,22 @@ export default function MainDashboard({ initialProfile }: Props) {
   const [completedPillars, setCompletedPillars] = useState<string[]>([]);
   const [isEmergencyOpen, setIsEmergencyOpen] = useState(false);
   const [language, setLanguage] = useState<AppLanguage>('hi');
+  const [confetti, setConfetti] = useState<{ id: number; left: number; delay: number; color: string }[]>([]);
+
+  // Trigger confetti on complete screen
+  useEffect(() => {
+    if (currentScreen === 'pillar_complete') {
+      const items = Array.from({ length: 45 }).map((_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 1.5,
+        color: ['bg-rose-500', 'bg-yellow-400', 'bg-blue-400', 'bg-emerald-400', 'bg-purple-400', 'bg-pink-400'][Math.floor(Math.random() * 6)]
+      }));
+      setConfetti(items);
+    } else {
+      setConfetti([]);
+    }
+  }, [currentScreen]);
 
   // Load state and completion from local storage
   useEffect(() => {
@@ -973,8 +1009,29 @@ export default function MainDashboard({ initialProfile }: Props) {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF5F5] text-gray-800 flex flex-col font-sans pb-8 antialiased">
+    <div className="min-h-screen bg-[#FFF5F5] text-gray-800 flex flex-col font-sans pb-8 antialiased relative overflow-x-hidden">
       <style>{customStyles}</style>
+
+      {/* --- BACKGROUND FLOATING DECORATIONS --- */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <span className="absolute bottom-0 left-[12%] text-3xl opacity-[0.08] animate-float-1">🌸</span>
+        <span className="absolute bottom-0 left-[35%] text-4xl opacity-[0.08] animate-float-2" style={{ animationDelay: '3s' }}>🌸</span>
+        <span className="absolute bottom-0 left-[68%] text-2xl opacity-[0.08] animate-float-3" style={{ animationDelay: '6s' }}>🌸</span>
+        <span className="absolute bottom-0 left-[85%] text-3xl opacity-[0.08] animate-float-1" style={{ animationDelay: '1.5s' }}>👶</span>
+      </div>
+
+      {/* --- CONFETTI SYSTEM --- */}
+      {confetti.map((item) => (
+        <div
+          key={item.id}
+          className={`fixed w-2.5 h-2.5 rounded-full ${item.color} animate-fall z-50 pointer-events-none`}
+          style={{
+            left: `${item.left}%`,
+            top: `-20px`,
+            animationDelay: `${item.delay}s`,
+          }}
+        />
+      ))}
 
       {/* --- FLOATING HEADER --- */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-rose-100 shadow-sm px-4 py-3 flex items-center justify-between">
@@ -1237,6 +1294,8 @@ export default function MainDashboard({ initialProfile }: Props) {
                     onClick={() => handleOptionClick(oIdx)}
                     disabled={isAnswered}
                     className={`w-full p-4 rounded-2xl border-2 text-left font-bold text-sm flex items-center justify-between transition-all ${
+                      showWrong ? 'animate-shake' : ''
+                    } ${
                       showCorrect 
                         ? 'bg-emerald-50 border-emerald-500 text-emerald-950 scale-[1.01] shadow-xs'
                         : showWrong
