@@ -89,3 +89,16 @@ body { top: 0 !important; }
     scrollbar-width: thin;
     scrollbar-color: rgba(236, 72, 153, 0.25) transparent;
 }
+
+/* Mobile refinements (max-width 639px) */
+@media (max-width: 639px) {
+  .text-\[8px\], .text-\[9px\], .text-\[10px\], .text-\[11px\] { font-size: 0.75rem; line-height: 1.35; }
+  .text-\[8px\].whitespace-nowrap, .text-\[9px\].whitespace-nowrap, .text-\[10px\].whitespace-nowrap, .text-\[11px\].whitespace-nowrap { white-space: normal; }
+  .tracking-widest { letter-spacing: 0.04em; }
+  footer a:not([class*="flex"]), nav a:not([class*="flex"]), li > a:not([class*="flex"]), div > a:not([class*="flex"]):not([class*="rounded-full"]):not([class*="py-"]), section > a:not([class*="flex"]) { display: inline-block; padding-top: 0.4rem; padding-bottom: 0.4rem; }
+  header button, header a, button[type="submit"] { min-height: 44px; }
+  section.min-h-screen { min-height: auto; }
+  #navbar > div > a[href="#home"], #navbar > div > a[href="#home"] > div { min-width: 0; }
+  #navbar > div > a[href="#home"] p { display: none; }
+  div[class*="top-[64px]"] { background-color: #fff; }
+}
