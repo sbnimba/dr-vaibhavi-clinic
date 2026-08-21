@@ -1352,163 +1352,189 @@ export default function MainDashboard({ initialProfile }: Props) {
 
         {/* --- SCREEN 4: QUIZ FLOW --- */}
         {currentScreen === 'quiz' && selectedStage && selectedPillar && (
-          <div className="space-y-5 animate-slide-in">
-            {/* Quiz Header Bar */}
-            <div className="flex items-center justify-between px-1">
-              <div className="flex items-center gap-2">
-                <span className="text-xl">{selectedPillar.icon}</span>
-                <span className="font-black text-xs text-gray-600 uppercase">
-                  {selectedPillar.titles[language]}
+          <div className="relative w-full">
+            {/* DESKTOP SIDE PANEL (LEFT): AVOID / NO (Mom Avoiding) */}
+            {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.no && (
+              <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-rose-200 rounded-2xl shadow-lg w-44 absolute right-full mr-5 top-1/2 -translate-y-1/2 animate-pop-in">
+                <span className="text-5xl mb-2 animate-pulse">🤰🙅‍♀️</span>
+                <span className="bg-rose-100 text-rose-700 text-[10px] font-black px-2.5 py-0.5 rounded-full mb-2 uppercase tracking-wider">
+                  {t("Avoid", "बचें", "टाळा")} ✕
+                </span>
+                <div className="flex flex-wrap items-center gap-1.5 justify-center mb-1.5">
+                  {selectedPillar.questions[currentQuestionIdx].visuals.no.map((v, vidx) => (
+                    <span key={vidx} className="text-2xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s` }}>
+                      {v.emoji}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-[10px] font-extrabold text-rose-955 leading-snug">
+                  {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(' + ')}
+                </p>
+              </div>
+            )}
+
+            {/* DESKTOP SIDE PANEL (RIGHT): EAT / YES (Mom Eating) */}
+            {isAnswered && selectedPillar.questions[currentQuestionIdx].visuals?.yes && (
+              <div className="hidden lg:flex lg:flex-col items-center justify-center text-center p-3.5 bg-white border-2 border-emerald-200 rounded-2xl shadow-lg w-44 absolute left-full ml-5 top-1/2 -translate-y-1/2 animate-pop-in">
+                <span className="text-5xl mb-2 animate-pulse">🤰😋</span>
+                <span className="bg-emerald-100 text-emerald-700 text-[10px] font-black px-2.5 py-0.5 rounded-full mb-2 uppercase tracking-wider">
+                  {t("Eat / Yes", "खाएं", "खा")} ✓
+                </span>
+                <div className="flex flex-wrap items-center gap-1.5 justify-center mb-1.5">
+                  {selectedPillar.questions[currentQuestionIdx].visuals.yes.map((v, vidx) => (
+                    <span key={vidx} className="text-2xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s` }}>
+                      {v.emoji}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-[10px] font-extrabold text-emerald-955 leading-snug">
+                  {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(' + ')}
+                </p>
+              </div>
+            )}
+
+            <div className="space-y-3 animate-slide-in">
+              {/* Quiz Header Bar */}
+              <div className="flex items-center justify-between px-1">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{selectedPillar.icon}</span>
+                  <span className="font-black text-[10px] text-gray-500 uppercase tracking-wider">
+                    {selectedPillar.titles[language]}
+                  </span>
+                </div>
+                <span className="text-[10px] font-black text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-100">
+                  {t("Q.", "प्रश्न", "प्र.")} {currentQuestionIdx + 1} / {selectedPillar.questions.length}
                 </span>
               </div>
-              <span className="text-xs font-black text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-100">
-                {t("Q.", "प्रश्न", "प्र.")} {currentQuestionIdx + 1} / {selectedPillar.questions.length}
-              </span>
-            </div>
 
-            {/* Question Text Box */}
-            <div className="bg-white rounded-[28px] p-6 shadow-md border-2 border-rose-100/60 relative overflow-hidden">
-              <p className="text-base sm:text-lg font-extrabold text-gray-900 leading-snug">
-                "{selectedPillar.questions[currentQuestionIdx].q[language]}"
-              </p>
-            </div>
-
-            {/* Answers Selection */}
-            <div className="space-y-2.5">
-              {selectedPillar.questions[currentQuestionIdx].options.map((opt, oIdx) => {
-                const isSelected = selectedOptionIdx === oIdx;
-                const showCorrect = isAnswered && opt.isCorrect;
-                const showWrong = isAnswered && isSelected && !opt.isCorrect;
-
-                return (
-                  <button
-                    key={oIdx}
-                    onClick={() => handleOptionClick(oIdx)}
-                    disabled={isAnswered}
-                    className={`w-full p-4 rounded-2xl border-2 text-left font-bold text-sm flex items-center justify-between transition-all ${
-                      showWrong ? 'animate-shake' : ''
-                    } ${
-                      showCorrect 
-                        ? 'bg-emerald-50 border-emerald-500 text-emerald-950 scale-[1.01] shadow-xs'
-                        : showWrong
-                          ? 'bg-rose-50 border-rose-500 text-rose-950 scale-[1.01] shadow-xs'
-                          : isAnswered
-                            ? 'bg-gray-50 border-gray-100 text-gray-400 opacity-60'
-                            : 'bg-white border-rose-100 hover:border-rose-300 hover:bg-rose-50/20 active:scale-98'
-                    }`}
-                  >
-                    <span>{opt.text[language]}</span>
-                    
-                    {/* Visual state icon */}
-                    {showCorrect && <span className="text-emerald-600 text-lg">✓</span>}
-                    {showWrong && <span className="text-rose-600 text-lg">✕</span>}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Explanation Section */}
-            {isAnswered && (
-              <div className="bg-amber-50/90 border border-amber-200 rounded-[24px] p-5 animate-fade-in relative">
-                <div className="flex items-center justify-between mb-3 border-b border-amber-200/60 pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg">📢</span>
-                    <h4 className="font-extrabold text-xs text-amber-900 uppercase tracking-wide">
-                      {t("Dr. Vaibhavi's Advice:", "डॉ. वैभवी की सलाह:", "डॉ. वैभवी यांचा सल्ला:")}
-                    </h4>
-                  </div>
-                  <button 
-                    onClick={() => speakText(selectedPillar.questions[currentQuestionIdx].explanation[language], language)}
-                    className="text-xs font-black text-rose-700 bg-white hover:bg-rose-50 border border-rose-200 px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm transition-all"
-                  >
-                    <span>🔊</span>
-                    <span>{t("Listen", "सुनें", "ऐका")}</span>
-                  </button>
-                </div>
-
-                {/* --- DYNAMIC VISUAL FOODS / ACTIONS POPUP --- */}
-                {selectedPillar.questions[currentQuestionIdx].visuals && (
-                  <div className="grid grid-cols-2 gap-3 mb-4 animate-pop-in">
-                    {/* AVOID CARD (NO) */}
-                    {selectedPillar.questions[currentQuestionIdx].visuals.no && selectedPillar.questions[currentQuestionIdx].visuals.no.length > 0 && (
-                      <div className="bg-rose-50/80 border-2 border-rose-200 rounded-2xl p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                        <span className="absolute top-1 right-2 text-rose-600 font-extrabold text-[10px]">✕</span>
-                        <div className="flex items-center gap-2 justify-center mb-1.5">
-                          {selectedPillar.questions[currentQuestionIdx].visuals.no.map((v, vidx) => (
-                            <span key={vidx} className="text-3xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s`, animationDuration: '2.5s' }}>
-                              {v.emoji}
-                            </span>
-                          ))}
-                        </div>
-                        <p className="text-[10px] font-black text-rose-700 uppercase tracking-wider mb-0.5">
-                          {t("Avoid / No", "न खाएं / बचें", "टाळा / नको")}
-                        </p>
-                        <p className="text-[9px] font-bold text-rose-950/80 leading-tight">
-                          {selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(' + ')}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* EAT/USE CARD (YES) */}
-                    {selectedPillar.questions[currentQuestionIdx].visuals.yes && selectedPillar.questions[currentQuestionIdx].visuals.yes.length > 0 && (
-                      <div className="bg-emerald-50/80 border-2 border-emerald-200 rounded-2xl p-3 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                        <span className="absolute top-1 right-2 text-emerald-600 font-extrabold text-[10px]">✓</span>
-                        <div className="flex items-center gap-2 justify-center mb-1.5">
-                          {selectedPillar.questions[currentQuestionIdx].visuals.yes.map((v, vidx) => (
-                            <span key={vidx} className="text-3xl animate-bounce" style={{ animationDelay: `${vidx * 0.2}s`, animationDuration: '2.5s' }}>
-                              {v.emoji}
-                            </span>
-                          ))}
-                        </div>
-                        <p className="text-[10px] font-black text-emerald-700 uppercase tracking-wider mb-0.5">
-                          {t("Eat / Yes", "खाएं / उपयोगी", "खा / सोयीचे")}
-                        </p>
-                        <p className="text-[9px] font-bold text-emerald-950/80 leading-tight">
-                          {selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(' + ')}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-                
-                <p className="text-xs sm:text-sm text-amber-950 font-semibold leading-relaxed mb-4">
-                  {selectedPillar.questions[currentQuestionIdx].explanation[language]}
+              {/* Question Text Box */}
+              <div className="bg-white rounded-2xl p-4 shadow-sm border-2 border-rose-100/60 relative overflow-hidden">
+                <p className="text-sm sm:text-base font-extrabold text-gray-900 leading-snug">
+                  "${selectedPillar.questions[currentQuestionIdx].q[language]}"
                 </p>
-
-                {/* --- CONNECT TO CLINIC HOOK --- */}
-                <div className="mt-3 pt-3 border-t border-amber-200/50 flex flex-col sm:flex-row items-center gap-3">
-                  <p className="text-[11px] text-amber-900 font-extrabold text-center sm:text-left leading-tight">
-                    {t(
-                      "Have a doubt about this topic? Ask Dr. Vaibhavi directly:",
-                      "इस विषय पर कोई शंका है? सीधे डॉ. वैभवी से पूछें:",
-                      "या विषयावर काही शंका आहे का? थेट डॉ. वैभवी यांना विचारा:"
-                    )}
-                  </p>
-                  <a
-                    href={getWhatsAppLink(selectedPillar.questions[currentQuestionIdx].q[language])}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs px-4 py-2.5 rounded-full shadow-md flex items-center justify-center gap-2 transition-all active:scale-95 shrink-0"
-                  >
-                    <span>💬</span>
-                    <span>{t("Consult on WhatsApp", "व्हाट्सएप पर पूछें", "व्हाट्सॲपवर विचारा")}</span>
-                  </a>
-                </div>
               </div>
-            )}
 
-            {/* Next Action Button */}
-            {isAnswered && (
-              <button
-                onClick={handleNextQuestion}
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-black py-4 rounded-full text-sm shadow-md transition-all text-center animate-fade-in"
-              >
-                {currentQuestionIdx < selectedPillar.questions.length - 1 
-                  ? t("Next Question ➔", "अगला प्रश्न ➔", "पुढील प्रश्न ➔")
-                  : t("Finish Quiz 🎉", "क्विज़ समाप्त करें 🎉", "क्विझ पूर्ण करा 🎉")
-                }
-              </button>
-            )}
+              {/* Answers Selection */}
+              <div className="space-y-2">
+                {selectedPillar.questions[currentQuestionIdx].options.map((opt, oIdx) => {
+                  const isSelected = selectedOptionIdx === oIdx;
+                  const showCorrect = isAnswered && opt.isCorrect;
+                  const showWrong = isAnswered && isSelected && !opt.isCorrect;
+
+                  return (
+                    <button
+                      key={oIdx}
+                      onClick={() => handleOptionClick(oIdx)}
+                      disabled={isAnswered}
+                      className={`w-full py-2.5 px-4 rounded-xl border-2 text-left font-bold text-xs flex items-center justify-between transition-all ${
+                        showWrong ? 'animate-shake' : ''
+                      } ${
+                        showCorrect 
+                          ? 'bg-emerald-50 border-emerald-500 text-emerald-955 scale-[1.01] shadow-xs'
+                          : showWrong
+                            ? 'bg-rose-50 border-rose-500 text-rose-955 scale-[1.01] shadow-xs'
+                            : isAnswered
+                              ? 'bg-gray-50 border-gray-100 text-gray-400 opacity-60'
+                              : 'bg-white border-rose-100 hover:border-rose-300 hover:bg-rose-50/20 active:scale-98'
+                      }`}
+                    >
+                      <span>${opt.text[language]}</span>
+                      
+                      {/* Visual state icon */}
+                      {showCorrect && <span className="text-emerald-600 text-base">✓</span>}
+                      {showWrong && <span className="text-rose-600 text-base">✕</span>}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Explanation Section */}
+              {isAnswered && (
+                <div className="bg-amber-50/90 border border-amber-200 rounded-[20px] p-3.5 animate-fade-in relative">
+                  <div className="flex items-center justify-between mb-2 border-b border-amber-200/60 pb-1.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-base">📢</span>
+                      <h4 className="font-extrabold text-[10px] text-amber-900 uppercase tracking-wide">
+                        {t("Dr. Vaibhavi's Advice:", "डॉ. वैभवी की सलाह:", "डॉ. वैभवीयांचा सल्ला:")}
+                      </h4>
+                    </div>
+                    <button 
+                      onClick={() => speakText(selectedPillar.questions[currentQuestionIdx].explanation[language], language)}
+                      className="text-[9px] font-black text-rose-700 bg-white hover:bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm transition-all"
+                    >
+                      <span>🔊</span>
+                      <span>{t("Listen", "सुनें", "ऐका")}</span>
+                    </button>
+                  </div>
+
+                  {/* --- DYNAMIC MOBILE COMPACT VISUALS --- */}
+                  {selectedPillar.questions[currentQuestionIdx].visuals && (
+                    <div className="flex lg:hidden gap-2 mb-2.5">
+                      {selectedPillar.questions[currentQuestionIdx].visuals.no && selectedPillar.questions[currentQuestionIdx].visuals.no.length > 0 && (
+                        <div className="flex-1 bg-rose-50 border border-rose-200 rounded-xl p-1.5 flex items-center gap-2">
+                          <span className="text-2xl shrink-0">🤰🙅‍♀️</span>
+                          <div className="min-w-0">
+                            <p className="text-[8px] font-black text-rose-700 uppercase tracking-wider leading-none mb-0.5">{t("Avoid", "बचें", "टाळा")} ✕</p>
+                            <p className="text-[8px] font-bold text-rose-955 truncate leading-tight">
+                              ${selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.emoji).join(' ')} ${selectedPillar.questions[currentQuestionIdx].visuals.no.map(v => v.label[language]).join(', ')}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {selectedPillar.questions[currentQuestionIdx].visuals.yes && selectedPillar.questions[currentQuestionIdx].visuals.yes.length > 0 && (
+                        <div className="flex-1 bg-emerald-50 border border-emerald-200 rounded-xl p-1.5 flex items-center gap-2">
+                          <span className="text-2xl shrink-0">🤰😋</span>
+                          <div className="min-w-0">
+                            <p className="text-[8px] font-black text-emerald-700 uppercase tracking-wider leading-none mb-0.5">{t("Eat / Yes", "खाएं", "खा")} ✓</p>
+                            <p className="text-[8px] font-bold text-emerald-955 truncate leading-tight">
+                              ${selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.emoji).join(' ')} ${selectedPillar.questions[currentQuestionIdx].visuals.yes.map(v => v.label[language]).join(', ')}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                  
+                  <p className="text-xs text-amber-955 font-semibold leading-relaxed mb-2.5">
+                    ${selectedPillar.questions[currentQuestionIdx].explanation[language]}
+                  </p>
+
+                  {/* --- CONNECT TO CLINIC HOOK --- */}
+                  <div className="mt-2 pt-2 border-t border-amber-200/50 flex flex-col sm:flex-row items-center gap-2">
+                    <p className="text-[10px] text-amber-900 font-extrabold text-center sm:text-left leading-tight flex-1">
+                      {t(
+                        "Have a doubt? Ask Dr. Vaibhavi directly:",
+                        "कोई शंका है? सीधे डॉ. वैभवी से पूछें:",
+                        "काही शंका आहे का? थेट डॉ. वैभवी यांना विचारा:"
+                      )}
+                    </p>
+                    <a
+                      href={getWhatsAppLink(selectedPillar.questions[currentQuestionIdx].q[language])}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[10px] px-3 py-1.5 rounded-full shadow-xs flex items-center justify-center gap-1.5 transition-all active:scale-95 shrink-0"
+                    >
+                      <span>💬</span>
+                      <span>{t("Ask Doctor", "डॉक्टर से पूछें", "डॉक्टरांना विचारा")}</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Next Action Button */}
+              {isAnswered && (
+                <button
+                  onClick={handleNextQuestion}
+                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-black py-2.5 rounded-full text-xs shadow-md transition-all text-center animate-fade-in"
+                >
+                  {currentQuestionIdx < selectedPillar.questions.length - 1 
+                    ? t("Next Question ➔", "अगला प्रश्न ➔", "पुढील प्रश्न ➔")
+                    : t("Finish Quiz 🎉", "क्विज़ समाप्त करें 🎉", "क्विझ पूर्ण करा 🎉")
+                  }
+                </button>
+              )}
+            </div>
           </div>
         )}
 
