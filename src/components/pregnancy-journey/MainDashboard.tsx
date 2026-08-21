@@ -978,7 +978,10 @@ const STAGES_DATA = [
 
 export default function MainDashboard({ initialProfile }: Props) {
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
-  const [currentScreen, setCurrentScreen] = useState<'welcome' | 'stages' | 'pillars' | 'quiz' | 'pillar_complete'>('welcome');
+  const [currentScreen, setCurrentScreen] = useState<'welcome' | 'stages' | 'pillars' | 'quiz' | 'pillar_complete' | 'follow_wall'>('welcome');
+  const [clickedInsta, setClickedInsta] = useState(false);
+  const [clickedYT, setClickedYT] = useState(false);
+  const [socialFollowed, setSocialFollowed] = useState(false);
   const [selectedStage, setSelectedStage] = useState<typeof STAGES_DATA[0] | null>(null);
   const [selectedPillar, setSelectedPillar] = useState<typeof STAGES_DATA[0]['pillars'][0] | null>(null);
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
@@ -1207,8 +1210,126 @@ export default function MainDashboard({ initialProfile }: Props) {
               onClick={handleStartGame}
               className="w-full bg-gradient-to-r from-rose-500 to-pink-600 text-white font-black py-4 rounded-full text-base shadow-lg hover:shadow-xl transform active:scale-95 transition-all"
             >
-              {t("Start My Journey ➔", "मेरी यात्रा शुरू करें ➔", "माझा प्रवास सुरू करा ➔")}
+              {t("Start Pregnancy Game ➔", "गर्भावस्था गेम शुरू करें ➔", "गरोदरपण खेळ सुरू करा ➔")}
             </button>
+          </div>
+        )}
+
+        {/* --- SCREEN 1.5: SOCIAL FOLLOW WALL --- */}
+        {currentScreen === 'follow_wall' && (
+          <div className="bg-white rounded-[32px] p-6 sm:p-8 shadow-xl border-2 border-rose-100 text-center animate-pop-in space-y-6">
+            <div className="w-20 h-20 mx-auto rounded-full bg-rose-50 flex items-center justify-center text-4xl animate-pulse">
+              🎁
+            </div>
+
+            <div className="space-y-2">
+              <h2 className="text-xl sm:text-2xl font-black text-rose-700 leading-tight">
+                {t(
+                  "Join Dr. Vaibhavi's Community! 🌸",
+                  "डॉ. वैभवी के कम्युनिटी से जुड़ें! 🌸",
+                  "डॉ. वैभवी यांच्या कम्युनिटीमध्ये सामील व्हा! 🌸"
+                )}
+              </h2>
+              <p className="text-xs text-gray-600 font-bold leading-relaxed">
+                {t(
+                  "To unlock the Pregnancy Game, please follow us on Instagram & subscribe to our YouTube channel. This helps us share correct medical care with you!",
+                  "गर्भावस्था खेल शुरू करने के लिए, कृपया हमें इंस्टाग्राम पर फॉलो करें और यूट्यूब चैनल को सब्सक्राइब करें। इससे हमें आप तक सही जानकारी पहुँचाने में मदद मिलेगी!",
+                  "गरोदरपणाचा खेळ सुरू करण्यासाठी, कृपया आम्हाला इंस्टाग्रामवर फॉलो करा आणि यूट्यूब चॅनेलला सबस्क्राईब करा. यामुळे तुमच्यापर्यंत योग्य माहिती पोहचवण्यास मदत होईल!"
+                )}
+              </p>
+            </div>
+
+            {/* ACTION BUTTONS */}
+            <div className="space-y-3 pt-2">
+              {/* Instagram link */}
+              <a
+                href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setClickedInsta(true)}
+                className={`w-full py-3.5 px-4 rounded-2xl font-black text-sm flex items-center justify-between border-2 transition-all active:scale-98 ${
+                  clickedInsta
+                    ? "bg-emerald-50 border-emerald-500 text-emerald-955"
+                    : "bg-gradient-to-r from-pink-500 via-rose-500 to-yellow-500 border-rose-400 text-white shadow-md hover:shadow-lg"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📸</span>
+                  <span>
+                    {t(
+                      "Follow on Instagram",
+                      "इंस्टाग्राम पर फॉलो करें",
+                      "इन्स्टाग्रामवर फॉलो करा"
+                    )}
+                  </span>
+                </div>
+                {clickedInsta ? (
+                  <span className="text-xs bg-emerald-500 text-white font-extrabold px-2.5 py-0.5 rounded-full">✓ Completed</span>
+                ) : (
+                  <span className="text-xs font-black bg-white/20 px-2.5 py-0.5 rounded-full">Follow ➔</span>
+                )}
+              </a>
+
+              {/* YouTube Link */}
+              <a
+                href="https://www.youtube.com/@DrVaibhavicare"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setClickedYT(true)}
+                className={`w-full py-3.5 px-4 rounded-2xl font-black text-sm flex items-center justify-between border-2 transition-all active:scale-98 ${
+                  clickedYT
+                    ? "bg-emerald-50 border-emerald-500 text-emerald-955"
+                    : "bg-red-600 border-red-500 text-white shadow-md hover:shadow-lg"
+                }`}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">🎥</span>
+                  <span>
+                    {t(
+                      "Subscribe on YouTube",
+                      "यूट्यूब पर सब्सक्राइब करें",
+                      "युट्यूबवर सबस्क्राईब करा"
+                    )}
+                  </span>
+                </div>
+                {clickedYT ? (
+                  <span className="text-xs bg-emerald-500 text-white font-extrabold px-2.5 py-0.5 rounded-full">✓ Completed</span>
+                ) : (
+                  <span className="text-xs font-black bg-white/20 px-2.5 py-0.5 rounded-full">Subscribe ➔</span>
+                )}
+              </a>
+            </div>
+
+            {/* UNLOCK BUTTON */}
+            <div className="pt-4 border-t border-rose-100/50">
+              <button
+                disabled={!(clickedInsta && clickedYT)}
+                onClick={() => {
+                  localStorage.setItem('dr_vaibhavi_social_followed', 'true');
+                  setSocialFollowed(true);
+                  setCurrentScreen('stages');
+                }}
+                className={`w-full py-4 rounded-full font-black text-base shadow-md transition-all flex items-center justify-center gap-2 ${
+                  (clickedInsta && clickedYT)
+                    ? "bg-gradient-to-r from-rose-500 to-pink-600 hover:shadow-lg text-white transform active:scale-95 cursor-pointer"
+                    : "bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed"
+                }`}
+              >
+                <span>🎮</span>
+                <span>
+                  {t(
+                    "Unlock & Start Game",
+                    "गेम अनलॉक करके शुरू करें",
+                    "गेम अनलॉक करा आणि खेळा"
+                  )}
+                </span>
+              </button>
+              {!(clickedInsta && clickedYT) && (
+                <p className="text-[10px] text-rose-600 font-bold mt-2">
+                  * {t("Please click both links above to unlock the game", "गेम अनलॉक करने के लिए कृपया ऊपर दिए गए दोनों लिंक पर क्लिक करें", "गेम अनलॉक करण्यासाठी कृपया वरील दोन्ही लिंकवर क्लिक करा")}
+                </p>
+              )}
+            </div>
           </div>
         )}
 
