@@ -681,86 +681,6 @@ export default function Home() {
 
 
 
-    {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
-    <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
-                <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Our Specialties</h3>
-                <p className="text-gray-600 text-xs sm:text-sm">From your first period to menopause and everything in between, we provide holistic care for every phase of your life.</p>
-            </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {/*  Service Cards  */}
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
-                    <div className="w-10 h-10 rounded-xl bg-brand-blush/30 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-person-pregnant"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Pregnancy Care</h4>
-                    <p className="text-[11px] text-gray-600">Complete antenatal and postnatal care focusing on healthy, normal deliveries.</p>
-                </div>
-                
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
-                    <div className="w-10 h-10 rounded-xl bg-brand-lavender/50 text-purple-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-heart-pulse"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">High Risk Pregnancy</h4>
-                    <p className="text-[11px] text-gray-600">Expert management of gestational diabetes, BP, and multiple pregnancies.</p>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
-                    <div className="w-10 h-10 rounded-xl bg-brand-teal/30 text-teal-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-dna"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">PCOS (PMOS) Treatment</h4>
-                    <p className="text-[11px] text-gray-600 mb-2">Holistic medical and lifestyle management for PCOS (now PMOS) and hormonal imbalances.</p>
-                    <Link href="/pcos-quiz" className="inline-block mt-1 text-[10px] font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 px-3 py-1.5 rounded-full transition-colors border border-teal-100">Take PCOS Risk Quiz <i className="fa-solid fa-arrow-right ml-1"></i></Link>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
-                    <div className="w-10 h-10 rounded-xl bg-brand-peach/50 text-orange-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-baby-carriage"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Infertility Consult</h4>
-                    <p className="text-[11px] text-gray-600">Compassionate guidance, evaluation, and treatments for couples trying to conceive.</p>
-                </div>
-                
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
-                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-droplet"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menstrual Disorders</h4>
-                    <p className="text-[11px] text-gray-600">Diagnosis and treatment for heavy bleeding, pain, and irregular cycles.</p>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
-                    <div className="w-10 h-10 rounded-xl bg-gray-200 text-gray-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-leaf"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menopause Care</h4>
-                    <p className="text-[11px] text-gray-600">Supportive therapies and management for a smooth menopausal transition.</p>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
-                    <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
-                        <i className="fa-solid fa-user-nurse"></i>
-                    </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">C-Section & Delivery</h4>
-                    <p className="text-[11px] text-gray-600">Safe, painless normal deliveries and expert caesarean sections.</p>
-                </div>
-
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group flex items-center justify-center text-center" data-aos="fade-up" data-aos-delay="400">
-                    <div>
-                        <h4 className="text-sm font-bold text-gray-900 mb-1">View All Services</h4>
-                        <a href="#appointment" aria-label="Book an appointment" className="w-8 h-8 mx-auto rounded-full bg-primary-50 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors text-sm">
-                            <i className="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     {/* ==================== 7TH PAGE: COMMUNITY & PREGNANCY TIPS ==================== */}
     <section id="community" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-16 lg:pt-20 pb-4 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full text-center">
@@ -950,6 +870,86 @@ export default function Home() {
                 </div>
                 <div className="w-full sm:w-auto relative z-10 shrink-0">
                     <LeadCaptureForm />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
+    <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
+                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
+                <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Our Specialties</h3>
+                <p className="text-gray-600 text-xs sm:text-sm">From your first period to menopause and everything in between, we provide holistic care for every phase of your life.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                {/*  Service Cards  */}
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div className="w-10 h-10 rounded-xl bg-brand-blush/30 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-person-pregnant"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Pregnancy Care</h4>
+                    <p className="text-[11px] text-gray-600">Complete antenatal and postnatal care focusing on healthy, normal deliveries.</p>
+                </div>
+                
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div className="w-10 h-10 rounded-xl bg-brand-lavender/50 text-purple-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">High Risk Pregnancy</h4>
+                    <p className="text-[11px] text-gray-600">Expert management of gestational diabetes, BP, and multiple pregnancies.</p>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div className="w-10 h-10 rounded-xl bg-brand-teal/30 text-teal-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-dna"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">PCOS (PMOS) Treatment</h4>
+                    <p className="text-[11px] text-gray-600 mb-2">Holistic medical and lifestyle management for PCOS (now PMOS) and hormonal imbalances.</p>
+                    <Link href="/pcos-quiz" className="inline-block mt-1 text-[10px] font-bold text-teal-700 bg-teal-50 hover:bg-teal-100 px-3 py-1.5 rounded-full transition-colors border border-teal-100">Take PCOS Risk Quiz <i className="fa-solid fa-arrow-right ml-1"></i></Link>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                    <div className="w-10 h-10 rounded-xl bg-brand-peach/50 text-orange-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-baby-carriage"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Infertility Consult</h4>
+                    <p className="text-[11px] text-gray-600">Compassionate guidance, evaluation, and treatments for couples trying to conceive.</p>
+                </div>
+                
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                    <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-droplet"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menstrual Disorders</h4>
+                    <p className="text-[11px] text-gray-600">Diagnosis and treatment for heavy bleeding, pain, and irregular cycles.</p>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                    <div className="w-10 h-10 rounded-xl bg-gray-200 text-gray-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-leaf"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menopause Care</h4>
+                    <p className="text-[11px] text-gray-600">Supportive therapies and management for a smooth menopausal transition.</p>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                    <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
+                        <i className="fa-solid fa-user-nurse"></i>
+                    </div>
+                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">C-Section & Delivery</h4>
+                    <p className="text-[11px] text-gray-600">Safe, painless normal deliveries and expert caesarean sections.</p>
+                </div>
+
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group flex items-center justify-center text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <h4 className="text-sm font-bold text-gray-900 mb-1">View All Services</h4>
+                        <a href="#appointment" aria-label="Book an appointment" className="w-8 h-8 mx-auto rounded-full bg-primary-50 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors text-sm">
+                            <i className="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
