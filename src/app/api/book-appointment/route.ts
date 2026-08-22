@@ -109,7 +109,7 @@ export async function POST(request: Request) {
       mlFormData.append('ml-submit', '1');
       mlFormData.append('anticsrf', 'true');
 
-      await fetch('https://assets.mailerlite.com/jsonp/2371546/forms/188182160208823762/subscribe', {
+      await fetch('https://assets.mailerlite.com/jsonp/2590587/forms/196519910434669622/subscribe', {
         method: 'POST',
         body: mlFormData,
       });
