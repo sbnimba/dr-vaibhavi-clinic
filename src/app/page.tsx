@@ -569,6 +569,9 @@ export default function Home() {
                             <a href="#booking-form" className="bg-primary-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-regular fa-calendar-check"></i> Book Appointment
                             </a>
+                            <Link href="/journey" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:shadow-lg transition shadow-lg shadow-pink-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
+                                🎮 Play Pregnancy Game
+                            </Link>
                             <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
                                 <i className="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
                             </a>
