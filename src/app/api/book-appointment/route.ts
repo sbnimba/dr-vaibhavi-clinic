@@ -92,7 +92,7 @@ export async function POST(request: Request) {
     // Send the email
     const mailOptions = {
       from: `"Dr. Vaibhavi Clinic Booking System" <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER, // Sending to the doctor's own email
+      to: 'drvaibhavicare@gmail.com', // Sending to the doctor's specific clinic email
       replyTo: data.emailAddress, // So the doctor can hit reply to email the patient directly
       // Subject is plain text, not HTML — escaping here would leak "&amp;" into the inbox.
       subject: `🩺 New Booking: ${data.patientName} — ${data.date} at ${data.timeSlot}`,
