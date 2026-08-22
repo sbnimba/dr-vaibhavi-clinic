@@ -64,7 +64,7 @@ export default function AboutDoctorPage() {
                                         <div className="text-yellow-400 text-lg mb-1">🏆</div>
                                         <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
                                         <div className="text-white text-[9px] font-bold leading-tight">Award Winner</div>
-                                        <div className="text-yellow-200/90 text-[8px] mt-0.5">ACOG · AICOG</div>
+                                        <div className="text-yellow-200/90 text-[8px] mt-0.5">AICOG</div>
                                     </div>
                                     {/* Badge 2 */}
                                     <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">

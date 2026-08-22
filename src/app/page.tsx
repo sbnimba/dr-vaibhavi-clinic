@@ -598,7 +598,7 @@ export default function Home() {
                                 <div className="text-lg mb-1">🏆</div>
                                 <div className="text-amber-800 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
                                 <div className="text-gray-900 text-[9px] font-bold leading-tight">Award Winner</div>
-                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">ACOG · AICOG</div>
+                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">AICOG</div>
                             </div>
                             {/* Badge 2 */}
                             <div className="bg-white/80 backdrop-blur-xs border border-amber-200/80 rounded-2xl p-2.5 text-center shadow-xs hover:border-amber-400 hover:-translate-y-0.5 transition-all duration-200">
