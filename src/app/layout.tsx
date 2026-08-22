@@ -118,7 +118,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         {/* Google Analytics */}
         {(() => {
-          const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-3CEGSVQZRT';
+          const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-1K3SV4Q09J';
           return (
             <>
               <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>
