@@ -768,12 +768,15 @@ export default function Home() {
             <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2" data-aos="fade-up" data-aos-delay="100">Community & Health Tips</h3>
             
             <div className="flex flex-wrap justify-center gap-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" className="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition flex items-center gap-2 text-xs sm:text-sm">
+                <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition flex items-center gap-2 text-xs sm:text-sm">
                     <i className="fa-brands fa-instagram text-base"></i> Follow on Instagram
                 </a>
-                <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" className="bg-red-600 text-white px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition flex items-center gap-2 text-xs sm:text-sm">
-                    <i className="fa-brands fa-youtube text-base"></i> Watch on YouTube
-                </a>
+                <Link href="/journey" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition flex items-center gap-2 text-xs sm:text-sm">
+                    🎮 Play Pregnancy Game
+                </Link>
+                <Link href="/pcos-quiz" className="bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-lg transition flex items-center gap-2 text-xs sm:text-sm">
+                    📝 Take PCOS Quiz
+                </Link>
             </div>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-left" data-aos="fade-up" data-aos-delay="300">
