@@ -564,30 +564,30 @@ export default function Home() {
                         Warm, private, and judgment-free women's care — at every stage of life
                     </p>
                     
-                    <div className="flex flex-col sm:flex-row gap-3 mt-4 w-full sm:w-auto">
-                        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                            <a href="#booking-form" className="bg-primary-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:bg-primary-700 transition shadow-lg shadow-primary-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
-                                <i className="fa-regular fa-calendar-check"></i> Book Appointment
+                    <div className="flex flex-row flex-wrap lg:flex-nowrap items-center gap-2 mt-4 w-full">
+                        <div className="flex flex-row items-center gap-1.5 whitespace-nowrap">
+                            <a href="#booking-form" className="bg-primary-600 text-white px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center hover:bg-primary-700 transition shadow-md whitespace-nowrap flex items-center justify-center gap-1.5">
+                                <i className="fa-regular fa-calendar-check text-[11px]"></i> Book Appointment
                             </a>
-                            <Link href="/journey" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center hover:shadow-lg transition shadow-lg shadow-pink-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
-                                🎮 Play Pregnancy Game
+                            <Link href="/journey" className="bg-gradient-to-r from-rose-500 to-pink-600 text-white px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center hover:shadow-md transition shadow-md whitespace-nowrap flex items-center justify-center gap-1">
+                                🎮 Pregnancy Game
                             </Link>
-                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-700 hover:bg-emerald-800 text-white px-7 py-3 sm:py-3.5 rounded-full font-semibold text-xs sm:text-sm text-center transition shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 w-full sm:w-auto">
-                                <i className="fa-brands fa-whatsapp text-base"></i> WhatsApp Us
+                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center transition shadow-md whitespace-nowrap flex items-center justify-center gap-1.5">
+                                <i className="fa-brands fa-whatsapp text-xs"></i> WhatsApp Us
                             </a>
                         </div>
-                        <div className="flex items-center justify-center sm:justify-start gap-2.5 pt-1 sm:pt-0">
-                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-white text-emerald-600 border border-emerald-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-emerald-50 transition shadow-premium" title="Chat on WhatsApp">
-                                <i className="fa-brands fa-whatsapp text-xl"></i>
+                        <div className="flex items-center gap-1.5 shrink-0 ml-1">
+                            <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-white text-emerald-600 border border-emerald-100 w-8 h-8 rounded-full flex items-center justify-center hover:bg-emerald-50 transition shadow-sm" title="Chat on WhatsApp">
+                                <i className="fa-brands fa-whatsapp text-sm"></i>
                             </a>
-                            <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" rel="noopener noreferrer" className="bg-white text-red-600 border border-red-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-red-50 transition shadow-premium" title="Watch YouTube">
-                                <i className="fa-brands fa-youtube text-lg"></i>
+                            <a href="https://www.youtube.com/@DrVaibhavicare" target="_blank" rel="noopener noreferrer" className="bg-white text-red-600 border border-red-100 w-8 h-8 rounded-full flex items-center justify-center hover:bg-red-50 transition shadow-sm" title="Watch YouTube">
+                                <i className="fa-brands fa-youtube text-sm"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 border border-blue-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-blue-50 transition shadow-premium" title="LinkedIn Profile">
-                                <i className="fa-brands fa-linkedin-in text-lg"></i>
+                            <a href="https://www.linkedin.com/in/dr-vaibhavi-dhenge-712642359?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 border border-blue-100 w-8 h-8 rounded-full flex items-center justify-center hover:bg-blue-50 transition shadow-sm" title="LinkedIn Profile">
+                                <i className="fa-brands fa-linkedin-in text-sm"></i>
                             </a>
-                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-white text-pink-600 border border-pink-100 w-11 h-11 rounded-full flex items-center justify-center hover:bg-pink-50 transition shadow-premium" title="Instagram Profile">
-                                <i className="fa-brands fa-instagram text-lg"></i>
+                            <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-white text-pink-600 border border-pink-100 w-8 h-8 rounded-full flex items-center justify-center hover:bg-pink-50 transition shadow-sm" title="Instagram Profile">
+                                <i className="fa-brands fa-instagram text-sm"></i>
                             </a>
                         </div>
                     </div>
