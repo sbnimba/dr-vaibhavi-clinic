@@ -592,8 +592,20 @@ export default function Home() {
                         </div>
                     </div>
                     
-                    {/* Awards Badges instead of simple stats */}
-                    <div className="mt-6">
+                    <div className="mt-6 flex items-center gap-6">
+                        <div>
+                            <p className="text-2xl font-serif font-bold text-gray-900">6+</p>
+                            <p className="text-xs text-gray-500 font-medium">Years in Medical Healthcare</p>
+                        </div>
+                        <div className="w-px h-8 bg-gray-200"></div>
+                        <div>
+                            <p className="text-2xl font-serif font-bold text-gray-900">1000+</p>
+                            <p className="text-xs text-gray-500 font-medium">Patients Treated</p>
+                        </div>
+                    </div>
+
+                    {/* Awards Badges */}
+                    <div className="mt-5">
                         <p className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-2.5 flex items-center gap-1.5">
                             <i className="fa-solid fa-trophy text-yellow-500 animate-pulse"></i> Awards & Recognition
                         </p>
