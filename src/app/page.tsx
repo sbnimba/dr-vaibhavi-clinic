@@ -338,7 +338,7 @@ export default function Home() {
                             </ul>
                             <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Philosophy</h4>
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
-                                <li><a href="#mission-vision" className="hover:text-primary-600 transition block"><i className="fa-solid fa-hand-holding-heart text-primary-400 mr-2 w-4"></i> Mission, Vision & Values</a></li>
+                                <li><Link href="/philosophy" className="hover:text-primary-600 transition block"><i className="fa-solid fa-hand-holding-heart text-primary-400 mr-2 w-4"></i> Mission, Vision & Values</Link></li>
                             </ul>
                         </div>
                         <div>
@@ -507,9 +507,9 @@ export default function Home() {
                     <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-person-pregnant text-primary-500 w-5"></i> Specialties & Services
                     </a>
-                    <a href="#mission-vision" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                    <Link href="/philosophy" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-hand-holding-heart text-primary-500 w-5"></i> Philosophy & Values
-                    </a>
+                    </Link>
                     <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-star text-primary-500 w-5"></i> Patient Stories
                     </a>
@@ -680,75 +680,6 @@ export default function Home() {
     </section>
 
 
-    {/* ==================== 3RD PAGE: MISSION, VISION & VALUES ==================== */}
-    <section id="mission-vision" tabIndex={0} aria-label="Our mission, vision and values" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-start relative bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
-            <div className="text-center max-w-3xl mx-auto mb-4" data-aos="fade-up">
-                <h2 className="text-[11px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Our Philosophy</h2>
-                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Mission, Vision & Values</h3>
-                <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">The foundational principles that guide our patient care, clinical excellence, and dedication to women's health.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                {/* Mission Card */}
-                <div className="bg-primary-50/30 p-4 sm:p-5 rounded-3xl shadow-sm hover:shadow-premium transition-all duration-300 border border-primary-100/50 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
-                    <div>
-                        <div className="w-8 h-8 rounded-xl bg-brand-blush/30 text-primary-600 flex items-center justify-center text-base mb-2">
-                            <i className="fa-solid fa-bullseye"></i>
-                        </div>
-                        <h4 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1.5">Our Mission</h4>
-                        <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed">
-                            "To be the doctor every woman deserves — one who listens without judgment, understands without rushing, and delivers care that is both medically excellent and deeply human."
-                        </p>
-                    </div>
-                </div>
-
-                {/* Vision Card */}
-                <div className="bg-primary-50/30 p-4 sm:p-5 rounded-3xl shadow-sm hover:shadow-premium transition-all duration-300 border border-primary-100/50 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
-                    <div>
-                        <div className="w-8 h-8 rounded-xl bg-brand-lavender/50 text-purple-600 flex items-center justify-center text-base mb-2">
-                            <i className="fa-solid fa-eye"></i>
-                        </div>
-                        <h4 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1.5">Our Vision</h4>
-                        <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed">
-                            "A world where every woman — regardless of where she comes from — has access to compassionate, expert, and dignified healthcare at every stage of her life."
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Core Values */}
-            <div className="bg-white py-4 px-5 sm:px-8 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="300">
-                <div className="text-center mb-4">
-                    <h4 className="text-[11px] font-bold uppercase tracking-widest text-primary-600 mb-0.5">Our Commitments</h4>
-                    <h5 className="text-lg sm:text-xl font-serif font-bold text-gray-900">Core Values</h5>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="flex flex-col items-center text-center px-3">
-                        <div className="w-10 h-10 rounded-2xl bg-pink-100 text-pink-700 flex items-center justify-center text-lg mb-2 shadow-inner">
-                            🤝
-                        </div>
-                        <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Trust</h6>
-                        <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug max-w-xs">A safe space where no concern is too small and no question goes unheard.</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center px-3 border-t md:border-t-0 md:border-l md:border-r border-gray-100">
-                        <div className="w-10 h-10 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-lg mb-2 shadow-inner">
-                            ⚕️
-                        </div>
-                        <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Excellence</h6>
-                        <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug max-w-xs">Evidence-based, modern care backed by 1,000+ real clinical experiences.</p>
-                    </div>
-                    <div className="flex flex-col items-center text-center px-3 border-t md:border-t-0 border-gray-100">
-                        <div className="w-10 h-10 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg mb-2 shadow-inner">
-                            🌸
-                        </div>
-                        <h6 className="text-lg sm:text-xl font-bold font-serif text-gray-900 mb-1">Dignity</h6>
-                        <p className="text-xs sm:text-sm text-gray-700 font-medium leading-snug max-w-xs">Every woman treated with the privacy, respect, and warmth she deserves.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
     <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
