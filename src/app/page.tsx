@@ -334,7 +334,7 @@ export default function Home() {
                         <div>
                             <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mb-3 border-b pb-1">Doctor Profile</h4>
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
-                                <li><a href="#about" className="hover:text-primary-600 transition block"><i className="fa-solid fa-user-md text-primary-400 mr-2 w-4"></i> About Doctor</a></li>
+                                <li><Link href="/about-doctor" className="hover:text-primary-600 transition block"><i className="fa-solid fa-user-md text-primary-400 mr-2 w-4"></i> About Doctor</Link></li>
                             </ul>
                             <h4 className="text-[11px] font-bold text-primary-600 uppercase tracking-widest mt-6 mb-3 border-b pb-1">Philosophy</h4>
                             <ul className="space-y-3 text-xs font-medium text-gray-600">
@@ -501,9 +501,9 @@ export default function Home() {
                     <a href="#home" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-house text-primary-500 w-5"></i> Home
                     </a>
-                    <a href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
+                    <Link href="/about-doctor" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-user-md text-primary-500 w-5"></i> About Doctor
-                    </a>
+                    </Link>
                     <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-primary-600 transition flex items-center gap-2 py-1">
                         <i className="fa-solid fa-person-pregnant text-primary-500 w-5"></i> Specialties & Services
                     </a>
@@ -692,92 +692,6 @@ export default function Home() {
         </div>
     </section>
 
-    {/* ==================== 2ND PAGE: ABOUT DOCTOR ==================== */}
-    <section id="about" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-t border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
-            <div className="text-center mb-4" data-aos="fade-up">
-                <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Get To Know</h2>
-                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900">About Us</h3>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-                <div data-aos="fade-up" className="lg:col-span-4 relative order-2 lg:order-1 mx-auto w-full max-w-[280px] lg:max-w-none">
-                    <img src="/images/doctor-about-perfect.jpg" alt="Dr. Vaibhavi OBGY" className="rounded-[2rem] shadow-premium object-cover h-[240px] sm:h-[300px] lg:h-[420px] w-full" />
-                </div>
-                
-                <div className="lg:col-span-8 order-1 lg:order-2" data-aos="fade-up" data-aos-delay="200">
-                    <h4 className="text-xl lg:text-2xl font-serif font-bold text-gray-900 mb-0.5">Dr. Vaibhavi</h4>
-                    <p className="text-xs sm:text-sm font-medium text-gray-700 mb-2">MBBS, MS (Obstetrics & Gynaecology) | <span className="text-primary-600">Senior Resident, MGM Belapur Hospital</span></p>
-                    
-                    <p className="text-gray-600 leading-relaxed mb-4 font-sans text-xs sm:text-sm">
-                        Dr. Vaibhavi is an Obstetrician and Gynecologist with 6+ years of experience in medical healthcare across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
-                    </p>
-                    
-                    {/* Awards & Recognition — visual badge grid */}
-                    <div className="mb-4">
-                        <p className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-3 flex items-center gap-1.5">
-                            <i className="fa-solid fa-trophy text-yellow-500"></i> Awards & Recognition
-                        </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                            {/* Badge 1 */}
-                            <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                <div className="text-yellow-400 text-xl mb-1">🏆</div>
-                                <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
-                                <div className="text-white text-[9px] font-bold leading-tight">Award Winner</div>
-                                <div className="text-yellow-200/90 text-[8px] mt-0.5">ACOG · AICOG</div>
-                            </div>
-                            {/* Badge 2 */}
-                            <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                <div className="text-yellow-400 text-xl mb-1">🥇</div>
-                                <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1st Rank</div>
-                                <div className="text-white text-[9px] font-bold leading-tight">Research Award</div>
-                                <div className="text-yellow-200/90 text-[8px] mt-0.5">MediAce Conference</div>
-                            </div>
-                            {/* Badge 3 */}
-                            <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                <div className="text-yellow-400 text-xl mb-1">🎖️</div>
-                                <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">Excellence</div>
-                                <div className="text-white text-[9px] font-bold leading-tight">Case Presenter</div>
-                                <div className="text-yellow-200/90 text-[8px] mt-0.5">POGS Society</div>
-                            </div>
-                            {/* Badge 4 */}
-                            <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                <div className="text-yellow-400 text-xl mb-1">🌟</div>
-                                <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1000+ Cases</div>
-                                <div className="text-white text-[9px] font-bold leading-tight">Managed</div>
-                                <div className="text-yellow-200/90 text-[8px] mt-0.5">6+ Years Exp.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Memberships */}
-                    <div className="mb-4">
-                        <p className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-3 flex items-center gap-1.5">
-                            <i className="fa-solid fa-certificate text-primary-500"></i> Professional Memberships
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            <span className="inline-flex items-center gap-1.5 bg-white border border-primary-100 text-primary-700 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                                <i className="fa-solid fa-check-circle text-primary-500 text-[10px]"></i> Member · POGS (Pune)
-                            </span>
-                            <span className="inline-flex items-center gap-1.5 bg-white border border-primary-100 text-primary-700 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                                <i className="fa-solid fa-check-circle text-primary-500 text-[10px]"></i> ACOG Conference
-                            </span>
-                            <span className="inline-flex items-center gap-1.5 bg-white border border-primary-100 text-primary-700 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                                <i className="fa-solid fa-check-circle text-primary-500 text-[10px]"></i> AICOG Conference
-                            </span>
-                            <span className="inline-flex items-center gap-1.5 bg-white border border-primary-100 text-primary-700 text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm">
-                                <i className="fa-solid fa-check-circle text-primary-500 text-[10px]"></i> Mediace Conference
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <a href="#services" className="inline-flex items-center gap-2 text-primary-700 font-bold hover:text-primary-800 transition text-xs sm:text-sm">
-                        Explore Specialties <i className="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
     {/* ==================== 3RD PAGE: MISSION, VISION & VALUES ==================== */}
     <section id="mission-vision" tabIndex={0} aria-label="Our mission, vision and values" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-start relative bg-white border-b border-gray-100">
@@ -1677,7 +1591,7 @@ export default function Home() {
                     <div>
                         <h4 className="font-bold mb-3 text-xs uppercase tracking-wider text-white">Quick Links</h4>
                         <ul className="space-y-1.5 text-gray-400 text-[11px]">
-                            <li><a href="#about" className="hover:text-white transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[9px] text-primary-500"></i> About Doctor</a></li>
+                            <li><Link href="/about-doctor" className="hover:text-white transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[9px] text-primary-500"></i> About Doctor</Link></li>
                             <li><a href="#services" className="hover:text-white transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[9px] text-primary-500"></i> Specialties</a></li>
                             <li><a href="#appointment" className="hover:text-white transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[9px] text-primary-500"></i> Patient Portal</a></li>
                             <li><a href="#community" className="hover:text-white transition flex items-center gap-2"><i className="fa-solid fa-chevron-right text-[9px] text-primary-500"></i> Blog & Resources</a></li>
