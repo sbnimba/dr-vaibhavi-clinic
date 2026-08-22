@@ -550,10 +550,6 @@ export default function Home() {
                 
                 {/*  Hero Content  */}
                 <div className="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
-                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white shadow-sm border border-primary-100 mb-4">
-                        <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-                        <span className="text-[11px] font-bold text-primary-700 tracking-wider uppercase">Senior Resident, MGM Belapur</span>
-                    </div>
                     
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-[1.15] mb-4 tracking-normal">
                         Where Every Woman Feels <br />
@@ -676,11 +672,17 @@ export default function Home() {
                         <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" decoding="async" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
-                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3 z-20 w-max">
-                            <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
-                            <div className="text-left">
-                                <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi</p>
-                                <p className="text-[9px] sm:text-xs font-bold text-primary-600 tracking-widest leading-none">Consultant Obstetrician & Gynecologist</p>
+                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20 w-max">
+                            <div className="bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3">
+                                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
+                                <div className="text-left">
+                                    <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi</p>
+                                    <p className="text-[9px] sm:text-xs font-bold text-primary-600 tracking-widest leading-none">Consultant Obstetrician & Gynecologist</p>
+                                </div>
+                            </div>
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-xs shadow-lg border border-primary-100">
+                                <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"></span>
+                                <span className="text-[8px] sm:text-[9px] font-bold text-primary-700 tracking-wider uppercase">Senior Resident, MGM Belapur</span>
                             </div>
                         </div>
                     </div>
