@@ -15,7 +15,18 @@ export function speakText(text: string, lang: AppLanguage): boolean {
         if (lang === 'hi') {
             utterance.lang = 'hi-IN';
         } else if (lang === 'mr') {
-            utterance.lang = 'mr-IN';
+            const voices = typeof window !== 'undefined' ? window.speechSynthesis.getVoices() : [];
+            const hasMarathi = voices.some(v => v.lang.toLowerCase().includes('mr'));
+            if (hasMarathi) {
+                utterance.lang = 'mr-IN';
+            } else {
+                // Fallback to Hindi voice which can read Marathi Devnagari script
+                utterance.lang = 'hi-IN';
+                const hiVoice = voices.find(v => v.lang.toLowerCase().includes('hi'));
+                if (hiVoice) {
+                    utterance.voice = hiVoice;
+                }
+            }
         } else {
             utterance.lang = 'en-IN';
         }
