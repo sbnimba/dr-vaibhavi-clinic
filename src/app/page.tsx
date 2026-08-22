@@ -659,17 +659,17 @@ export default function Home() {
                         <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" decoding="async" className="w-full h-full object-cover object-center" />
                         
                         {/* Elegant Glassmorphism Floating Nameplate Badge */}
-                        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-20 w-max">
-                            <div className="bg-white/95 backdrop-blur-md py-2 px-4 sm:py-2.5 sm:px-6 rounded-2xl shadow-2xl border border-white flex items-center gap-2 sm:gap-3">
-                                <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
+                        <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 z-20 w-max">
+                            <div className="bg-white/95 backdrop-blur-md py-1.5 px-3 sm:py-2.5 sm:px-6 rounded-xl sm:rounded-2xl shadow-2xl border border-white flex items-center gap-1.5 sm:gap-3">
+                                <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
                                 <div className="text-left">
-                                    <p className="text-xs sm:text-base font-bold font-serif text-gray-900 leading-none mb-1">Dr. Vaibhavi</p>
-                                    <p className="text-[9px] sm:text-xs font-bold text-primary-600 tracking-widest leading-none">Consultant Obstetrician & Gynecologist</p>
+                                    <p className="text-[10px] sm:text-base font-bold font-serif text-gray-900 leading-none mb-0.5 sm:mb-1">Dr. Vaibhavi</p>
+                                    <p className="text-[7.5px] xs:text-[9px] sm:text-xs font-bold text-primary-600 tracking-wider sm:tracking-widest leading-none whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
                                 </div>
                             </div>
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-xs shadow-lg border border-primary-100">
-                                <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse"></span>
-                                <span className="text-[8px] sm:text-[9px] font-bold text-primary-700 tracking-wider uppercase">Senior Resident, MGM Belapur</span>
+                            <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-xs shadow-lg border border-primary-100">
+                                <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-primary-500 animate-pulse"></span>
+                                <span className="text-[7px] xs:text-[8px] sm:text-[9px] font-bold text-primary-700 tracking-wider uppercase whitespace-nowrap">Senior Resident, MGM Belapur</span>
                             </div>
                         </div>
                     </div>
