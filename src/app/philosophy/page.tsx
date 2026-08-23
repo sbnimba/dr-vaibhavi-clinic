@@ -13,7 +13,7 @@ export default function PhilosophyPage() {
                             <i className="fa-solid fa-spa"></i>
                         </div>
                         <div className="min-w-0">
-                            <span className="block truncate text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-primary-600 transition-colors">Dr. Vaibhavi</span>
+                            <span className="block truncate text-base sm:text-lg font-serif font-bold text-gray-900 tracking-wide group-hover:text-primary-600 transition-colors">Vemina</span>
                             <p className="truncate text-[10px] sm:text-xs text-primary-700 font-bold tracking-widest">Consultant Obstetrician & Gynecologist</p>
                         </div>
                     </Link>
