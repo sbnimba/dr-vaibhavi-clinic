@@ -112,6 +112,11 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${lora.variable} scroll-smooth snap-y snap-mandatory antialiased`}
     >
       <head>
+        {/* Favicon & Search Engine Icon */}
+        <link rel="icon" href="https://drvaibhavicare.com/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="https://drvaibhavicare.com/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="https://drvaibhavicare.com/icon.svg" type="image/svg+xml" />
+
         {/* Libraries */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
