@@ -6,7 +6,8 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://drvaibhavicare.com';
 
-export const SITE_NAME = 'Vemina | Obstetrician & Gynaecologist';
+export const SITE_NAME = 'Vemina';
+export const DOCTOR_NAME = 'Dr. Vaibhavi';
 export const CLINIC_PHONE = '+91-9321880359';
 export const OG_IMAGE = '/images/og-cover.jpg';
 
