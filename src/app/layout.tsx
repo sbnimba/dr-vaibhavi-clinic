@@ -76,6 +76,13 @@ const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": ["Physician", "MedicalBusiness"],
   "name": "Dr. Vaibhavi",
+  "brand": { "@type": "Brand", "name": "Vemina" },
+  "parentOrganization": {
+    "@type": "MedicalOrganization",
+    "name": "Vemina",
+    "url": SITE_URL,
+    "logo": `${SITE_URL}/icon.svg`,
+  },
   "image": `${SITE_URL}/images/doctor-hero-hd.jpg`,
   "description":
     "Consultant Obstetrician & Gynecologist. Expert in high-risk pregnancy, PCOS, and women's health.",
