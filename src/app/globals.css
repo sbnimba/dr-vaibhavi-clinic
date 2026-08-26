@@ -98,7 +98,6 @@ body { top: 0 !important; }
   footer a:not([class*="flex"]), nav a:not([class*="flex"]), li > a:not([class*="flex"]), div > a:not([class*="flex"]):not([class*="rounded-full"]):not([class*="py-"]), section > a:not([class*="flex"]) { display: inline-block; padding-top: 0.4rem; padding-bottom: 0.4rem; }
   header button, header a, button[type="submit"] { min-height: 44px; }
   #navbar > div > a[href="#home"], #navbar > div > a[href="#home"] > div { min-width: 0; }
-  #navbar > div > a[href="#home"] p { display: none; }
   div[class*="top-[64px]"] { background-color: #fff; }
 }
 

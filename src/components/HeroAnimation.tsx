@@ -15,28 +15,6 @@ interface Blob {
   pulseSpeed: number;
 }
 
-interface Sparkle {
-  x: number;
-  y: number;
-  size: number;
-  opacity: number;
-  opacityDir: number;
-  color: string;
-  speed: number;
-}
-
-interface Petal {
-  x: number;
-  y: number;
-  size: number;
-  angle: number;
-  rotSpeed: number;
-  vx: number;
-  vy: number;
-  opacity: number;
-  color: string;
-}
-
 const HeroAnimation = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -54,81 +32,33 @@ const HeroAnimation = () => {
     const resizeObserver = new ResizeObserver(resize);
     resizeObserver.observe(canvas);
 
-    // Soothing brand palette — soft pink, peach, lavender
+    // Restrained brand palette — one calming primary tone, one warm neutral.
+    // Fewer, larger, slower shapes read as a quiet ambient wash rather than
+    // a busy animated background — closer to how premium sites use motion.
     const blobColors = [
-      { r: 255, g: 183, b: 197 }, // soft pink
-      { r: 255, g: 218, b: 185 }, // peach
-      { r: 216, g: 191, b: 216 }, // lavender
-      { r: 255, g: 204, b: 213 }, // blush
-      { r: 230, g: 190, b: 255 }, // soft purple
-      { r: 255, g: 230, b: 200 }, // warm cream
+      { r: 252, g: 214, b: 227 }, // soft primary blush
+      { r: 255, g: 233, b: 214 }, // warm cream
     ];
 
     const mkColor = (c: { r: number; g: number; b: number }, a: number) =>
       `rgba(${c.r},${c.g},${c.b},${a.toFixed(2)})`;
 
-    // Large soft floating blobs
-    const blobs: Blob[] = Array.from({ length: 12 }, () => {
-      const c = blobColors[Math.floor(Math.random() * blobColors.length)];
+    // Large soft floating blobs — the only moving element left.
+    const blobs: Blob[] = Array.from({ length: 4 }, (_, i) => {
+      const c = blobColors[i % blobColors.length];
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        radius: 80 + Math.random() * 160,
+        radius: 140 + Math.random() * 160,
         color: mkColor(c, 1),
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        opacity: 0.12 + Math.random() * 0.18,
-        opacityDir: (Math.random() > 0.5 ? 1 : -1) * 0.0008,
+        vx: (Math.random() - 0.5) * 0.08,
+        vy: (Math.random() - 0.5) * 0.08,
+        opacity: 0.08 + Math.random() * 0.08,
+        opacityDir: (Math.random() > 0.5 ? 1 : -1) * 0.0004,
         pulseAngle: Math.random() * Math.PI * 2,
-        pulseSpeed: 0.008 + Math.random() * 0.008,
+        pulseSpeed: 0.004 + Math.random() * 0.004,
       };
     });
-
-    // Tiny sparkle dots
-    const sparkleColors = ['#ffb6c1', '#ffd7be', '#d8b4fe', '#fbcfe8', '#fde68a'];
-    const sparkles: Sparkle[] = Array.from({ length: 60 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: 1.5 + Math.random() * 3,
-      opacity: 0.2 + Math.random() * 0.6,
-      opacityDir: (Math.random() > 0.5 ? 1 : -1) * 0.005,
-      color: sparkleColors[Math.floor(Math.random() * sparkleColors.length)],
-      speed: 0.1 + Math.random() * 0.3,
-    }));
-
-    // Soft floating petals / hearts
-    const petalColors = ['rgba(255,182,193,0.5)', 'rgba(255,192,203,0.4)', 'rgba(216,180,254,0.4)', 'rgba(253,186,116,0.3)'];
-    const petals: Petal[] = Array.from({ length: 18 }, () => ({
-      x: Math.random() * canvas.width,
-      y: canvas.height + Math.random() * 200,
-      size: 4 + Math.random() * 10,
-      angle: Math.random() * Math.PI * 2,
-      rotSpeed: (Math.random() - 0.5) * 0.02,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: -(0.3 + Math.random() * 0.5),
-      opacity: 0.3 + Math.random() * 0.5,
-      color: petalColors[Math.floor(Math.random() * petalColors.length)],
-    }));
-
-    const drawHeart = (
-      ctx: CanvasRenderingContext2D,
-      x: number,
-      y: number,
-      size: number,
-      angle: number,
-      color: string
-    ) => {
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(angle);
-      ctx.beginPath();
-      ctx.moveTo(0, -size * 0.3);
-      ctx.bezierCurveTo(size * 0.5, -size, size * 1.1, 0, 0, size * 0.8);
-      ctx.bezierCurveTo(-size * 1.1, 0, -size * 0.5, -size, 0, -size * 0.3);
-      ctx.fillStyle = color;
-      ctx.fill();
-      ctx.restore();
-    };
 
     let animId: number;
 
@@ -140,7 +70,7 @@ const HeroAnimation = () => {
         b.pulseAngle += b.pulseSpeed;
         const r = b.radius + Math.sin(b.pulseAngle) * 15;
         b.opacity += b.opacityDir;
-        if (b.opacity > 0.3 || b.opacity < 0.05) b.opacityDir *= -1;
+        if (b.opacity > 0.18 || b.opacity < 0.04) b.opacityDir *= -1;
         b.x += b.vx;
         b.y += b.vy;
         if (b.x < -r) b.x = canvas.width + r;
@@ -156,44 +86,6 @@ const HeroAnimation = () => {
         ctx.arc(b.x, b.y, r, 0, Math.PI * 2);
         ctx.fillStyle = grad;
         ctx.fill();
-      });
-
-      // Draw sparkles
-      sparkles.forEach(s => {
-        s.opacity += s.opacityDir;
-        if (s.opacity > 0.8 || s.opacity < 0.05) s.opacityDir *= -1;
-        s.y -= s.speed;
-        if (s.y < -10) {
-          s.y = canvas.height + 10;
-          s.x = Math.random() * canvas.width;
-        }
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
-        ctx.fillStyle = s.color + Math.round(s.opacity * 255).toString(16).padStart(2, '0');
-        ctx.fill();
-        // Add cross sparkle effect for some
-        if (s.size > 3) {
-          ctx.strokeStyle = s.color + Math.round(s.opacity * 0.5 * 255).toString(16).padStart(2, '0');
-          ctx.lineWidth = 0.5;
-          ctx.beginPath();
-          ctx.moveTo(s.x, s.y - s.size * 2);
-          ctx.lineTo(s.x, s.y + s.size * 2);
-          ctx.moveTo(s.x - s.size * 2, s.y);
-          ctx.lineTo(s.x + s.size * 2, s.y);
-          ctx.stroke();
-        }
-      });
-
-      // Draw floating hearts/petals
-      petals.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        p.angle += p.rotSpeed;
-        if (p.y < -50) {
-          p.y = canvas.height + 50;
-          p.x = Math.random() * canvas.width;
-        }
-        drawHeart(ctx, p.x, p.y, p.size, p.angle, p.color);
       });
 
       animId = requestAnimationFrame(draw);

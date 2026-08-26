@@ -1,6 +1,8 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL, NOINDEX_ROUTES } from '@/lib/site';
 
+export const dynamic = 'force-static';
+
 /**
  * Generated sitemap. Previously /sitemap.xml returned 404, so search engines had to
  * discover the ten medical guides by crawling alone — and /pregnancy-diet-guide, which

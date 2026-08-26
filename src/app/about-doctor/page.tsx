@@ -56,33 +56,33 @@ export default function AboutDoctorPage() {
                             {/* Awards & Recognition — visual badge grid */}
                             <div className="mb-6">
                                 <p className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-3 flex items-center gap-1.5">
-                                    <i className="fa-solid fa-trophy text-yellow-500"></i> Awards & Recognition
+                                    <i className="fa-solid fa-trophy text-amber-500"></i> Awards & Recognition
                                 </p>
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                                     {/* Badge 1 */}
                                     <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                        <div className="text-yellow-400 text-lg mb-1">🏆</div>
+                                        <div className="text-yellow-400 text-lg mb-1"><i className="fa-solid fa-trophy"></i></div>
                                         <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
                                         <div className="text-white text-[9px] font-bold leading-tight">Award Winner</div>
                                         <div className="text-yellow-200/90 text-[8px] mt-0.5">AICOG</div>
                                     </div>
                                     {/* Badge 2 */}
                                     <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                        <div className="text-yellow-400 text-lg mb-1">🥇</div>
+                                        <div className="text-yellow-400 text-lg mb-1"><i className="fa-solid fa-medal"></i></div>
                                         <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1st Rank</div>
                                         <div className="text-white text-[9px] font-bold leading-tight">Research Award</div>
                                         <div className="text-yellow-200/90 text-[8px] mt-0.5">MediAce Conference</div>
                                     </div>
                                     {/* Badge 3 */}
                                     <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                        <div className="text-yellow-400 text-lg mb-1">🎖️</div>
+                                        <div className="text-yellow-400 text-lg mb-1"><i className="fa-solid fa-award"></i></div>
                                         <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">Excellence</div>
                                         <div className="text-white text-[9px] font-bold leading-tight">Case Presenter</div>
                                         <div className="text-yellow-200/90 text-[8px] mt-0.5">POGS Society</div>
                                     </div>
                                     {/* Badge 4 */}
                                     <div className="bg-gradient-to-b from-yellow-900/90 to-gray-900 border border-yellow-500/40 rounded-xl p-2.5 text-center shadow-lg hover:scale-105 transition-transform duration-300">
-                                        <div className="text-yellow-400 text-lg mb-1">🌟</div>
+                                        <div className="text-yellow-400 text-lg mb-1"><i className="fa-solid fa-star"></i></div>
                                         <div className="text-yellow-400 text-[9px] font-black uppercase tracking-wider leading-tight">1000+ Cases</div>
                                         <div className="text-white text-[9px] font-bold leading-tight">Managed</div>
                                         <div className="text-yellow-200/90 text-[8px] mt-0.5">6+ Years Exp.</div>

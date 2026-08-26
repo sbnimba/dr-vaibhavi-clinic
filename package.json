@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/cli": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@supabase/supabase-js": "^2.106.1",
     "@types/aos": "^3.0.8",
