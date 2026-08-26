@@ -7,6 +7,7 @@ import LeadCaptureForm from '@/components/LeadCaptureForm';
 import 'swiper/css/bundle';
 import Swiper from 'swiper/bundle';
 import { supabase } from '@/lib/supabase';
+import { getApiUrl } from '@/lib/api-client';
 
 const HeroAnimation = dynamic(() => import('@/components/HeroAnimation'), { ssr: false });
 
@@ -172,7 +173,7 @@ export default function Home() {
             }
 
             try {
-                await fetch('/api/book-appointment', {
+                await fetch(getApiUrl('/api/book-appointment'), {
                     method: 'POST',
                     headers: { 
                         'Content-Type': 'application/json',

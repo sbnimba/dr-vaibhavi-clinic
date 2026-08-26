@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
+import { getApiUrl } from '@/lib/api-client';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
 interface Appointment {
@@ -244,7 +245,7 @@ export default function AdminDashboard() {
                 return;
             }
 
-            const res = await fetch('/api/admin/send-status', {
+            const res = await fetch(getApiUrl('/api/admin/send-status'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
