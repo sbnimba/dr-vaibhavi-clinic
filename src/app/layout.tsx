@@ -19,13 +19,13 @@ const lora = Lora({
 });
 
 const DESCRIPTION =
-  "Dr. Vaibhavi — Consultant Obstetrician & Gynaecologist at MGM Belapur Hospital, Navi Mumbai. Expert care for pregnancy, high-risk pregnancy, PCOS, infertility and women's health. Book an in-clinic or online consultation.";
+  "Dr. Vaibhavi Dhenge — Consultant Obstetrician & Gynaecologist at MGM Belapur Hospital, Navi Mumbai. Expert care for pregnancy, high-risk pregnancy, PCOS, infertility and women's health. Book an in-clinic or online consultation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Dr. Vaibhavi | Obstetrician & Gynaecologist",
-    template: "%s | Dr. Vaibhavi",
+    default: "Dr. Vaibhavi Dhenge | Obstetrician & Gynaecologist, Navi Mumbai",
+    template: "%s | Dr. Vaibhavi Dhenge",
   },
   description: DESCRIPTION,
   keywords: [
@@ -37,12 +37,12 @@ export const metadata: Metadata = {
     "infertility specialist",
     "MGM Hospital Belapur",
   ],
-  authors: [{ name: "Dr. Vaibhavi" }],
+  authors: [{ name: "Dr. Vaibhavi Dhenge" }],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: "Dr. Vaibhavi | Obstetrician & Gynaecologist",
+    title: "Dr. Vaibhavi Dhenge | Obstetrician & Gynaecologist, Navi Mumbai",
     description: DESCRIPTION,
     url: SITE_URL,
     locale: "en_IN",
@@ -51,13 +51,13 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Dr. Vaibhavi — Consultant Obstetrician & Gynaecologist, Navi Mumbai",
+        alt: "Dr. Vaibhavi Dhenge — Consultant Obstetrician & Gynaecologist, Navi Mumbai",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dr. Vaibhavi | Obstetrician & Gynaecologist",
+    title: "Dr. Vaibhavi Dhenge | Obstetrician & Gynaecologist, Navi Mumbai",
     description: DESCRIPTION,
     images: [OG_IMAGE],
   },
@@ -75,7 +75,7 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": ["Physician", "MedicalBusiness"],
-  "name": "Dr. Vaibhavi",
+  "name": "Dr. Vaibhavi Dhenge",
   "image": `${SITE_URL}/images/doctor-hero-hd.jpg`,
   "description":
     "Consultant Obstetrician & Gynecologist. Expert in high-risk pregnancy, PCOS, and women's health.",
