@@ -8,6 +8,7 @@ const apiDir = path.join(__dirname, 'src', 'app', 'api');
 const tempApiDir = path.join(__dirname, 'api_temp');
 const configTs = path.join(__dirname, 'next.config.ts');
 const configMjs = path.join(__dirname, 'next.config.mjs');
+const capConfig = path.join(__dirname, 'capacitor.config.ts');
 
 // 1. Temporarily enable static export via next.config.mjs and remove next.config.ts
 console.log('Configuring Next.js for static export...');
@@ -31,6 +32,14 @@ if (fs.existsSync(apiDir)) {
     console.log('Temporarily moving API routes out of compilation path...');
     fs.renameSync(apiDir, tempApiDir);
     movedApi = true;
+}
+
+// 3. Temporarily hide capacitor.config.ts (website repo lacks @capacitor/cli)
+let movedCap = false;
+if (fs.existsSync(capConfig)) {
+    console.log('Temporarily hiding capacitor.config.ts...');
+    fs.renameSync(capConfig, capConfig + '.bak');
+    movedCap = true;
 }
 
 try {
@@ -59,6 +68,9 @@ try {
     }
     if (movedApi && fs.existsSync(tempApiDir)) {
         fs.renameSync(tempApiDir, apiDir);
+    }
+    if (movedCap && fs.existsSync(capConfig + '.bak')) {
+        fs.renameSync(capConfig + '.bak', capConfig);
     }
     console.log('Workspace restored and clean!');
 }
