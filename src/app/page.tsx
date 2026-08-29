@@ -591,7 +591,7 @@ export default function Home() {
                     </div>
                     <div className="relative z-10 flex items-center gap-2 justify-center mt-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse shrink-0"></span>
-                        <p className="text-xs sm:text-sm font-serif font-bold text-gray-900">
+                        <p className="text-xs sm:text-sm font-sans font-bold text-gray-900">
                             Dr. Vaibhavi <span className="text-gray-400 font-sans font-medium">— Consultant OB-GYN, Senior Resident MGM Belapur</span>
                         </p>
                     </div>
