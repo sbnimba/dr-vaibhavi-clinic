@@ -537,7 +537,7 @@ export default function Home() {
     </header>
 
     {/* ==================== 1ST PAGE: HERO SECTION ==================== */}
-    <section id="home" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto overflow-x-hidden lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
+    <section id="home" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto overflow-x-hidden lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-2 flex flex-col justify-center relative bg-white">
         {/* Soothing Animated Background */}
         <HeroAnimation />
         {/* Soft static gradient accent blobs (behind canvas) */}
@@ -587,7 +587,7 @@ export default function Home() {
                 <div className="lg:col-span-6 relative mt-6 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div className="relative w-fit mx-auto">
                         <div className="absolute inset-0 bg-gradient-to-tr from-primary-100 to-brand-peach/40 blob-shape scale-105 opacity-30 pointer-events-none"></div>
-                        <img src="images/doctor-hero-v2.jpg" alt="Dr. Vaibhavi standing, full length" decoding="async" className="relative z-10 rounded-[2rem] shadow-2xl block h-[320px] sm:h-[380px] lg:h-[400px] xl:h-[440px] w-auto" />
+                        <img src="images/doctor-hero-v2.jpg" alt="Dr. Vaibhavi standing, full length" decoding="async" className="relative z-10 rounded-[2rem] shadow-2xl block h-[320px] sm:h-[380px] lg:h-[350px] xl:h-[400px] w-auto" />
                     </div>
                     <div className="relative z-10 flex items-center gap-2 justify-center mt-3">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse shrink-0"></span>
@@ -600,25 +600,25 @@ export default function Home() {
             </div>
 
             {/* Credentials bar — every stat, award & institution from before, deferred to a single quiet line beneath the fold-focus content */}
-            <div className="mt-6 lg:mt-8 pt-5 border-t border-gray-100 text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
-                    <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+            <div className="mt-1 lg:mt-1 pt-1 border-t border-gray-100 text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-1">
+                    <span className="inline-flex items-center gap-1 bg-primary-50 text-primary-700 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full">
                         <i className="fa-solid fa-user-doctor text-primary-500"></i>6+ Years Experience
                     </span>
-                    <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                    <span className="inline-flex items-center gap-1 bg-primary-50 text-primary-700 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full">
                         <i className="fa-solid fa-heart-pulse text-primary-500"></i>1000+ Patients Treated
                     </span>
-                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                    <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-800 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full">
                         <i className="fa-solid fa-trophy text-amber-500"></i>National Award Winner, AICOG
                     </span>
-                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                    <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-800 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full">
                         <i className="fa-solid fa-medal text-amber-500"></i>1st Rank Research Award, MediAce Conf.
                     </span>
-                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                    <span className="inline-flex items-center gap-1 bg-amber-50 text-amber-800 text-[11px] sm:text-xs font-bold px-2.5 py-1 rounded-full">
                         <i className="fa-solid fa-award text-amber-500"></i>Excellence Case Presenter, POGS Society
                     </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-500 font-medium mt-3 leading-relaxed">
+                <p className="text-[11px] sm:text-xs text-gray-500 font-medium mt-1 leading-snug">
                     Worked at MGM Hospital, Belapur · Kashibai Navale Medical College, Pune · Motherhood Hospital · Vasantrao Deshmukh Govt. Medical College, Yavatmal
                 </p>
             </div>
