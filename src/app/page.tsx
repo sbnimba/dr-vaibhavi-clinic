@@ -573,11 +573,11 @@ export default function Home() {
                         </a>
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <Link href="/journey" aria-label="Pregnancy Game" title="Pregnancy Game" className="text-gray-300 hover:text-primary-600 transition">
+                    <div className="flex items-center gap-3">
+                        <Link href="/journey" aria-label="Pregnancy Game" title="Pregnancy Game" className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition flex items-center justify-center">
                             <i className="fa-solid fa-gamepad text-base"></i>
                         </Link>
-                        <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" className="text-gray-300 hover:text-primary-600 transition">
+                        <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" className="w-9 h-9 rounded-full bg-gray-100 text-gray-500 hover:bg-primary-50 hover:text-primary-600 transition flex items-center justify-center">
                             <i className="fa-brands fa-instagram text-base"></i>
                         </a>
                     </div>
