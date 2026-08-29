@@ -600,16 +600,25 @@ export default function Home() {
             </div>
 
             {/* Credentials bar — every stat, award & institution from before, deferred to a single quiet line beneath the fold-focus content */}
-            <div className="mt-6 lg:mt-8 pt-4 border-t border-gray-100 text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2.5 gap-y-1.5 text-[10.5px] sm:text-[11px] font-semibold text-gray-400">
-                    <span>6+ Years Experience</span><span className="text-gray-200">·</span>
-                    <span>1000+ Patients Treated</span><span className="text-gray-200">·</span>
-                    <span><i className="fa-solid fa-trophy text-amber-500 mr-1"></i>National Award Winner, AICOG</span><span className="text-gray-200">·</span>
-                    <span><i className="fa-solid fa-medal text-amber-500 mr-1"></i>1st Rank Research Award, MediAce Conf.</span><span className="text-gray-200">·</span>
-                    <span><i className="fa-solid fa-award text-amber-500 mr-1"></i>Excellence Case Presenter, POGS Society</span><span className="text-gray-200">·</span>
-                    <span><i className="fa-solid fa-star text-amber-500 mr-1"></i>1000+ Cases Managed</span>
+            <div className="mt-6 lg:mt-8 pt-5 border-t border-gray-100 text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                    <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                        <i className="fa-solid fa-user-doctor text-primary-500"></i>6+ Years Experience
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                        <i className="fa-solid fa-heart-pulse text-primary-500"></i>1000+ Patients Treated
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                        <i className="fa-solid fa-trophy text-amber-500"></i>National Award Winner, AICOG
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                        <i className="fa-solid fa-medal text-amber-500"></i>1st Rank Research Award, MediAce Conf.
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs sm:text-sm font-bold px-3 py-1.5 rounded-full">
+                        <i className="fa-solid fa-award text-amber-500"></i>Excellence Case Presenter, POGS Society
+                    </span>
                 </div>
-                <p className="text-[10.5px] sm:text-[11px] text-gray-300 font-medium mt-2 leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-500 font-medium mt-3 leading-relaxed">
                     Worked at MGM Hospital, Belapur · Kashibai Navale Medical College, Pune · Motherhood Hospital · Vasantrao Deshmukh Govt. Medical College, Yavatmal
                 </p>
             </div>
