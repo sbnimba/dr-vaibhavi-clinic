@@ -547,135 +547,71 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-                
-                {/*  Hero Content  */}
-                <div className="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
-                    
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-[1.15] mb-4 tracking-normal">
-                        Where Every Woman Feels <br />
-                        <span className="gradient-text">Safe, Heard & Cared</span>
-                    </h2>
-                    
-                    <p className="text-sm sm:text-base text-gray-700 font-sans font-medium italic mb-6 max-w-xl leading-relaxed tracking-wide">
-                        Warm, private, and judgment-free women's care — at every stage of life
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+                {/*  Hero Content — headline, one line of support copy, one clear action  */}
+                <div className="lg:col-span-6" data-aos="fade-right" data-aos-duration="1000">
+
+                    <p className="text-[11px] font-bold tracking-[0.25em] text-primary-600 uppercase mb-4">
+                        Obstetrician &amp; Gynaecologist · Navi Mumbai
                     </p>
-                    
-                    <div className="flex flex-row flex-wrap items-center gap-2 mt-4 w-full">
-                        <a href="#booking-form" className="bg-primary-600 text-white px-4 py-2.5 rounded-full font-bold text-[11px] sm:text-xs text-center hover:bg-primary-700 transition shadow-premium whitespace-nowrap flex items-center justify-center gap-1.5">
-                            <i className="fa-regular fa-calendar-check text-[11px]"></i> Book Appointment
+
+                    <h2 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-serif font-bold text-gray-900 leading-[1.08] mb-5 tracking-tight">
+                        Where Every Woman Feels <span className="gradient-text">Safe, Heard &amp; Cared</span>
+                    </h2>
+
+                    <p className="text-base sm:text-lg text-gray-500 mb-8 max-w-sm leading-relaxed">
+                        Warm, private, and judgment-free women's care — at every stage of life.
+                    </p>
+
+                    <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6">
+                        <a href="#booking-form" className="bg-primary-600 text-white px-7 py-3.5 rounded-full font-bold text-sm hover:bg-primary-700 transition shadow-premium whitespace-nowrap flex items-center justify-center gap-2">
+                            <i className="fa-regular fa-calendar-check text-xs"></i> Book Appointment
                         </a>
-                        <Link href="/journey" className="bg-white text-gray-700 border border-gray-200 px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center hover:border-primary-300 hover:text-primary-700 hover:bg-primary-50 transition whitespace-nowrap flex items-center justify-center gap-1.5">
-                            <i className="fa-solid fa-gamepad text-primary-500 text-[11px]"></i> Pregnancy Game
+                        <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="text-gray-500 font-semibold text-sm hover:text-primary-700 transition flex items-center gap-2">
+                            <i className="fa-brands fa-whatsapp text-emerald-600"></i> WhatsApp Us
+                        </a>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                        <Link href="/journey" aria-label="Pregnancy Game" title="Pregnancy Game" className="text-gray-300 hover:text-primary-600 transition">
+                            <i className="fa-solid fa-gamepad text-base"></i>
                         </Link>
-                        <a href="https://wa.me/919321880359?text=Hello%20Dr.%20Vaibhavi,%20I%20would%20like%20to%20inquire%20about%20an%20appointment." target="_blank" rel="noopener noreferrer" className="bg-white text-gray-700 border border-gray-200 px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center hover:border-emerald-300 hover:text-emerald-700 hover:bg-emerald-50 transition whitespace-nowrap flex items-center justify-center gap-1.5">
-                            <i className="fa-brands fa-whatsapp text-emerald-600 text-xs"></i> WhatsApp Us
+                        <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" className="text-gray-300 hover:text-primary-600 transition">
+                            <i className="fa-brands fa-instagram text-base"></i>
                         </a>
-                        <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-700 border border-gray-200 px-3 py-2 rounded-full font-bold text-[10px] sm:text-xs text-center hover:border-primary-300 hover:text-primary-700 hover:bg-primary-50 transition whitespace-nowrap flex items-center justify-center gap-1.5">
-                            <i className="fa-brands fa-instagram text-primary-500 text-xs"></i> Instagram
-                        </a>
-                    </div>
-                    
-                    <div className="mt-6 flex items-center gap-6">
-                        <div>
-                            <p className="text-2xl font-serif font-bold text-gray-900">6+</p>
-                            <p className="text-xs text-gray-500 font-medium">Years in Medical Healthcare</p>
-                        </div>
-                        <div className="w-px h-8 bg-gray-200"></div>
-                        <div>
-                            <p className="text-2xl font-serif font-bold text-gray-900">1000+</p>
-                            <p className="text-xs text-gray-500 font-medium">Patients Treated</p>
-                        </div>
-                    </div>
-
-                    {/* Awards Badges */}
-                    <div className="mt-5">
-                        <p className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-2.5 flex items-center gap-1.5">
-                            <i className="fa-solid fa-trophy text-amber-600"></i> Awards & Recognition
-                        </p>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-w-xl">
-                            {/* Badge 1 */}
-                            <div className="bg-white/80 backdrop-blur-xs border border-amber-200/80 rounded-2xl p-2.5 text-center shadow-xs hover:border-amber-400 hover:-translate-y-0.5 transition-all duration-200">
-                                <div className="text-amber-600 text-base mb-1"><i className="fa-solid fa-trophy"></i></div>
-                                <div className="text-amber-800 text-[9px] font-black uppercase tracking-wider leading-tight">National</div>
-                                <div className="text-gray-900 text-[9px] font-bold leading-tight">Award Winner</div>
-                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">AICOG</div>
-                            </div>
-                            {/* Badge 2 */}
-                            <div className="bg-white/80 backdrop-blur-xs border border-amber-200/80 rounded-2xl p-2.5 text-center shadow-xs hover:border-amber-400 hover:-translate-y-0.5 transition-all duration-200">
-                                <div className="text-amber-600 text-base mb-1"><i className="fa-solid fa-medal"></i></div>
-                                <div className="text-amber-800 text-[9px] font-black uppercase tracking-wider leading-tight">1st Rank</div>
-                                <div className="text-gray-900 text-[9px] font-bold leading-tight">Research Award</div>
-                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">MediAce Conf.</div>
-                            </div>
-                            {/* Badge 3 */}
-                            <div className="bg-white/80 backdrop-blur-xs border border-amber-200/80 rounded-2xl p-2.5 text-center shadow-xs hover:border-amber-400 hover:-translate-y-0.5 transition-all duration-200">
-                                <div className="text-amber-600 text-base mb-1"><i className="fa-solid fa-award"></i></div>
-                                <div className="text-amber-800 text-[9px] font-black uppercase tracking-wider leading-tight">Excellence</div>
-                                <div className="text-gray-900 text-[9px] font-bold leading-tight">Case Presenter</div>
-                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">POGS Society</div>
-                            </div>
-                            {/* Badge 4 */}
-                            <div className="bg-white/80 backdrop-blur-xs border border-amber-200/80 rounded-2xl p-2.5 text-center shadow-xs hover:border-amber-400 hover:-translate-y-0.5 transition-all duration-200">
-                                <div className="text-amber-600 text-base mb-1"><i className="fa-solid fa-star"></i></div>
-                                <div className="text-amber-800 text-[9px] font-black uppercase tracking-wider leading-tight">1000+ Cases</div>
-                                <div className="text-gray-900 text-[9px] font-bold leading-tight">Managed</div>
-                                <div className="text-gray-500 text-[8px] mt-0.5 font-semibold">6+ Years Exp.</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Premier Hospitals Strip */}
-                    <div className="mt-5">
-                        <p className="text-[10px] font-bold tracking-widest text-gray-400 uppercase mb-3 flex items-center gap-1.5">
-                            <span className="inline-block w-5 h-px bg-gray-300"></span>
-                            Worked at Premier Institutions
-                            <span className="inline-block w-5 h-px bg-gray-300"></span>
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            <div className="flex items-center gap-1.5 bg-white border border-gray-100 rounded-full px-3 py-1.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                                <i className="fa-solid fa-hospital text-primary-500 text-xs"></i>
-                                <span className="text-[10px] font-bold text-gray-700 whitespace-nowrap">MGM Hospital, Belapur</span>
-                            </div>
-                            <div className="flex items-center gap-1.5 bg-white border border-gray-100 rounded-full px-3 py-1.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                                <i className="fa-solid fa-hospital text-primary-500 text-xs"></i>
-                                <span className="text-[10px] font-bold text-gray-700 whitespace-nowrap">Kashibai Navale Medical College, Pune</span>
-                            </div>
-                            <div className="flex items-center gap-1.5 bg-white border border-gray-100 rounded-full px-3 py-1.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                                <i className="fa-solid fa-hospital text-primary-500 text-xs"></i>
-                                <span className="text-[10px] font-bold text-gray-700 whitespace-nowrap">Motherhood Hospital</span>
-                            </div>
-                            <div className="flex items-center gap-1.5 bg-white border border-gray-100 rounded-full px-3 py-1.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
-                                <i className="fa-solid fa-hospital text-primary-500 text-xs"></i>
-                                <span className="text-[10px] font-bold text-gray-700 whitespace-nowrap">Vasantrao Deshmukh Govt. Medical College, Yavatmal</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
-                {/*  Hero Image  */}
-                <div className="lg:col-span-5 relative mt-8 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-primary-200 to-brand-peach blob-shape transform rotate-6 scale-105 opacity-30 pointer-events-none"></div>
-                    <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-6 sm:border-8 border-white bg-white aspect-square max-h-[280px] sm:max-h-[340px] lg:max-h-[380px] xl:max-h-[440px] flex items-center justify-center mx-auto w-full max-w-[280px] sm:max-w-[340px] lg:max-w-none">
-                        <img src="images/doctor-hero-hd.jpg" alt="Dr. Vaibhavi OBGY" decoding="async" className="w-full h-full object-cover object-center" />
-                        
-                        {/* Elegant Glassmorphism Floating Nameplate Badge */}
-                        <div className="absolute bottom-2.5 sm:bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 sm:gap-1.5 z-20 w-max">
-                            <div className="bg-white/95 backdrop-blur-md py-1.5 px-3 sm:py-2.5 sm:px-6 rounded-xl sm:rounded-2xl shadow-2xl border border-white flex items-center gap-1.5 sm:gap-3">
-                                <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-primary-500 animate-pulse shrink-0"></div>
-                                <div className="text-left">
-                                    <p className="text-[10px] sm:text-base font-bold font-serif text-gray-900 leading-none mb-0.5 sm:mb-1">Dr. Vaibhavi</p>
-                                    <p className="text-[7.5px] xs:text-[9px] sm:text-xs font-bold text-primary-600 tracking-wider sm:tracking-widest leading-none whitespace-nowrap">Consultant Obstetrician & Gynecologist</p>
-                                </div>
-                            </div>
-                            <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-xs shadow-lg border border-primary-100">
-                                <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-primary-500 animate-pulse"></span>
-                                <span className="text-[7px] xs:text-[8px] sm:text-[9px] font-bold text-primary-700 tracking-wider uppercase whitespace-nowrap">Senior Resident, MGM Belapur</span>
-                            </div>
-                        </div>
+                {/*  Hero Image — full standing photo, uncropped  */}
+                <div className="lg:col-span-6 relative mt-6 lg:mt-0" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div className="relative w-fit mx-auto">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary-100 to-brand-peach/40 blob-shape scale-105 opacity-30 pointer-events-none"></div>
+                        <img src="images/doctor-hero-v2.jpg" alt="Dr. Vaibhavi standing, full length" decoding="async" className="relative z-10 rounded-[2rem] shadow-2xl block h-[320px] sm:h-[380px] lg:h-[400px] xl:h-[440px] w-auto" />
+                    </div>
+                    <div className="relative z-10 flex items-center gap-2 justify-center mt-3">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary-500 animate-pulse shrink-0"></span>
+                        <p className="text-xs sm:text-sm font-serif font-bold text-gray-900">
+                            Dr. Vaibhavi <span className="text-gray-400 font-sans font-medium">— Consultant OB-GYN, Senior Resident MGM Belapur</span>
+                        </p>
                     </div>
                 </div>
 
+            </div>
+
+            {/* Credentials bar — every stat, award & institution from before, deferred to a single quiet line beneath the fold-focus content */}
+            <div className="mt-6 lg:mt-8 pt-4 border-t border-gray-100 text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-2.5 gap-y-1.5 text-[10.5px] sm:text-[11px] font-semibold text-gray-400">
+                    <span>6+ Years Experience</span><span className="text-gray-200">·</span>
+                    <span>1000+ Patients Treated</span><span className="text-gray-200">·</span>
+                    <span><i className="fa-solid fa-trophy text-amber-500 mr-1"></i>National Award Winner, AICOG</span><span className="text-gray-200">·</span>
+                    <span><i className="fa-solid fa-medal text-amber-500 mr-1"></i>1st Rank Research Award, MediAce Conf.</span><span className="text-gray-200">·</span>
+                    <span><i className="fa-solid fa-award text-amber-500 mr-1"></i>Excellence Case Presenter, POGS Society</span><span className="text-gray-200">·</span>
+                    <span><i className="fa-solid fa-star text-amber-500 mr-1"></i>1000+ Cases Managed</span>
+                </div>
+                <p className="text-[10.5px] sm:text-[11px] text-gray-300 font-medium mt-2 leading-relaxed">
+                    Worked at MGM Hospital, Belapur · Kashibai Navale Medical College, Pune · Motherhood Hospital · Vasantrao Deshmukh Govt. Medical College, Yavatmal
+                </p>
             </div>
         </div>
     </section>
