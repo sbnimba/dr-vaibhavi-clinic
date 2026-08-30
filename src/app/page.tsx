@@ -630,10 +630,10 @@ export default function Home() {
     {/* ==================== 7TH PAGE: COMMUNITY & PREGNANCY TIPS ==================== */}
     <section id="community" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-16 lg:pt-20 pb-4 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full text-center">
-            <h2 className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-1" data-aos="fade-up">Stay Connected</h2>
-            <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2" data-aos="fade-up" data-aos-delay="100">Community & Health Tips</h3>
+            <h2 className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-1">Stay Connected</h2>
+            <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Community & Health Tips</h3>
             
-            <div className="flex flex-wrap justify-center gap-3 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div className="flex flex-wrap justify-center gap-3 mb-4">
                 <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-primary-600 text-white px-5 py-2.5 rounded-full font-bold shadow-sm hover:bg-primary-700 hover:shadow-md transition flex items-center gap-2 text-xs sm:text-sm">
                     <i className="fa-brands fa-instagram text-base"></i> Follow on Instagram
                 </a>
@@ -645,7 +645,7 @@ export default function Home() {
                 </Link>
             </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-left" data-aos="fade-up" data-aos-delay="300">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-left">
                 {/* Card 1 */}
                 <div className="bg-[#FAF9F6] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition border border-gray-100 flex flex-col justify-between p-2 group">
                     <div>
@@ -808,7 +808,7 @@ export default function Home() {
             </div>
 
             {/* Lead Capture Form */}
-            <div className="mt-4 bg-gradient-to-br from-brand-peach/20 via-pink-50/30 to-brand-peach/10 border border-brand-peach/40 rounded-2xl p-3 sm:p-4 max-w-4xl mx-auto shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 relative overflow-hidden" data-aos="fade-up">
+            <div className="mt-4 bg-gradient-to-br from-brand-peach/20 via-pink-50/30 to-brand-peach/10 border border-brand-peach/40 rounded-2xl p-3 sm:p-4 max-w-4xl mx-auto shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div className="relative z-10 text-center sm:text-left flex-1">
                     <h4 className="text-[9px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Free Download</h4>
@@ -824,7 +824,7 @@ export default function Home() {
     {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
     <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
+            <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Our Specialties</h3>
                 <p className="text-gray-600 text-xs sm:text-sm">From your first period to menopause and everything in between, we provide holistic care for every phase of your life.</p>
@@ -832,7 +832,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {/*  Service Cards  */}
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-person-pregnant"></i>
                     </div>
@@ -840,7 +840,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Complete antenatal and postnatal care focusing on healthy, normal deliveries.</p>
                 </div>
                 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-heart-pulse"></i>
                     </div>
@@ -848,7 +848,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Expert management of gestational diabetes, BP, and multiple pregnancies.</p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-dna"></i>
                     </div>
@@ -857,7 +857,7 @@ export default function Home() {
                     <Link href="/pcos-quiz" className="inline-block mt-1 text-[10px] font-bold text-primary-700 bg-primary-50 hover:bg-primary-100 px-3 py-1.5 rounded-full transition-colors border border-primary-100">Take PCOS Risk Quiz <i className="fa-solid fa-arrow-right ml-1"></i></Link>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="400">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-baby-carriage"></i>
                     </div>
@@ -865,7 +865,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Compassionate guidance, evaluation, and treatments for couples trying to conceive.</p>
                 </div>
                 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="100">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-droplet"></i>
                     </div>
@@ -873,7 +873,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Diagnosis and treatment for heavy bleeding, pain, and irregular cycles.</p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="200">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-leaf"></i>
                     </div>
@@ -881,7 +881,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Supportive therapies and management for a smooth menopausal transition.</p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group" data-aos="fade-up" data-aos-delay="300">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group">
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-user-nurse"></i>
                     </div>
@@ -889,7 +889,7 @@ export default function Home() {
                     <p className="text-[11px] text-gray-600">Safe, painless normal deliveries and expert caesarean sections.</p>
                 </div>
 
-                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group flex items-center justify-center text-center" data-aos="fade-up" data-aos-delay="400">
+                <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-premium transition-all duration-300 border border-gray-100 group flex items-center justify-center text-center">
                     <div>
                         <h4 className="text-sm font-bold text-gray-900 mb-1">View All Services</h4>
                         <a href="#appointment" aria-label="Book an appointment" className="w-8 h-8 mx-auto rounded-full bg-primary-50 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors text-sm">
@@ -904,13 +904,13 @@ export default function Home() {
     {/* ==================== 5TH PAGE: PATIENT STORIES ==================== */}
     <section id="testimonials" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="text-center max-w-3xl mx-auto mb-8" data-aos="fade-up">
+            <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Testimonials</h2>
                 <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Patient Stories</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Real experiences from women and families who trusted Dr. Vaibhavi with their health and pregnancy journeys.</p>
             </div>
             
-            <div className="swiper testimonial-swiper pb-8" data-aos="fade-up" data-aos-delay="200">
+            <div className="swiper testimonial-swiper pb-8">
                 <div className="swiper-wrapper">
                     <div className="swiper-slide bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <div className="flex text-yellow-400 mb-3 text-sm"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
@@ -934,7 +934,7 @@ export default function Home() {
                 <div className="swiper-pagination"></div>
             </div>
 
-            <div className="text-center mt-2 pb-4" data-aos="fade-up" data-aos-delay="300">
+            <div className="text-center mt-2 pb-4">
                 <a href="https://share.google/rIHIKWL49PnG4VcCd" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-200 text-gray-800 font-bold rounded-full shadow-sm hover:shadow-md hover:border-gray-300 transition-all text-xs sm:text-sm outline-none group">
                     <img src="/images/google-g.svg" alt="" aria-hidden="true" width={16} height={16} className="w-4 h-4 group-hover:scale-110 transition-transform" />
                     Read all 5-Star Reviews on Google Maps <i className="fa-solid fa-arrow-up-right-from-square text-gray-400 ml-1"></i>
@@ -946,13 +946,13 @@ export default function Home() {
     {/* ==================== 6TH PAGE: FAQ SECTION ==================== */}
     <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div className="text-center mb-4 lg:mb-6" data-aos="fade-up">
+            <div className="text-center mb-4 lg:mb-6">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Patient Guide</h2>
                 <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Frequently Asked Questions</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Clear, transparent answers to common patient questions about pregnancy, gynecology, and consultation modes.</p>
             </div>
             
-            <div className="space-y-3 lg:space-y-4" data-aos="fade-up" data-aos-delay="200">
+            <div className="space-y-3 lg:space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 items-start">
                 {/* Left Column (FAQs 1-5) */}
                 <div className="space-y-2">
