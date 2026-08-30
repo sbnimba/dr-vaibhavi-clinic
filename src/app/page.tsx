@@ -556,7 +556,7 @@ export default function Home() {
                         Obstetrician &amp; Gynaecologist · Navi Mumbai
                     </p>
 
-                    <h2 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-serif font-bold text-gray-900 leading-[1.08] mb-5 tracking-tight">
+                    <h2 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-sans font-extrabold text-gray-900 leading-[1.08] mb-5 tracking-tight">
                         Where Every Woman Feels <span className="gradient-text">Safe, Heard &amp; Cared</span>
                     </h2>
 
