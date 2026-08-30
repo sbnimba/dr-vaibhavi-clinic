@@ -547,7 +547,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
 
                 {/*  Hero Content — headline, one line of support copy, one clear action  */}
                 <div className="lg:col-span-6" data-aos="fade-right" data-aos-duration="1000">
