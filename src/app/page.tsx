@@ -537,7 +537,7 @@ export default function Home() {
     </header>
 
     {/* ==================== 1ST PAGE: HERO SECTION ==================== */}
-    <section id="home" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto overflow-x-hidden lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-2 flex flex-col justify-center relative bg-white">
+    <section id="home" className="w-full overflow-x-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
         {/* Soothing Animated Background */}
         <HeroAnimation />
         {/* Soft static gradient accent blobs (behind canvas) */}
@@ -628,7 +628,7 @@ export default function Home() {
 
 
     {/* ==================== 7TH PAGE: COMMUNITY & PREGNANCY TIPS ==================== */}
-    <section id="community" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-16 lg:pt-20 pb-4 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
+    <section id="community" className="w-full pt-16 lg:pt-20 pb-8 lg:pb-10 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full text-center">
             <h2 className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-1">Stay Connected</h2>
             <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Community & Health Tips</h3>
@@ -822,7 +822,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 4TH PAGE: OUR SPECIALTIES ==================== */}
-    <section id="services" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+    <section id="services" className="w-full pt-16 lg:pt-20 pb-12 lg:pb-14 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
@@ -902,7 +902,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 5TH PAGE: PATIENT STORIES ==================== */}
-    <section id="testimonials" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto lg:overflow-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white border-b border-gray-100">
+    <section id="testimonials" className="w-full pt-16 lg:pt-20 pb-12 lg:pb-14 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Testimonials</h2>
@@ -944,7 +944,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 6TH PAGE: FAQ SECTION ==================== */}
-    <section id="faq" className="w-full min-h-screen lg:h-screen snap-start snap-always overflow-y-auto pt-20 lg:pt-16 pb-8 lg:pb-4 flex flex-col justify-center relative bg-[#FAF9F6] border-b border-gray-100">
+    <section id="faq" className="w-full pt-16 lg:pt-16 pb-12 lg:pb-14 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center mb-4 lg:mb-6">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Patient Guide</h2>
@@ -1067,7 +1067,7 @@ export default function Home() {
     </section>
 
     {/* ==================== 8TH PAGE: BOOK YOUR VISIT & FOOTER ==================== */}
-    <section id="appointment" className="w-full min-h-screen snap-start snap-always overflow-y-auto pt-24 lg:pt-20 flex flex-col justify-between relative bg-white">
+    <section id="appointment" className="w-full pt-24 lg:pt-20 pb-12 lg:pb-16 flex flex-col justify-between relative bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-6">
             <div className="bg-[#FAF9F6] rounded-[2rem] shadow-premium overflow-hidden border border-gray-100">
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
