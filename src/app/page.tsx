@@ -315,7 +315,7 @@ export default function Home() {
                     <i className="fa-solid fa-spa"></i>
                 </div>
                 <div className="min-w-0">
-                    <h1 className="truncate text-lg xl:text-xl font-serif font-bold text-gray-900 tracking-wide">Dr. Vaibhavi Dhenge</h1>
+                    <h1 className="truncate text-lg xl:text-xl font-sans font-extrabold text-gray-900 tracking-tight">Dr. Vaibhavi Dhenge</h1>
                     <p className="truncate text-[10px] xl:text-xs text-primary-700 font-bold tracking-widest">Consultant Obstetrician &amp; Gynecologist</p>
                 </div>
             </a>
@@ -631,7 +631,7 @@ export default function Home() {
     <section id="community" className="w-full scroll-mt-24 pt-8 lg:pt-10 pb-8 lg:pb-10 flex flex-col justify-center relative bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10 w-full text-center">
             <h2 className="text-[10px] font-bold tracking-widest text-primary-600 uppercase mb-1">Stay Connected</h2>
-            <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Community & Health Tips</h3>
+            <h3 className="text-2xl lg:text-3xl font-sans font-extrabold text-gray-900 mb-2 tracking-tight">Community & Health Tips</h3>
             
             <div className="flex flex-wrap justify-center gap-3 mb-4">
                 <a href="https://www.instagram.com/drvaibhavicare?igsh=MTg4MTh3b2kya2VsMw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="bg-primary-600 text-white px-5 py-2.5 rounded-full font-bold shadow-sm hover:bg-primary-700 hover:shadow-md transition flex items-center gap-2 text-xs sm:text-sm">
@@ -812,7 +812,7 @@ export default function Home() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary-200/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                 <div className="relative z-10 text-center sm:text-left flex-1">
                     <h4 className="text-[9px] font-bold tracking-widest text-primary-600 uppercase mb-0.5">Free Download</h4>
-                    <h3 className="text-sm sm:text-base font-serif font-bold text-gray-900">Week-by-Week Pregnancy Diet Guide</h3>
+                    <h3 className="text-sm sm:text-base font-sans font-bold text-gray-900">Week-by-Week Pregnancy Diet Guide</h3>
                 </div>
                 <div className="w-full sm:w-auto relative z-10 shrink-0">
                     <LeadCaptureForm />
@@ -826,7 +826,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Expert Treatments</h2>
-                <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Our Specialties</h3>
+                <h3 className="text-3xl lg:text-4xl font-sans font-extrabold text-gray-900 mb-2 tracking-tight">Our Specialties</h3>
                 <p className="text-gray-600 text-xs sm:text-sm">From your first period to menopause and everything in between, we provide holistic care for every phase of your life.</p>
             </div>
             
@@ -836,7 +836,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-person-pregnant"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Pregnancy Care</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">Pregnancy Care</h4>
                     <p className="text-[11px] text-gray-600">Complete antenatal and postnatal care focusing on healthy, normal deliveries.</p>
                 </div>
                 
@@ -844,7 +844,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-heart-pulse"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">High Risk Pregnancy</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">High Risk Pregnancy</h4>
                     <p className="text-[11px] text-gray-600">Expert management of gestational diabetes, BP, and multiple pregnancies.</p>
                 </div>
 
@@ -852,7 +852,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-dna"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">PCOS (PMOS) Treatment</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">PCOS (PMOS) Treatment</h4>
                     <p className="text-[11px] text-gray-600 mb-2">Holistic medical and lifestyle management for PCOS (now PMOS) and hormonal imbalances.</p>
                     <Link href="/pcos-quiz" className="inline-block mt-1 text-[10px] font-bold text-primary-700 bg-primary-50 hover:bg-primary-100 px-3 py-1.5 rounded-full transition-colors border border-primary-100">Take PCOS Risk Quiz <i className="fa-solid fa-arrow-right ml-1"></i></Link>
                 </div>
@@ -861,7 +861,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-baby-carriage"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Infertility Consult</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">Infertility Consult</h4>
                     <p className="text-[11px] text-gray-600">Compassionate guidance, evaluation, and treatments for couples trying to conceive.</p>
                 </div>
                 
@@ -869,7 +869,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-droplet"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menstrual Disorders</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">Menstrual Disorders</h4>
                     <p className="text-[11px] text-gray-600">Diagnosis and treatment for heavy bleeding, pain, and irregular cycles.</p>
                 </div>
 
@@ -877,7 +877,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-leaf"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">Menopause Care</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">Menopause Care</h4>
                     <p className="text-[11px] text-gray-600">Supportive therapies and management for a smooth menopausal transition.</p>
                 </div>
 
@@ -885,7 +885,7 @@ export default function Home() {
                     <div className="w-10 h-10 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center text-lg mb-3 group-hover:scale-110 transition-transform">
                         <i className="fa-solid fa-user-nurse"></i>
                     </div>
-                    <h4 className="text-base font-bold font-serif text-gray-900 mb-1">C-Section & Delivery</h4>
+                    <h4 className="text-base font-bold font-sans text-gray-900 mb-1">C-Section & Delivery</h4>
                     <p className="text-[11px] text-gray-600">Safe, painless normal deliveries and expert caesarean sections.</p>
                 </div>
 
@@ -906,7 +906,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center max-w-3xl mx-auto mb-8">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Testimonials</h2>
-                <h3 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900 mb-2">Patient Stories</h3>
+                <h3 className="text-3xl lg:text-4xl font-sans font-extrabold text-gray-900 mb-2 tracking-tight">Patient Stories</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Real experiences from women and families who trusted Dr. Vaibhavi with their health and pregnancy journeys.</p>
             </div>
             
@@ -948,7 +948,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div className="text-center mb-4 lg:mb-6">
                 <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Patient Guide</h2>
-                <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-1">Frequently Asked Questions</h3>
+                <h3 className="text-2xl lg:text-3xl font-sans font-extrabold text-gray-900 mb-1 tracking-tight">Frequently Asked Questions</h3>
                 <p className="text-gray-600 text-xs sm:text-sm max-w-2xl mx-auto">Clear, transparent answers to common patient questions about pregnancy, gynecology, and consultation modes.</p>
             </div>
             
@@ -1075,7 +1075,7 @@ export default function Home() {
                     <div className="lg:col-span-5 p-6 lg:p-10 flex flex-col justify-center bg-brand-peach/10 relative overflow-hidden h-full">
                         <div className="relative z-10">
                             <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Professional Care</h2>
-                            <h3 className="text-2xl lg:text-3xl font-serif font-bold text-gray-900 mb-2">Book Your Visit</h3>
+                            <h3 className="text-2xl lg:text-3xl font-sans font-extrabold text-gray-900 mb-2 tracking-tight">Book Your Visit</h3>
                             <p className="text-gray-600 text-xs sm:text-sm mb-6 leading-relaxed">Schedule an in-clinic appointment or an online video consultation with Dr. Vaibhavi.</p>
                             
                             <div className="space-y-3">
@@ -1120,7 +1120,7 @@ export default function Home() {
                                 </div>
                                 <div className="space-y-1">
                                     <span className="text-[10px] font-bold text-emerald-700 tracking-widest uppercase bg-emerald-100 px-2.5 py-0.5 rounded-full">Booking Confirmed</span>
-                                    <h3 className="text-xl font-serif font-bold text-gray-900">Your appointment request has been submitted</h3>
+                                    <h3 className="text-xl font-sans font-bold text-gray-900">Your appointment request has been submitted</h3>
                                     <p className="text-[11px] sm:text-xs text-gray-600 max-w-md mx-auto leading-relaxed">
                                         Dr. Vaibhavi and the clinic staff have received your request. A confirmation email and background alert have been dispatched to the clinic management.
                                     </p>
@@ -1435,7 +1435,7 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     {/*  Branding  */}
                     <div className="lg:col-span-1">
-                        <h2 className="text-lg font-serif font-bold text-white mb-3 flex items-center gap-2">
+                        <h2 className="text-lg font-sans font-bold text-white mb-3 flex items-center gap-2">
                             <div className="w-6 h-6 rounded-full bg-primary-600 flex items-center justify-center"><i className="fa-solid fa-spa text-[10px]"></i></div>
                             Dr. Vaibhavi Dhenge
                         </h2>
