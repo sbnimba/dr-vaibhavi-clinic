@@ -537,7 +537,7 @@ export default function Home() {
     </header>
 
     {/* ==================== 1ST PAGE: HERO SECTION ==================== */}
-    <section id="home" className="w-full overflow-x-hidden pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
+    <section id="home" className="w-full overflow-x-hidden lg:min-h-screen pt-24 lg:pt-20 pb-12 lg:pb-6 flex flex-col justify-center relative bg-white">
         {/* Soothing Animated Background */}
         <HeroAnimation />
         {/* Soft static gradient accent blobs (behind canvas) */}
