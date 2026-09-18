@@ -22,7 +22,7 @@ export default function TermsConditions() {
             </ul>
 
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">2. Appointments & Scheduling</h2>
-            <p>Booking an appointment through this website constitutes a request. The appointment is only considered final when you receive an "Appointment Confirmed" email notification. The clinic reserves the right to reschedule or decline appointments based on the doctor's availability.</p>
+            <p>Booking an appointment through this website constitutes a request. The appointment is only considered final when you receive an &quot;Appointment Confirmed&quot; email notification. The clinic reserves the right to reschedule or decline appointments based on the doctor&apos;s availability.</p>
 
             <h2 className="text-lg font-bold text-gray-900 mt-8 mb-4">3. User Conduct</h2>
             <p>You agree to provide accurate, current, and complete information regarding your medical history and identity. Falsifying identity during online consultations is a violation of telemedicine laws.</p>

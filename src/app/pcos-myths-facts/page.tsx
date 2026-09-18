@@ -35,7 +35,7 @@ export default function PcosMythsFacts() {
                     <div className="max-w-4xl mx-auto text-center relative z-10">
                         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white shadow-sm border border-purple-100 mb-6 animate-fade-in">
                             <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
-                            <span className="text-[11px] font-bold text-purple-700 tracking-wider uppercase">Women's Health & Hormones</span>
+                            <span className="text-[11px] font-bold text-purple-700 tracking-wider uppercase">Women&apos;s Health & Hormones</span>
                         </div>
 
                         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-gray-900 leading-[1.2] mb-6 tracking-normal">
@@ -105,7 +105,7 @@ export default function PcosMythsFacts() {
                                 <div className="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/15 space-y-2 text-xs sm:text-sm text-purple-50">
                                     <p className="m-0"><strong>Why the name change?</strong></p>
                                     <ul className="space-y-1.5 list-disc list-inside text-purple-100">
-                                        <li>The old name (PCOS) focused heavily on "cysts"—which are actually harmless, normal egg follicles, not true ovarian cysts. This misleading name caused immense anxiety and led many women to believe surgery was needed.</li>
+                                        <li>The old name (PCOS) focused heavily on &quot;cysts&quot;—which are actually harmless, normal egg follicles, not true ovarian cysts. This misleading name caused immense anxiety and led many women to believe surgery was needed.</li>
                                         <li>The new name (<strong>PMOS</strong>) accurately highlights that this is a <strong>metabolic and hormonal condition</strong> affecting the entire body (insulin, metabolism, hormones), not just an isolated issue with the ovaries.</li>
                                     </ul>
                                 </div>
@@ -123,7 +123,7 @@ export default function PcosMythsFacts() {
 
                             <div className="bg-[#FAF9F6] border border-gray-200/60 rounded-2xl p-6 shadow-sm">
                                 <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg mb-3 flex items-center gap-2">
-                                    <i className="fa-solid fa-circle-info text-purple-600"></i> PCOS / PMOS can affect multiple aspects of a woman's life:
+                                    <i className="fa-solid fa-circle-info text-purple-600"></i> PCOS / PMOS can affect multiple aspects of a woman&apos;s life:
                                 </h3>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 font-medium text-xs sm:text-sm text-gray-800">
                                     <div className="bg-white p-3 rounded-xl border border-gray-100 shadow-sm flex items-center gap-2">
@@ -328,7 +328,7 @@ export default function PcosMythsFacts() {
                                             <span className="text-[10px] sm:text-xs font-bold text-emerald-700 uppercase tracking-wider block mb-1">Fact</span>
                                             <p className="text-gray-900 font-bold text-sm sm:text-base m-0">This exact misunderstanding is why the medical community is changing the name from PCOS to PMOS!</p>
                                             <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                                Not all women with PMOS have visible cysts on ultrasound. The "cysts" are actually normal developing egg follicles that stalled due to hormonal imbalance. A PMOS diagnosis depends on a combination of symptoms, metabolic evaluation, menstrual history, and ultrasound findings.
+                                                Not all women with PMOS have visible cysts on ultrasound. The &quot;cysts&quot; are actually normal developing egg follicles that stalled due to hormonal imbalance. A PMOS diagnosis depends on a combination of symptoms, metabolic evaluation, menstrual history, and ultrasound findings.
                                             </p>
                                         </div>
                                     </div>

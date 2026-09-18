@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { AppLanguage, UserProfile } from '@/types/pregnancy-journey';
+import { UserProfile } from '@/types/pregnancy-journey';
 import { PRE_PREGNANCY_SYMPTOMS } from '@/lib/pregnancy-journey-data';
 import { saveUserProfile, addCarePoints } from '@/lib/pregnancy-store';
 import { speakText } from '@/lib/audio-player';

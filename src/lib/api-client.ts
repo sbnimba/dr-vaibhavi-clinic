@@ -2,8 +2,8 @@ const BASE_URL = 'https://drvaibhavicare.com';
 
 export function getApiUrl(path: string): string {
   if (typeof window !== 'undefined') {
-    const isMobileApp = 
-      (window as any).Capacitor || 
+    const isMobileApp =
+      (window as Window & { Capacitor?: unknown }).Capacitor ||
       window.location.origin === 'file://' || 
       window.location.hostname === 'localhost' || 
       !window.location.hostname.includes('drvaibhavicare.com');

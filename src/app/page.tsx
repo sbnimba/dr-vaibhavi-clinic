@@ -11,6 +11,21 @@ import { getApiUrl } from '@/lib/api-client';
 
 const HeroAnimation = dynamic(() => import('@/components/HeroAnimation'), { ssr: false });
 
+interface BookedAppointment {
+    id: string;
+    patientName: string;
+    mobileNumber: string;
+    emailAddress: string;
+    consultationMode: string;
+    specialty: string;
+    date: string;
+    timeSlot: string;
+    healthConcern: string;
+    medicalHistory: string[];
+    status: string;
+    createdAt: string;
+}
+
 export default function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [currentLang, setCurrentLang] = useState('en');
@@ -19,6 +34,8 @@ export default function Home() {
     useEffect(() => {
         const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
         if (match && match[1] && match[1] !== 'en') {
+            // Syncing from a browser-only cookie set by the Google Translate widget; can't be read during SSR.
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setCurrentLang(match[1]);
         }
     }, []);
@@ -93,7 +110,7 @@ export default function Home() {
     const [medicalConditions, setMedicalConditions] = useState<string[]>([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [bookingSuccess, setBookingSuccess] = useState(false);
-    const [bookedAppointment, setBookedAppointment] = useState<any>(null);
+    const [bookedAppointment, setBookedAppointment] = useState<BookedAppointment | null>(null);
 
     const toggleCondition = (condition: string) => {
         if (medicalConditions.includes(condition)) {
@@ -125,49 +142,23 @@ export default function Home() {
         setBookingStep(prev => prev - 1);
     };
 
-    // Security XOR helper functions for encrypting private patient data
-    const SECRET_KEY = "vaibhavi2026";
-    
-    const encryptData = (text: string): string => {
-        try {
-            const xor = text.split('').map((char, i) => 
-                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
-            ).join('');
-            return btoa(unescape(encodeURIComponent(xor)));
-        } catch (e) {
-            return '';
-        }
-    };
-
-    const decryptData = (encoded: string): string => {
-        try {
-            const decoded = decodeURIComponent(escape(atob(encoded)));
-            return decoded.split('').map((char, i) => 
-                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
-            ).join('');
-        } catch (e) {
-            return '';
-        }
-    };
-
     // Helper for sending real emails using FormSubmit (zero-config) & EmailJS
-    const sendEmailAlert = async (type: 'new_booking' | 'status_update', data: any) => {
+    const sendEmailAlert = async (type: 'new_booking' | 'status_update', data: BookedAppointment) => {
         if (typeof window === 'undefined') return false;
 
         // 1. Send new booking alert to Doctor via Web3Forms using the user's Access Key
         if (type === 'new_booking') {
-            let gcalLink = '';
             let gcalUrl = '';
             try {
                 const [time, modifier] = data.timeSlot.split(' ');
-                let [hours, minutes] = time.split(':');
+                const [rawHours, minutes] = time.split(':');
+                let hours = rawHours;
                 if (hours === '12') hours = '00';
                 if (modifier === 'PM') hours = (parseInt(hours, 10) + 12).toString();
                 const start = new Date(`${data.date}T${hours.padStart(2, '0')}:${minutes}:00`);
                 const end = new Date(start.getTime() + 15 * 60000); // 15 mins
                 const formatGCalDate = (d: Date) => d.toISOString().replace(/-|:|\.\d\d\d/g, '');
                 gcalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(`Meeting: Dr. Vaibhavi & ${data.patientName}`)}&dates=${formatGCalDate(start)}/${formatGCalDate(end)}&details=${encodeURIComponent(`Patient Phone: ${data.mobileNumber}\nMode: ${data.consultationMode}\nSpecialty: ${data.specialty}\nRef: ${data.id}`)}&add=${encodeURIComponent(data.emailAddress)}`;
-                gcalLink = `<div style="margin-top:24px;text-align:center;"><a href="${gcalUrl}" target="_blank" style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;text-decoration:none;padding:14px 28px;border-radius:50px;font-size:15px;font-weight:700;font-family:sans-serif;box-shadow:0 6px 20px rgba(124,58,237,0.35);letter-spacing:0.3px;">✅ Confirm Booking &amp; Schedule 15-Min Meeting</a><p style="margin-top:10px;font-size:11px;color:#888;font-family:sans-serif;">Clicking this will open Google Calendar. Save the event to send a meeting invite to the patient.</p></div>`;
             } catch (e) {
                 console.error("GCal Link error", e);
             }
@@ -561,7 +552,7 @@ export default function Home() {
                     </h2>
 
                     <p className="text-base sm:text-lg text-gray-500 mb-8 max-w-sm leading-relaxed">
-                        Warm, private, and judgment-free women's care — at every stage of life.
+                        Warm, private, and judgment-free women&apos;s care — at every stage of life.
                     </p>
 
                     <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-6">
@@ -668,7 +659,7 @@ export default function Home() {
                         <div className="w-6 h-6 rounded-md bg-primary-50 flex items-center justify-center text-primary-600 text-xs mb-1.5 group-hover:scale-110 transition-transform duration-300">
                             <i className="fa-solid fa-dna"></i>
                         </div>
-                        <span className="text-[8px] font-bold text-primary-600 uppercase tracking-wider block mb-1">Women's Health</span>
+                        <span className="text-[8px] font-bold text-primary-600 uppercase tracking-wider block mb-1">Women&apos;s Health</span>
                         <Link href="/pcos-myths-facts" className="block outline-none">
                             <h4 className="font-bold text-[10px] sm:text-xs text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2 leading-snug">Understanding PCOS (now PMOS): Myths vs Facts</h4>
                         </Link>
@@ -914,19 +905,19 @@ export default function Home() {
                 <div className="swiper-wrapper">
                     <div className="swiper-slide bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <div className="flex text-yellow-400 mb-3 text-sm"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
-                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">"Dr. Vaibhavi handled my high-risk pregnancy with such calm and expertise. The delivery at MGM Belapur was extremely smooth. Truly the best gynecologist in Navi Mumbai!"</p>
+                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">&quot;Dr. Vaibhavi handled my high-risk pregnancy with such calm and expertise. The delivery at MGM Belapur was extremely smooth. Truly the best gynecologist in Navi Mumbai!&quot;</p>
                         <h4 className="font-bold text-gray-900 text-sm sm:text-base">- Priya Sharma</h4>
                         <p className="text-[11px] text-gray-500">Pregnancy Care</p>
                     </div>
                     <div className="swiper-slide bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <div className="flex text-yellow-400 mb-3 text-sm"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
-                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">"I was struggling with PCOS (PMOS) and irregular periods for years. Her structured treatment and lifestyle guidance changed everything for me. Highly recommended."</p>
+                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">&quot;I was struggling with PCOS (PMOS) and irregular periods for years. Her structured treatment and lifestyle guidance changed everything for me. Highly recommended.&quot;</p>
                         <h4 className="font-bold text-gray-900 text-sm sm:text-base">- Anjali Deshmukh</h4>
                         <p className="text-[11px] text-gray-500">PCOS / PMOS Patient</p>
                     </div>
                     <div className="swiper-slide bg-[#FAF9F6] p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
                         <div className="flex text-yellow-400 mb-3 text-sm"><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
-                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">"Very compassionate and non-judgmental. She listens to all queries patiently. The clinic atmosphere is very premium and soothing."</p>
+                        <p className="text-gray-700 italic leading-relaxed mb-4 text-xs sm:text-sm">&quot;Very compassionate and non-judgmental. She listens to all queries patiently. The clinic atmosphere is very premium and soothing.&quot;</p>
                         <h4 className="font-bold text-gray-900 text-sm sm:text-base">- Sneha R.</h4>
                         <p className="text-[11px] text-gray-500">Routine Checkup</p>
                     </div>
@@ -1440,7 +1431,7 @@ export default function Home() {
                             Dr. Vaibhavi Dhenge
                         </h2>
                         <p className="text-gray-400 text-[11px] leading-relaxed mb-3">
-                            Premium women's healthcare focusing on empathy, clinical excellence, and empowerment for every stage of life.
+                            Premium women&apos;s healthcare focusing on empathy, clinical excellence, and empowerment for every stage of life.
                         </p>
                         <div className="bg-gray-800/50 p-2.5 rounded-lg border border-gray-700 mb-4 inline-block">
                             <p className="text-gray-300 text-[10px] font-mono">

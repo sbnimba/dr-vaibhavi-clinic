@@ -56,7 +56,7 @@ export default function MythOrFactGame({ profile, onUpdateProfile }: Props) {
 
             <div className="bg-purple-50/60 rounded-2xl p-5 mb-5 border border-purple-100 text-center">
                 <p className="text-base sm:text-lg font-serif font-bold text-purple-950 leading-snug">
-                    "{currentItem.statement[lang]}"
+                    &quot;{currentItem.statement[lang]}&quot;
                 </p>
             </div>
 

@@ -81,7 +81,7 @@ export default function InfertilityConsult() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6 sm:p-8">
                                 <p className="text-white text-xs sm:text-sm font-medium backdrop-blur-md bg-black/30 py-2.5 px-5 rounded-2xl border border-white/20 shadow-lg">
-                                    🌸 <strong>A journey of hope and medical support:</strong> Infertility is not simply a "woman's problem"—both partners require comprehensive evaluation and compassionate care.
+                                    🌸 <strong>A journey of hope and medical support:</strong> Infertility is not simply a &quot;woman&apos;s problem&quot;—both partners require comprehensive evaluation and compassionate care.
                                 </p>
                             </div>
                         </div>

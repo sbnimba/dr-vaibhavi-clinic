@@ -234,7 +234,7 @@ export default function NormalDeliveryVsCSection() {
                                     <li>• Increased need for dedicated rest</li>
                                 </ul>
                                 <p className="text-xs text-purple-700 font-bold m-0 italic pt-2">
-                                    ⭐ However, with Dr. Vaibhavi's advanced post-operative care protocols, recovery is highly smooth and comfortable.
+                                    ⭐ However, with Dr. Vaibhavi&apos;s advanced post-operative care protocols, recovery is highly smooth and comfortable.
                                 </p>
                             </div>
 

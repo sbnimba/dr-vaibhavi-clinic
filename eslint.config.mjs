@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Standalone CommonJS Node scripts, run directly via `node`, not part of the app build.
+    "deploy-website.js",
+    "fix-out-images.js",
   ]),
 ]);
 

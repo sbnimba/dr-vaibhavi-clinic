@@ -44,7 +44,7 @@ export default function BabyGrowthPregnancy() {
                         </h1>
 
                         <p className="text-base sm:text-lg text-gray-700 font-sans font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
-                            Follow your baby's incredible journey from a tiny cluster of cells to a fully developed newborn, exploring major developmental milestones every single month.
+                            Follow your baby&apos;s incredible journey from a tiny cluster of cells to a fully developed newborn, exploring major developmental milestones every single month.
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 font-medium bg-white/80 backdrop-blur-sm py-3 px-6 rounded-full max-w-full mx-auto shadow-sm border border-white">
@@ -138,7 +138,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-xs font-bold border border-teal-100">🫐 Size: Raspberry</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            This is a highly critical stage because major organs begin developing rapidly. The baby's heart starts beating, the neural tube (forming the brain and spinal cord) develops, tiny arm and leg buds appear, and early facial features begin forming.
+                                            This is a highly critical stage because major organs begin developing rapidly. The baby&apos;s heart starts beating, the neural tube (forming the brain and spinal cord) develops, tiny arm and leg buds appear, and early facial features begin forming.
                                         </p>
                                         <div className="bg-white p-4 rounded-xl border border-gray-100 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-semibold text-gray-800">
                                             <span className="bg-teal-50/50 p-2 rounded-lg text-center border border-teal-100/50">❤️ Heart Beating</span>
@@ -178,7 +178,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-xs font-bold border border-teal-100">🥑 Size: Avocado</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            The second trimester begins, and many mothers start feeling much better physically as morning sickness fades. The baby's bones become stronger, facial expressions develop, fine hair (lanugo) begins growing, and the baby becomes highly active inside the womb.
+                                            The second trimester begins, and many mothers start feeling much better physically as morning sickness fades. The baby&apos;s bones become stronger, facial expressions develop, fine hair (lanugo) begins growing, and the baby becomes highly active inside the womb.
                                         </p>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-xs font-bold border border-teal-100">🍌 Size: Banana</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            This is an incredibly exciting month because mothers begin feeling gentle fluttery baby movements. These magical first movements are clinically called <strong>Quickening</strong>. The baby's hearing develops, muscles grow stronger, and distinct sleep-wake patterns begin forming.
+                                            This is an incredibly exciting month because mothers begin feeling gentle fluttery baby movements. These magical first movements are clinically called <strong>Quickening</strong>. The baby&apos;s hearing develops, muscles grow stronger, and distinct sleep-wake patterns begin forming.
                                         </p>
                                         <div className="bg-white p-3 rounded-xl border border-gray-100 text-xs text-teal-900 font-bold">
                                             🩺 The comprehensive Anomaly Scan is commonly performed during this stage.
@@ -209,7 +209,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-xs font-bold border border-teal-100">🌽 Size: Ear of Corn</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            Baby's growth becomes much more noticeable. Skin develops further (covered by a protective waxy coating called vernix), eyelids begin opening, the baby actively responds to external sounds and voices, and kicking movements become significantly stronger. Lungs are developing but remain immature.
+                                            Baby&apos;s growth becomes much more noticeable. Skin develops further (covered by a protective waxy coating called vernix), eyelids begin opening, the baby actively responds to external sounds and voices, and kicking movements become significantly stronger. Lungs are developing but remain immature.
                                         </p>
                                     </div>
                                 </div>
@@ -223,7 +223,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-teal-50 text-teal-800 px-3 py-1 rounded-full text-xs font-bold border border-teal-100">🍆 Size: Large Eggplant</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            The third trimester officially begins. The baby's brain develops rapidly, body fat increases to help regulate temperature, eyes open and close, and kicking becomes vigorous. Many babies begin changing their position inside the uterus during this time.
+                                            The third trimester officially begins. The baby&apos;s brain develops rapidly, body fat increases to help regulate temperature, eyes open and close, and kicking becomes vigorous. Many babies begin changing their position inside the uterus during this time.
                                         </p>
                                     </div>
                                 </div>
@@ -265,7 +265,7 @@ export default function BabyGrowthPregnancy() {
                                             <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-xs font-bold border border-emerald-200">🍉 Size: Watermelon</span>
                                         </div>
                                         <p className="text-xs sm:text-sm text-emerald-900 m-0 leading-relaxed font-medium">
-                                            A pregnancy is considered full-term after reaching 37 weeks. By now, the baby's organs are fully developed, lungs are mature, and the baby is completely ready for life outside the womb. Labor can begin naturally at absolutely anytime during this period.
+                                            A pregnancy is considered full-term after reaching 37 weeks. By now, the baby&apos;s organs are fully developed, lungs are mature, and the baby is completely ready for life outside the womb. Labor can begin naturally at absolutely anytime during this period.
                                         </p>
                                     </div>
                                 </div>
@@ -322,7 +322,7 @@ export default function BabyGrowthPregnancy() {
                                 Tips for Healthy Baby Growth
                             </h2>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Support your baby's rapid monthly development by maintaining these excellent daily habits:
+                                Support your baby&apos;s rapid monthly development by maintaining these excellent daily habits:
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -375,7 +375,7 @@ export default function BabyGrowthPregnancy() {
                             </div>
 
                             <div>
-                                <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-1">Track Your Baby's Growth Milestones</h3>
+                                <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-1">Track Your Baby&apos;s Growth Milestones</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto leading-relaxed">
                                     Consult Dr. Vaibhavi for high-resolution growth ultrasounds, accurate fundal height tracking, and expert maternal-fetal care.
                                 </p>

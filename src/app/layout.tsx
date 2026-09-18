@@ -68,10 +68,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Analytics only loads when a real measurement ID is configured. The previous
-// placeholder (G-XXXXXXXXXX) shipped a script on every page view and recorded nothing.
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-
 const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": ["Physician", "MedicalBusiness"],

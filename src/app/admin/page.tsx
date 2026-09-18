@@ -5,6 +5,31 @@ import { supabase } from '@/lib/supabase';
 import { getApiUrl } from '@/lib/api-client';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 
+interface StaffMember {
+    id: string;
+    email: string;
+    role: 'SUPER_ADMIN' | 'COMPOUNDER';
+    is_approved: boolean;
+    created_at: string;
+}
+
+interface AppointmentRow {
+    id: string;
+    patient_name: string;
+    mobile_number: string;
+    email_address: string;
+    consultation_mode: string;
+    specialty: string;
+    appointment_date: string;
+    time_slot: string;
+    health_concern: string;
+    medical_history: string[] | null;
+    status: 'Pending' | 'Confirmed' | 'Rescheduled' | 'Rejected' | 'Completed';
+    created_at: string;
+    reschedule_note?: string;
+    reject_note?: string;
+}
+
 interface Appointment {
     id: string;
     patientName: string;
@@ -31,7 +56,7 @@ export default function AdminDashboard() {
     
     const [userRole, setUserRole] = useState<'SUPER_ADMIN' | 'COMPOUNDER' | null>(null);
     const [isApproved, setIsApproved] = useState(false);
-    const [staffList, setStaffList] = useState<any[]>([]);
+    const [staffList, setStaffList] = useState<StaffMember[]>([]);
 
     const [appointments, setAppointments] = useState<Appointment[]>([]);
     const [activeTab, setActiveTab] = useState<'Pending' | 'Confirmed' | 'Completed' | 'Calendar' | 'Analytics' | 'Staff' | 'Settings'>('Pending');
@@ -52,66 +77,10 @@ export default function AdminDashboard() {
         setTimeout(() => setToastMessage(null), 4000);
     };
 
-    // Load credentials & appointments
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            checkUser();
-        }
-    }, []);
-
-    const checkUser = async () => {
-        const { data: { session } } = await supabase.auth.getSession();
-        if (session) {
-            await fetchRoleAndApprove(session.user.id);
-        }
-    }
-
-    const fetchRoleAndApprove = async (userId: string) => {
-        const { data } = await supabase.from('staff_roles').select('*').eq('id', userId).single();
-        if (data) {
-            setUserRole(data.role);
-            setIsApproved(data.is_approved);
-            if (data.is_approved) {
-                setAuthStep('authenticated');
-                loadAppointments();
-                if (data.role === 'SUPER_ADMIN') {
-                    loadStaff();
-                }
-            } else {
-                setAuthStep('authenticated');
-            }
-        }
-    }
-
     const loadStaff = async () => {
         const { data } = await supabase.from('staff_roles').select('*').order('created_at', { ascending: false });
         if (data) setStaffList(data);
     }
-
-    // Security XOR helper functions for encrypting/decrypting private patient data
-    const SECRET_KEY = "vaibhavi2026";
-    
-    const encryptData = (text: string): string => {
-        try {
-            const xor = text.split('').map((char, i) => 
-                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
-            ).join('');
-            return btoa(unescape(encodeURIComponent(xor)));
-        } catch (e) {
-            return '';
-        }
-    };
-
-    const decryptData = (encoded: string): string => {
-        try {
-            const decoded = decodeURIComponent(escape(atob(encoded)));
-            return decoded.split('').map((char, i) => 
-                String.fromCharCode(char.charCodeAt(0) ^ SECRET_KEY.charCodeAt(i % SECRET_KEY.length))
-            ).join('');
-        } catch (e) {
-            return '';
-        }
-    };
 
     const loadAppointments = async () => {
         setIsSyncing(true);
@@ -122,9 +91,9 @@ export default function AdminDashboard() {
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
-            
+
             if (data && data.length > 0) {
-                const mapped: Appointment[] = data.map((item: any) => ({
+                const mapped: Appointment[] = data.map((item: AppointmentRow) => ({
                     id: item.id,
                     patientName: item.patient_name,
                     mobileNumber: item.mobile_number,
@@ -149,6 +118,39 @@ export default function AdminDashboard() {
         }
         setIsSyncing(false);
     };
+
+    const fetchRoleAndApprove = async (userId: string) => {
+        const { data } = await supabase.from('staff_roles').select('*').eq('id', userId).single();
+        if (data) {
+            setUserRole(data.role);
+            setIsApproved(data.is_approved);
+            if (data.is_approved) {
+                setAuthStep('authenticated');
+                loadAppointments();
+                if (data.role === 'SUPER_ADMIN') {
+                    loadStaff();
+                }
+            } else {
+                setAuthStep('authenticated');
+            }
+        }
+    }
+
+    const checkUser = async () => {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (session) {
+            await fetchRoleAndApprove(session.user.id);
+        }
+    }
+
+    // Load credentials & appointments
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            // Syncing from a browser-only Supabase auth session; can't be checked during SSR.
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            checkUser();
+        }
+    }, []);
 
     const handleSendOtp = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -198,8 +200,7 @@ export default function AdminDashboard() {
     const updateAppointmentInStore = async (id: string, status: Appointment['status'], extra: Partial<Appointment>, emailType: 'status_update', emailNote?: string) => {
         // 1. Update local cache state & trigger email alert
         let updatedList: Appointment[] = [];
-        const appToUpdate = appointments.find(app => app.id === id);
-        
+
         updatedList = appointments.map(app => {
             if (app.id === id) {
                 const newApp = { ...app, status, ...extra };
@@ -213,7 +214,7 @@ export default function AdminDashboard() {
         setAppointments(updatedList);
 
         // 2. Sync to Supabase
-        const dbUpdates: any = {
+        const dbUpdates: Partial<AppointmentRow> = {
             status: status,
         };
         if (extra.date) dbUpdates.appointment_date = extra.date;
@@ -853,7 +854,7 @@ export default function AdminDashboard() {
                                         <div>
                                             <span className="block text-[11px] font-bold text-gray-700 uppercase tracking-wider mb-1">Health Concern / Reason for Visit:</span>
                                             <p className="text-xs sm:text-sm text-gray-600 bg-white p-3.5 rounded-xl border border-gray-200/60 leading-relaxed font-serif italic">
-                                                "{app.healthConcern}"
+                                                &quot;{app.healthConcern}&quot;
                                             </p>
                                         </div>
 

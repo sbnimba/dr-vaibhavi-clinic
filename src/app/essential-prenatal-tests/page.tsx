@@ -161,7 +161,7 @@ export default function EssentialPrenatalTests() {
                                     <div className="space-y-3 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">First Pregnancy Ultrasound (Dating Scan)</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            This initial ultrasound confirms the pregnancy is developing safely inside the uterus, checks the baby's heartbeat, accurately estimates the due date (EDD), and detects multiple pregnancies (twins/triplets).
+                                            This initial ultrasound confirms the pregnancy is developing safely inside the uterus, checks the baby&apos;s heartbeat, accurately estimates the due date (EDD), and detects multiple pregnancies (twins/triplets).
                                         </p>
                                         <div className="bg-blue-50 text-blue-900 p-3 rounded-xl text-xs font-bold inline-block border border-blue-100">
                                             📅 Usually performed around 6–8 weeks of pregnancy.
@@ -208,7 +208,7 @@ export default function EssentialPrenatalTests() {
                                     <div className="space-y-2 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">Thyroid Function Test (TSH)</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            Thyroid hormones are absolutely vital for your baby's early brain development, maternal metabolism, and healthy pregnancy progression. Thyroid imbalances require prompt medication adjustment and regular follow-up.
+                                            Thyroid hormones are absolutely vital for your baby&apos;s early brain development, maternal metabolism, and healthy pregnancy progression. Thyroid imbalances require prompt medication adjustment and regular follow-up.
                                         </p>
                                     </div>
                                 </div>
@@ -230,7 +230,7 @@ export default function EssentialPrenatalTests() {
                                     <div className="space-y-3 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">NT Scan (Nuchal Translucency Scan)</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            A specialized high-resolution ultrasound that measures the fluid at the back of the baby's neck to screen for chromosomal abnormalities (like Down syndrome) and major congenital heart defects.
+                                            A specialized high-resolution ultrasound that measures the fluid at the back of the baby&apos;s neck to screen for chromosomal abnormalities (like Down syndrome) and major congenital heart defects.
                                         </p>
                                         <div className="bg-blue-50 text-blue-900 p-3 rounded-xl text-xs font-bold inline-block border border-blue-100">
                                             📅 Usually performed between 11–14 weeks of pregnancy.
@@ -255,7 +255,7 @@ export default function EssentialPrenatalTests() {
                                     <div className="space-y-3 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">Anomaly Scan (Targeted Imaging for Fetal Anomalies)</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            One of the most crucial pregnancy scans. The anomaly scan performs a head-to-toe anatomical evaluation of the baby's developing organs, including the brain, heart chambers, spine, kidneys, limbs, facial structures, and placenta location.
+                                            One of the most crucial pregnancy scans. The anomaly scan performs a head-to-toe anatomical evaluation of the baby&apos;s developing organs, including the brain, heart chambers, spine, kidneys, limbs, facial structures, and placenta location.
                                         </p>
                                         <div className="bg-blue-50 text-blue-900 p-3 rounded-xl text-xs font-bold inline-block border border-blue-100">
                                             📅 Usually performed around 18–22 weeks of pregnancy.
@@ -269,7 +269,7 @@ export default function EssentialPrenatalTests() {
                                     <div className="space-y-2 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">Growth Scans During Late Pregnancy</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            Conducted during the third trimester to monitor the baby's estimated fetal weight, presentation (head-down vs breech), placenta maturity, Doppler blood flow, and amniotic fluid levels (AFI).
+                                            Conducted during the third trimester to monitor the baby&apos;s estimated fetal weight, presentation (head-down vs breech), placenta maturity, Doppler blood flow, and amniotic fluid levels (AFI).
                                         </p>
                                     </div>
                                 </div>

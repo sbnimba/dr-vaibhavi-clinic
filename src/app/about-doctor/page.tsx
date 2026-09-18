@@ -50,7 +50,7 @@ export default function AboutDoctorPage() {
                             </p>
                             
                             <p className="text-gray-600 leading-relaxed mb-6 font-sans text-xs sm:text-sm">
-                                Dr. Vaibhavi is an Obstetrician and Gynecologist with 6+ years of experience in medical healthcare across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women's health concerns, across premier institutions in Pune and Maharashtra.
+                                Dr. Vaibhavi is an Obstetrician and Gynecologist with 6+ years of experience in medical healthcare across 1,000+ cases — from high-risk pregnancies and complex surgeries to everyday women&apos;s health concerns, across premier institutions in Pune and Maharashtra.
                             </p>
                             
                             {/* Awards & Recognition — visual badge grid */}

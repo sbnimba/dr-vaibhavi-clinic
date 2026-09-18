@@ -30,7 +30,7 @@ export default function PhilosophyPage() {
                     <div className="text-center mb-10">
                         <h2 className="text-xs font-bold tracking-widest text-primary-700 uppercase mb-1">Our Philosophy</h2>
                         <h1 className="text-3xl lg:text-4xl font-serif font-bold text-gray-900">Mission, Vision & Values</h1>
-                        <p className="text-gray-500 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">The foundational principles that guide our patient care, clinical excellence, and dedication to women's health.</p>
+                        <p className="text-gray-500 text-xs sm:text-sm mt-2 max-w-2xl mx-auto">The foundational principles that guide our patient care, clinical excellence, and dedication to women&apos;s health.</p>
                     </div>
 
                     <div className="space-y-6">
@@ -43,7 +43,7 @@ export default function PhilosophyPage() {
                                     </div>
                                     <h2 className="text-xl sm:text-2xl font-bold font-serif text-gray-900 mb-2">Our Mission</h2>
                                     <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed">
-                                        "To be the doctor every woman deserves — one who listens without judgment, understands without rushing, and delivers care that is both medically excellent and deeply human."
+                                        &quot;To be the doctor every woman deserves — one who listens without judgment, understands without rushing, and delivers care that is both medically excellent and deeply human.&quot;
                                     </p>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@ export default function PhilosophyPage() {
                                     </div>
                                     <h2 className="text-xl sm:text-2xl font-bold font-serif text-gray-900 mb-2">Our Vision</h2>
                                     <p className="font-serif italic text-gray-700 text-xs sm:text-sm leading-relaxed">
-                                        "A world where every woman — regardless of where she comes from — has access to compassionate, expert, and dignified healthcare at every stage of her life."
+                                        &quot;A world where every woman — regardless of where she comes from — has access to compassionate, expert, and dignified healthcare at every stage of her life.&quot;
                                     </p>
                                 </div>
                             </div>

@@ -44,7 +44,7 @@ export default function PregnancySupplements() {
                         </h1>
 
                         <p className="text-base sm:text-lg text-gray-700 font-sans font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
-                            An expert guide to essential micronutrients, daily recommended dosages, natural dietary sources, and protecting your baby's early development.
+                            An expert guide to essential micronutrients, daily recommended dosages, natural dietary sources, and protecting your baby&apos;s early development.
                         </p>
 
                         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-gray-600 font-medium bg-white/80 backdrop-blur-sm py-3 px-6 rounded-full max-w-full mx-auto shadow-sm border border-white">

@@ -13,9 +13,9 @@ export default function ConfirmationMoment({ profile, onCompleteConfirmation }: 
     const [phase, setPhase] = useState<'reveal' | 'onboarding'>('reveal');
     const [lang, setLang] = useState<AppLanguage>(profile.language || 'hi');
     const [diet, setDiet] = useState<DietaryPreference>(profile.dietaryPreference || 'veg');
-    const [name, setName] = useState(profile.name || 'मीना');
+    const [name] = useState(profile.name || 'मीना');
     const [lmpDate, setLmpDate] = useState(profile.lmpDate || '2026-04-01');
-    const [isFirst, setIsFirst] = useState(true);
+    const [isFirst] = useState(true);
 
     useEffect(() => {
         if (phase === 'reveal') {

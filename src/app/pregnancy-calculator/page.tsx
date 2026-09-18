@@ -18,7 +18,7 @@ export default function PregnancyCalculator() {
         
         // Gestational age in days
         const diffTime = Math.abs(today.getTime() - lmp.getTime());
-        let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
         
         // Cap at 280 days (40 weeks) if they are overdue
         if (diffDays > 280 && diffDays < 300) {
@@ -85,7 +85,7 @@ export default function PregnancyCalculator() {
                         </h1>
 
                         <p className="text-base sm:text-lg text-gray-700 font-sans font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
-                            Find out your estimated due date, current trimester, and track your baby's development timeline.
+                            Find out your estimated due date, current trimester, and track your baby&apos;s development timeline.
                         </p>
                     </div>
                 </section>
@@ -138,7 +138,7 @@ export default function PregnancyCalculator() {
                                     <p className="text-[11px] font-bold text-teal-600 uppercase tracking-widest mb-2">Current Stage</p>
                                     <p className="text-lg sm:text-xl font-bold text-gray-900">{result.trimester}</p>
                                     {result.weeks < 14 && <p className="text-xs text-teal-800 mt-2">Focus on Folic Acid, Vitamin D, and managing morning sickness.</p>}
-                                    {result.weeks >= 14 && result.weeks < 28 && <p className="text-xs text-teal-800 mt-2">The "honeymoon phase" of pregnancy! Time for your anomaly scan.</p>}
+                                    {result.weeks >= 14 && result.weeks < 28 && <p className="text-xs text-teal-800 mt-2">The &quot;honeymoon phase&quot; of pregnancy! Time for your anomaly scan.</p>}
                                     {result.weeks >= 28 && <p className="text-xs text-teal-800 mt-2">Almost there! Keep track of baby kicks and prepare your hospital bag.</p>}
                                 </div>
 

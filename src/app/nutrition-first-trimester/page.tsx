@@ -202,7 +202,7 @@ export default function NutritionFirstTrimester() {
                                             <h3 className="font-bold text-base sm:text-lg text-gray-900">4. Calcium & Vitamin D</h3>
                                         </div>
                                         <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">
-                                            These nutrients help in building strong bones and teeth for the baby while protecting the mother's bone density. Daily sunlight exposure also helps maintain Vitamin D levels.
+                                            These nutrients help in building strong bones and teeth for the baby while protecting the mother&apos;s bone density. Daily sunlight exposure also helps maintain Vitamin D levels.
                                         </p>
                                     </div>
                                     <div className="bg-white p-3.5 rounded-xl border border-gray-200/50">
@@ -337,7 +337,7 @@ export default function NutritionFirstTrimester() {
                                 A Simple Healthy Pregnancy Plate
                             </h2>
                             <p className="text-xs sm:text-sm text-gray-600 mb-6 leading-relaxed">
-                                A perfectly balanced first-trimester meal doesn't need to be complicated. Every major meal should aim to include a colorful balance of:
+                                A perfectly balanced first-trimester meal doesn&apos;t need to be complicated. Every major meal should aim to include a colorful balance of:
                             </p>
 
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6 text-center font-bold text-xs sm:text-sm text-gray-800">
@@ -394,7 +394,7 @@ export default function NutritionFirstTrimester() {
                             <div>
                                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-gray-900 mb-1">Need a Customized Pregnancy Diet Chart?</h3>
                                 <p className="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto leading-relaxed">
-                                    Consult Dr. Vaibhavi for a personalized first-trimester evaluation, advanced ANC checkups, and a tailored nutrition plan designed for your baby's optimal growth.
+                                    Consult Dr. Vaibhavi for a personalized first-trimester evaluation, advanced ANC checkups, and a tailored nutrition plan designed for your baby&apos;s optimal growth.
                                 </p>
                             </div>
 

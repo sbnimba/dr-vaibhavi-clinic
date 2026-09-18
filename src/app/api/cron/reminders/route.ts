@@ -109,8 +109,9 @@ export async function GET(request: Request) {
             message: `Successfully sent ${emailsSent} reminder emails for ${tomorrowString}.` 
         });
 
-    } catch (error: any) {
+    } catch (error) {
         console.error('Cron job error:', error);
-        return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+        const message = error instanceof Error ? error.message : 'Unknown error';
+        return NextResponse.json({ success: false, error: message }, { status: 500 });
     }
 }

@@ -2,15 +2,15 @@
 import { useEffect, useState } from 'react';
 import { UserProfile } from '@/types/pregnancy-journey';
 import { getUserProfile, saveUserProfile } from '@/lib/pregnancy-store';
-import OnboardingFlow from '@/components/pregnancy-journey/OnboardingFlow';
 import MainDashboard from '@/components/pregnancy-journey/MainDashboard';
 
 export default function JourneyPage() {
     const [profile, setProfile] = useState<UserProfile | null>(null);
-    const [showOnboarding, setShowOnboarding] = useState(false);
 
     useEffect(() => {
         const stored = getUserProfile();
+        // Syncing from browser-only localStorage; can't be read during SSR.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setProfile(stored);
         // Show onboarding only if user has never set their LMP
         // Otherwise go straight to the journey map

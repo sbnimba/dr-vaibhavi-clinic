@@ -3,10 +3,19 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
 
+interface AppointmentRecord {
+    id: string;
+    status: 'Pending' | 'Confirmed' | 'Rescheduled' | 'Rejected' | 'Completed';
+    specialty: string;
+    appointment_date: string;
+    time_slot: string;
+    consultation_mode: string;
+}
+
 export default function PatientPortal() {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchType, setSearchType] = useState<'email' | 'mobile'>('mobile');
-    const [appointments, setAppointments] = useState<any[]>([]);
+    const [appointments, setAppointments] = useState<AppointmentRecord[]>([]);
     const [isSearching, setIsSearching] = useState(false);
     const [hasSearched, setHasSearched] = useState(false);
     const [error, setError] = useState('');
@@ -34,7 +43,7 @@ export default function PatientPortal() {
 
             setAppointments(data || []);
             setHasSearched(true);
-        } catch (err: any) {
+        } catch (err) {
             console.error('Search error:', err);
             setError('Failed to fetch records. Please try again.');
         } finally {

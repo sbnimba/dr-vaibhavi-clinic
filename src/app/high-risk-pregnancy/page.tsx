@@ -149,7 +149,7 @@ export default function HighRiskPregnancy() {
                                     <div className="space-y-3 w-full">
                                         <h3 className="font-serif font-bold text-gray-900 text-base sm:text-lg m-0">High Blood Pressure During Pregnancy</h3>
                                         <p className="text-xs sm:text-sm text-gray-600 m-0 leading-relaxed">
-                                            High blood pressure affects placental blood flow, baby's growth, and maternal health. In severe cases, it can lead to preeclampsia, premature delivery, and maternal organ complications.
+                                            High blood pressure affects placental blood flow, baby&apos;s growth, and maternal health. In severe cases, it can lead to preeclampsia, premature delivery, and maternal organ complications.
                                         </p>
                                     </div>
                                 </div>

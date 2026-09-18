@@ -981,7 +981,7 @@ export default function MainDashboard({ initialProfile }: Props) {
   const [currentScreen, setCurrentScreen] = useState<'welcome' | 'stages' | 'pillars' | 'quiz' | 'pillar_complete' | 'follow_wall'>('welcome');
   const [clickedInsta, setClickedInsta] = useState(false);
   const [clickedYT, setClickedYT] = useState(false);
-  const [socialFollowed, setSocialFollowed] = useState(false);
+  const [, setSocialFollowed] = useState(false);
   const [selectedStage, setSelectedStage] = useState<typeof STAGES_DATA[0] | null>(null);
   const [selectedPillar, setSelectedPillar] = useState<typeof STAGES_DATA[0]['pillars'][0] | null>(null);
   const [currentQuestionIdx, setCurrentQuestionIdx] = useState(0);
@@ -1001,6 +1001,8 @@ export default function MainDashboard({ initialProfile }: Props) {
         delay: Math.random() * 1.5,
         color: ['bg-rose-500', 'bg-yellow-400', 'bg-blue-400', 'bg-emerald-400', 'bg-purple-400', 'bg-pink-400'][Math.floor(Math.random() * 6)]
       }));
+      // Regenerated only when currentScreen changes, not on every render, since it's randomized.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setConfetti(items);
     } else {
       setConfetti([]);
@@ -1010,6 +1012,8 @@ export default function MainDashboard({ initialProfile }: Props) {
   // Load state and completion from local storage
   useEffect(() => {
     const activeProfile = getUserProfile();
+    // Syncing from browser-only localStorage; can't be read during SSR.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setProfile(activeProfile);
     setLanguage(activeProfile.language || 'hi');
     
