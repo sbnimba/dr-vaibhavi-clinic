@@ -119,4 +119,4 @@ export const PAGE_META: Record<string, PageMeta> = {
 };
 
 /** Routes that should not be indexed by search engines. */
-export const NOINDEX_ROUTES = new Set(['admin', 'patient-portal']);
+export const NOINDEX_ROUTES = new Set(['admin', 'patient-portal', 'privacy-policy', 'terms-conditions', 'medical-disclaimer']);

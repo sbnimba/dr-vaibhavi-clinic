@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description: "Terms of use for the Dr. Vaibhavi Clinic website and online appointment booking.",
   alternates: { canonical: '/terms-conditions' },
+  robots: { index: false, follow: true },
   openGraph: {
     type: 'website',
     title: "Terms & Conditions",

@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How Dr. Vaibhavi Clinic collects, stores and protects your personal and medical information.",
   alternates: { canonical: '/privacy-policy' },
+  robots: { index: false, follow: true },
   openGraph: {
     type: 'website',
     title: "Privacy Policy",

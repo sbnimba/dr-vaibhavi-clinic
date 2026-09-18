@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Medical Disclaimer",
   description: "Information on this site is educational and does not replace an in-person consultation or emergency medical care.",
   alternates: { canonical: '/medical-disclaimer' },
+  robots: { index: false, follow: true },
   openGraph: {
     type: 'website',
     title: "Medical Disclaimer",
